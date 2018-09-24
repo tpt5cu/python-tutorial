@@ -1,5 +1,7 @@
 import sys
 
+"""The underlying type of all integral types (regardless of base) is int."""
+
 
 def integer_precision():
     """The largest practical integer value is equal to the sys.maxsize variable.
@@ -13,5 +15,15 @@ def integer_precision():
     print("big_num type: " + str(type(big_num)))
 
 
+def different_bases():
+    binary = 0b10001
+    print(binary)
+    octal = 0o21
+    print(octal)
+    hexadecimal = 0x11
+    print(hexadecimal)
+
+
 if __name__ == "__main__":
-    integer_precision()
+    # integer_precision()
+    different_bases()
