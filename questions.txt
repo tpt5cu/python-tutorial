@@ -1,0 +1,4 @@
+https://docs.python-guide.org/writing/gotchas/
+
+What is the self argument?
+What are these special/magic methods anyway?
