@@ -8,6 +8,7 @@ def get_an_iterator():
     """
     my_list = ['a', 'b', 'c', 'd']
     iterator = iter(my_list)
+    print(type(iterator))
     print(dir(iterator))
 
 
@@ -39,9 +40,12 @@ def reset_iterator():
     """
 
 
+
+
+
 if __name__ == "__main__":
     """I just noticed that indentation amount only depends on context. I could indent one function by 1 space and a separate
     function with 3 spaces as long as I'm consistent in each function.
     """
-    # get_an_iterator()
+    get_an_iterator()
     # use_manual_iterator()
