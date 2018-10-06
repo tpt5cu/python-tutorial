@@ -1,3 +1,10 @@
+# https://developers.google.com/edu/python/lists
+# https://docs.python.org/3/tutorial/datastructures.html#
+# https://stackoverflow.com/questions/509211/understanding-pythons-slice-notation
+# https://stackoverflow.com/questions/10623302/how-assignment-works-with-python-list-slice
+
+"""Lists keep order, so the insertion order of a list CAN be depended upon. Set requires items to be hashable while list
+does not, so use a list for non-hashable items. Set forbids duplicates while list does not. Set is also mutable."""
 
 
 def list_access():
@@ -55,9 +62,35 @@ def list_traversal_2():
     print(my_list)
 
 
+def shallow_copy_slice():
+    """The slice notation can be used (somewhat confusingly) to create a shallow copy of a list and assign this copy to
+    another variable.
+    """
+    numbers = [5, 4, 3, 2, 1]
+    copy = numbers
+    new_list = numbers[:]
+    print("numbers: " + str(numbers) + ", numbers id: " + str(id(numbers)))
+    print("copy: " + str(copy) + ", copy id: " + str(id(copy)))
+    print("new_list: " + str(new_list) + ", new_list id: " + str(id(new_list)))
+
+
+def slice_assignment():
+    """Using the slice operator on the left-hand side of assignment is called 'slice assignment' and does not perform the
+    same operation as using the slice operator on the right-hand side of assignment.
+
+    This example replaces element 0 in 'numbers' with the entire contents of 'names'.
+    """
+    names = ['Bartholemew', 'terrible', 'jack jackity jack jack']
+    numbers = [1, 2, 3, 4, 5, 6]
+    numbers[0:1] = names
+    print(numbers)
+
+
 if __name__ == "__main__":
     # list_access()
     # list_concatenation()
     # list_purpose()
     # list_traversal_1()
-    list_traversal_2()
+    # list_traversal_2()
+    # shallow_copy_slice()
+    slice_assignment()

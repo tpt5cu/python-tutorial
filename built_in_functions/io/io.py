@@ -1,4 +1,4 @@
-# https://www.programiz.com/python-programming/file-operation
+# https://www.programiz.com/python-programming/file-operation (shows open modes)
 # https://stackoverflow.com/questions/5137497/find-current-directory-and-files-directory
 # https://stackoverflow.com/questions/3012488/what-is-the-python-with-statement-designed-for
 # https://docs.python.org/3/tutorial/inputoutput.html (talks about seek(), readlines(), etc.)
@@ -26,6 +26,8 @@ def my_open():
     -The default open mode is 'r', or read. It's NOT in binary mode by default
     -A file must be closed to free up resources. It should be closed in a finally block in case an exception happens
     during file operations
+
+    -A file may only be opened in ONE of the following modes: create/read/write/append
     """
     try:
         file = open('../.gitignore', encoding='utf-8')

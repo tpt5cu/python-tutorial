@@ -1,5 +1,6 @@
 # https://stackoverflow.com/questions/94935/what-is-the-difference-between-range-and-xrange-functions-in-python-2-x
 # http://treyhunner.com/2018/02/python-3-s-range-better-than-python-2-s-xrange/
+# https://docs.python.org/3/library/functions.html#func-range
 
 
 def examine_range():
@@ -14,16 +15,17 @@ def examine_range():
 
 
 def examine_xrange():
-    """xrange is a sequence object that evaluated lazily. It is not a generator. """
+    """xrange is an immutable sequence type that is evaluated lazily. It is not a generator. """
 
-    """xrange() is not defined in Python3, so the code throws a NameError. In Python2, this code prints '(xrange(1, 1000)'
+    """xrange() is not defined in Python3 (range() acts like xrange()), so the code throws a NameError.
+     In Python2, this code prints '(xrange(1, 1000)'
     """
     # my_xrange = xrange(1, 1000)
     # print(my_xrange)
 
 
 def use_range():
-    """My interpreter is set to Python3."""
+    """My interpreter is set to Python3. A range is an immutable sequence type in Python3"""
     for num in range(0, 100):
         print(num)
 
