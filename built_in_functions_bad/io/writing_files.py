@@ -18,12 +18,12 @@ def get_parent_dir_path(target_dir):
 
 
 def write_lines():
-    with open(get_parent_dir_path("python-tutorial") + "temp.txt", mode="w", encoding="utf-8") as file:
+    with open(get_parent_dir_path("python_tutorial") + "temp.txt", mode="w", encoding="utf-8") as file:
         for x in range(100):
             file.write(str(x) + "\n")
     print("File was overwritten")
 
 
 if __name__ == "__main__":
-    # get_parent_dir_path("python-tutorial/")
+    # get_parent_dir_path("python_tutorial/")
     write_lines()

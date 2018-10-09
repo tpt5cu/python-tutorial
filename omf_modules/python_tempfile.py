@@ -7,7 +7,7 @@ import os
 
 def what_is_file():
     """__file__ CAN BE the absolute path of the module within which __file__ is written. In this case, this __file__ is:
-    /Users/austinchang/pycharm/python-tutorial/omf_modules/python_tempfile.py
+    /Users/austinchang/pycharm/python_tutorial/omf_modules/python_tempfile.py
 
     __file__ is only the absolute path of the module within which __file__ is written WHEN the main method of the
     module is executed.
@@ -20,7 +20,7 @@ def what_is_file():
 def what_is_dirname():
     """dirname() itself is a function. It takes a path and returns the absolute path to the directory of provided path.
 
-    In this case, it returns /Users/austinchang/pycharm/python-tutorial/omf_modules because that is the directory within
+    In this case, it returns /Users/austinchang/pycharm/python_tutorial/omf_modules because that is the directory within
     which __file__ (i.e. this module) is contained.
     """
     print(os.path.dirname(__file__))

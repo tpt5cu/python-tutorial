@@ -25,11 +25,12 @@ class Subclass:
 
 def use_vars():
     """Strictly, vars() returns the __dict__ attribute of a module, class, or object. It throws a type error if the
-    argument does not have the __dict__ attribute.
+    argument does not have the __dict__ attribute. A class has a distinct namespace, and each instance of that class
+    has a distinct namespace. These namespaces are represented by the __dict__ attribute.
 
-    1) For an object, __dict__ is a dictionary that contains all of the attributes defined on the object itself. This does
-    not include attributes of the class (e.g. methods and class attributes)
-    2) For a class, __dict__ is actually of the type dictproxy.
+    1) For an object, __dict__ is a dictionary that contains all of the attributes defined on the object itself. This
+    does not include attributes of the class (e.g. methods and class attributes)
+    2) For a class, __dict__ is actually of the type mappingproxy.
     3) For a module ...
     """
     obj = Subclass("Austin", "Red")
@@ -43,8 +44,9 @@ def use_vars():
 
 
 def use_dir():
-    """dir() does more than vars(). It returns a LIST of the object's attributes, its class's attributes, and recursively
-    the attributes of its class's base classes. However, this list only contains the attributes, not their values.
+    """dir() does more than vars(). It returns a LIST of defined names in a namespace. This refers to the object's
+    attributes, its class's attributes, and recursively the attributes of its class's base classes.
+    However, this list only contains the attributes, not their values.
     """
     obj = Subclass("David", "Blue")
     print(dir(obj))
@@ -56,4 +58,4 @@ def use_dir():
 
 if __name__ == "__main__":
     # use_vars()
-    use_dir()
+     use_dir()

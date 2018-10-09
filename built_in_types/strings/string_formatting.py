@@ -1,3 +1,14 @@
+# https://realpython.com/python-string-formatting/
+
+
+def string_interpolation():
+    """Python has string interpolation, which allow me to use variables inside the string!"""
+    num = 33
+    name = "Allison"
+    string = f"{name} is {num} years old today!"
+    print(string)
+
+
 def string_literals():
     """strings can be delineated with single, double, or triple quotes."""
     string1 = "I am a cool string!"
@@ -27,6 +38,7 @@ def raw_string():
 
 
 if __name__ == "__main__":
-     string_literals()
+    string_interpolation()
+    string_literals()
     # multiline_strings()
-    # raw_string()
+    #  raw_string()

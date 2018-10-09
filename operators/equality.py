@@ -18,8 +18,8 @@ def equals_operator():
     """
     a = ["list", "of", "things", {1: "foo"}]
     c = ["list", "of", "things", {1: "foo"}]
-    if a is not c:
-        if a == c:
+    if a == c:
+        if a is not c:
             print("a and c are equal in value, but are not the same object.")
 
 

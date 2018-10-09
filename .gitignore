@@ -112,3 +112,6 @@ venv.bak/
 *.iml
 out
 gen
+
+# Mac stuff. Need to remove this file
+.DS_Store

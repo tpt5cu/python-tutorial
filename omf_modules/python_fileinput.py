@@ -23,7 +23,7 @@ def read_file():
     opening the file in 'w' mode? That must be it.
     """
 
-    real_path = "/Users/austinchang/pycharm/python-tutorial/temp.txt"
+    real_path = "/Users/austinchang/pycharm/python_tutorial/temp.txt"
     content = []
     for line in fileinput.input(real_path, inplace=1):
         pass
