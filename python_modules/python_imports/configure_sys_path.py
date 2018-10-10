@@ -6,7 +6,6 @@
 """SimpleNamespace doesn't exist in Python 2, use type() instead"""
 #from types import SimpleNamespace
 import sys
-sys.path.append("/Users/autinchang/pycharm/python_tutorial")
 
 """I'm making op into a dummy custom object so I can add attributes to it"""
 #op = SimpleNamespace()
@@ -14,11 +13,11 @@ op = type("CustomClassObject", (), {})
 
 
 def import_my_add():
-    """I'm importing module 'adding' from package 'operators'. Note that this actual import just places the module
+    """I'm importing module 'adding' from package 'python_operators'. Note that this actual import just places the module
     into the scope of THIS function. The imports are wrapped in a function just for the sake of this tutorial
     """
-    import operators.adding as my_add
-    #import operators.equality
+    import python_operators.adding as my_add
+    #import python_operators.equality
     """This line won't work unless 'op' is actually defined at the global level."""
     global op
     """I'm adding my_add to the global scope so I can use it in other functions (to pretend as if I had imported
@@ -33,7 +32,7 @@ def import_module_from_package():
     specifically be imported.
     """
     op.adding.plus_equals_with_mutable_object()
-    """This throws an AttributeError because module 'operators' has no attribute 'equality'"""
+    """This throws an AttributeError because module 'python_operators' has no attribute 'equality'"""
     #op.equality
 
 
@@ -55,9 +54,9 @@ def brittle_fix_import_errors():
     and brittle. Now the import will work as expected, but ONLY in THIS function! Note how the sys.path must be
     modified BEFORE the import happens in order for Python to find the desired module.
     """
-    print("sys.path: " + str(sys.path))
-    import operators
-    #operators.equality.equals_operator()
+    sys.path.append("/Users/austinchang/pycharm/python_tutorial")
+    import python_operators.equality
+    python_operators.equality.equals_operator()
 
 
 if __name__ == "__main__":

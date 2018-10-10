@@ -23,7 +23,9 @@ def serialize_python():
     with open("output.json", mode="w", encoding="utf-8") as file:
         json.dump(classes, file, indent=4)
 
-    """json.dumps() simply writes the json string into a Python string, as supposed to writing the json to a file."""
+    """json.dumps() simply serializes the obj to a Python string that is also formatted as valid json,
+    as supposed to writing the json to a file.
+    """
     json_string = json.dumps(classes)
     print(json_string)
 
