@@ -1,6 +1,8 @@
 # https://stackoverflow.com/questions/4081217/how-to-modify-list-entries-during-for-loop
 # https://www.programiz.com/python-programming/list-comprehension
 # https://docs.python.org/3/tutorial/datastructures.html
+# https://stackoverflow.com/questions/30245397/why-is-a-list-comprehension-so-much-faster-than-appending-to-a-list
+# https://stackoverflow.com/questions/6475314/python-for-in-loop-preceded-by-a-variable
 
 """A list comprehension is an elegant way to create a new list based on an existing list."""
 
