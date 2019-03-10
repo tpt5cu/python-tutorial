@@ -28,7 +28,7 @@ def import_my_add():
 def import_module_from_package():
     import_my_add()
     """As long as a package is within the search path, specific modules can be imported from that package.
-    Note that importing a package alone does NOT make all the modules available. The desired modules must
+    Importing a package alone does NOT make all the modules available. The desired modules must
     specifically be imported.
     """
     op.adding.plus_equals_with_mutable_object()

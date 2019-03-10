@@ -1,0 +1,5 @@
+This directory only exists so that I can test the usage of pkgutil.extend_path().
+If I understand extend_path() correctly, It should add THIS directory "/Users/austinchang/pycharm/python_tutorial/python_pkgutil"
+to the __path__ attribute of the REAL python_pkgutil package inside of omf_modules.
+The resulting total __path__ attribute should be:
+"[/Users/austinchang/pycharm/python_tutorial/python_pkgutil, "/Users/austinchang/pycharm/python_tutorial/python_pkgutil"]

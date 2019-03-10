@@ -1,5 +1,6 @@
 # https://realpython.com/python-json/
 # https://docs.python.org/3/library/json.html
+# Conversion table: https://docs.python.org/3/library/json.html#json-to-py-table
 
 import json
 
@@ -30,40 +31,6 @@ def serialize_python():
     print(json_string)
 
 
-def deserialize_json():
-    """Deserialization is NOT a perfect inverse of serialization. If a serialize an object, I might not get EXACTLY
-    the same object back when it's deserialized.
-
-    There is a mapping between json types and Python types. json.load() will return a data type
-    that is dependent on the mapping between json and Python types.
-    """
-    with open("source.json", "r", encoding="utf-8") as file:
-        data = json.load(file)
-    print(type(data))
-    print(data)
-
-    """json.loads() does the same exact thing as json.load(), except that json.loads() expects an actual Python string
-    (which must also be valid formatted json) as its argument.
-    """
-    json_data = """ 
-        {
-            "researcher": {
-                "name": "Ford Prefect",
-                "species": "Betelgeusian",
-                "relatives": [
-                    {
-                        "name": "Zaphod Beeblebrox",
-                        "species": "Betelgeusian"
-                    }
-                ]
-            }
-        } 
-    """
-    string_data = json.loads(json_data)
-    print(type(string_data))
-    print(string_data)
-
-
 if __name__ == "__main__":
     #serialize_python()
-    deserialize_json()
+    pass

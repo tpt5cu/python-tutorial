@@ -2,7 +2,7 @@
 # https://www.python.org/dev/peps/pep-0257/
 
 
-"""Turing a docstring into a function signature is verbose and brittle because if I change the function then
+"""Turning a docstring into a function signature is verbose and brittle because if I change the function then
 I have to change the docstring. Use function annotations?
 """
 

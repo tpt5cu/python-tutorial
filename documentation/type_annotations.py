@@ -1,0 +1,1 @@
+# https://stackoverflow.com/questions/35230635/type-hinting-in-python-2

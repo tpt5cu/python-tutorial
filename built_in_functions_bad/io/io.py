@@ -17,16 +17,11 @@ def my_print():
 
 
 def my_open():
-    """open() returns a file object (also known as a 'handle') that is used to read/write the underlying file.
-    A file object is an iterator, not an iterable. That's why it can only traverse a file once (barring the use of seek())
-
-    -The encoding is a default argument, but it should always be specified b/c different systems will use different
-    default encodings.
+    """open() returns a file object (also known as a 'handle') that is used to read/write the underlying file. A file object is an iterator, not an iterable. That's why it can only traverse a file once (barring the use of seek())
+    -The encoding is a default argument, but it should always be specified b/c different systems will use different default encodings.
     -The path can be absolute, or relative to the current working directory.
     -The default open mode is 'r', or read. It's NOT in binary mode by default
-    -A file must be closed to free up resources. It should be closed in a finally block in case an exception happens
-    during file operations
-
+    -A file must be closed to free up resources. It should be closed in a finally block in case an exception happens during file operations
     -A file may only be opened in ONE of the following modes: create/read/write/append
     """
     try:
@@ -38,8 +33,7 @@ def my_open():
 
 
 def my_better_open():
-    """The 'with' statement simplifies exception handling. It does the same thing as try-finally, but it can be used
-    for much more than file handling.
+    """The 'with' statement simplifies exception handling. It does the same thing as try-finally, but it can be used for much more than file handling.
     """
     with open('../.gitignore', encoding='utf-8') as f:
         print(f.read())
@@ -56,8 +50,7 @@ def offset_the_file_pointer_location():
 
 
 def read_by_line():
-    """list() and <file_object>.readlines() do the same thing, but their implementations might be different. I'll
-    be surprised if I ever really need to know the difference in implementation.
+    """list() and <file_object>.readlines() do the same thing, but their implementations might be different. I'll be surprised if I ever really need to know the difference in implementation.
     """
     with open('../.gitignore', encoding='utf-8') as f:
         content = f.readlines()

@@ -32,7 +32,13 @@ def reassign_variable():
           " to: " + str(b))
 
 
+def multivariable_assignment():
+    a=b=c = None
+    print(a, b, c)
+
+
 if __name__ == "__main__":
-    # assign_variable()
-    # object_references()
-    reassign_variable()
+    #assign_variable()
+    #object_references()
+    #reassign_variable()
+    multivariable_assignment()

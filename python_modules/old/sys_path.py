@@ -3,6 +3,10 @@
 
 import sys, os
 
+"""Run python in terminal like so, setting the custom path to the root directory of whatever project I'm running.
+Actually, since omf and this tutorial project are so important I'm going to put them in my .bash_profile
+PYTHONPATH=$PYTHONPATH:/custom/path/to/modules python <your-program> 
+"""
 
 def print_pythonpath():
     """The PYTHONPATH is different when I run this function from within my IDE vs in my terminal."""

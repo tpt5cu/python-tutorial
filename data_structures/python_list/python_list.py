@@ -38,7 +38,7 @@ def list_traversal_1():
     my_list = [3.0, 5.44, 99.9, 2]
     for elm in my_list:
         """In this example, the list contains immutable objects. Therefore, __add__ is being called for each object.
-        Therefore, the 'elm' variable is being made to point at a NEW object that is returned from the operation. Hence,
+        Therefore, the 'elm' variable is being made to point at a NEW object that is returned from the += operation. Hence,
         the original elements of the list aren't being modified in place at all.
         """
         elm += 5
@@ -92,5 +92,5 @@ if __name__ == "__main__":
     # list_purpose()
     # list_traversal_1()
     # list_traversal_2()
-    # shallow_copy_slice()
-    slice_assignment()
+    shallow_copy_slice()
+    #slice_assignment()

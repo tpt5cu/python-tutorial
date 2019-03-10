@@ -1,13 +1,13 @@
-# https://realpython.com/python-string-formatting/
-
+"""
+https://stackoverflow.com/questions/11630106/advanced-string-formatting-vs-template-strings
+https://realpython.com/python-string-formatting/
+https://stackoverflow.com/questions/599625/python-string-prints-as-ustring
+"""
 
 def string_interpolation():
-    """Python has string interpolation, which allow me to use variables inside the string!"""
-    num = 33
-    name = "Allison"
-    string = f"{name} is {num} years old today!"
-    print(string)
-
+    """ Not available until Python 3.6.
+    """
+    pass
 
 def string_literals():
     """strings can be delineated with single, double, or triple quotes."""
@@ -17,7 +17,6 @@ def string_literals():
     string3 = "This string can have \"quotes\" inside of it."
     print(string3)
     print(str(type(string3)))
-
 
 def multiline_strings():
     string = """Triple quotes
@@ -30,15 +29,26 @@ def multiline_strings():
                " to avoid including spaces and newlines in the format.")
     print(string2)
 
+def inserting_variables():
+    name = "Austin"
+    string = "Hello my name is {} and I like {}.".format(name, "cats")
+    print(string)
+    # Very useful when substituting the same variable multiple times
+    string = "Hello my name is {name}. I was named {name} because my parents liked the name {name}.".format(name=name)
+    print(string)
+    # This is the most basic way, but it's annoying to have to remember to put spaces around the end quotations.
+    string = "Hello my name is " + name
+    print(string)
+
 
 def raw_string():
     """Precede a string literal with 'r' or 'R' to create a raw string."""
     string = r"I'm a raw string \\ so \" nothing \t gets \u escaped."
     print(string)
 
-
 if __name__ == "__main__":
-    string_interpolation()
-    string_literals()
-    # multiline_strings()
-    #  raw_string()
+    #string_interpolation()
+    #string_literals()
+    #multiline_strings()
+    inserting_variables()
+    #raw_string()

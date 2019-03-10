@@ -8,12 +8,6 @@ dictionary.
 
 def create_dictionary():
     """A dictionary can be created with literal syntax or with the dict() constructor."""
-    foods = {
-        'starch': 'bread',
-        'protein': 'steak',
-        'dairy': 'yogurt'
-    }
-    print(foods)
     # I'm using a list of tuples as input to the dict constructor
     people = dict([
         (33, 'George'),
@@ -82,20 +76,9 @@ def key_restrictions():
     weird_dict[[5, 6, 7]] = 5
 
 
-def avoid_key_error():
-    """Using brackets to access a value of a dictionary is great, except that a KeyError is thrown if the key
-    doesn't exist. Use the get() method which is identical except it will return None if the key doesn't exist."""
-    dictionary = {
-        "name": "Austin",
-        "age": 23
-    }
-    # print(dictionary["occupation"])
-    print(dictionary.get("occupation"))
-
-
 if __name__ == "__main__":
-    # create_dictionary()
-    # access_dictionary()
-    # modify_dictionary()
-    # key_restrictions()
-    avoid_key_error()
+    pass
+    #create_dictionary()
+    #access_dictionary()
+    #modify_dictionary()
+    #key_restrictions()

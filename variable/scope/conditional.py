@@ -1,4 +1,3 @@
-# https://stackoverflow.com/questions/6475314/python-for-in-loop-preceded-by-a-variable
 
 
 def if_statement_scope(num):
@@ -15,13 +14,6 @@ def if_statement_scope(num):
         var += 100
     print(var)
 
-
-
-    # for key in my_dict:
-    #     for subKey in ['latitude', 'longitude']:
-    #         if subKey in tree[key]:
-    #             latLonCount += 1
-    # if latLonCount == 0:
 
 if __name__ == "__main__":
     if_statement_scope()
