@@ -36,6 +36,8 @@ def create_byte_string():
     print(s)
 
 def unicode_to_byte():
+    """ Use decode() to go from byte to unicode. use encode() to go from unicode to byte.
+    """
     s = "I'm a byte string";
     """ The decode() function translates a sequence of bytes into a sequence of code points, and returns the sequence of code points as a <'unicode'> instance.
     The function assumes I know what I'm doing and that the bytes SHOULD be translated using whatever encoding I specify (e.g. "utf-8")
