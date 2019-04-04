@@ -6,10 +6,10 @@ https://pymotw.com/2/codecs/
 https://stackoverflow.com/questions/2596714/why-does-python-print-unicode-characters-when-the-default-encoding-is-ascii
 """
 
-""" The reason I have Unicode strings in web.py is because User.cu() returns a Unicode string. Whenever a Unicode and byte string are joined, the result is always a Unicode string. 
-"""
-
-""" Unicode uses code points (i.e. an integer that is mapped to a character), not bytes. There are variations of Unicode. UTF-8 is one such variation. It uses 1 to 4 bytes to encode a code point. 
+""" The reason I have Unicode strings in web.py is because User.cu() returns a Unicode string.
+Whenever a Unicode and byte string are joined, the result is always a Unicode string. 
+Unicode uses code points (i.e. an integer that is mapped to a character), not bytes.
+    - There are variations of Unicode. UTF-8 is one such variation. It uses 1 to 4 bytes to encode a code point. 
 """
 
 """ This whole Unicode vs byte string distinction in Python 2 (and Python 3) is quite complex. I will need to come back to this later.
@@ -38,11 +38,11 @@ def create_byte_string():
 def unicode_to_byte():
     """ Use decode() to go from byte to unicode. use encode() to go from unicode to byte.
     """
-    s = "I'm a byte string";
+    s = "I'm a byte string"
     """ The decode() function translates a sequence of bytes into a sequence of code points, and returns the sequence of code points as a <'unicode'> instance.
     The function assumes I know what I'm doing and that the bytes SHOULD be translated using whatever encoding I specify (e.g. "utf-8")
     """
-    u = s.decode("utf-8");
+    u = s.decode("utf-8")
     print(type(u))
     """ The encode() function translates a sequence of code points into a sequence of bytes. """
     s = u.encode("utf-8")
