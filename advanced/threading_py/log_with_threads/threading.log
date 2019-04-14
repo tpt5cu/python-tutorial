@@ -1,0 +1,10 @@
+2019-04-06 14:00:36,064 - Wanda - DEBUG - doubler function executing
+2019-04-06 14:00:36,065 - Mike - DEBUG - doubler function executing
+2019-04-06 14:00:36,066 - George - DEBUG - doubler function executing
+2019-04-06 14:00:36,067 - Wanda - DEBUG - doubler function ended with: 4
+2019-04-06 14:00:36,068 - Mike - DEBUG - doubler function ended with: 0
+2019-04-06 14:00:36,069 - George - DEBUG - doubler function ended with: 2
+2019-04-06 14:00:36,070 - Dingbat - DEBUG - doubler function executing
+2019-04-06 14:00:36,071 - Nina - DEBUG - doubler function executing
+2019-04-06 14:00:36,072 - Dingbat - DEBUG - doubler function ended with: 6
+2019-04-06 14:00:36,073 - Nina - DEBUG - doubler function ended with: 8

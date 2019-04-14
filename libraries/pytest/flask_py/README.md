@@ -1,0 +1,5 @@
+https://werkzeug.palletsprojects.com/en/0.15.x/test/#werkzeug.test.Client (how to send data to the server via app.test_client())
+https://tedboy.github.io/flask/generated/generated/flask.Response.html (see what the heck is inside of a Response object)
+https://tutorials.technology/tutorials/Flask--How-to-Test-file-upload.html (example of sending a file via app.test_client())
+https://werkzeug.palletsprojects.com/en/0.15.x/datastructures/#werkzeug.datastructures.FileStorage (FileStorage structure)
+https://stackoverflow.com/questions/51962220/testing-file-upload-with-flask-test-client (exmples that might be useful)

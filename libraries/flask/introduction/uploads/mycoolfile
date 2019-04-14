@@ -1,0 +1,72 @@
+import os
+from flask import Flask, url_for, request
+from werkzeug.utils import secure_filename
+
+""" This is the simplest way to create a Flask instance. I could also create the instance in a factory function and configure it as shown in the 
+tutorial.
+"""
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello_world():
+    return "Hello, World!"
+
+""" Restrict the parameter to a certain type. If the route parameter violates the constraint, the route isn't found.
+"""
+@app.route("/numroute/<int:num>")
+def get_number(num):
+    return "The number was " + str(num)
+
+""" If I define a route with a trailing slash and the URL is hit without the slash, it will be redirected.
+"""
+@app.route("/trailingslash/")
+def trailing_slash():
+    return "You could have been redirected"
+
+""" If I define a route without a trailing slash, then hitting the URL with a slash is a 404
+"""
+@app.route("/noslash")
+def noslash():
+    return "404 if you added the slash"
+
+""" The url_for() function doesn't redirect me anywhere, it merge takes a function (and optional arguments) that is bound to a route, looks up the
+url of that route, and return the route.
+"""
+@app.route("/reverseurl")
+def reverse_url():
+    # Return "/"
+    return url_for("hello_world") 
+
+""" A route only takes GET requests by default.
+This route only takes POST requests. It will return 405 if a GET request is sent.
+"""
+@app.route("/postrequest", methods=["POST"])
+def post_request():
+    return "nice post"
+
+""" Flask provides access to all the information in a request via the global "request" object.
+The request object must be imported.
+"""
+@app.route("/requestcontext")
+def request_context():
+    string = """ The method was: {method}
+    The url was: {url}
+    The host was: {host}""".format(method=request.method, url=request.url, host=request.host)
+    return string
+
+""" Uploaded files can be accessed via the request object.
+The keys in request.files are the names that were assigned to the files when the form was submitted. These form-defined names are NOT nececessarily
+the same as the actual file names of the files.
+"""
+@app.route("/file", methods=["POST"])
+def file():
+    #request.files is a dictionary of <key, file> entries. 'key' is a string and 'file' is a modified Python file object.
+    file_names = []
+    for key in request.files:
+        print(key)
+        file_names.append(key)
+        # I need to filter the client-provided file name because the client could 1) overwrite an important system file 2) include invalid characters # (such as weird unicode characters)
+        path = os.path.join(os.path.dirname(__file__), "./files", secure_filename(key))
+        request.files[key].save(path)
+    return "The names of the saved files were: " + str(file_names)
