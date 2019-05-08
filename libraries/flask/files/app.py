@@ -1,5 +1,5 @@
 import os, tempfile, shutil
-from flask import Flask, flash, request, redirect, url_for, send_from_directory
+from flask import Flask, flash, request, redirect, url_for, send_from_directory, send_file
 from werkzeug.utils import secure_filename
 from contextlib import contextmanager
 
@@ -74,7 +74,6 @@ def uploaded_file(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
 """
 
-
 # Create a context manager to deal with automatically deleting the temporary directory when the 'with' statement exists
 @contextmanager
 def TemporaryDirectory():
@@ -83,3 +82,34 @@ def TemporaryDirectory():
         yield name
     finally:
         shutil.rmtree(name)
+
+@app.route("/safe", methods=["POST"])
+def safe():
+    f = request.files["file-form-param"]
+    name = secure_filename(f.filename)
+    filepath = os.path.join(os.path.dirname(__file__), "uploads", name)
+    f.save(filepath)
+    return str({
+        "filename": name,
+        "saved at": filepath
+    })
+
+@app.route("/unsafe", methods=["POST"])
+def unsafe():
+    f = request.files["file-form-param"]
+    filepath = os.path.join(os.path.dirname(__file__), "uploads", f.filename)
+    f.save(filepath)
+    return str({
+        "filename": f.filename,
+        "saved at": filepath
+    })
+
+@app.route("/sendfile", methods=["POST"])
+def send_file_py():
+    filename = request.form.get("filename")
+    return send_file(os.path.join(os.path.dirname(__file__), "uploads", filename))
+
+@app.route("/sendfromdirectory", methods=["POST"])
+def send_from_directory_py():
+    filename = request.form.get("filename")
+    return send_from_directory(os.path.join(os.path.dirname(__file__), "uploads"), filename)

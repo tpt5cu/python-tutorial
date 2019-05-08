@@ -1,7 +1,8 @@
 import os
 
 def resolve_relative_path():
-    """ I should not use relative paths when opening files because the relative path will be resolved according to the cwd, which is set by where $ 
+    """
+    I should not use relative paths when opening files because the relative path will be resolved according to the cwd, which is set by where $ 
     python $ is run. I should not use absolute paths because then no other machine will be able to run my code. Instead, I should use the os.path
     module
 

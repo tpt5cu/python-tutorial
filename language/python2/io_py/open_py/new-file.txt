@@ -1,0 +1,36 @@
+	Guidelines
+
+1. Plan what I'm going to do on paper from start to finish before I do it. 
+2. Start at a high conceptual level, then work downwards into implementation.
+3. Work iteratively. Get something to work, then move on to the next thing
+4. Stuck and frustrated? Take a break and/or work on a different task
+5. Testing is hard. Think carefully before committing wholeheartedly to it. It is easy to test a bad architecture.
+
+	What good code looks like
+
+1. Consistent, minimal interfaces are good. The calling code should be simple and concise (easy to use the functions, constructors, and methods), yet powerful and flexible.
+2. Don't mix up data and visual display of data in the same method(s). EVER
+3. Every piece of data should have logical semantic meaning
+4. Ideally I would have level 1, level 2, level 3, etc. functions. Level 1 functions should only call level 2 functions. Level 2 functions should only call level 3 functions. Level 1, 2 functions shouldn't do ANYTHING other than call lower level functions. This strategy is like treating top-level functions as objects, and lower level functions as their methods.
+5. Could I easily extend the functionality of what I'm making without changing everything else? Try some test cases
+6. Have as little state as possible in an object. All of the fields that comprise the state of the class should not be able to exist without each other. If a field could
+exist independently of other fields, it should be moved somewhere else. Fields in a class should all have a relationship with each another.
+
+	What bad code looks like
+
+1. Functions shouldn't call other functions UNLESS they are calling helper functions
+	-When a critical function calls another critical function, both functions become intertwined together and deleting/editing one messes everything up
+	-Enforcing this rule means I can plug/play/edit functions however I want forever
+2. An interface shouldn't consist solely of super specific methods that only do one thing. 
+	-These kinds of methods CAN exist, bu there should be smaller, plug and play methods that do all the real work. The specific methods should ENTIRELY be able to plug an play the smaller methods to get their work done
+
+
+	To go list
+
+Computer
+Charger
+Mouse
+Warm clothes
+Paper and pen
+Snack
+Headphones	Guidelines

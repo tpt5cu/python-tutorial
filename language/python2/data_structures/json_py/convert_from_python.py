@@ -20,15 +20,17 @@ dictionary = {
 }
 
 def write_to_file():
-    """ The json.dump() function writes the Python data to the selected file. There are many options for exactly how the file is written.
-    The file is written as JSON. By that I mean the entire file is not enclosed in quotations.
+    """
+    The json.dump() function writes the Python data to the selected file. There are many options for exactly how the file is written. The file is
+    written as JSON. By that I mean the entire file is not enclosed in quotations.
     """
     with open("output.json", "w") as f:
         json.dump(dictionary, f)
 
 def write_to_string():
-    """ json.dump() and json.dumps() seem the same, but they are completely different. json.dumps() simply serializes
-    the obj to a Python string that is also formatted as valid json, as supposed to writing the json to a file.
+    """
+    json.dump() and json.dumps() seem the same, but they are completely different. json.dumps() simply serializes the obj to a Python string that is
+    also formatted as valid json, as supposed to writing the json to a file.
     """
     print(json.dumps(dictionary, indent=4))
 

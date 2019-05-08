@@ -2,9 +2,10 @@
 https://realpython.com/python-dicts/#accessing-dictionary-values
 """
 
-def py_get():
-    """ Using brackets to access a value of a dictionary is great, except that a KeyError is thrown if the key doesn't exist. Use the get() method
-    which is identical except it will return None if the key doesn't exist. I can set a default value instead of None if I want.
+def get_py():
+    """
+    Using brackets to access a value of a dictionary is great, except that a KeyError is thrown if the key doesn't exist. Use the get() method which
+    is identical except it will return None if the key doesn't exist. I can set a default value instead of None if I want.
     """
     dictionary = {
         "name": "Austin",
@@ -17,9 +18,7 @@ def py_get():
     print(dictionary.get("occupation", "SuperHERo default value"))
 
 def parse_dictionary():
-    """ There are two main ways to parse a dictionary. Either iterate over the keys with a for-in loop or use
-    <dict>.items()
-    """
+    """ There are two main ways to parse a dictionary. Either iterate over the keys with a for-in loop or use <dict>.items() """
     dictionary = {
         0: "first item",
         "1": "second item",
@@ -29,10 +28,11 @@ def parse_dictionary():
     for key in dictionary:
         print(type(key))
         print(key)
-    # This is invalid syntax!
-    #for key, val in dictionary:
-    #    print(val)
-    # dict.items() returns a list of tuples, where each tuple contains a key and a value. Therefore, what this is doing is 1) getting a list from the dictionary 2) getting an element from the list that is a tuple 3) inspecting the items in the element.
+    # This is invalid syntax! 
+    #for key, val in dictionary: print(val) 
+
+    # dict.items() returns a list of tuples, where each tuple contains a key and a value. Therefore, what this is doing is 1) getting a list from the
+    # dictionary, 2) getting an element from the list that is a tuple, and 3) inspecting the items in the element.
     for key, val in dictionary.items():
         print(val)
         
@@ -71,7 +71,7 @@ def be_careful_with_get():
     print(d.get("hello", "no").strip("o"))
 
 if __name__ == "__main__":
-    #py_get()
+    #get_py()
     #parse_dictionary()
     #parse_nested_dictionary()
     be_careful_with_get()

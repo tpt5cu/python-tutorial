@@ -1,51 +1,29 @@
 import os
-from flask import Flask, url_for, request, make_response, redirect, abort
+from flask import Flask, url_for, request, make_response, redirect, abort, json
 from werkzeug.utils import secure_filename
 
-""" This is the simplest way to create a Flask instance. I could also create the instance in a factory function and configure it as shown in the 
-tutorial.
+""" 
+This is the simplest way to create a Flask instance. I could also create the instance in a factory function and configure it as shown in the tutorial.
 """
-
 app = Flask(__name__)
 
-@app.route('/')
-def hello_world():
-    return "Hello, World!"
+@app.route('/<int:num>')
+def hello_world(num):
+    return "Hello, World!: " + str(num)
 
-""" Restrict the parameter to a certain type. If the route parameter violates the constraint, the route isn't found.
-"""
-@app.route("/numroute/<int:num>")
-def get_number(num):
-    return "The number was " + str(num)
-
-""" If I define a route with a trailing slash and the URL is hit without the slash, it will be redirected.
-"""
-@app.route("/trailingslash/")
-def trailing_slash():
-    return "You could have been redirected"
-
-""" If I define a route without a trailing slash, then hitting the URL with a slash is a 404
-"""
-@app.route("/noslash")
-def noslash():
-    return "404 if you added the slash"
-
-""" The url_for() function doesn't redirect me anywhere, it merge takes a function (and optional arguments) that is bound to a route, looks up the
+""" 
+The url_for() function doesn't redirect me anywhere, it takes a function (and optional arguments) that is bound to a route, looks up the
 url of that route, and return the route.
 """
 @app.route("/reverseurl")
 def reverse_url():
     # Return "/"
-    return url_for("hello_world") 
+    #return url_for("hello_world") # This will throw an exception because I didn't provide a URL parametere
+    #return url_for("hello_world", num=7) # This returns /7 because that is the URL! url_for() is not the same as redirect()!
+    return redirect(url_for("hello_world", num=7))
 
-""" A route only takes GET requests by default.
-This route only takes POST requests. It will return 405 if a GET request is sent.
 """
-@app.route("/postrequest", methods=["POST"])
-def post_request():
-    return "nice post"
-
-""" Flask provides access to all the information in a request via the global "request" object.
+Flask provides access to all the information in a request via the global "request" object.
 The request object must be imported.
 """
 @app.route("/requestcontext")
@@ -55,7 +33,8 @@ def request_context():
     The host was: {host}""".format(method=request.method, url=request.url, host=request.host)
     return string
 
-""" Uploaded files can be accessed via the request object.
+"""
+Uploaded files can be accessed via the request object.
 The keys in request.files are the names that were assigned to the files when the form was submitted. These form-defined names are NOT nececessarily
 the same as the actual file names of the files.
 """
@@ -73,10 +52,10 @@ def file():
         request.files.get(key).save(path)
     return "The names of the saved files were: " + str(file_names)
 
-""" Flask will create a default response object for me if I return a string. The default response object has code 200 and a best-guess mimetype.
-If I want a little more customization, I can return a tuple.
-Returning a tuple is the middle ground of customization between returning a plain string (which is converted into a default response object) and 
-creating my own response with make_response()
+""" 
+Flask will create a default response object for me if I return a string. The default response object has code 200 and a best-guess mimetype.
+If I want a little more customization, I can return a tuple. Returning a tuple is the middle ground of customization between returning a 
+plain string (which is converted into a default response object) and creating my own response with make_response()
 """
 @app.route("/tupleresponse")
 def tuple_response():
@@ -84,7 +63,8 @@ def tuple_response():
     # The last tuple element (headers) must be a dictionary
     return ("<h1>Tuple Response</h1>", 202, {"mycustomheader": "cool"})
 
-""" Flask normally converts whatever I return from a route function into a response object for me, but I can create an explicity response object if I 
+""" 
+Flask normally converts whatever I return from a route function into a response object for me, but I can create an explicity response object if I 
 want. A response object is composed of: response (i.e. entity-body), status, headers. In reality, this is identical to returning a tuple, but the
 syntax might be easier to work with in some cases.
 
@@ -105,16 +85,56 @@ def custom_response(num):
         resp.headers["Location"] = "/"
     return resp
 
-""" Flask provides the redirect() function to redirect requests. It uses a 302 by default, but this can be changed.
+"""
+Flask provides the redirect() function to redirect requests. It uses a 302 by default, but this can be changed.
 """
 @app.route("/my_redirect")
 def my_redirect():
     return redirect(url_for("hello_world"))
 
-""" Flask provides the abort() function to return some kind of 4xx response to the client. Apparently, Flask will intentionally raise the correct 
+"""
+Flask provides the abort() function to return some kind of 4xx response to the client. Apparently, Flask will intentionally raise the correct 
 exception that would have been thrown if the 4xx code had occurred unintentionally.
 """
 @app.route("/abort!abort!")
 def my_abort():
     # No return statement necessary
     abort(418)
+
+
+"""
+{
+  "NoneType": null, 
+  "dictionary": {
+    "coolness": "10/10", 
+    "name": "Austin"
+  }, 
+  "exists": true, 
+  "list": [
+    "1", 
+    2, 
+    3.0, 
+    false
+  ], 
+  "sentence": "This is a string!", 
+  "tuple": [
+    "hello", 
+    "there", 
+    [
+      1, 
+      2, 
+      3
+    ]
+  ]
+}
+"""
+@app.route("/somejson")
+def some_json():
+    return json.jsonify(
+        exists=True,
+        dictionary={"name": "Austin", "coolness": "10/10"},
+        sentence="This is a string!",
+        list=["1", 2, 3.0, False],
+        tuple=("hello", "there", [1, 2, 3]),
+        NoneType=None
+    )
