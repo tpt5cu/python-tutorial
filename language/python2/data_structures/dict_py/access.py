@@ -1,5 +1,6 @@
 """
 https://realpython.com/python-dicts/#accessing-dictionary-values
+https://docs.python.org/2.7/library/stdtypes.html#typesmapping
 """
 
 def get_py():
@@ -17,8 +18,23 @@ def get_py():
     print(type(dictionary.get("madeUpVaLuE")))
     print(dictionary.get("occupation", "SuperHERo default value"))
 
+
+def get_keys():
+    """ Sometimes all I want is just to examine the keys of a dictionary. keys() returns a list of the dictionary's keys. """
+    my_dict = {
+        "a": 1,
+        "b": 2,
+        "c": 3
+    }
+    print(my_dict.keys())
+
+
 def parse_dictionary():
-    """ There are two main ways to parse a dictionary. Either iterate over the keys with a for-in loop or use <dict>.items() """
+    """
+    There are many ways to parse a dictionary.
+    - 
+    
+     Either iterate over the keys with a for-in loop or use <dict>.items() """
     dictionary = {
         0: "first item",
         "1": "second item",
@@ -61,6 +77,7 @@ def parse_nested_dictionary():
         for sub_key, val in val.items():
             print(val)
 
+
 def be_careful_with_get():
     """ <dict>.get() is great, but I can run into problems if I assume a return value (and don't provide a fallback)
     """
@@ -70,8 +87,10 @@ def be_careful_with_get():
     # This is better
     print(d.get("hello", "no").strip("o"))
 
+
 if __name__ == "__main__":
     #get_py()
+    get_keys()
     #parse_dictionary()
     #parse_nested_dictionary()
-    be_careful_with_get()
+    #be_careful_with_get()

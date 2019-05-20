@@ -18,6 +18,16 @@ def extend_py():
     my_list.extend([4, 5])
     print(my_list) #[1, 2, 3, 4, 5] This is what I want
 
+
+def remove_py():
+    """ remove() removes an item with the specified value. If the value doesn't exist in the list, it's an error """
+    my_list = [1, 2, 3]
+    my_list.remove(2)
+    print(my_list) # [1, 3]
+    #my_list.remove(66) # ValueError
+
+
 if __name__ == "__main__":
-    append_py()
+    #append_py()
     #extend_py()
+    remove_py()

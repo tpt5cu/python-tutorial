@@ -1,9 +1,8 @@
 - https://stackoverflow.com/questions/9366264/what-does-it-mean-to-join-a-thread
 - https://www.blog.pythonlibrary.org/2016/07/28/python-201-a-tutorial-on-threads/
-
 - https://medium.com/@bfortuner/python-multithreading-vs-multiprocessing-73072ce5600b (come back to this tutorial)
-
 - https://docs.python.org/2.7/library/logging.handlers.html#logging.FileHandler (annoying that it's documented like this)
+- https://stackoverflow.com/questions/1036754/difference-between-wait-and-sleep
 
 # Thread join
 
@@ -32,5 +31,9 @@
 - Some operating systems don't allows suspend() and resume() because of deadlock. Deadlock occurs when a thread acquires sole access to some data
   (i.e. a lock) and then that same thread is suspended. Now, no other thread can touch the data and the lock can't be released until a resume()
   call
+
+# Thread wait
+
+- 
 
 To be continued: 4/6/19

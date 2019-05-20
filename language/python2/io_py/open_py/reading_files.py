@@ -4,8 +4,8 @@ https://docs.python.org/2/library/stdtypes.html#bltin-file-objects
 
 import os, re
 
-src_path = os.path.join(os.path.dirname(__file__), "test-text.txt")
-target_path = os.path.join(os.path.dirname(__file__), "new-file.txt")
+src_path = os.path.join(os.path.dirname(__file__), "test-files/test-text.txt")
+target_path = os.path.join(os.path.dirname(__file__), "test-files/new-file.txt")
 
 def read_lines():
     """

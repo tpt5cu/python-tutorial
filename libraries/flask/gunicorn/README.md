@@ -4,6 +4,7 @@ https://www.sitepoint.com/python-web-applications-the-basics-of-wsgi/ - backgrou
 https://medium.com/building-the-system/gunicorn-3-means-of-concurrency-efbb547674b7
 https://stackoverflow.com/questions/45071875/memory-sharing-among-workers-in-gunicorn-using-preload
 https://github.com/benoitc/gunicorn/issues/1367
+https://stackoverflow.com/questions/46528360/why-gevent-needs-synchronization-since-it-is-in-a-single-threaded (gevent is single-threaded)
 
 # Installation
 
@@ -19,6 +20,7 @@ https://github.com/benoitc/gunicorn/issues/1367
 - This "runs the application on a local development server" and is NOT suitable for production use
 - The "**options" parameter is forwarded to the underlying function werkzeug.serving.run_simple()
 - The "port" argument defaults to 5000 if it isn't provided
+- The "host" argument defaults to localhost (127.0.0.1) if it isn't provided
 
 # Start gunicorn
 
@@ -52,7 +54,10 @@ https://github.com/benoitc/gunicorn/issues/1367
 - An I/O bounded application gets best performance from using "pseudo-threads" (i.e. gevent)
     - gevent enables "concurrency" in Python, which means executing 2 or more tasks at the same time. This could mean that 1 task gets worked on while
       the others are paused.
-    - However, gevent workers with the multiprocessing Python package don't work together at all.
+        - However, I don't have an I/O bounded application. The file conversion operations run on the CPU and take forever. The CPU operations may
+          take a long time, but they aren't asynchronous at all.
+    - Gevent workers with the multiprocessing Python package don't work together at all.
+- Just use sync workers with gunicorn
 
 # Stop gunicorn
 
@@ -62,4 +67,6 @@ https://github.com/benoitc/gunicorn/issues/1367
 # gevent issues
 
 - gevent replaces the stdlib socket with its own socket. The multiprocessing package extensively uses the stdlib socket, so it does not tolerate
-  this switch in sockets. That's why multiprocessing and gunicorn with gevent workers don't work together at all.
+  this switch in sockets. That's why multiprocessing and gevent (and thus gunicorn with gevent workers) don't work together at all.
+- gevent has no built-in support for multiprocessing. This is because gevent is asynchronous. It has nothing to do with multiprocessing or
+  multithreading since it is single-threaded.
