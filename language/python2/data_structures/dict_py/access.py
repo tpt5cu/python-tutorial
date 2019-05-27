@@ -51,7 +51,8 @@ def parse_dictionary():
     # dictionary, 2) getting an element from the list that is a tuple, and 3) inspecting the items in the element.
     for key, val in dictionary.items():
         print(val)
-        
+
+
 def parse_nested_dictionary():
     """ dict.values() returns a list of values in the dictionary. Much more expressive then getting the key just to get
     the value.

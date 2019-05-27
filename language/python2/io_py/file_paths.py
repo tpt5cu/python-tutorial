@@ -2,8 +2,8 @@ import os
 
 def resolve_relative_path():
     """
-    I should not use relative paths when opening files because the relative path will be resolved according to the cwd, which is set by where $ 
-    python $ is run. I should not use absolute paths because then no other machine will be able to run my code. Instead, I should use the os.path
+    I should not use relative paths when opening files because the relative path will be resolved according to the cwd, which is set by where $ python
+    $ is run. I should not use hard-coded absolute paths because then no other machine will be able to run my code. Instead, I should use the os.path
     module
 
     This strategy works fine when Python's own open() function is being used to access a file. However, if I'm printing the joined path somewhere else

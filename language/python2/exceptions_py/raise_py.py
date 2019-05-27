@@ -9,7 +9,8 @@ assert and raise statements both raise exceptions.
 """
 
 def my_assert():
-    """assert is a STATEMENT, not a function.
+    """
+    assert is a STATEMENT, not a function.
     Syntax: assert <condition>
     NOT syntax: assert(<condition>, <condition>, etc.)
     """

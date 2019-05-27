@@ -13,7 +13,7 @@ def pickle_to_dataframe():
     happens to be a DataFrame (which I hope it is), then I'll get a DataFrame! The nice thing is that pandas will figure out the compression algorithm
     and decompress the file for me.
     """
-    data = pandas.read_pickle(os.path.join(os.path.dirname(__file__), "delicious-pickle.pkl.gz"))
+    data = pd.read_pickle(os.path.join(os.path.dirname(__file__), "delicious-pickle.pkl.gz"))
     print(data)
 
 

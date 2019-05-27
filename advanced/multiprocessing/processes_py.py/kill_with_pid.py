@@ -9,6 +9,9 @@ Hard way:
 4) Worker processes will check to see if their PID matches the PID I want to kill
 5) Worker with matching PID terminates itself, that PID is removed from the messages
 
+Even harder way:
+Store PIDs of ongoing processes in memory and don't use the filesystem to handle process coordination.
+
 Easy way:
 1) Get the PID to kill
 2) Use os.kill(<PID>, <signal>)
@@ -35,6 +38,7 @@ def spawn_processes():
     time.sleep(5)
     #os.kill(pid1, signal.SIGTERM)
     os.kill(pid2, signal.SIGTERM)
+    # OSError. There is no PID 999....
     #os.kill(99999999, signal.SIGTERM)
 
 

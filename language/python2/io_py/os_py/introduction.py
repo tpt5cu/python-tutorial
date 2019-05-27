@@ -13,6 +13,7 @@ import os, glob
 test_file_directory = "/Users/austinchang/Desktop/testfiles"
 components_directory = "/Users/austinchang/Desktop/testfiles/components"
 
+
 def examine_single_directory_with_glob():
     print("Moving to: " + os.getcwd())
     # The os module operates in the current working directory. If I want the os functions to apply somewhere else, I need to change directories
@@ -22,14 +23,15 @@ def examine_single_directory_with_glob():
     for path in glob.glob("*.glm"):
         print(path)
 
+
 def create_path():
-    """ The os.path module has useful functions for manipulating paths.
-    """
+    """ The os.path module has useful functions for manipulating paths. """
     root = "/Users/austinchang/pycharm/python_tutorial"
     git_ignore = "testCsv.csv"
-    """ os.path.join() intelligently joins paths, so if I forget a slash it isn't a big deal. """
+    # os.path.join() intelligently joins paths, so if I forget a slash it isn't a big deal.
     path = os.path.join(root, git_ignore)
     print(path)
+
 
 def traverse_directories():
     """ os.walk returns a tuple that is (<string>, <list>, <list>). Each directory that is traversed returns its own tuple.

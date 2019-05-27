@@ -1,3 +1,8 @@
+"""
+https://pandas.pydata.org/pandas-docs/stable/getting_started/dsintro.html#indexing-selection
+"""
+
+
 import pandas as pd
 import create
 
@@ -10,7 +15,7 @@ def access_rows():
     These objects are used to return 1 or more rows from a DataFrame.
     Rows can also be accessed with a slice operator directly on the DataFrame object
     """
-    df = pd.DataFrame(create.get_2d_matrix(), index=["cat", "dog", "frog", "log", "zog", "butt", "goof", "night", "as", "we"])
+    df = pd.DataFrame(create.get_mixed_matrix(), index=["cat", "dog", "frog", "log", "zog", "butt", "goof", "night", "as", "we"])
     print(df)
     # get the row at index 0. Rows can be printed veritcally, but they are still horizontal rows in the DataFrame.
     print(df.iloc[0]) 
@@ -29,7 +34,7 @@ def access_columns():
     """
     Access columns directly on the DatFrame object with brackets.
     """
-    df = pd.DataFrame(create.get_2d_matrix())
+    df = pd.DataFrame(create.get_mixed_matrix())
     print(df)
     # Use brackets to access a COLUMN by label of a dataframe. Brackets (aka square brackets) refers to "[]". Braces (aka curly brackets) refers to "{}".
     # This particular DataFrame happens to have integer columns labels.
@@ -40,6 +45,14 @@ def access_columns():
     #print(df["cat"])
 
 
+def access_column_and_row():
+    """ The syntax for accessing a particular row of a column is actually intuitive """
+    df = pd.DataFrame(create.get_mixed_matrix())
+    print(df)
+    print(df[0][1])
+
+
 if __name__ == "__main__":
     #access_rows()
-    access_columns()
+    #access_columns()
+    access_column_and_row()
