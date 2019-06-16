@@ -6,7 +6,7 @@ def func(x):
 
 def test_answer():
     """
-    This function is prefixed with "text*", so pytest detects it an runs it
+    This function is prefixed with "text*", so pytest detects it and runs it
     """
     # This is wrong on purpose
     assert func(3) == 5

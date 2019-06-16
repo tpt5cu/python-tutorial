@@ -19,6 +19,7 @@ def inplace():
             # newline or modifying the print invocation
             print line.rstrip("\n")
 
+
 def write_new_file():
     """
     When the inplace flag isn't used, stdout is not redirected back into the file so any print statements just appear in the console.

@@ -1,10 +1,15 @@
 """
 https://pandas.pydata.org/pandas-docs/stable/getting_started/dsintro.html#indexing-selection
+https://stackoverflow.com/questions/10665889/how-to-take-column-slices-of-dataframe-in-pandas
 """
 
 
 import pandas as pd
 import create
+
+
+def get_mixed_matrix():
+    return pd.DataFrame(create.get_mixed_matrix(), columns=["cat", "dog", "frog", "log", "zog", "butt", "goof", "night", "as", "we"])
 
 
 def access_rows():
@@ -16,24 +21,22 @@ def access_rows():
     Rows can also be accessed with a slice operator directly on the DataFrame object
     """
     df = pd.DataFrame(create.get_mixed_matrix(), index=["cat", "dog", "frog", "log", "zog", "butt", "goof", "night", "as", "we"])
-    print(df)
+    print(str(df) + "\n")
     # get the row at index 0. Rows can be printed veritcally, but they are still horizontal rows in the DataFrame.
-    print(df.iloc[0]) 
+    print(str(df.iloc[0]) + "\n")
     # get the row labeld "butt"
-    print(df.loc["butt"]) 
+    print(str(df.loc["butt"]) + "\n")
     # get rows at indexes 0 and 5. Interestingly, now the rows are printed horizontally. Printing components of a DataFrame is tricky!
-    print(df.iloc[[0, 5]]) 
+    print(str(df.iloc[[0, 5]]) + "\n")
     # get rows with labels "zog" and "night"
-    print(df.loc[["zog", "night"]])
+    print(str(df.loc[["zog", "night"]]) + "\n")
     # rows can be accessed directly on the DataFrame object with slicing notation. As with the normal slice operator, the lower bound is inclusive and
     # the upper bound is exclusive.
-    print(df[3:6])
+    print(str(df[3:6]) + "\n")
 
 
 def access_columns():
-    """
-    Access columns directly on the DatFrame object with brackets.
-    """
+    """ Access columns directly on the DatFrame object with brackets. """
     df = pd.DataFrame(create.get_mixed_matrix())
     print(df)
     # Use brackets to access a COLUMN by label of a dataframe. Brackets (aka square brackets) refers to "[]". Braces (aka curly brackets) refers to "{}".
@@ -43,6 +46,26 @@ def access_columns():
     print(len(df[0])) 
     # This throws an error because there is no column with the label "cat"
     #print(df["cat"])
+
+
+def slice_columns_by_label():
+    """ The loc dictionary object stores everything by label. Everything must be accessed by lable, NOT index! """
+    df = get_mixed_matrix()
+    print(str(df) + "\n")
+    # Get all the rows of the "frog" column
+    print(str(df.loc[:, "frog"]) + "\n")
+    # Get all of the rows of the "frog" through "zog" columns
+    print(str(df.loc[:, "frog":"zog"]))
+
+
+def slice_columns_by_index():
+    """ The iloc dictionary object stores evrything by index """
+    df = get_mixed_matrix()
+    print(str(df) + "\n")
+    # Get all the rows of the 1st column
+    print(str(df.iloc[:,0]) + "\n")
+    # Get all of the rows of the 1st through 3rd columns
+    print(str(df.iloc[:,0:3]))
 
 
 def access_column_and_row():
@@ -55,4 +78,6 @@ def access_column_and_row():
 if __name__ == "__main__":
     #access_rows()
     #access_columns()
-    access_column_and_row()
+    #slice_columns_by_label()
+    slice_columns_by_index()
+    #access_column_and_row()

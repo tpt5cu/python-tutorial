@@ -5,8 +5,7 @@ https://stackoverflow.com/questions/25440694/whats-the-purpose-of-dictproxy
 
 """
 Most of the time, I use the "." operator to access attributes of an object and I don't care how it works. However, there is a lot that goes on behind
-the scenes.
-    - Every object in Python has a __dict__ attribute. __dict__ is a dictionary-like object of all of the object's own attributes. 
+the scenes. Every object in Python has a __dict__ attribute. __dict__ is a dictionary-like object of all of the object's own attributes. 
 """
 
 class MyClass(object):
@@ -26,16 +25,14 @@ def instance_dict():
     print(mc.__dict__) # {'number', 'instance_field'}
 
 
-
 def class_dict():
     """
-    The __dict__ of a class object is not a regular dictionary. It is s dictproxy. It has class properties and other stuff. A dictproxy has separate
+    The __dict__ of a class object is not a regular dictionary. It is a dictproxy. It has class properties and other stuff. A dictproxy has separate
     behavior from a normal dictionary:
-        - A dictproxy is read-only.
+    - A dictproxy is read-only.
     """
     print(MyClass.__dict__) # {'cool_field', ...}
     #MyClass.__dict__["foo"] = "bar" # This throws an error because a dictproxy is read-only
-    My
 
 
 if __name__ == "__main__":

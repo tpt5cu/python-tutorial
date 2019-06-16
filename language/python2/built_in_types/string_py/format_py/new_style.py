@@ -13,6 +13,7 @@ def inserting_variables():
     string = "Hello my name is " + name
     print(string)
 
+
 def pad_and_align_string():
     """
     - Use {:num} to set the length of a substring inside of a string.
@@ -34,6 +35,7 @@ def pad_and_align_string():
     print("\"{:2}\"".format(val))
     print("{:010}".format(22))
 
+
 def truncate_string():
     """
     - Use {:.num} to truncate a string to certain amount of characters
@@ -41,6 +43,7 @@ def truncate_string():
     print("{:.8}".format("interesting"))
     print("interesting"[3:]) # This is just to show how to get the last 8 characters instead of the first 8
     print("{:_^10.8}".format("interesting")) # Combine truncation, padding, and alignment
+
 
 def truncate_number():
     """
@@ -53,6 +56,7 @@ def truncate_number():
     print("{:.3}".format(pie)) # Apparently, Python ignores "." when calculating the precision for string types
     print("{:.3f}".format(pie))
 
+
 def decimal_and_float():
     """
     - A floating point number cannot be formatted as a decimal. Cast the floating point number to a decimal instead.
@@ -62,6 +66,7 @@ def decimal_and_float():
     print("{:06.3f}".format(5.12345))
     print("{:f}".format(12))
     print("{:08.3f}".format(5.12345)) # A floating point number can be left-padded with 0s, but the specified length must be longer than the floating point number
+
 
 if __name__ == "__main__":
     #inserting_variables()

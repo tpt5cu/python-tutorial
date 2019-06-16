@@ -1,6 +1,6 @@
 """
 https://realpython.com/python-dicts/#accessing-dictionary-values
-https://docs.python.org/2.7/library/stdtypes.html#typesmapping
+https://docs.python.org/2.7/library/stdtypes.html#typesmapping - dict documentation
 """
 
 def get_py():

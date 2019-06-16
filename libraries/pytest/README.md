@@ -9,7 +9,7 @@ https://docs.pytest.org/en/latest/capture.html
     - pytest automatically searches for files named either 1) "test_*.py" or 2) "*_test.py" and searches those files for any tests
 - $ pytest < file name >
     - Run the tests only inside of < file name >
-- $ pytset -q
+- $ pytest -q
     - Run in less-verbose mode
 - $ pytest < file name > -k < matching strings >
     - Run tests that match the pattern inside of the file

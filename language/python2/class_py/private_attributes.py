@@ -6,7 +6,7 @@ https://stackoverflow.com/questions/1641219/does-python-have-private-variables-i
 
 class MyClass:
     """
-    A single underscore indicates that a variable is nominally private. In other words, it's a regular variable but I"m telling other programmers not
+    A single underscore indicates that a variable is nominally private. In other words, it's a regular variable but I'm telling other programmers not
     to touch it. However, nominally private variables won't be imported when stuff from their module is imported with 'from M import *'.
     """
     _my_private_var = 22

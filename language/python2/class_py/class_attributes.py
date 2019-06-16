@@ -1,16 +1,16 @@
-# https://stackoverflow.com/questions/207000/what-is-the-difference-between-class-and-instance-attributes
-# https://www.toptal.com/python/python-class-attributes-an-overly-thorough-guide
-# https://stackoverflow.com/questions/32720492/why-is-a-class-dict-a-mappingproxy
+"""
+https://stackoverflow.com/questions/207000/what-is-the-difference-between-class-and-instance-attributes
+https://www.toptal.com/python/python-class-attributes-an-overly-thorough-guide
+https://stackoverflow.com/questions/32720492/why-is-a-class-dict-a-mappingproxy
+"""
 
 # TODO: look at his later
 
 g_var = "Whoo!"
 
 
-class CellPhone:
-    """
-    A class attribute is similar, but not identical, to a static member in Java.
-    """
+class CellPhone(object):
+    """ A class attribute is similar, but not identical, to a static member in Java. """
     os = "Android"
     brand = "Asus"
     stuff = [1, 2, 3]

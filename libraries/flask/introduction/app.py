@@ -7,9 +7,11 @@ This is the simplest way to create a Flask instance. I could also create the ins
 """
 app = Flask(__name__)
 
+
 @app.route('/<int:num>')
 def hello_world(num):
     return "Hello, World!: " + str(num)
+
 
 """ 
 The url_for() function doesn't redirect me anywhere, it takes a function (and optional arguments) that is bound to a route, looks up the
@@ -22,6 +24,7 @@ def reverse_url():
     #return url_for("hello_world", num=7) # This returns /7 because that is the URL! url_for() is not the same as redirect()!
     return redirect(url_for("hello_world", num=7))
 
+
 """
 Flask provides access to all the information in a request via the global "request" object.
 The request object must be imported.
@@ -32,6 +35,7 @@ def request_context():
     The url was: {url}
     The host was: {host}""".format(method=request.method, url=request.url, host=request.host)
     return string
+
 
 """
 Uploaded files can be accessed via the request object.
@@ -52,6 +56,7 @@ def file():
         request.files.get(key).save(path)
     return "The names of the saved files were: " + str(file_names)
 
+
 """ 
 Flask will create a default response object for me if I return a string. The default response object has code 200 and a best-guess mimetype.
 If I want a little more customization, I can return a tuple. Returning a tuple is the middle ground of customization between returning a 
@@ -61,7 +66,10 @@ plain string (which is converted into a default response object) and creating my
 def tuple_response():
     # A 202 is wrong, but I do it just to demonstrate setting a custom status code
     # The last tuple element (headers) must be a dictionary
+    # Throws an error if I'm not running the web server
+    print("Request method: " + str(request.method))
     return ("<h1>Tuple Response</h1>", 202, {"mycustomheader": "cool"})
+
 
 """ 
 Flask normally converts whatever I return from a route function into a response object for me, but I can create an explicity response object if I 
@@ -85,12 +93,14 @@ def custom_response(num):
         resp.headers["Location"] = "/"
     return resp
 
+
 """
 Flask provides the redirect() function to redirect requests. It uses a 302 by default, but this can be changed.
 """
 @app.route("/my_redirect")
 def my_redirect():
     return redirect(url_for("hello_world"))
+
 
 """
 Flask provides the abort() function to return some kind of 4xx response to the client. Apparently, Flask will intentionally raise the correct 
@@ -138,3 +148,11 @@ def some_json():
         tuple=("hello", "there", [1, 2, 3]),
         NoneType=None
     )
+
+
+if __name__ == "__main__":
+  """
+  I can use the undecorated versions of view functions in Flask. This is NOT standard to Python. However, keep in mind that Flask will throw an
+  exception if I attempt to use Flask objects inside of the undecorated view function.
+  """
+  print(tuple_response())

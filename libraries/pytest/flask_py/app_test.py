@@ -17,6 +17,7 @@ def client():
     yield client
     # Could put teardown code here if needed
 
+
 def test_app_response(client):
     response = client.get('/person')
     print(response.data)

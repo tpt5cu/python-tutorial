@@ -32,8 +32,8 @@ def base_classes():
     The OldStyle class does not inherit from the Python object type.
     The NewStyle class inherits from the Python object type.
     """
-    print("OldStyle base classes: " + str(OldStyle.__bases__))
-    print("NewStyle base classes: " + str(NewStyle.__bases__))
+    print("OldStyle base classes: " + str(OldStyle.__bases__)) # ()
+    print("NewStyle base classes: " + str(NewStyle.__bases__)) # (<type 'object'>,)
     #print(OldStyle.add_two_numbers(1, 2))
 
 if __name__ == "__main__":

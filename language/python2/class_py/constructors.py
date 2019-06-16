@@ -1,4 +1,6 @@
-# https://beginnersbook.com/2018/03/python-constructors-default-and-parameterized/
+"""
+https://beginnersbook.com/2018/03/python-constructors-default-and-parameterized/
+"""
 
 class MyClass:
     """
@@ -7,6 +9,7 @@ class MyClass:
 
     def do_stuff(self):
         print("I'm doing stuff")
+
 
 def use_default_constructor():
     obj = MyClass()

@@ -1,7 +1,5 @@
 def old_school_variable_substitution():
-    """
-    The character after the % in a string is the format specifier. %d is decimal, %f is float, %x is hex. There are several.
-    """
+    """ The character after the % in a string is the format specifier. %d is decimal, %f is float, %x is hex. There are several. """
     food = "chocolate"
     print "My favorite food is %s" % food
     # If I want to do multiple substitutions, then I need to wrap the variables because the % argument only takes one argument
@@ -12,10 +10,11 @@ def old_school_variable_substitution():
     three = -3
     print("The first three negative integers are %(one)d, %(two)d, %(three)d" % {"one": one, "two": two, "three": three})
 
+
 def in_depth_printf_formatting():
     """
     printf-style string formatting actually has 7 components, which must appear in order.
-    1) % character whichfmarks start of a format specifier. (required)
+    1) % character which marks start of a format specifier. (required)
     2) A mapping key enclosed in parentheses (e.g. %(one)) for the sake of mapping. (optional)
     3) Conversion flags: #, 0, -, ' ', +. See docs because a few of these are weird. (optional)
         - #: Use alternative form (see docs)

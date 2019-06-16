@@ -1,7 +1,19 @@
 """
 https://realpython.com/python-exceptions/
+https://stackoverflow.com/questions/2903827/why-are-python-exceptions-named-error
+https://docs.python.org/2.7/tutorial/errors.html
 """
+
+
 import sys, os
+
+
+"""
+Python has regular old errors. These can occur before execution time (e.g. SyntaxError). I'm not supposed to recover from regular old errors during
+execution time. According to the docs, "errors detected during execution are called exceptions". Exceptions are divided into two subtypes: Errors and
+Warnings. I am supposed to recover from exceptions. Thus "except Exception:" is correct while there is no such thing as "except Error:"
+"""
+
 
 """
 try-except cannot be done in a single line in Python
@@ -14,7 +26,6 @@ def catch_all_explicit():
             text = f.read()
     except Exception:
         print("Explicit catch all exceptions")
-
 
 def catch_all_implicit():
     """ Excepting nothing implicitly is catching "Exception" """

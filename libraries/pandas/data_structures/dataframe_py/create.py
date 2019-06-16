@@ -38,7 +38,6 @@ def get_mixed_matrix():
 
 def get_numeric_matrix():
     """ Return a 10 x 10 2d matrix that is a list of lists """
-    words = ["Returns", "a", "new", "list", "containing", "elements", "from", "the", "population", "while", "leaving", "the", "original", "population", "unchanged.", "The", "resulting", "list", "is", "in", "selection", "order", "so", "that", "all", "sub-slices", "will", "also", "be", "valid", "random", "samples.", "This", "allows", "raffle", "winners", "(the", "sample)", "to", "be", "partitioned", "into", "grand", "prize", "and", "second", "place", "winners", "(the", "subslices)."]
     matrix = []
     for x in range(10):
         my_list = []
@@ -69,6 +68,7 @@ def labeled_dataframe():
     Since the DataFrame constructor takes 5 arguments, I should always label my arguments so its clear if the passed labels should apply to the rows
     or columns
     """
+    # "index" applies to rows, "columns" applies to columns
     df = pd.DataFrame(get_mixed_matrix(), index=["cat", "dog", "frog", "log", "zog", "butt", "goof", "night", "as", "we"])
     print(df)
 
@@ -102,6 +102,10 @@ def coerce_type():
     print(df)
     print("\n")
     print(df.dtypes)
+
+
+def from_ndarray():
+    pass
 
 
 if __name__ == "__main__":

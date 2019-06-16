@@ -18,3 +18,4 @@ https://opensource.com/article/17/4/grok-gil - detailed explanation of the GIL
 - By default, Flask is multi-threaded. That means there are multiple threads to handle all incoming requests. However, because of the GIL of CPython
   (which is the version of Python I use), only one thread ever runs at a time in a Python interpreter. Threads cannot execute concurrently (without hacks).
 - I can enable multiple processes too, but that is not a substitute for a real web server
+  - See the first link

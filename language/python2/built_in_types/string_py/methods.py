@@ -64,10 +64,38 @@ def split_py():
     filename = filename.split(".")[0] + ".py"
     print(filename)
 
+
+def string_to_list():
+    """
+    split() will create a list from a string based on the passed delimiter.
+    For each pair of consecutive delimiters in the original string, an empty string is inserted as an element of the new list. 
+    """
+    my_string = '1,,2'
+    my_list = my_string.split(',')
+    print(my_list) # ['1', '', '2']
+    # This is a nice trick for ignoring empty strings that were the output of consecutive delimiters
+    my_list = [x for x in my_string.split(',') if len(x) != 0]
+    print(my_list) # ['1', '2']
+
+
+def get_individual_lines():
+    """
+    split_lines() returns a list of all the lines (deliniated by newlines) in a string literal. It accepts an optional boolean specifying whether or
+    not to keep each newline as part of its string in the returned list.
+    """
+    my_str = """This is a string.
+It has three lines.
+Isn't that cool?"""
+    str_list = my_str.splitlines()
+    print(str_list)
+
+
 if __name__ == "__main__":
     #strip_py()
     #rstrip_py()
     #find_py()
     #regex_find()
     #equals()
-    split_py()
+    #split_py()
+    string_to_list()
+    #get_individual_lines()

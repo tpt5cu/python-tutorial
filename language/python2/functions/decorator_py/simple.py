@@ -4,6 +4,7 @@ from functools import wraps
 """
 https://realpython.com/primer-on-python-decorators/
 https://stackoverflow.com/questions/13931633/how-can-a-flask-decorator-have-arguments
+https://stackoverflow.com/questions/1166118/how-to-strip-decorators-from-a-function-in-python
 """
 
 """
@@ -28,18 +29,29 @@ These two functions are very similar. Instead of writing their shared logic twic
 def yes_or_no(rand):
     return "yes" if rand > 0.5 else "no"
 
+
 @my_decorator
 def hi_or_low(rand):
     return "high" if rand > 0.5 else "low"
 
+
 def red_or_blue(rand):
     return "red" if rand > 0.5 else "blue"
+
 
 def use_my_decorator():
     for x in range(5):
         print(yes_or_no(random.random()))
         print(hi_or_low(random.random()))
         print(my_decorator(red_or_blue)(random.random())) # This is how to do it without nice pretty decorators
+
+
+def use_plain_function():
+    """
+    There is no easy built-in way to use the undecorated version of a function because technically the plain function doesn't exist anymore
+    """
+    print(yes_or_no(random.random()))
+
 
 """
 Decorators can take arguments. This is not essential to use custom decorators in Flask.
@@ -62,4 +74,5 @@ def say_hello():
 
 if __name__ == "__main__":
     #use_my_decorator()    
-    say_hello()
+    #say_hello()
+    use_plain_function()

@@ -1,3 +1,4 @@
+import os
 from multiprocessing import Process
 import time
 
@@ -44,7 +45,11 @@ def view_pid():
 
 
 def view_pid_from_subprocess(reference):
+    # This is a bad way
     print("PID from inside subprocess is: " + str(reference[0].pid)) # Number
+    # This is the good way
+    print("PID from inside subprocess is: " + str(os.getpid()))
+
 
 if __name__ == "__main__":
     #join_process()

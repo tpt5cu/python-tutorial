@@ -1,14 +1,17 @@
-import io
 """
 https://docs.python.org/2/library/stdtypes.html#bltin-file-objects (has links to useful high-level file operation packages)
 https://docs.python.org/2/library/stdtypes.html#bltin-file-objects
 https://stackoverflow.com/questions/29324037/convert-bytesio-into-file (very, very helpful)
 """
 
+
+import io
+
+
 def file_to_bytesio():
     """
-    Flask FileStorage objects need a stream as an argument, so I need to convert my file into a stream.
-    An _io.BytesIO instance is/isn't a stream? I don't understand streams well in Python at all
+    A Flask FileStorage object needs a stream as an argument, so I need to convert my file into a stream. An _io.BytesIO instance is/isn't a stream? I
+    don't understand streams well in Python at all
     """
     file_path = "/Users/austinchang/tutorials/python/language/testCsv.csv"
     byte_io_path = "./bytes-io.txt"

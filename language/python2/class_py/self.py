@@ -2,6 +2,7 @@
 https://realpython.com/python3-object-oriented-programming/
 https://stackoverflow.com/questions/6578487/init-as-a-constructor
 https://stackoverflow.com/questions/2709821/what-is-the-purpose-of-self
+https://stackoverflow.com/questions/674304/why-is-init-always-called-after-new
 """
 
 #class Animal:
@@ -20,11 +21,14 @@ class Animal(object):
     defined, it must explicitly have 1 parameter (conventionally called 'self') which represents that object instance that is implicitly passed to it.
 
     This is long-winded to say, so these kinds of functions are called methods in Python. 
+
+    Also, __new__ returns a new instance of a class. __init__() doens't return anything. It just initializes the new instance with desired attributes.
     """
     def __init__(self, name="George", species="none", age=0):
         self.name = name
         self.species = species
         self.age = age
+
 
     def bad_method(name):
         """
