@@ -35,6 +35,20 @@ def multiline_strings():
     #string3 = "yes" + 
     #"no"
     #print(string3)
+    # Apparently, this syntax can only be used with literals, not functions that return strings
+    string4 = "Strings can be " \
+        "split across multiple" \
+        " lines without including newlines this way"
+    print(string4)
+
+
+def more_multiline_strings():
+    """Use the parentheses () syntax to create multiline string literals that involve function calls. If function calls are involved, I need the + operator."""
+    def get_string():
+        return "cool string!"
+    long_string = (get_string() + get_string() +
+        get_string() + "Yo" + get_string())
+    print(long_string)
 
 
 def raw_string():
@@ -48,5 +62,6 @@ def raw_string():
 if __name__ == "__main__":
     #string_interpolation()
     #string_literals()
-    multiline_strings()
+    #multiline_strings()
+    more_multiline_strings()
     #raw_string()

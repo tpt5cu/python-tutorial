@@ -23,9 +23,18 @@ def literal():
     #}
     #print(animals)
 
+
+def fill_with_keys():
+    """Create a dict with specified keys, where each key holds a list."""
+    keys = ['a', 'b', 'c']
+    d = {key:[] for key in keys}
+    print(d)
+
+
 def constructor():
     pass
 
 if __name__ == "__main__":
     #literal()
-    constructor()
+    fill_with_keys()
+    #constructor()

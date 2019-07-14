@@ -16,7 +16,9 @@ data = [
 
 
 def basic_write():
-    """ This is the simplest way to write with a csv writer """
+    """
+    This is the simplest way to write with a csv writer. writerows() must get a sequence of sequences, not just a 1D sequence
+    """
     with open(filepath, 'w') as f:
         writer = csv.writer(f)
         writer.writerows(data)
@@ -60,7 +62,7 @@ def write_strings():
 
 
 if __name__ == "__main__":
-    #basic_write()
+    basic_write()
     #examine_excel_dialect()
     #write_header()
-    write_strings()
+    #write_strings()

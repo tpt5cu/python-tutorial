@@ -1,6 +1,7 @@
 """
 https://stackoverflow.com/questions/13703720/converting-between-datetime-timestamp-and-datetime64
 https://docs.python.org/2/library/datetime.html
+https://stackoverflow.com/questions/656297/python-time-timedelta-equivalent - time + timedelta?
 """
 
 
@@ -51,7 +52,7 @@ def create_timedelta():
     print(td.days, td.seconds, td.microseconds) # (-1, 86399, 999999)
 
 
-def add_timedelta():
+def add_timedelta_to_datetime():
     """ datetime + timedelta = datetime """
     dt = datetime.datetime(2000, 5, 5, 23, 59, 59)
     td = datetime.timedelta(seconds=1)
@@ -63,12 +64,32 @@ def add_timedelta():
     print(new_dt) # 2000-05-06 00:00:00.000001
 
 
-def subtract_timedelta():
-    """ datetime - timedelta = datetime """
-    pass
+def create_time():
+    # time(hour, minute, second, microsecond, tzinfo)
+    t = datetime.time(23, 59, 59)
+    print(t)
+
+
+def datetime_to_time():
+    dt = datetime.datetime(2019, 6, 13, 2, 30, 2)
+    t = dt.time()
+    print(t)
+
+
+def add_timedelta_to_time():
+    """
+    I cannot directly do operations with time objects and timedelta objects, so I have to convert the time into a datetime object!
+    datetime.combine(<date>, <time>)
+    """
+    dt = datetime.datetime.combine(datetime.date.today(), datetime.time(12, 30, 5)) + datetime.timedelta(hours=1)
+    t = dt.time()
+    print(t) # 13:30:05
 
 
 if __name__ == "__main__":
     #create_naive_datetime()
     #create_timedelta()
-    add_timedelta()
+    #add_timedelta_to_datetime()
+    #create_time()
+    #datetime_to_time()
+    add_timedelta_to_time()

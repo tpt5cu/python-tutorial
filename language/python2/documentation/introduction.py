@@ -16,8 +16,17 @@ Python 2.7. The "# type: (param1 type, param2 type, ...) -> <return value> " ann
 
 
 """
-I like the idea of separating the type annotation from the docstring. The docstring does not mention types, so if the function changes, the docstring
-is less likely to need a change. Default arguments need no type annotation.
+It seems that docstring conventions in Python are quite loose, so I shouldn't worry about using a specific format. I should only worry about writing
+docstrings that the rest of the team can understand.
+"""
+
+
+"""
+I like the idea of separating the type annotation from the docstring. The docstring does not mention types (except for perhaps the return type), so if
+the function changes, the docstring is less likely to need a change. Default arguments need no type annotation.
+
+Actually, in I must be careful to intentionally NOT mention the return type in the docstring if I want to separate a type annotation from the
+docstring. If I mentioned the return type in the docstring, then what's the point of using a type annotation in the first place?
 """
 def add_numbers(x, y, useless=100, *z):
     # type: (float, float, *float) -> float

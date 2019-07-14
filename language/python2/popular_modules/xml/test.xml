@@ -1,0 +1,730 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SearchResults:searchresults xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SearchResults="http://www.zillow.com/static/xsd/SearchResults.xsd" xsi:schemaLocation="http://www.zillow.com/static/xsd/SearchResults.xsd https://www.zillowstatic.com/vstatic/80d5e73/static/xsd/SearchResults.xsd">
+  <request>
+    <address>279</address>
+    <citystatezip>11211</citystatezip>
+  </request>
+  <message>
+    <text>Request successfully processed</text>
+    <code>0</code>
+  </message>
+  <response>
+    <results>
+      <result>
+        <zpid>30617244</zpid>
+        <links>
+          <homedetails>https://www.zillow.com/homedetails/279-Hewes-St-Brooklyn-NY-11211/30617244_zpid/</homedetails>
+          <graphsanddata>http://www.zillow.com/homedetails/279-Hewes-St-Brooklyn-NY-11211/30617244_zpid/#charts-and-data</graphsanddata>
+          <mapthishome>http://www.zillow.com/homes/30617244_zpid/</mapthishome>
+          <comparables>http://www.zillow.com/homes/comps/30617244_zpid/</comparables>
+        </links>
+        <address>
+          <street>279 Hewes St</street>
+          <zipcode>11211</zipcode>
+          <city>Brooklyn</city>
+          <state>NY</state>
+          <latitude>40.705661</latitude>
+          <longitude>-73.954952</longitude>
+        </address>
+        <FIPScounty>36047</FIPScounty>
+        <useCode>Duplex</useCode>
+        <taxAssessmentYear>2017</taxAssessmentYear>
+        <taxAssessment>1285000.0</taxAssessment>
+        <yearBuilt>1899</yearBuilt>
+        <lotSizeSqFt>2000</lotSizeSqFt>
+        <finishedSqFt>2960</finishedSqFt>
+        <lastSoldDate>04/12/2011</lastSoldDate>
+        <lastSoldPrice currency="USD">630000</lastSoldPrice>
+        <zestimate>
+          <amount currency="USD">1887023</amount>
+          <last-updated>07/08/2019</last-updated>
+          <oneWeekChange deprecated="true"/>
+          <valueChange duration="30" currency="USD">29106</valueChange>
+          <valuationRange>
+            <low currency="USD">1547359</low>
+            <high currency="USD">2245557</high>
+          </valuationRange>
+          <percentile>0</percentile>
+        </zestimate>
+        <localRealEstate>
+          <region name="Williamsburg" id="199001" type="neighborhood">
+            <zindexValue>973,600</zindexValue>
+            <links>
+              <overview>http://www.zillow.com/local-info/NY-New-York/Williamsburg/r_199001/</overview>
+              <forSaleByOwner>http://www.zillow.com/williamsburg-brooklyn-new-york-ny/fsbo/</forSaleByOwner>
+              <forSale>http://www.zillow.com/williamsburg-brooklyn-new-york-ny/</forSale>
+            </links>
+          </region>
+        </localRealEstate>
+      </result>
+      <result>
+        <zpid>30617675</zpid>
+        <links>
+          <homedetails>https://www.zillow.com/homedetails/279-Rutledge-St-Brooklyn-NY-11211/30617675_zpid/</homedetails>
+          <graphsanddata>http://www.zillow.com/homedetails/279-Rutledge-St-Brooklyn-NY-11211/30617675_zpid/#charts-and-data</graphsanddata>
+          <mapthishome>http://www.zillow.com/homes/30617675_zpid/</mapthishome>
+          <comparables>http://www.zillow.com/homes/comps/30617675_zpid/</comparables>
+        </links>
+        <address>
+          <street>279 Rutledge St</street>
+          <zipcode>11211</zipcode>
+          <city>Brooklyn</city>
+          <state>NY</state>
+          <latitude>40.704753</latitude>
+          <longitude>-73.953344</longitude>
+        </address>
+        <FIPScounty>36047</FIPScounty>
+        <useCode>MultiFamily2To4</useCode>
+        <taxAssessmentYear>2017</taxAssessmentYear>
+        <taxAssessment>1286000.0</taxAssessment>
+        <yearBuilt>1899</yearBuilt>
+        <lotSizeSqFt>2016</lotSizeSqFt>
+        <finishedSqFt>2440</finishedSqFt>
+        <bathrooms>3.0</bathrooms>
+        <bedrooms>6</bedrooms>
+        <zestimate>
+          <amount currency="USD">1385666</amount>
+          <last-updated>07/08/2019</last-updated>
+          <oneWeekChange deprecated="true"/>
+          <valueChange duration="30" currency="USD">359720</valueChange>
+          <valuationRange>
+            <low currency="USD">1108533</low>
+            <high currency="USD">1648943</high>
+          </valuationRange>
+          <percentile>0</percentile>
+        </zestimate>
+        <localRealEstate>
+          <region name="Williamsburg" id="199001" type="neighborhood">
+            <zindexValue>973,600</zindexValue>
+            <links>
+              <overview>http://www.zillow.com/local-info/NY-New-York/Williamsburg/r_199001/</overview>
+              <forSaleByOwner>http://www.zillow.com/williamsburg-brooklyn-new-york-ny/fsbo/</forSaleByOwner>
+              <forSale>http://www.zillow.com/williamsburg-brooklyn-new-york-ny/</forSale>
+            </links>
+          </region>
+        </localRealEstate>
+      </result>
+      <result>
+        <zpid>30617097</zpid>
+        <links>
+          <homedetails>https://www.zillow.com/homedetails/279-Hooper-St-Brooklyn-NY-11211/30617097_zpid/</homedetails>
+          <graphsanddata>http://www.zillow.com/homedetails/279-Hooper-St-Brooklyn-NY-11211/30617097_zpid/#charts-and-data</graphsanddata>
+          <mapthishome>http://www.zillow.com/homes/30617097_zpid/</mapthishome>
+          <comparables>http://www.zillow.com/homes/comps/30617097_zpid/</comparables>
+        </links>
+        <address>
+          <street>279 Hooper St</street>
+          <zipcode>11211</zipcode>
+          <city>Brooklyn</city>
+          <state>NY</state>
+          <latitude>40.706612</latitude>
+          <longitude>-73.954876</longitude>
+        </address>
+        <FIPScounty>36047</FIPScounty>
+        <useCode>Triplex</useCode>
+        <taxAssessmentYear>2017</taxAssessmentYear>
+        <taxAssessment>1571000.0</taxAssessment>
+        <yearBuilt>1910</yearBuilt>
+        <lotSizeSqFt>1200</lotSizeSqFt>
+        <finishedSqFt>3200</finishedSqFt>
+        <zestimate>
+          <amount currency="USD">1820905</amount>
+          <last-updated>07/08/2019</last-updated>
+          <oneWeekChange deprecated="true"/>
+          <valueChange duration="30" currency="USD">11672</valueChange>
+          <valuationRange>
+            <low currency="USD">1511351</low>
+            <high currency="USD">2221504</high>
+          </valuationRange>
+          <percentile>0</percentile>
+        </zestimate>
+        <localRealEstate>
+          <region name="Williamsburg" id="199001" type="neighborhood">
+            <zindexValue>973,600</zindexValue>
+            <links>
+              <overview>http://www.zillow.com/local-info/NY-New-York/Williamsburg/r_199001/</overview>
+              <forSaleByOwner>http://www.zillow.com/williamsburg-brooklyn-new-york-ny/fsbo/</forSaleByOwner>
+              <forSale>http://www.zillow.com/williamsburg-brooklyn-new-york-ny/</forSale>
+            </links>
+          </region>
+        </localRealEstate>
+      </result>
+      <result>
+        <zpid>30618933</zpid>
+        <links>
+          <homedetails>https://www.zillow.com/homedetails/279-Grand-St-Brooklyn-NY-11211/30618933_zpid/</homedetails>
+          <graphsanddata>http://www.zillow.com/homedetails/279-Grand-St-Brooklyn-NY-11211/30618933_zpid/#charts-and-data</graphsanddata>
+          <mapthishome>http://www.zillow.com/homes/30618933_zpid/</mapthishome>
+          <comparables>http://www.zillow.com/homes/comps/30618933_zpid/</comparables>
+        </links>
+        <address>
+          <street>279 Grand St</street>
+          <zipcode>11211</zipcode>
+          <city>Brooklyn</city>
+          <state>NY</state>
+          <latitude>40.713331</latitude>
+          <longitude>-73.957711</longitude>
+        </address>
+        <FIPScounty>36047</FIPScounty>
+        <useCode>Townhouse</useCode>
+        <taxAssessmentYear>2017</taxAssessmentYear>
+        <taxAssessment>863000.0</taxAssessment>
+        <yearBuilt>1910</yearBuilt>
+        <lotSizeSqFt>2500</lotSizeSqFt>
+        <finishedSqFt>3500</finishedSqFt>
+        <bathrooms>4.0</bathrooms>
+        <bedrooms>4</bedrooms>
+        <lastSoldDate>08/27/1996</lastSoldDate>
+        <lastSoldPrice currency="USD">120000</lastSoldPrice>
+        <zestimate>
+          <amount currency="USD">2416755</amount>
+          <last-updated>07/08/2019</last-updated>
+          <oneWeekChange deprecated="true"/>
+          <valueChange duration="30" currency="USD">-8064</valueChange>
+          <valuationRange>
+            <low currency="USD">1909236</low>
+            <high currency="USD">3020944</high>
+          </valuationRange>
+          <percentile>0</percentile>
+        </zestimate>
+        <localRealEstate>
+          <region name="Williamsburg" id="199001" type="neighborhood">
+            <zindexValue>973,600</zindexValue>
+            <links>
+              <overview>http://www.zillow.com/local-info/NY-New-York/Williamsburg/r_199001/</overview>
+              <forSaleByOwner>http://www.zillow.com/williamsburg-brooklyn-new-york-ny/fsbo/</forSaleByOwner>
+              <forSale>http://www.zillow.com/williamsburg-brooklyn-new-york-ny/</forSale>
+            </links>
+          </region>
+        </localRealEstate>
+      </result>
+      <result>
+        <zpid>30618996</zpid>
+        <links>
+          <homedetails>https://www.zillow.com/homedetails/279-Bedford-Ave-Brooklyn-NY-11211/30618996_zpid/</homedetails>
+          <graphsanddata>http://www.zillow.com/homedetails/279-Bedford-Ave-Brooklyn-NY-11211/30618996_zpid/#charts-and-data</graphsanddata>
+          <mapthishome>http://www.zillow.com/homes/30618996_zpid/</mapthishome>
+          <comparables>http://www.zillow.com/homes/comps/30618996_zpid/</comparables>
+        </links>
+        <address>
+          <street>279 Bedford Ave</street>
+          <zipcode>11211</zipcode>
+          <city>Brooklyn</city>
+          <state>NY</state>
+          <latitude>40.714187</latitude>
+          <longitude>-73.961263</longitude>
+        </address>
+        <FIPScounty>36047</FIPScounty>
+        <useCode>MultiFamily2To4</useCode>
+        <taxAssessmentYear>2017</taxAssessmentYear>
+        <taxAssessment>908775.0</taxAssessment>
+        <yearBuilt>1910</yearBuilt>
+        <lotSizeSqFt>1240</lotSizeSqFt>
+        <finishedSqFt>2935</finishedSqFt>
+        <bathrooms>1.5</bathrooms>
+        <bedrooms>4</bedrooms>
+        <lastSoldDate>12/02/2014</lastSoldDate>
+        <lastSoldPrice currency="USD">2305000</lastSoldPrice>
+        <zestimate>
+          <amount currency="USD">2198748</amount>
+          <last-updated>07/08/2019</last-updated>
+          <oneWeekChange deprecated="true"/>
+          <valueChange duration="30" currency="USD">17260</valueChange>
+          <valuationRange>
+            <low currency="USD">1846948</low>
+            <high currency="USD">2792410</high>
+          </valuationRange>
+          <percentile>0</percentile>
+        </zestimate>
+        <localRealEstate>
+          <region name="Williamsburg" id="199001" type="neighborhood">
+            <zindexValue>973,600</zindexValue>
+            <links>
+              <overview>http://www.zillow.com/local-info/NY-New-York/Williamsburg/r_199001/</overview>
+              <forSaleByOwner>http://www.zillow.com/williamsburg-brooklyn-new-york-ny/fsbo/</forSaleByOwner>
+              <forSale>http://www.zillow.com/williamsburg-brooklyn-new-york-ny/</forSale>
+            </links>
+          </region>
+        </localRealEstate>
+      </result>
+      <result>
+        <zpid>30623215</zpid>
+        <links>
+          <homedetails>https://www.zillow.com/homedetails/279-Ainslie-St-Brooklyn-NY-11211/30623215_zpid/</homedetails>
+          <graphsanddata>http://www.zillow.com/homedetails/279-Ainslie-St-Brooklyn-NY-11211/30623215_zpid/#charts-and-data</graphsanddata>
+          <mapthishome>http://www.zillow.com/homes/30623215_zpid/</mapthishome>
+          <comparables>http://www.zillow.com/homes/comps/30623215_zpid/</comparables>
+        </links>
+        <address>
+          <street>279 Ainslie St</street>
+          <zipcode>11211</zipcode>
+          <city>Brooklyn</city>
+          <state>NY</state>
+          <latitude>40.713385</latitude>
+          <longitude>-73.942714</longitude>
+        </address>
+        <FIPScounty>36047</FIPScounty>
+        <useCode>Apartment</useCode>
+        <taxAssessmentYear>2017</taxAssessmentYear>
+        <taxAssessment>1364000.0</taxAssessment>
+        <yearBuilt>1920</yearBuilt>
+        <lotSizeSqFt>1125</lotSizeSqFt>
+        <finishedSqFt>1856</finishedSqFt>
+        <bathrooms>1.0</bathrooms>
+        <bedrooms>3</bedrooms>
+        <zestimate>
+          <amount currency="USD"/>
+          <last-updated>01/01/1970</last-updated>
+          <oneWeekChange deprecated="true"/>
+          <valueChange/>
+          <valuationRange>
+            <low currency="USD"/>
+            <high currency="USD"/>
+          </valuationRange>
+          <percentile>0</percentile>
+        </zestimate>
+        <localRealEstate>
+          <region name="Williamsburg" id="199001" type="neighborhood">
+            <zindexValue>973,600</zindexValue>
+            <links>
+              <overview>http://www.zillow.com/local-info/NY-New-York/Williamsburg/r_199001/</overview>
+              <forSaleByOwner>http://www.zillow.com/williamsburg-brooklyn-new-york-ny/fsbo/</forSaleByOwner>
+              <forSale>http://www.zillow.com/williamsburg-brooklyn-new-york-ny/</forSale>
+            </links>
+          </region>
+        </localRealEstate>
+      </result>
+      <result>
+        <zpid>30623150</zpid>
+        <links>
+          <homedetails>https://www.zillow.com/homedetails/279-Manhattan-Ave-Brooklyn-NY-11211/30623150_zpid/</homedetails>
+          <graphsanddata>http://www.zillow.com/homedetails/279-Manhattan-Ave-Brooklyn-NY-11211/30623150_zpid/#charts-and-data</graphsanddata>
+          <mapthishome>http://www.zillow.com/homes/30623150_zpid/</mapthishome>
+          <comparables>http://www.zillow.com/homes/comps/30623150_zpid/</comparables>
+        </links>
+        <address>
+          <street>279 Manhattan Ave</street>
+          <zipcode>11211</zipcode>
+          <city>Brooklyn</city>
+          <state>NY</state>
+          <latitude>40.713343</latitude>
+          <longitude>-73.946157</longitude>
+        </address>
+        <FIPScounty>36047</FIPScounty>
+        <useCode>Triplex</useCode>
+        <taxAssessmentYear>2017</taxAssessmentYear>
+        <taxAssessment>1577000.0</taxAssessment>
+        <yearBuilt>1899</yearBuilt>
+        <lotSizeSqFt>2200</lotSizeSqFt>
+        <finishedSqFt>1500</finishedSqFt>
+        <zestimate>
+          <amount currency="USD">1898051</amount>
+          <last-updated>07/08/2019</last-updated>
+          <oneWeekChange deprecated="true"/>
+          <valueChange duration="30" currency="USD">-39135</valueChange>
+          <valuationRange>
+            <low currency="USD">1556402</low>
+            <high currency="USD">2277661</high>
+          </valuationRange>
+          <percentile>0</percentile>
+        </zestimate>
+        <localRealEstate>
+          <region name="Williamsburg" id="199001" type="neighborhood">
+            <zindexValue>973,600</zindexValue>
+            <links>
+              <overview>http://www.zillow.com/local-info/NY-New-York/Williamsburg/r_199001/</overview>
+              <forSaleByOwner>http://www.zillow.com/williamsburg-brooklyn-new-york-ny/fsbo/</forSaleByOwner>
+              <forSale>http://www.zillow.com/williamsburg-brooklyn-new-york-ny/</forSale>
+            </links>
+          </region>
+        </localRealEstate>
+      </result>
+      <result>
+        <zpid>30619410</zpid>
+        <links>
+          <homedetails>https://www.zillow.com/homedetails/279-S-5th-St-Brooklyn-NY-11211/30619410_zpid/</homedetails>
+          <graphsanddata>http://www.zillow.com/homedetails/279-S-5th-St-Brooklyn-NY-11211/30619410_zpid/#charts-and-data</graphsanddata>
+          <mapthishome>http://www.zillow.com/homes/30619410_zpid/</mapthishome>
+          <comparables>http://www.zillow.com/homes/comps/30619410_zpid/</comparables>
+        </links>
+        <address>
+          <street>279 S 5th St</street>
+          <zipcode>11211</zipcode>
+          <city>Brooklyn</city>
+          <state>NY</state>
+          <latitude>40.709356</latitude>
+          <longitude>-73.957638</longitude>
+        </address>
+        <FIPScounty>36047</FIPScounty>
+        <useCode>Quadruplex</useCode>
+        <taxAssessmentYear>2017</taxAssessmentYear>
+        <taxAssessment>825000.0</taxAssessment>
+        <yearBuilt>1910</yearBuilt>
+        <lotSizeSqFt>1800</lotSizeSqFt>
+        <finishedSqFt>2800</finishedSqFt>
+        <lastSoldDate>08/04/1998</lastSoldDate>
+        <lastSoldPrice currency="USD">100000</lastSoldPrice>
+        <zestimate>
+          <amount currency="USD">2388896</amount>
+          <last-updated>07/08/2019</last-updated>
+          <oneWeekChange deprecated="true"/>
+          <valueChange duration="30" currency="USD">-161956</valueChange>
+          <valuationRange>
+            <low currency="USD">1815561</low>
+            <high currency="USD">3057787</high>
+          </valuationRange>
+          <percentile>0</percentile>
+        </zestimate>
+        <localRealEstate>
+          <region name="Williamsburg" id="199001" type="neighborhood">
+            <zindexValue>973,600</zindexValue>
+            <links>
+              <overview>http://www.zillow.com/local-info/NY-New-York/Williamsburg/r_199001/</overview>
+              <forSaleByOwner>http://www.zillow.com/williamsburg-brooklyn-new-york-ny/fsbo/</forSaleByOwner>
+              <forSale>http://www.zillow.com/williamsburg-brooklyn-new-york-ny/</forSale>
+            </links>
+          </region>
+        </localRealEstate>
+      </result>
+      <result>
+        <zpid>30618497</zpid>
+        <links>
+          <homedetails>https://www.zillow.com/homedetails/279-N-7th-St-Brooklyn-NY-11211/30618497_zpid/</homedetails>
+          <graphsanddata>http://www.zillow.com/homedetails/279-N-7th-St-Brooklyn-NY-11211/30618497_zpid/#charts-and-data</graphsanddata>
+          <mapthishome>http://www.zillow.com/homes/30618497_zpid/</mapthishome>
+          <comparables>http://www.zillow.com/homes/comps/30618497_zpid/</comparables>
+        </links>
+        <address>
+          <street>279 N 7th St</street>
+          <zipcode>11211</zipcode>
+          <city>Brooklyn</city>
+          <state>NY</state>
+          <latitude>40.715376</latitude>
+          <longitude>-73.953324</longitude>
+        </address>
+        <FIPScounty>36047</FIPScounty>
+        <useCode>MultiFamily2To4</useCode>
+        <taxAssessmentYear>2017</taxAssessmentYear>
+        <taxAssessment>1058000.0</taxAssessment>
+        <bathrooms>2.0</bathrooms>
+        <bedrooms>4</bedrooms>
+        <totalRooms>5</totalRooms>
+        <zestimate>
+          <amount currency="USD">1656038</amount>
+          <last-updated>07/08/2019</last-updated>
+          <oneWeekChange deprecated="true"/>
+          <valueChange duration="30" currency="USD">59421</valueChange>
+          <valuationRange>
+            <low currency="USD">1341391</low>
+            <high currency="USD">2003806</high>
+          </valuationRange>
+          <percentile>0</percentile>
+        </zestimate>
+        <localRealEstate>
+          <region name="Williamsburg" id="199001" type="neighborhood">
+            <zindexValue>973,600</zindexValue>
+            <links>
+              <overview>http://www.zillow.com/local-info/NY-New-York/Williamsburg/r_199001/</overview>
+              <forSaleByOwner>http://www.zillow.com/williamsburg-brooklyn-new-york-ny/fsbo/</forSaleByOwner>
+              <forSale>http://www.zillow.com/williamsburg-brooklyn-new-york-ny/</forSale>
+            </links>
+          </region>
+        </localRealEstate>
+      </result>
+      <result>
+        <zpid>2097397925</zpid>
+        <links>
+          <homedetails>https://www.zillow.com/homedetails/279-Manhattan-Ave-2C-Brooklyn-NY-11211/2097397925_zpid/</homedetails>
+          <mapthishome>http://www.zillow.com/homes/2097397925_zpid/</mapthishome>
+          <comparables>http://www.zillow.com/homes/comps/2097397925_zpid/</comparables>
+        </links>
+        <address>
+          <street>279 Manhattan Ave # 2C</street>
+          <zipcode>11211</zipcode>
+          <city>Brooklyn</city>
+          <state>NY</state>
+          <latitude>40.713343</latitude>
+          <longitude>-73.946157</longitude>
+        </address>
+        <FIPScounty/>
+        <useCode>Unknown</useCode>
+        <zestimate>
+          <amount currency="USD">806064</amount>
+          <last-updated>07/08/2019</last-updated>
+          <oneWeekChange deprecated="true"/>
+          <valueChange duration="30" currency="USD">-78243</valueChange>
+          <valuationRange>
+            <low currency="USD">660972</low>
+            <high currency="USD">1055944</high>
+          </valuationRange>
+          <percentile>0</percentile>
+        </zestimate>
+        <localRealEstate>
+          <region name="Williamsburg" id="199001" type="neighborhood">
+            <zindexValue>973,600</zindexValue>
+            <links>
+              <overview>http://www.zillow.com/local-info/NY-New-York/Williamsburg/r_199001/</overview>
+              <forSaleByOwner>http://www.zillow.com/williamsburg-brooklyn-new-york-ny/fsbo/</forSaleByOwner>
+              <forSale>http://www.zillow.com/williamsburg-brooklyn-new-york-ny/</forSale>
+            </links>
+          </region>
+        </localRealEstate>
+      </result>
+      <result>
+        <zpid>2098404887</zpid>
+        <links>
+          <homedetails>https://www.zillow.com/homedetails/279-Bedford-Ave-1-Brooklyn-NY-11211/2098404887_zpid/</homedetails>
+          <mapthishome>http://www.zillow.com/homes/2098404887_zpid/</mapthishome>
+          <comparables>http://www.zillow.com/homes/comps/2098404887_zpid/</comparables>
+        </links>
+        <address>
+          <street>279 Bedford Ave # 1</street>
+          <zipcode>11211</zipcode>
+          <city>Brooklyn</city>
+          <state>NY</state>
+          <latitude>40.714187</latitude>
+          <longitude>-73.961263</longitude>
+        </address>
+        <FIPScounty/>
+        <useCode>Apartment</useCode>
+        <bathrooms>1.5</bathrooms>
+        <bedrooms>4</bedrooms>
+        <zestimate>
+          <amount currency="USD"/>
+          <last-updated>01/01/1970</last-updated>
+          <oneWeekChange deprecated="true"/>
+          <valueChange/>
+          <valuationRange>
+            <low currency="USD"/>
+            <high currency="USD"/>
+          </valuationRange>
+          <percentile>0</percentile>
+        </zestimate>
+        <localRealEstate>
+          <region name="Williamsburg" id="199001" type="neighborhood">
+            <zindexValue>973,600</zindexValue>
+            <links>
+              <overview>http://www.zillow.com/local-info/NY-New-York/Williamsburg/r_199001/</overview>
+              <forSaleByOwner>http://www.zillow.com/williamsburg-brooklyn-new-york-ny/fsbo/</forSaleByOwner>
+              <forSale>http://www.zillow.com/williamsburg-brooklyn-new-york-ny/</forSale>
+            </links>
+          </region>
+        </localRealEstate>
+      </result>
+      <result>
+        <zpid>2098975400</zpid>
+        <links>
+          <homedetails>https://www.zillow.com/homedetails/279-Bedford-Ave-3222593-Brooklyn-NY-11211/2098975400_zpid/</homedetails>
+          <mapthishome>http://www.zillow.com/homes/2098975400_zpid/</mapthishome>
+          <comparables>http://www.zillow.com/homes/comps/2098975400_zpid/</comparables>
+        </links>
+        <address>
+          <street>279 Bedford Ave # 3222593</street>
+          <zipcode>11211</zipcode>
+          <city>Brooklyn</city>
+          <state>NY</state>
+          <latitude>40.714187</latitude>
+          <longitude>-73.961263</longitude>
+        </address>
+        <FIPScounty/>
+        <useCode>Apartment</useCode>
+        <bathrooms>2.5</bathrooms>
+        <bedrooms>4</bedrooms>
+        <zestimate>
+          <amount currency="USD"/>
+          <last-updated>01/01/1970</last-updated>
+          <oneWeekChange deprecated="true"/>
+          <valueChange/>
+          <valuationRange>
+            <low currency="USD"/>
+            <high currency="USD"/>
+          </valuationRange>
+          <percentile>0</percentile>
+        </zestimate>
+        <localRealEstate>
+          <region name="Williamsburg" id="199001" type="neighborhood">
+            <zindexValue>973,600</zindexValue>
+            <links>
+              <overview>http://www.zillow.com/local-info/NY-New-York/Williamsburg/r_199001/</overview>
+              <forSaleByOwner>http://www.zillow.com/williamsburg-brooklyn-new-york-ny/fsbo/</forSaleByOwner>
+              <forSale>http://www.zillow.com/williamsburg-brooklyn-new-york-ny/</forSale>
+            </links>
+          </region>
+        </localRealEstate>
+      </result>
+      <result>
+        <zpid>2098975401</zpid>
+        <links>
+          <homedetails>https://www.zillow.com/homedetails/279-Bedford-Ave-3222502-Brooklyn-NY-11211/2098975401_zpid/</homedetails>
+          <mapthishome>http://www.zillow.com/homes/2098975401_zpid/</mapthishome>
+          <comparables>http://www.zillow.com/homes/comps/2098975401_zpid/</comparables>
+        </links>
+        <address>
+          <street>279 Bedford Ave # 3222502</street>
+          <zipcode>11211</zipcode>
+          <city>Brooklyn</city>
+          <state>NY</state>
+          <latitude>40.714187</latitude>
+          <longitude>-73.961263</longitude>
+        </address>
+        <FIPScounty/>
+        <useCode>Apartment</useCode>
+        <bathrooms>1.5</bathrooms>
+        <bedrooms>4</bedrooms>
+        <zestimate>
+          <amount currency="USD"/>
+          <last-updated>01/01/1970</last-updated>
+          <oneWeekChange deprecated="true"/>
+          <valueChange/>
+          <valuationRange>
+            <low currency="USD"/>
+            <high currency="USD"/>
+          </valuationRange>
+          <percentile>0</percentile>
+        </zestimate>
+        <localRealEstate>
+          <region name="Williamsburg" id="199001" type="neighborhood">
+            <zindexValue>973,600</zindexValue>
+            <links>
+              <overview>http://www.zillow.com/local-info/NY-New-York/Williamsburg/r_199001/</overview>
+              <forSaleByOwner>http://www.zillow.com/williamsburg-brooklyn-new-york-ny/fsbo/</forSaleByOwner>
+              <forSale>http://www.zillow.com/williamsburg-brooklyn-new-york-ny/</forSale>
+            </links>
+          </region>
+        </localRealEstate>
+      </result>
+      <result>
+        <zpid>2099717476</zpid>
+        <links>
+          <homedetails>https://www.zillow.com/homedetails/279-Bedford-Ave-3-Brooklyn-NY-11211/2099717476_zpid/</homedetails>
+          <mapthishome>http://www.zillow.com/homes/2099717476_zpid/</mapthishome>
+          <comparables>http://www.zillow.com/homes/comps/2099717476_zpid/</comparables>
+        </links>
+        <address>
+          <street>279 Bedford Ave # 3</street>
+          <zipcode>11211</zipcode>
+          <city>Brooklyn</city>
+          <state>NY</state>
+          <latitude>40.714187</latitude>
+          <longitude>-73.961263</longitude>
+        </address>
+        <FIPScounty/>
+        <useCode>MultiFamily2To4</useCode>
+        <yearBuilt>1910</yearBuilt>
+        <finishedSqFt>1200</finishedSqFt>
+        <bathrooms>1.5</bathrooms>
+        <bedrooms>4</bedrooms>
+        <zestimate>
+          <amount currency="USD">1321569</amount>
+          <last-updated>07/08/2019</last-updated>
+          <oneWeekChange deprecated="true"/>
+          <valueChange duration="30" currency="USD">-11995</valueChange>
+          <valuationRange>
+            <low currency="USD">1017608</low>
+            <high currency="USD">1625530</high>
+          </valuationRange>
+          <percentile>0</percentile>
+        </zestimate>
+        <localRealEstate>
+          <region name="Williamsburg" id="199001" type="neighborhood">
+            <zindexValue>973,600</zindexValue>
+            <links>
+              <overview>http://www.zillow.com/local-info/NY-New-York/Williamsburg/r_199001/</overview>
+              <forSaleByOwner>http://www.zillow.com/williamsburg-brooklyn-new-york-ny/fsbo/</forSaleByOwner>
+              <forSale>http://www.zillow.com/williamsburg-brooklyn-new-york-ny/</forSale>
+            </links>
+          </region>
+        </localRealEstate>
+      </result>
+      <result>
+        <zpid>2099726754</zpid>
+        <links>
+          <homedetails>https://www.zillow.com/homedetails/279-Bedford-Ave-2-Brooklyn-NY-11211/2099726754_zpid/</homedetails>
+          <mapthishome>http://www.zillow.com/homes/2099726754_zpid/</mapthishome>
+          <comparables>http://www.zillow.com/homes/comps/2099726754_zpid/</comparables>
+        </links>
+        <address>
+          <street>279 Bedford Ave # 2</street>
+          <zipcode>11211</zipcode>
+          <city>Brooklyn</city>
+          <state>NY</state>
+          <latitude>40.714187</latitude>
+          <longitude>-73.961263</longitude>
+        </address>
+        <FIPScounty/>
+        <useCode>MultiFamily2To4</useCode>
+        <yearBuilt>1910</yearBuilt>
+        <finishedSqFt>1200</finishedSqFt>
+        <bathrooms>1.5</bathrooms>
+        <bedrooms>4</bedrooms>
+        <zestimate>
+          <amount currency="USD">1318838</amount>
+          <last-updated>07/08/2019</last-updated>
+          <oneWeekChange deprecated="true"/>
+          <valueChange duration="30" currency="USD">-14839</valueChange>
+          <valuationRange>
+            <low currency="USD">1015505</low>
+            <high currency="USD">1635359</high>
+          </valuationRange>
+          <percentile>0</percentile>
+        </zestimate>
+        <localRealEstate>
+          <region name="Williamsburg" id="199001" type="neighborhood">
+            <zindexValue>973,600</zindexValue>
+            <links>
+              <overview>http://www.zillow.com/local-info/NY-New-York/Williamsburg/r_199001/</overview>
+              <forSaleByOwner>http://www.zillow.com/williamsburg-brooklyn-new-york-ny/fsbo/</forSaleByOwner>
+              <forSale>http://www.zillow.com/williamsburg-brooklyn-new-york-ny/</forSale>
+            </links>
+          </region>
+        </localRealEstate>
+      </result>
+      <result>
+        <zpid>30619148</zpid>
+        <links>
+          <homedetails>https://www.zillow.com/homedetails/279-S-2nd-St-Brooklyn-NY-11211/30619148_zpid/</homedetails>
+          <graphsanddata>http://www.zillow.com/homedetails/279-S-2nd-St-Brooklyn-NY-11211/30619148_zpid/#charts-and-data</graphsanddata>
+          <mapthishome>http://www.zillow.com/homes/30619148_zpid/</mapthishome>
+          <comparables>http://www.zillow.com/homes/comps/30619148_zpid/</comparables>
+        </links>
+        <address>
+          <street>279 S 2nd St</street>
+          <zipcode>11211</zipcode>
+          <city>Brooklyn</city>
+          <state>NY</state>
+          <latitude>40.71141</latitude>
+          <longitude>-73.956419</longitude>
+        </address>
+        <FIPScounty>36047</FIPScounty>
+        <useCode>Triplex</useCode>
+        <taxAssessmentYear>2017</taxAssessmentYear>
+        <taxAssessment>1682000.0</taxAssessment>
+        <yearBuilt>1901</yearBuilt>
+        <lotSizeSqFt>1600</lotSizeSqFt>
+        <finishedSqFt>2340</finishedSqFt>
+        <zestimate>
+          <amount currency="USD">2013004</amount>
+          <last-updated>07/08/2019</last-updated>
+          <oneWeekChange deprecated="true"/>
+          <valueChange duration="30" currency="USD">-112296</valueChange>
+          <valuationRange>
+            <low currency="USD">1690923</low>
+            <high currency="USD">2435735</high>
+          </valuationRange>
+          <percentile>0</percentile>
+        </zestimate>
+        <localRealEstate>
+          <region name="Williamsburg" id="199001" type="neighborhood">
+            <zindexValue>973,600</zindexValue>
+            <links>
+              <overview>http://www.zillow.com/local-info/NY-New-York/Williamsburg/r_199001/</overview>
+              <forSaleByOwner>http://www.zillow.com/williamsburg-brooklyn-new-york-ny/fsbo/</forSaleByOwner>
+              <forSale>http://www.zillow.com/williamsburg-brooklyn-new-york-ny/</forSale>
+            </links>
+          </region>
+        </localRealEstate>
+      </result>
+    </results>
+  </response>
+</SearchResults:searchresults>
+<!-- H:002  T:41ms  S:13960  R:Tue Jul 09 15:44:17 PDT 2019  B:5.0.61033-master.e804620~delivery_ready.cd00c91 -->

@@ -15,14 +15,12 @@ def get_mixed_matrix():
 def access_rows():
     """
     Each DataFrame has two special dictionary-like attributes: loc and iloc
-        - loc stands for location. Use it to return a row based on the row's label
-        - iloc stands for integer location. Use it to return a row based on its index relative to other rows in the DataFrame. Rows are indexed from 0.
-    These objects are used to return 1 or more rows from a DataFrame.
-    Rows can also be accessed with a slice operator directly on the DataFrame object
+    - loc stands for location. Use it to return a row/column based on label
+    - iloc stands for integer location. Use it to return a row/column based on its index relative to other rows/columns in the DataFrame. Indexes start at 0.
     """
     df = pd.DataFrame(create.get_mixed_matrix(), index=["cat", "dog", "frog", "log", "zog", "butt", "goof", "night", "as", "we"])
     print(str(df) + "\n")
-    # get the row at index 0. Rows can be printed veritcally, but they are still horizontal rows in the DataFrame.
+    # get the row at integer index 0. Rows can be printed veritcally, but they are still horizontal rows in the DataFrame.
     print(str(df.iloc[0]) + "\n")
     # get the row labeld "butt"
     print(str(df.loc["butt"]) + "\n")

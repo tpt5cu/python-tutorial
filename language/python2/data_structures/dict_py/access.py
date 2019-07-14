@@ -20,13 +20,18 @@ def get_py():
 
 
 def get_keys():
-    """ Sometimes all I want is just to examine the keys of a dictionary. keys() returns a list of the dictionary's keys. """
+    """Sometimes all I want is just to examine the keys of a dictionary. keys() returns a list of the dictionary's keys."""
     my_dict = {
         "a": 1,
         "b": 2,
         "c": 3
     }
-    print(my_dict.keys())
+    print(my_dict.keys()[0]) # a
+    print(my_dict[my_dict.keys()[0]]) # 1
+    keys = my_dict.keys()
+    print(keys) # ['a', 'c', 'b']
+    print(keys[2]) # b
+    print(type(keys)) # <type 'list'>
 
 
 def parse_dictionary():
@@ -80,8 +85,7 @@ def parse_nested_dictionary():
 
 
 def be_careful_with_get():
-    """ <dict>.get() is great, but I can run into problems if I assume a return value (and don't provide a fallback)
-    """
+    """ <dict>.get() is great, but I can run into problems if I assume a return value (and don't provide a fallback) """
     d = {}
     # This throws an error because None is not a string!
     #print(d.get("hello").strip("o"))

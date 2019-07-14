@@ -17,7 +17,8 @@ Axes is the most important Artist subclass. It has all of the juicy methods for 
 def easy_way_to_add_axes():
     """
     Figure.add_subplot() with no arguments is the easiest way to add a single Axes to a figure. I can stack multiple Axes onto a figure with repeated
-    calls of this method.
+    calls of this method. Currently, calling this function with the same arguments will reuse the same Axes (to prevent accidentally creating 736
+    different Axes! However, in the future this call will always return a new Axes object)
     - The index of a Subplot refers to its position within the specified grid. Indexes start at 1 (argh!). E.g. add_subplot(2, 2, 1) means add a Subplot with 2 rows and 2 columns
       and place the Subplot in the top left corner of the 2 x 2 square. The index cannot exceed the specified grid. E.g in the previous example, index
       >= 5 or index <= 0 would raise an Exception

@@ -10,5 +10,9 @@ import matplotlib.pyplot as plt
 """
 
 def basic_figure():
-    """ Return a new figure and hook it to the backend automatically """
+    """
+    Return a new figure and hook it to the backend automatically. Everytime this function is called a new figure is created. If it's called once, a
+    single graph will appear once the script starts. If I call this function inside of a for-loop with 10 iterations, I'll get 10 different graph
+    windows upon script invocation.
+    """
     my_figure = plt.figure() 

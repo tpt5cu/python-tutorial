@@ -1,4 +1,5 @@
-- https://matplotlib.org/3.1.0/tutorials/index.html#introductory
+- https://matplotlib.org/3.1.0/tutorials/index.html#introductory - tutorials
+- https://matplotlib.org/3.1.0/api/ - go to this page to get the REAL doc for a module instead of the pyplot hack for the module
 
 # Datatype Terminology
 
@@ -9,7 +10,7 @@
         - Containers: Axis, Axes, Figure
 - Figure: everything in the graph. Includes the x and y axes, the title, the legend, etc.
     - A figure can contain many different axes
-- Axes: the region of the figure where the data is plotted. It must contain at least two Axis objects
+- Axes: the region of the figure where the data is plotted. It must contain at least two (yes two, not one) Axis objects
     - An axes object can be assigned to 1 and only 1 figure
 - Axis: number-line-looking objects
     - The location of the ticks on the Axis is controlled by a "Locator" object and the tickable strings are controlled by a "Formatter" object

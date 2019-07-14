@@ -1,6 +1,5 @@
-"""
-https://docs.python.org/2/library/re.html
-"""
+# https://docs.python.org/2/library/re.html
+# https://stackoverflow.com/questions/18493677/how-do-i-return-a-string-from-a-regex-match-in-python
 
 
 import re
@@ -27,5 +26,24 @@ def string_to_list():
     print(len(my_list)) # 39
 
 
+def get_numbers_from_string():
+    """
+    The string found by a regex can be returned from a MatchObject with the group() method.
+    - With no arguments, group() returns the entire string that was matched by the regex. If there were no parenthesized groups (i.e. "(<regex>)"),
+      then there will only ever be 1 group.
+
+    Regexs are greedy.
+    - \d will find exactly 1 digit since that's all it can do
+    - \d will find as many consecutive digits as possible (greedy)
+    """
+    string = "Meter121XYZ333"
+    # re.search() returns a MatchObject. re.search() only returns a MatchObject with the FIRST matching occurance to the regex
+    mo = re.search("\d+", string)
+    print(mo.group()) # 121
+    #print(mo.group(1))
+    #print(mo.group(2))
+
+
 if __name__ == "__main__":
-    string_to_list()
+    #string_to_list()
+    get_numbers_from_string()

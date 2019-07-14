@@ -23,6 +23,7 @@ A byte string represents a sequence of bytes in some particular encoding, which 
 A Unicode string literal is prefixed with the 'u' character.
 """
 
+
 def create_unicode_string():
     """ A Unicode string is interpreted as a sequence of code points. See source to understand how printing works
     """
@@ -30,10 +31,12 @@ def create_unicode_string():
     print(type(u))
     print(u)
 
+
 def create_byte_string():
     s = "I'm a byte string \u03c0"
     print(type(s))
     print(s)
+
 
 def unicode_to_byte():
     """
@@ -62,7 +65,23 @@ def parse_unicode_string():
         dict['model'] = str(dict['model'])
     print(dicts)
 
+
+def compare_unicode_byte():
+    """
+    A unicode and a byte string literal have value equality as expected. However, they will never has identity equality to one another. strings are
+    different objects in memory.
+    """
+    # Equality comparison
+    print(u"" == "") # True
+    print(u"a string" == "a string") # True
+    # Identity comparison
+    print("" is "") # True
+    print(u"" is u"") # True
+    print("" is u"") # False
+
+
 if __name__ == "__main__":
-    create_unicode_string()
-    create_byte_string()
+    #create_unicode_string()
+    #create_byte_string()
     #unicode_to_byte()
+    compare_unicode_byte()

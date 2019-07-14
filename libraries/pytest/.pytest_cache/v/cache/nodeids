@@ -1,0 +1,6 @@
+[
+  "basic_tests/addition_test.py::test_answer", 
+  "basic_tests/class_test.py::TestClass::test_one", 
+  "basic_tests/class_test.py::TestClass::test_two", 
+  "basic_tests/exception_test.py::test_mytest"
+]

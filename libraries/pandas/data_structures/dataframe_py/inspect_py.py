@@ -5,25 +5,26 @@ https://stackoverflow.com/questions/35339139/where-is-the-documentation-on-panda
 
 
 import pandas as pd
-import create
+from introduction import get_mixed_matrix
 
 
 def view_column_labels():
     """ Don't use <DataFrame>.keys(). It doesn't do what I want """
-    df = pd.DataFrame(create.get_mixed_matrix())
+    df = pd.DataFrame(get_mixed_matrix())
     print(df)
     print(df.columns.tolist())
     print(type(df.columns.tolist())) # <class 'list'>
+    print(len(df.columns)) # 10
 
 
 def view_row_labels():
-    df = pd.DataFrame(create.get_mixed_matrix())
+    df = pd.DataFrame(get_mixed_matrix())
     print(df)
     print(df.index.tolist())
     print(type(df.index.tolist())) # <class 'list'>
-    #print(df.loc)
+    print(len(df.index)) # 10
 
 
 if __name__ == "__main__":
-    view_column_labels()
-    #view_row_labels()
+    #view_column_labels()
+    view_row_labels()

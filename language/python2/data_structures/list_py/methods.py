@@ -1,0 +1,66 @@
+"""
+https://docs.python.org/2.7/tutorial/datastructures.html
+"""
+
+def append_py():
+    """ list.append() adds an element to the end of the list in-place. """
+    my_list = [1, 2, 3]
+    my_list.append(4)
+    # append() only accepts a single argument
+    #my_list.append(5, 6)
+    my_list.append([5, 6])
+    print(my_list) #[1, 2, 3, 4, [5, 6]] This is not what I want
+
+
+def prepend():
+    my_list = [4, 5, 6]
+    my_list.insert(0, "X")
+    print(my_list)
+
+
+def extend_py():
+    """
+    extend() only takes 1 argument, but the elements inside of that argument are appended to the list directly. This is an in-place modification!
+    """
+    my_list = [1, 2, 3]
+    my_list.extend([4, 5])
+    print(my_list) #[1, 2, 3, 4, 5] This is what I want
+
+
+def remove_py():
+    """ remove() removes an item with the specified value. If the value doesn't exist in the list, it's an error """
+    my_list = [1, 2, 3]
+    my_list.remove(2)
+    print(my_list) # [1, 3]
+    #my_list.remove(66) # ValueError
+
+
+def find_element():
+    my_list = ['a', 'b', 'c', 'd']
+    print(my_list.index('c')) # 2
+    #print(my_list.index(1)) # ValueError
+
+
+def shift():
+    """Insertion and popping are in-place operations, so shifting is an in-place operation."""
+    my_list = [1, 2, 3, 4, 5]
+    my_list.insert(0, my_list.pop())
+    print(my_list)
+
+
+def count_py():
+    """<list>.count() is very useful for assert statements. Apparently 1 == True?"""
+    my_list = [True, False, False, True, 1, 2, 3, 4]
+    print(my_list.count(True)) # 3. How about that!
+    for x in my_list:
+        print(str(x) + ". x == True: " + str(x == True))
+
+
+if __name__ == "__main__":
+    #append_py()
+    #prepend()
+    #extend_py()
+    #remove_py()
+    #find_element()
+    #shift()
+    count_py()
