@@ -1,12 +1,13 @@
-"""
-https://stackoverflow.com/questions/40182944/difference-between-raise-try-and-assert
-"""
+# https://stackoverflow.com/questions/40182944/difference-between-raise-try-and-assert
+# https://stackoverflow.com/questions/16706956/is-there-a-difference-between-raise-exception-and-raise-exception-without
+
 
 """
 assert and raise statements both raise exceptions.
 - assert statements can be disabled, so don't rely on them for production debugging. They are essentially for runtime debugging.
 - raise statements are for raising exceptions normally.
 """
+
 
 def assert_py():
     """
@@ -31,11 +32,16 @@ def assert_multiple_conditions():
     assert 1 == 2 or 6 == 6 and 7 == 7
 
 
-def 
-
-
 def raise_exception():
+    """
+    Exception and Exception() both do the same thing because using the class automatically creates an instance. It's perfectly okay to use the class.
+    In fact, it's common to use the class when no arguments need to be passed.
+    """
     raise Exception("This is my Exception")
+
+
+def re_raise():
+    pass
 
 
 if __name__ == "__main__":

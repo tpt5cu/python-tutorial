@@ -1,8 +1,7 @@
-"""
-https://realpython.com/python-type-checking/
-https://stackoverflow.com/questions/1549801/what-are-the-differences-between-type-and-isinstance
-https://stackoverflow.com/questions/21024913/python-isinstance-vs-hasattr-vs-try-except-what-is-better
-"""
+# https://realpython.com/python-type-checking/
+# https://stackoverflow.com/questions/1549801/what-are-the-differences-between-type-and-isinstance
+# https://stackoverflow.com/questions/21024913/python-isinstance-vs-hasattr-vs-try-except-what-is-better
+
 
 """
 Apparently the "Pythonic" way of type-checking is to use an argument as if it were the proper type in a try-except block, and to do something else if

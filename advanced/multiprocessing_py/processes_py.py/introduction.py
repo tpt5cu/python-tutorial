@@ -1,4 +1,4 @@
-#https://docs.python.org/2/library/msltiprocessing.html
+# https://docs.python.org/2/library/msltiprocessing.html
 
 
 import os
@@ -31,7 +31,9 @@ def create_and_join_process():
     - args: arguments to be passed to the callable object. If there is only one argument, it MUST be followed by a comma!
     - kwargs: keyword arguments to be passed to the callable object
     """
-    p = Process(target=print_numbers, args=(10,))
+    # args also accepts a list instead of a tuple!
+    #p = Process(target=print_numbers, args=(10,))
+    p = Process(target=print_numbers, args=[10])
     p.start()
     print(p.pid) # <Number>
     print(p.is_alive()) # True

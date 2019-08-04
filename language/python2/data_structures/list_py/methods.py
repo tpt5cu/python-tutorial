@@ -1,6 +1,6 @@
-"""
-https://docs.python.org/2.7/tutorial/datastructures.html
-"""
+# https://docs.python.org/2.7/tutorial/datastructures.html
+# https://stackoverflow.com/questions/11520492/difference-between-del-remove-and-pop-on-lists
+
 
 def append_py():
     """ list.append() adds an element to the end of the list in-place. """
@@ -28,7 +28,12 @@ def extend_py():
 
 
 def remove_py():
-    """ remove() removes an item with the specified value. If the value doesn't exist in the list, it's an error """
+    """
+    remove() removes an item with the specified value. If the value doesn't exist in the list, it's an error
+    - del removes an element by index
+    - pop() removes an element by index and returns it
+    - remove() removes an element by value
+    """
     my_list = [1, 2, 3]
     my_list.remove(2)
     print(my_list) # [1, 3]
@@ -36,6 +41,7 @@ def remove_py():
 
 
 def find_element():
+    """If the element is not found in the list, Python made the design decision to raise an error. I should use the 'in' operator instead"""
     my_list = ['a', 'b', 'c', 'd']
     print(my_list.index('c')) # 2
     #print(my_list.index(1)) # ValueError
@@ -56,6 +62,11 @@ def count_py():
         print(str(x) + ". x == True: " + str(x == True))
 
 
+def filter_py():
+    """Use the built-in filter() function"""
+    pass
+
+
 if __name__ == "__main__":
     #append_py()
     #prepend()
@@ -63,4 +74,5 @@ if __name__ == "__main__":
     #remove_py()
     #find_element()
     #shift()
-    count_py()
+    #count_py()
+    filter_py()

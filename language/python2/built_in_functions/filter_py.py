@@ -1,10 +1,8 @@
-"""
-https://docs.python.org/2/library/functions.html#filter
-"""
+# https://docs.python.org/2/library/functions.html#filter
 
-"""
-filter() is shorthand for [item for item in iterable if <condition>]. There does not appear to be any reference to indexes.
-"""
+
+# filter() is shorthand for [item for item in iterable if <condition>]. There does not appear to be any reference to indexes. It is very versitile!
+
 
 def filter_list():
     """ filtering any iterable (except a string or tuple) will return a list """
@@ -24,7 +22,7 @@ def filter_tuple():
 
 
 def filter_string():
-    """ filtering a string always returns a string """
+    """filtering a string always returns a string"""
     sentence = "The quick brown fox jumped over the lazy dog"
     # Captials come before lowercase
     new_sentence = filter(lambda c: c < "m", sentence)
@@ -32,7 +30,14 @@ def filter_string():
     print(type(new_sentence))
 
 
+def filter_opposite():
+    items = [5, 4, 3, 2, 1]
+    filtered_items = filter(lambda e: not e < 3, items)
+    print(filtered_items) # [5, 4, 3]
+
+
 if __name__ == "__main__":
     #filter_list()
     #filter_tuple()
-    filter_string()
+    #filter_string()
+    filter_opposite()

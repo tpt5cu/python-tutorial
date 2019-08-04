@@ -21,5 +21,14 @@ def sequence_membership():
     print(list_b in list_of_lists) # This is true due to identity (and value) equality
 
 
+def in_none():
+    """If a sequence could instead be None, I cannot use a naked 'in' operator"""
+    if 1 in None: # TypeError: argument of type 'NoneType' is not iterable
+        print("impossible")
+    else:
+        print("predictable")
+
+
 if __name__ == "__main__":
-    sequence_membership()
+    #sequence_membership()
+    in_none()

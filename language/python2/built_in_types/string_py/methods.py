@@ -9,24 +9,24 @@ import re
 
 
 def strip_py():
-    """ Use <string>.strip() to remove the specified characters from the leading and trailing ends of the string.
-    CAUTION: ALL such specified characters will be removed! """
+    """
+    Use <string>.strip() to remove the specified characters from the leading and trailing ends of the string. CAUTION: ALL such specified characters
+    will be removed!
+    """
     # The first 'o', the last 'd', and ".omd" will be removed
     string = "oOoy, what a nice string you created.omd".strip(".omd")
     print(string)
 
 
 def rstrip_py():
-    """ 
-    print() automatically inserts a newline, so sometimes it's useful to strip off an existing newline
-    """
+    """print() automatically inserts a newline, so sometimes it's useful to strip off an existing newline"""
     line = "This line has a newline\n"
     print(line.rstrip("\n"))
     print("no extra space above")
     
 
 def replace_py():
-    """ replace() can also take a number specifying the number of time to replace a pattern, starting from the beginning of the string """
+    """replace() can also take a number specifying the number of time to replace a pattern, starting from the beginning of the string"""
     # This line throws an error. Also, I can't escape the forward slash!
     #string = 'What a cool \/ file name.txt'
     string = 'What a cool/file name.txt'.replace("/", ":")
@@ -35,7 +35,7 @@ def replace_py():
 
 
 def find_py():
-    """ find() returns the index of the substring, or -1 if it isn't found """
+    """find() returns the index of the substring, or -1 if it isn't found"""
     string = "Hi there"
     print(string.find("z"))
 
@@ -59,12 +59,6 @@ def equals():
     print(my_str == "hello there") # True
 
 
-def split_py():
-    filename = "myfilename.java"
-    filename = filename.split(".")[0] + ".py"
-    print(filename)
-
-
 def string_to_list():
     """
     split() will create a list from a string based on the passed delimiter.
@@ -83,11 +77,16 @@ def get_individual_lines():
     split_lines() returns a list of all the lines (deliniated by newlines) in a string literal. It accepts an optional boolean specifying whether or
     not to keep each newline as part of its string in the returned list.
     """
-    my_str = """This is a string.
-It has three lines.
-Isn't that cool?"""
+    my_str = ("This is a string.\nIt has three lines.\nIsn't that cool?")
     str_list = my_str.splitlines()
     print(str_list)
+
+
+def check_beginning_and_end():
+    """startswith() and endswith() are neat convenience methods"""
+    string = "I think that coconuts are cool."
+    print(string.startswith("I t")) # True
+    print(string.endswith("cool")) # False
 
 
 if __name__ == "__main__":
@@ -97,5 +96,6 @@ if __name__ == "__main__":
     #regex_find()
     #equals()
     #split_py()
-    string_to_list()
+    #string_to_list()
     #get_individual_lines()
+    check_beginning_and_end()

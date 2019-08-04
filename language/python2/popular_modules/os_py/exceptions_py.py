@@ -13,7 +13,7 @@ def kill_nonsense_value():
 
 
 def kill_string():
-    """ Attempting to use os.kill() an integer string will throw a TypeError """
+    """ Attempting to use os.kill() with an integer string will throw a TypeError """
     p = Process(target=sleep_py)
     p.start()
     time.sleep(1)

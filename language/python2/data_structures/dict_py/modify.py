@@ -1,12 +1,8 @@
-"""
-https://docs.python.org/2.7/library/stdtypes.html#mapping-types-dict
-"""
+# https://docs.python.org/2.7/library/stdtypes.html#mapping-types-dict
 
 
 def delete_element():
-    """
-    The del statement is not a built-in function, but a statement that can be used with lists, tuples, dictionaries
-    """
+    """The del statement is not a built-in function, but a statement that can be used with lists, tuples, dictionaries"""
     my_dict = {
         "cat": "Amber",
         "dog": "Max"
@@ -19,9 +15,7 @@ def delete_element():
 
 
 def delete_during_iteration():
-    """
-    If I want to modify a dictionary during iteration, I have to iterate over a list/tuple/sequence of keys that doesn't change during iteration.
-    """
+    """If I want to modify a dictionary during iteration, I have to iterate over a list/tuple/sequence of keys that doesn't change during iteration."""
     my_dict = {
         1: "a",
         2: "b",

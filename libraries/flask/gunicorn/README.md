@@ -1,10 +1,10 @@
-http://docs.gunicorn.org/en/latest/run.html - introduction
-http://docs.gunicorn.org/en/latest/settings.html - basically an API reference
-https://www.sitepoint.com/python-web-applications-the-basics-of-wsgi/ - background on WSGI
-https://medium.com/building-the-system/gunicorn-3-means-of-concurrency-efbb547674b7
-https://stackoverflow.com/questions/45071875/memory-sharing-among-workers-in-gunicorn-using-preload
-https://github.com/benoitc/gunicorn/issues/1367
-https://stackoverflow.com/questions/46528360/why-gevent-needs-synchronization-since-it-is-in-a-single-threaded (gevent is single-threaded)
+- http://docs.gunicorn.org/en/latest/run.html - introduction
+- http://docs.gunicorn.org/en/latest/settings.html - basically an API reference
+- https://www.sitepoint.com/python-web-applications-the-basics-of-wsgi/ - background on WSGI
+- https://medium.com/building-the-system/gunicorn-3-means-of-concurrency-efbb547674b7
+- https://stackoverflow.com/questions/45071875/memory-sharing-among-workers-in-gunicorn-using-preload
+- https://github.com/benoitc/gunicorn/issues/1367
+- https://stackoverflow.com/questions/46528360/why-gevent-needs-synchronization-since-it-is-in-a-single-threaded (gevent is single-threaded)
 
 # Installation
 

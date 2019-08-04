@@ -1,4 +1,8 @@
-import os, signal, multiprocessing, time
+# https://stackoverflow.com/questions/173278/is-there-a-way-to-prevent-a-systemexit-exception-raised-from-sys-exit-from-bei
+
+
+import os, sys, signal, multiprocessing, time
+from exceptions import SystemExit
 
 
 """
@@ -18,28 +22,42 @@ Easy way:
 """
 
 
-def create_process(limit, wait, spaces):
-    p = multiprocessing.Process(target=print_numbers, args=(limit, wait, spaces))
+def create_process(limit, wait, spaces, should_raise=False):
+    p = multiprocessing.Process(target=print_numbers, args=(limit, wait, spaces, should_raise))
     p.start()
-    return p.pid
+    return p
 
 
-def print_numbers(limit, wait, spaces):
-    for x in range(limit):
-        print(spaces + str(x))
-        time.sleep(wait)
+def print_numbers(limit, wait, spaces, should_raise):
+    try:
+        for x in range(limit):
+            print(spaces + str(x))
+            time.sleep(wait)
+        if should_raise:
+            # This is the exact same exception and error integer that I'm getting in web.py
+            #raise SystemExit(0)
+            raise Exception() # raise something else to test
+    except Exception:
+        print("There was an exception")
+    except SystemExit as e:
+        if e.code == 0:
+            print("SystemExit occurred successfully")
 
 
 def spawn_processes():
-    """ Attempting to kill a non-existant PID throws an OSError """
-    pid1 = create_process(10, 1.0, " ")
-    pid2 = create_process(10, 1.5, "    ")
-    pid3 = create_process(10, 2, "        ")
-    time.sleep(5)
-    #os.kill(pid1, signal.SIGTERM)
-    os.kill(pid2, signal.SIGTERM)
-    # OSError. There is no PID 999....
-    #os.kill(99999999, signal.SIGTERM)
+    """
+    I must join the child processes to the main process in order to use the debugger to inspect a child process. If I
+    don't, then when the main process exits, the debugger will shut down, even if the child processes were still executing.
+    """
+    p1 = create_process(5, 1.0, " ")
+    p2 = create_process(5, 1.5, "    ", True)
+    p3 = create_process(5, 2, "        ")
+    p1.join()
+    p2.join()
+    p3.join()
+    #time.sleep(4)
+    #os.kill(p1.pid, signal.SIGTERM)
+    #os.kill(p2.pid, signal.SIGTERM)
 
 
 if __name__ == "__main__":

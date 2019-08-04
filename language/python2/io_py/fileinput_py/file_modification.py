@@ -1,13 +1,13 @@
 import os, fileinput
 
+
 def inplace():
     """
     When fileinput.input() is used as the interface to the module, a global fileinput instance is created that is shared across all method invocations
     of the module.
-    Using the inplace flag 1) adds the ".bak" extension to the original file and 2) creates a new file with the same original filename.
-    The backup file is iterated over and any modifications are written to the new file (which looks like the original file). The backup file is
-    deleted at the end of the operation. 
-    Each line is returned with its newline at the end during iteration.
+    - Using the inplace flag 1) adds the ".bak" extension to the original file and 2) creates a new file with the same original filename. The backup
+      file is iterated over and any modifications are written to the new file (which looks like the original file). The backup file is deleted at the
+      end of the operation. Each line is returned with its newline at the end during iteration.
     """
     filepath = os.path.join(os.path.dirname(__file__), "testCsv.csv")
     for line in fileinput.input(filepath, inplace=1):

@@ -1,6 +1,7 @@
 """
 https://docs.python.org/2.7/reference/expressions.html#membership-test-details
 https://stackoverflow.com/questions/14247373/python-none-comparison-should-i-use-is-or
+https://stackoverflow.com/questions/27276610/boolean-identity-true-vs-is-true
 """
 
 def is_py():
@@ -62,8 +63,20 @@ def none_py():
     print(d.get("thing") == None)
     print(d.get("thing") is None)
 
+
+def check_boolean():
+    """Use 'is' when comparing to the singletons True and False"""
+    if 1 is True:
+        print("1 is True")
+    elif 1 == True: # Don't do this
+        print("1 == True") # This is True!!!
+    else:
+        print("False)")
+
+
 if __name__ == "__main__":
     #py_is()
     #py_equals()
-    equals_with_order()
+    #equals_with_order()
     #none_py()
+    check_boolean()

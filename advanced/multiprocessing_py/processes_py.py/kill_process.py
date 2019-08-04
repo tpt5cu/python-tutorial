@@ -28,7 +28,7 @@ def terminate_and_join():
     p.join()
     print 'JOINED:', p, p.is_alive() # False
 
-def no_join():
+def terminate_no_join():
     p = multiprocessing.Process(target=slow_worker)
     print 'BEFORE:', p, p.is_alive() # False
     
@@ -46,4 +46,4 @@ def no_join():
 
 if __name__ == "__main__":
     #terminate_and_join()
-    no_join()
+    terminate_no_join()

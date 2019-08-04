@@ -1,11 +1,10 @@
-http://flask.pocoo.org/docs/1.0/quickstart/
-https://codingdose.info/2018/05/12/change-flask-root-folder/
-http://flask.pocoo.org/docs/1.0/api/#flask.Request
-http://flask.pocoo.org/docs/1.0/api/#response-objects
-http://flask.pocoo.org/docs/1.0/api/#flask.Flask.make_response
-
-https://stackoverflow.com/questions/13598363/how-to-dynamically-select-template-directory-to-be-used-in-flask
-http://jinja.pocoo.org/docs/2.10/api/
+- http://flask.pocoo.org/docs/1.0/quickstart/
+- https://codingdose.info/2018/05/12/change-flask-root-folder/
+- http://flask.pocoo.org/docs/1.0/api/#flask.Request
+- http://flask.pocoo.org/docs/1.0/api/#response-objects
+- http://flask.pocoo.org/docs/1.0/api/#flask.Flask.make_response
+- https://stackoverflow.com/questions/13598363/how-to-dynamically-select-template-directory-to-be-used-in-flask
+- http://jinja.pocoo.org/docs/2.10/api/
 
 # Run the application
 

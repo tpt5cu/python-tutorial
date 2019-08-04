@@ -1,6 +1,5 @@
-"""
-https://docs.python.org/2/library/functions.html#reduce
-"""
+# https://docs.python.org/2/library/functions.html#reduce
+
 
 
 def sum_numbers():

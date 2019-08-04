@@ -19,6 +19,18 @@ def get_py():
     print(dictionary.get("occupation", "SuperHERo default value"))
 
 
+def dot_access():
+    """
+    Recall that built-in types (like dictionaries) do not have a __dict__ attribute. Thus, arbitraries properties cannot be assigned or accessed on
+    the object at runtime.
+    """
+    my_dict = {
+        "species": "lion"
+    }
+    print(my_dict["species"]) # lion
+    print(my_dict.species) # AttributeError: 'dict' object has no attribute 'species'
+
+
 def get_keys():
     """Sometimes all I want is just to examine the keys of a dictionary. keys() returns a list of the dictionary's keys."""
     my_dict = {
@@ -95,7 +107,8 @@ def be_careful_with_get():
 
 if __name__ == "__main__":
     #get_py()
-    get_keys()
+    dot_access()
+    #get_keys()
     #parse_dictionary()
     #parse_nested_dictionary()
     #be_careful_with_get()

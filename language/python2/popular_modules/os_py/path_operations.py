@@ -1,6 +1,5 @@
-"""
-https://docs.python.org/2/library/os.path.html
-"""
+
+# https://docs.python.org/2/library/os.path.html
 
 
 import os
@@ -42,10 +41,28 @@ def os_path_normpath():
 
 
 def get_file_basename():
-    print(os.path.basename("/Users/austinchang/pycharm/omf/omf/scratch/weatherTesting/aGosedWeather.py"))
+    print(os.path.basename("/Users/austinchang/pycharm/omf/omf/scratch/weatherTesting/aGosedWeather.py")) # AGosedWeather.py
+
+
+def get_last_path_component():
+    """os.path.split(<path>) returns (head, tail), where tail is the last part of the path without any slashes and head is everything before that."""
+    p = "/This/is/a/path/to/some/resources"
+    head, tail = os.path.split(p)
+    print(head) # /This/is/a/path/to/some
+    print(tail) # resources
+    head, tail = os.path.split(head)
+    print(head) # /This/is/a/path/to
+    print(tail) # some
+    head, tail = os.path.split(tail)
+    print(head) # ""
+    print(tail) # some
+    head, tail = os.path.split("/")
+    print(head) # /
+    print(tail) # ""
 
 
 if __name__ == "__main__":
     #os_path_join()
     #os_path_normpath()
-    get_file_basename()
+    #get_file_basename()
+    get_last_path_component()

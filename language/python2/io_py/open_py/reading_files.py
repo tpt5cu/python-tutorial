@@ -1,11 +1,12 @@
-"""
-https://docs.python.org/2/library/stdtypes.html#bltin-file-objects
-"""
+# https://docs.python.org/2/library/stdtypes.html#bltin-file-objects
+
 
 import os, re
 
+
 src_path = os.path.join(os.path.dirname(__file__), "test-files/test-text.txt")
 target_path = os.path.join(os.path.dirname(__file__), "test-files/new-file.txt")
+
 
 def read_lines():
     """
@@ -17,6 +18,7 @@ def read_lines():
     with open(target_path, 'w') as f:
         f.writelines(lines)
 
+
 def use_iterator():
     """
     A file object is its own iterator. That means its next() method is implicitly called when used in a for-loop. This is quite efficient
@@ -25,6 +27,7 @@ def use_iterator():
         with open(src_path) as f:
             for line in f:
                 fw.write(line)
+
 
 def use_iterator_with_seek():
     """
@@ -36,6 +39,7 @@ def use_iterator_with_seek():
                 # Skip lines with numbers for fun
                 if re.search(r"\d", line) == None:
                     fw.write(line)
+
 
 def inplace_modification():
     """ 
@@ -60,6 +64,7 @@ def inplace_modification():
                 print(f.tell())
                 f.write(line)
                 print(f.tell())
+
 
 if __name__ == "__main__":
     #read_lines()

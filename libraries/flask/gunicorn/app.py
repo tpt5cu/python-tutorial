@@ -1,13 +1,16 @@
 import inspect, subprocess
 from flask import Flask
 
+
 app = Flask(__name__)
+
 
 @app.route("/hello")
 def hello():
     #for x in inspect.getmembers(app):
     #    print(x)
     return "hello world!"
+
 
 if __name__ == "__main__":
     """ Run from this directory because gunicorn must be run as a module. Alternatively, use in conjunction with os.chdir() """

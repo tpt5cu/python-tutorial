@@ -1,11 +1,11 @@
+# https://realpython.com/primer-on-python-decorators/
+# https://stackoverflow.com/questions/13931633/how-can-a-flask-decorator-have-arguments
+# https://stackoverflow.com/questions/1166118/how-to-strip-decorators-from-a-function-in-python
+
+
 import random
 from functools import wraps
 
-"""
-https://realpython.com/primer-on-python-decorators/
-https://stackoverflow.com/questions/13931633/how-can-a-flask-decorator-have-arguments
-https://stackoverflow.com/questions/1166118/how-to-strip-decorators-from-a-function-in-python
-"""
 
 """
 Decorators are especially useful when I have some larger functionality that is common to a bunch of small functions. I can refactor those small
@@ -19,7 +19,7 @@ def my_decorator(func): # The decorator should always just take a function
     # The wrapper should always have *args and **kwargs so that all arguments passed into it can be seen by the wrapped function
     def wrapper(*args, **kwargs): 
         val = func(*args, **kwargs)
-        return "The resposne was: " + val
+        return "The response was: " + val
     return wrapper
 
 """

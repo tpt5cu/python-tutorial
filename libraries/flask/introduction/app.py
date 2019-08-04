@@ -2,9 +2,7 @@ import os
 from flask import Flask, url_for, request, make_response, redirect, abort, json
 from werkzeug.utils import secure_filename
 
-""" 
-This is the simplest way to create a Flask instance. I could also create the instance in a factory function and configure it as shown in the tutorial.
-"""
+"""This is the simplest way to create a Flask instance. I could also create the instance in a factory function and configure it as shown in the tutorial"""
 app = Flask(__name__)
 
 
@@ -14,8 +12,8 @@ def hello_world(num):
 
 
 """ 
-The url_for() function doesn't redirect me anywhere, it takes a function (and optional arguments) that is bound to a route, looks up the
-url of that route, and return the route.
+The url_for() function doesn't redirect me anywhere, it takes a function (and optional arguments) that is bound to a route, looks up the url of that
+route, and returns the route.
 """
 @app.route("/reverseurl")
 def reverse_url():
@@ -25,10 +23,7 @@ def reverse_url():
     return redirect(url_for("hello_world", num=7))
 
 
-"""
-Flask provides access to all the information in a request via the global "request" object.
-The request object must be imported.
-"""
+"""Flask provides access to all the information in a request via the global "request" object. The request object must be imported."""
 @app.route("/requestcontext")
 def request_context():
     string = """ The method was: {method}
@@ -38,9 +33,8 @@ def request_context():
 
 
 """
-Uploaded files can be accessed via the request object.
-The keys in request.files are the names that were assigned to the files when the form was submitted. These form-defined names are NOT nececessarily
-the same as the actual file names of the files.
+Uploaded files can be accessed via the request object. The keys in request.files are the names that were assigned to the files when the form was
+submitted. These form-defined names are NOT nececessarily the same as the actual file names of the files.
 """
 @app.route("/file", methods=["POST"])
 def file():
@@ -58,9 +52,14 @@ def file():
 
 
 """ 
-Flask will create a default response object for me if I return a string. The default response object has code 200 and a best-guess mimetype.
-If I want a little more customization, I can return a tuple. Returning a tuple is the middle ground of customization between returning a 
-plain string (which is converted into a default response object) and creating my own response with make_response()
+Flask will create a default response object for me if I return a string. The default response object has code 200 and a best-guess mimetype. If I want
+a little more customization, I can return a tuple. Returning a tuple is the middle ground of customization between returning a plain string (which is
+converted into a default response object) and creating my own response with make_response()
+
+https://flask.palletsprojects.com/en/1.1.x/quickstart/#about-responses
+If a tuple is returned the items in the tuple can provide extra information. Such tuples have to be in the form (response, status), (response,
+headers), or (response, status, headers). The status value will override the status code and headers can be a list or dictionary of additional header
+values.
 """
 @app.route("/tupleresponse")
 def tuple_response():
@@ -72,9 +71,9 @@ def tuple_response():
 
 
 """ 
-Flask normally converts whatever I return from a route function into a response object for me, but I can create an explicity response object if I 
-want. A response object is composed of: response (i.e. entity-body), status, headers. In reality, this is identical to returning a tuple, but the
-syntax might be easier to work with in some cases.
+Flask normally converts whatever I return from a route function into a response object for me, but I can explicity create a response object if I want.
+A response object is composed of: response (i.e. entity-body), status, headers. In reality, this is identical to returning a tuple, but the syntax
+might be easier to work with in some cases.
 
 I NEED to use make_response() if I want to edit something like the mimetype of the response.
 """
@@ -94,16 +93,14 @@ def custom_response(num):
     return resp
 
 
-"""
-Flask provides the redirect() function to redirect requests. It uses a 302 by default, but this can be changed.
-"""
+"""Flask provides the redirect() function to redirect requests. It uses a 302 by default, but this can be changed"""
 @app.route("/my_redirect")
 def my_redirect():
     return redirect(url_for("hello_world"))
 
 
 """
-Flask provides the abort() function to return some kind of 4xx response to the client. Apparently, Flask will intentionally raise the correct 
+Flask provides the abort() function to return some kind of 4xx response to the client. Apparently, Flask will intentionally raise the correct
 exception that would have been thrown if the 4xx code had occurred unintentionally.
 """
 @app.route("/abort!abort!")
