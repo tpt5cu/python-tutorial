@@ -20,10 +20,7 @@ From Python buffer to disk:
 - os.fsync(<file descriptor>) supposedly force-writes the file descriptor to disk. It uses the native fsync() function on Unix
 - On macOS fsync() will send the data from the OS to the drive, but the drive can 1) write the data out of order to disk and 2) the timing of the
   writes to disk is asynchronous
-"""
 
-
-"""
 Buffering during write:
 - If I want to write data to a file, buffering can increase the speed of the write by 1) storing everything that I want to write in memory until some
   defined event (e.g. a newline is reached or the file is closed) 2) when the event occurs, write everything in the buffer to disk.
