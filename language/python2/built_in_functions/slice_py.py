@@ -1,6 +1,5 @@
-"""
-https://docs.python.org/2/library/functions.html#slice
-"""
+# https://docs.python.org/2/library/functions.html#slice
+
 
 def get_slice():
     """

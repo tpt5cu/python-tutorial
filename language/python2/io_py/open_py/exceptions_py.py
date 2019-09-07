@@ -1,5 +1,5 @@
 def open_nonexistent_file():
-    """ Attempting to open a nonexistent file/directory will raise an IOError with errno == 2 """
+    """Attempting to open a nonexistent file/directory will raise an IOError with errno == 2"""
     with open("./blahblah") as f:
         text = f.read()
 

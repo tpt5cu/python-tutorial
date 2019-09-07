@@ -1,0 +1,13 @@
+{
+    "layoutAlgorithm": "geospatial", 
+    "created": "2019-08-28 13:03:35.670148", 
+    "nodeCol": "perUnit120Voltage", 
+    "modelType": "voltageDrop", 
+    "customColormap": "False", 
+    "rezSqIn": "225", 
+    "nodeLabs": "None", 
+    "feederName1": "Olin Barre Geo", 
+    "runTime": "0:00:03", 
+    "edgeCol": "None", 
+    "edgeLabs": "None"
+}

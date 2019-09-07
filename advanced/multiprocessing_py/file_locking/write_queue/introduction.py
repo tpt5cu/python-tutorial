@@ -1,0 +1,1 @@
+# https://stackoverflow.com/questions/13446445/python-multiprocessing-safely-writing-to-a-file

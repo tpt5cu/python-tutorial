@@ -1,0 +1,12 @@
+# file...... switch_cont_rating.csv
+# date...... Wed Aug 28 13:03:36 2019
+# user...... austinchang
+# host...... (null)
+# group..... class=switch
+# property.. continuous_rating
+# limit..... 1
+# interval.. 0
+# timestamp,SW1250-Bx1,SW1250-Ax1,SW1064-Bx1,SW1064-Ax1,SW1139-Bx1,SW1139-Ax1,SW1420-Bx1,SW1420-Ax1,SW1039-Bx1,SW1039-Ax1,SW1421-Bx1,SW1421-Ax1
+2000-01-01 00:00:00 PST,+1000,+1000,+1000,+1000,+1000,+1000,+1000,+1000,+1000,+1000,+1000,+1000
+2000-01-01 00:00:00 PST,+1000,+1000,+1000,+1000,+1000,+1000,+1000,+1000,+1000,+1000,+1000,+1000
+# end of file

@@ -1,9 +1,12 @@
 from flask import Flask, current_app, g, request
 
+
 app = Flask(__name__)
 
-""" app.config is a special dictionary. I can treat it like a regular dictionary, but it has extra functionality like being able to load configuration from files easily. """
+
+"""app.config is a special dictionary. I can treat it like a regular dictionary, but it has extra functionality like being able to load configuration from files easily"""
 app.config["CONFIG_VAR"] = "cool config var!!!"
+
 
 @app.route("/firstroute")
 def first_route():
@@ -14,6 +17,7 @@ def first_route():
     print(current_app._get_current_object() is app)
     return "Hello from /firstroute"
 
+
 @app.route("/secondroute")
 def second_route():
     # This throws an exception because g does not have an attribute "config"
@@ -21,6 +25,7 @@ def second_route():
     # This throws an exception because the global request object does not support assignment
     #request["foo"] = "bar"
     return "Hello from /secondroute"
+
 
 @app.teardown_request
 def pre_request_pop(e):
@@ -30,6 +35,7 @@ def pre_request_pop(e):
     and g should be available, as well as request.
     """
     print("Hello from request context: " + request.method)
+
 
 @app.teardown_appcontext
 def post_request_pop(e):

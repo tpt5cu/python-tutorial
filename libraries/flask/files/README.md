@@ -1,6 +1,6 @@
-http://flask.pocoo.org/docs/1.0/patterns/fileuploads/#uploading-files
-https://stackoverflow.com/questions/6884991/how-to-delete-dir-created-by-python-tempfile-mkdtemp
-https://stackoverflow.com/questions/41543951/how-to-change-downloading-name-in-flask
+- http://flask.pocoo.org/docs/1.0/patterns/fileuploads/#uploading-files
+- https://stackoverflow.com/questions/6884991/how-to-delete-dir-created-by-python-tempfile-mkdtemp
+- https://stackoverflow.com/questions/41543951/how-to-change-downloading-name-in-flask
 
 # secure_filename()
 

@@ -20,9 +20,7 @@ def read_lines():
 
 
 def use_iterator():
-    """
-    A file object is its own iterator. That means its next() method is implicitly called when used in a for-loop. This is quite efficient
-    """
+    """A Python file object is its own iterator. That means its next() method is implicitly called when used in a for-loop. This is quite efficient"""
     with open(target_path, 'w') as fw:
         with open(src_path) as f:
             for line in f:
@@ -30,9 +28,7 @@ def use_iterator():
 
 
 def use_iterator_with_seek():
-    """
-    Sometimes its useful to move the file pointer around. I cannot correctly move the pointer around with readlines()
-    """
+    """Sometimes its useful to move the file pointer around. I cannot correctly move the pointer around with readlines()"""
     with open(target_path, 'w') as fw:
         with open(src_path) as f:
             for line in f:

@@ -18,7 +18,7 @@ def add_two_numbers(a, b):
     Return the sum of two numbers.
 
     :param a: the first operand.
-        add an indent to make Sphinx associated these lines
+        add an indent to make Sphinx associate these lines
         with the above un-indented ine.
     :type a: int or float
     :param b: the second operand

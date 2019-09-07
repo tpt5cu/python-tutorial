@@ -1,0 +1,13 @@
+ERROR    [2000-01-01 00:05:00 PST] : group_recorder::sync
+ERROR    [2000-01-01 00:05:00 PST] : 2000-01-01 00:05:00 PST: object group_recorder:1705 stopped its clock (exec)!
+ERROR    [2000-01-01 00:05:00 PST] : group_recorder::sync
+ERROR    [2000-01-01 00:05:00 PST] : 2000-01-01 00:05:00 PST: object group_recorder:1708 stopped its clock (exec)!
+ERROR    [2000-01-01 00:05:00 PST] : group_recorder::sync
+ERROR    [2000-01-01 00:05:00 PST] : 2000-01-01 00:05:00 PST: object group_recorder:1709 stopped its clock (exec)!
+ERROR    [2000-01-01 00:05:00 PST] : group_recorder::sync
+ERROR    [2000-01-01 00:05:00 PST] : 2000-01-01 00:05:00 PST: object group_recorder:1707 stopped its clock (exec)!
+ERROR    [2000-01-01 00:05:00 PST] : group_recorder::sync
+ERROR    [2000-01-01 00:05:00 PST] : 2000-01-01 00:05:00 PST: object group_recorder:1706 stopped its clock (exec)!
+ERROR    [2000-01-01 00:05:00 PST] : exec halted: synchronization failed
+FATAL    [2000-01-01 00:05:00 PST] : shutdown after simulation stopped prematurely
+FATAL    [2000-01-01 00:05:00 PST] : environment startup failed: Invalid argument

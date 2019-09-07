@@ -22,9 +22,7 @@ def my_decorator(func): # The decorator should always just take a function
         return "The response was: " + val
     return wrapper
 
-"""
-These two functions are very similar. Instead of writing their shared logic twice, I can wrap them in the same decorator.
-"""
+"""These two functions are very similar. Instead of writing their shared logic twice, I can wrap them in the same decorator."""
 @my_decorator
 def yes_or_no(rand):
     return "yes" if rand > 0.5 else "no"
@@ -47,15 +45,13 @@ def use_my_decorator():
 
 
 def use_plain_function():
-    """
-    There is no easy built-in way to use the undecorated version of a function because technically the plain function doesn't exist anymore
-    """
+    """There is no easy built-in way to use the undecorated version of a function because technically the plain function doesn't exist anymore"""
     print(yes_or_no(random.random()))
 
 
 """
-Decorators can take arguments. This is not essential to use custom decorators in Flask.
-In order for the uppermost argument to be bound in a closure, I need to use the same argument name.
+Decorators can take arguments. This is not essential to use custom decorators in Flask. In order for the uppermost argument to be bound in a closure,
+I need to use the same argument name.
 """
 def repeat(num_times): # Use this to make a closure
     def decorator_repeat(func):
@@ -71,6 +67,7 @@ def repeat(num_times): # Use this to make a closure
 @repeat(num_times=5)
 def say_hello():
     print("Hello there!")
+
 
 if __name__ == "__main__":
     #use_my_decorator()    

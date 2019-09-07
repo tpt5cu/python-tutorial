@@ -1,7 +1,5 @@
 http://flask.pocoo.org/docs/1.0/appcontext/
-
 https://stackoverflow.com/questions/15083967/when-should-flask-g-be-used
-
 http://flask.pocoo.org/docs/1.0/reqcontext/ - technical explanation
 http://flask.pocoo.org/docs/1.0/api/#flask.Request - useful documentation
 

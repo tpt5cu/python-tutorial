@@ -3,6 +3,7 @@ from flask import Flask, flash, request, redirect, url_for, send_from_directory,
 from werkzeug.utils import secure_filename
 from contextlib import contextmanager
 
+
 """
 Flask stores uploaded FileStorage objects in memory if they are small. Otherwise, it internally uses tempfile.gettempdir() which returns the globally
 configured temporary directory that tempfile is using.
@@ -13,8 +14,10 @@ Flask encourages the use of <FileStorage>.save() to save uploaded files on the s
 not appear to be an easy way to directly interact with a FileStorage object with such functions as open()
 """
 
+
 #UPLOAD_FOLDER = './uploads'
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
+
 
 app = Flask(__name__)
 # Limit the file size fo 16 MB
@@ -22,8 +25,10 @@ app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 # I want each user to have their own upload folder
 #app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
+
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
 
 """
 Upload a text file and the server will process the file by writing a single line to it and returning the modified file. The temporary directory where
@@ -67,12 +72,14 @@ def upload_file():
     </form>
     '''
 
+
 # Send the uploaded file right back to the user as an example. I don't do this because I process the file and spit it back to the user
 """
 @app.route('/uploads/<filename>')
 def uploaded_file(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
 """
+
 
 # Create a context manager to deal with automatically deleting the temporary directory when the 'with' statement exists
 @contextmanager
@@ -82,6 +89,7 @@ def TemporaryDirectory():
         yield name
     finally:
         shutil.rmtree(name)
+
 
 @app.route("/safe", methods=["POST"])
 def safe():
@@ -94,6 +102,7 @@ def safe():
         "saved at": filepath
     })
 
+
 @app.route("/unsafe", methods=["POST"])
 def unsafe():
     f = request.files["file-form-param"]
@@ -104,10 +113,12 @@ def unsafe():
         "saved at": filepath
     })
 
+
 @app.route("/sendfile", methods=["POST"])
 def send_file_py():
     filename = request.form.get("filename")
     return send_file(os.path.join(os.path.dirname(__file__), "uploads", filename))
+
 
 @app.route("/sendfromdirectory", methods=["POST"])
 def send_from_directory_py():

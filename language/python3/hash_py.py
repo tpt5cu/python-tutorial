@@ -1,0 +1,1 @@
+# https://stackoverflow.com/questions/34402522/difference-between-hash-and-id

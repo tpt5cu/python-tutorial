@@ -1,0 +1,12 @@
+{
+    "genLimits": 0, 
+    "algorithm": "NR", 
+    "created": "2019-08-28 13:05:29.631192", 
+    "iteration": 10, 
+    "modelType": "transmission", 
+    "user": "admin", 
+    "networkName1": "case9", 
+    "model": "AC", 
+    "runTime": "0:00:05", 
+    "tolerance": "0.00000001"
+}

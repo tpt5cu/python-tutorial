@@ -19,5 +19,13 @@ def attribute_in_variable():
     print(getattr(foo, x)) # Douglas
 
 
+def get_nonexistent_attribute():
+    """Provided a default value to return, otherwise accessing a nonexistent attribute raises an AttributeError"""
+    foo = Foo()
+    #getattr(foo, "thing") # AttributeError
+    print(getattr(foo, "thing", "default!"))
+
+
 if __name__ == "__main__":
-    attribute_in_variable()
+    #attribute_in_variable()
+    get_nonexistent_attribute()

@@ -1,0 +1,4 @@
+- https://chris.improbable.org/2010/12/16/everything-you-never-wanted-to-know-about-file-locking/
+- https://blog.gocept.com/2013/07/15/reliable-file-updates-with-python/
+- https://gavv.github.io/articles/file-locks/
+- https://stackoverflow.com/questions/56900163/why-isnt-my-file-corrupted-while-writing-to-it-from-multiple-processes-in-pytho?noredirect=1&lq=1
