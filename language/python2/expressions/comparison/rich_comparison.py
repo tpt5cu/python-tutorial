@@ -1,1 +1,0 @@
-# https://docs.python.org/2.7/reference/datamodel.html#object.__lt__

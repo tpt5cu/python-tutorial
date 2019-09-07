@@ -14,4 +14,5 @@ An object that follows the iterator protocol is known as an iterator.
   grouping types that are defined by following a protocol in this "built_in protocols" section
 
 It is not possible to iterate without an iterator in Python. Why? Because for-loops use iterators under the hood. See the link for clarification.
+- even using enumerate() to get a convenience index is using an iterator under the hood
 """

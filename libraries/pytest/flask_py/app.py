@@ -1,14 +1,13 @@
+# https://stackoverflow.com/questions/18249949/python-file-object-to-flasks-filestorage
+
+
 import os, tempfile
 from flask import Flask, request, send_from_directory
 from werkzeug.utils import secure_filename
 
-"""
-https://stackoverflow.com/questions/18249949/python-file-object-to-flasks-filestorage
-"""
 
-"""
-The web server must NOT be started before any tests can be run.
-"""
+"""The web server must NOT be started before any tests can be run."""
+
 
 # Never ever use relative paths
 # Don't do "./uploads or /uploads"

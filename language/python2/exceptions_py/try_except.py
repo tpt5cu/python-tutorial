@@ -11,12 +11,12 @@ import sys, os
 
 """
 Python has regular old errors. These can occur before execution time (e.g. SyntaxError). I'm not supposed to recover from regular old errors during
-execution time. According to the docs, "errors detected during execution are called exceptions". Exceptions are divided into two subtypes: Errors and
-Warnings. I am supposed to recover from exceptions. Thus "except Exception:" is correct while there is no such thing as "except Error:"
+execution time. 
 
-try-except cannot be done in a single line in Python
-
-There is no StandardError in Python 3. 
+According to the docs, "errors detected during execution are called exceptions". Exceptions are divided into two subtypes: Errors and Warnings. I am
+supposed to recover from exceptions. Thus "except Exception:" is correct while there is no such thing as "except Error:"
+- try-except cannot be done in a single line in Python
+- There is no StandardError in Python 3. 
 """
 
 def catch_all_explicit():
@@ -45,7 +45,7 @@ def bare_except_alias():
     try:
         raise IOError("There was an IOError")
     #except as e: # SyntaxError
-    except e: # e is an undefined variable, so this is also a SyntaxError
+    except as e: # e is an undefined variable, so this is also a SyntaxError
         print(e.message)
     print("Hello from bare_except_alias()")
 
@@ -67,9 +67,7 @@ def catch_specific_exception():
 
 
 def catch_system_exit():
-    """
-    sys.exit() raises a SystemExit exception, which is actually a subclass of BaseException, not Exception. See the exception hierarchy link.
-    """
+    """sys.exit() raises a SystemExit exception, which is actually a subclass of BaseException, not Exception. See the exception hierarchy link."""
     try:
         raise SystemExit(0) # 0 integer error code indicates successful process termination
     except Exception:

@@ -11,7 +11,7 @@ filepath = os.path.join(os.path.dirname(__file__), "test.txt")
 def get_a_file_object():
     """
     High-level file objects (which will henceforth be called simply file objects) are returned by several Python functions
-    - subprocess.Popen() stdin, sdout, or stderr
+    - subprocess.Popen().stdin (or sdout, or stderr)
     - built-in open()
     - os.fdopen(), NOT os.open()
         - Build-in open() could be implemented with os.open() + os.fdopen()
@@ -19,8 +19,8 @@ def get_a_file_object():
     Using the low-level file descriptor operations (e.g. os.open(), os.read(), etc.) instead of the high-level file interface will ignore aspects like
     internal bufferring of data
     """
-    #with open(filepath) as f:
-    #    print(type(f)) # <type 'file'>
+    with open(filepath) as f:
+        print(type(f)) # <type 'file'>
 
     # This function is obsolete. Use the subprocess module instead
     #os.popen()

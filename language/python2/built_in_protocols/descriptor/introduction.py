@@ -15,8 +15,8 @@ descriptor object must be "owned" by a class. That is, the descriptor object mus
 
 The descriptor protocol states that if 1) a regular Python class defines a special set of method signatures and 2) an instance of that class is
 assigned as an attribute of another class, then the instance will behave as a descriptor object. 
-1) If a regular old Python class defines at least 1 of 3 functions, __get__(), __set__(), and/or __delete__(), then instances of that class follow the
-   descriptor protocol and are called "descriptors".
+- If a regular old Python class defines at least 1 of 3 functions, __get__(), __set__(), and/or __delete__(), then instances of that class follow the
+  descriptor protocol and are called "descriptors".
 
 The descriptor protocol is low-level. High-level structures like Python properties, bound and unbound methods, static methods, class methods, and
 super() are all based on the descriptor protocol.
@@ -25,8 +25,8 @@ When Python looks up an attribute, it checks to see if the attribute is actually
 object's behavior instead of reading/writing the attribute normally, depending on the precedence of the descriptor in the attribute look-up process.
 The override order of data descriptors vs. non-data descriptors vs. regular attributes in Python's attribute look-up process is very important.
 - If an object implements __get__() and __set__(), it is a "data descriptor"
-    - For an instance object, a data descriptor (which exists as a class attribute) will take precedence over an instance attribute with the same
-      name or a non-data descriptor with the same name
+    - For an instance object, a data descriptor (which exists as a class attribute) will take precedence over an instance attribute with the same name
+      or a non-data descriptor with the same name
 - If an object implements only __get__(), then it is a "non-data descriptor"
     - For an instance object, an instance attribute will take precedence over a non-data descriptor attribute with the same name.
 
@@ -37,8 +37,8 @@ without modifying any existing code at all! That isn't possible in Java, which i
 every class, no matter how simple.
 """
 
-class BadDivider(object):
 
+class BadDivider(object):
 
     def __init__(self, divisor):
         assert divisor != 0
@@ -54,20 +54,17 @@ class Divisor(object):
     The Divisor class will create descriptor objects. These function signatures are required by the descriptor protocol, but the names of the
     parameters may be whatever I want (of course). A descriptor object is supposed to encapsulate 1 and only 1 attribute of another class.
     """
-
-
     def __init__(self):
         print("Created Divisor descriptor!")
         # I don't want any class-level state to be stored in this object because it's confusing.
         #assert divisor != 0
         #self.divisor = divisor
 
-
     def __get__(self, instance, owner):
         """
         'self' refers to this descriptor object, 'instance' refers to the object that has this descriptor as an attribute, and 'owner' refers to the
         class that owns the descriptor. Descriptor objects are defined as class attributes ONLY. 'instance' could be None if this descriptor were
-        referenced from a class as supposed to an instance.
+        referenced from a class as opposed to an instance.
         - The use of 'instance.__dict__' is how to avoid going through Python's automatic attribute look-up process that occurs with '.' notation.
           That's why I can avoid infinite recursion.
         """
@@ -96,7 +93,7 @@ class Divisor(object):
         # class. Since the descriptor is trying to be set to a value, its __set__() method gets called, which triggers the instance to look up the
         # divisor, etc.
         #instance.divisor = value
-        # This line does what I want becuase it bypasses the normal Python attribute look-up.
+        # This line does what I want because it bypasses the normal Python attribute look-up.
         instance.__dict__["divisor"] = value
         # This line will change the integer value stored inside this object. That's probably not what I want.
         #self.divisor = value 

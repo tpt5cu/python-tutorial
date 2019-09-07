@@ -7,6 +7,7 @@ any fixture. This is much more flexible then scoped beforeEach() and afterEach()
 - Decorate a function to turn it into a 'fixture function'. A fixture function will return a fixture object, which is simply a wrapper around whatever
   the function normally returns.
 - Do scope="module" to create a fixture only once per module
+- A fixture function is only called when a test needs it. So if 4/5 tests use a fixture, the fixture will only be called 4 times
 """
 @pytest.fixture
 #@pytest.fixture(scope="module")

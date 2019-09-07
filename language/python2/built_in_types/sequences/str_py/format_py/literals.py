@@ -1,18 +1,11 @@
-"""
-https://stackoverflow.com/questions/11630106/advanced-string-formatting-vs-template-strings
-https://realpython.com/python-string-formatting/ - types of string templating
-https://stackoverflow.com/questions/599625/python-string-prints-as-ustring
-https://docs.python.org/3/library/stdtypes.html#printf-style-string-formatting
-"""
-
-def string_interpolation():
-    """ Not available until Python 3.6.
-    """
-    pass
+# https://stackoverflow.com/questions/11630106/advanced-string-formatting-vs-template-strings
+# https://realpython.com/python-string-formatting/ - types of string templating
+# https://stackoverflow.com/questions/599625/python-string-prints-as-ustring
+# https://docs.python.org/3/library/stdtypes.html#printf-style-string-formatting
 
 
 def types_of_quotes():
-    """ strings can be delineated with single, double, or triple quotes. """
+    """strings can be delineated with single, double, or triple quotes."""
     string1 = "I am a cool string!"
     string2 = 'I am also a cool string.'
     """Use the backslash for escape sequences."""
@@ -52,15 +45,12 @@ def more_multiline_strings():
 
 
 def raw_string():
-    """
-    Precede a string literal with 'r' or 'R' to create a raw string. Very useful for regular expressions.
-    """
+    """Precede a string literal with 'r' or 'R' to create a raw string. Very useful for regular expressions."""
     string = r"I'm a raw string \\ so \" nothing \t gets \u escaped."
     print(string)
 
 
 if __name__ == "__main__":
-    #string_interpolation()
     #string_literals()
     #multiline_strings()
     more_multiline_strings()

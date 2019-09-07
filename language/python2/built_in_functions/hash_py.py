@@ -26,7 +26,7 @@ In order to be hashable, an object must:
 
 Two unequal objects ARE allowed to have the same hash value!
 
-An object can exist in 3 states with regard to hashing:
+A (mutable) object can exist in 3 states with regard to hashing: (all immutable objects are hashable by default)
 1) It is explicitly unhashable, and the interpreter will recognize it as such. This is valid.
     - It can be an unhashable built-in mutable type
     - It can be defined as explicitly unhashable

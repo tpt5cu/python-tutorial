@@ -1,8 +1,6 @@
-"""
-https://stackoverflow.com/questions/13703720/converting-between-datetime-timestamp-and-datetime64
-https://docs.python.org/2/library/datetime.html
-https://stackoverflow.com/questions/656297/python-time-timedelta-equivalent - time + timedelta?
-"""
+# https://stackoverflow.com/questions/13703720/converting-between-datetime-timestamp-and-datetime64
+# https://docs.python.org/2/library/datetime.html
+# https://stackoverflow.com/questions/656297/python-time-timedelta-equivalent - time + timedelta?
 
 
 import datetime
@@ -15,11 +13,8 @@ If I ever see a datetime object like '2017-06-01 00:00:00-05:00', then:
 - '-05:00' is 5 hours subtracted from UTC, which represents EST (Eastern Standard Time), which starts in November and ends in March
     - '-04:00' is 4 hours subtracted from UTC, which represents EDT (Eastern Daylight Time), which starts in March and ends in November
 
-If I see "Z" at the end of a datetime format, that stands for the UTC timezone
-1994-11-05T13:15:30Z
-"""
+If I see "Z" at the end of a datetime format, that stands for the UTC timezone 1994-11-05T13:15:30Z
 
-"""
 There are "naive" and "aware" objects for working with dates and times. A naive object cannot locate itself relative to other date/time objects. An
 aware object can locate itself relative to other date/time objects.
 
@@ -41,9 +36,8 @@ def create_naive_datetime():
 
 def create_timedelta():
     """
-    All arguments are optional and default to 0. Make sure to use kwargs!
-    A timedelta object only stores days, seconds, and microseconds, and hence only has those attributes.
-    micro means 10^-6, not 10^-2 (that's centi)
+    All arguments are optional and default to 0. Make sure to use kwargs! A timedelta object only stores days, seconds, and microseconds, and hence
+    only has those attributes. micro means 10^-6, not 10^-2 (that's centi)
     """
     # timedelta(days, seconds, microseconds, milliseconds, minutes, hours, weeks)
     td = datetime.timedelta(microseconds=-1)
@@ -53,7 +47,7 @@ def create_timedelta():
 
 
 def add_timedelta_to_datetime():
-    """ datetime + timedelta = datetime """
+    """datetime + timedelta = datetime"""
     dt = datetime.datetime(2000, 5, 5, 23, 59, 59)
     td = datetime.timedelta(seconds=1)
     new_dt = dt + td

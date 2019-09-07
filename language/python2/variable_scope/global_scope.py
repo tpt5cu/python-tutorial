@@ -3,7 +3,8 @@
 
 
 """
-Python seems to have 3 scopes: function, class, and global. There is no block scope (if-statements, for-loops, etc.)
+- Python seems to have 3 scopes: function, class, and global. There is no block scope (if-statements, for-loops, etc.)
+    - There's also scope within with-statements
 - The "global <variable>" statement must go on its own line alone
 - Using the "global" keyword outside of a function has no effect.
 """

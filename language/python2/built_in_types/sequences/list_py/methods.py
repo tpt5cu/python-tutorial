@@ -70,6 +70,11 @@ def filter_py():
     pass
 
 
+def iterate_with_index():
+    """Use the built-in enumerate() function"""
+    pass
+
+
 if __name__ == "__main__":
     #append_py()
     #prepend()

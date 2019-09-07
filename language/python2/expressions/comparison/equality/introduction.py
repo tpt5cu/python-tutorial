@@ -11,32 +11,45 @@ from this default behavior if rich comparison methods or a __cmp__ method have b
 """
 
 
-class SpecialNumber(object):
+class SpecialNumber(int):
     """I can't modify the __cmp__ attribute of regular integers, so I'll make a wrapper class instead."""
-    def __init__(self, val):
-        self.val = val
-
-
     def __cmp__(self, other):
         """This method is used when rich comparison functions are not defined"""
+        return 0
 
 
-
-
-
-def default_equality_behavior():
+def incorrect_way_to_change_equality_behavior():
     """
     In Python 2, the built-in integer type has a __cmp__ but no __eq__ method (this is actually reversed in Python 3. Insane!). In Python 3, the
     __cmp__ method isn't used anymore!
     """
-    #print(dir(5))
+    print(dir(5))
+    #print(type(5) # <type 'int'>
     #print(hasattr(5, "__cmp__")) # True
     #print(hasattr(5, "__eq__")) # False
     x = 5
-    setattr(x, "__cmp__", None)
-    y = 7
-    setattr(y, "__cmp__", None)
+    #setattr(x, "__cmp__", None) # AttributeError '__cmp__' is read-only
+
+
+def compare_special_numbers():
+    """There is NO way to modify how comparison works for built-in types like int. Creating a wrapper class doesn't change this."""
+    #x = 5
+    #y = 5
+    #print(hash(x)) # 5
+    #print(hash(y)) # 5
+    #print(5 == 5) # True
+    x = SpecialNumber(4)
+    #print(type(x)) # <class '__main__.SpecialNumber'>
+    #print(hasattr(x, "__cmp__")) # True
+    #print(x.__cmp__) # <bound method SpecialNumber.__cmp__ of ...>
+    y = SpecialNumber(77)
+    # SpecialNumber doesn't define __hash__, so the __hash__ of int is used
+    #print(hasattr(4, "__hash__")) # True
+    print(hash(x)) # 4
+    print(hash(y)) # 77
+    print(x == y) # Would usually be False, but is True
 
 
 if __name__ == "__main__":
-    default_equality_behavior()
+    #incorrect_way_to_change_equality_behavior()
+    compare_special_numbers()

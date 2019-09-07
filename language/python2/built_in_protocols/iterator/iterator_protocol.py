@@ -10,11 +10,11 @@ An iterator is simply an object that implements 2 methods: __iter__() and next()
 An iterable is simply an object that implements 1 method: __iter__(). __iter__() returns an iterator object
 - An iterable object may support different kinds of iteration, and thus may return different corresponding iterator objects
 
-An iterator and an iterable both implement __iter__() so that both an iterator and an iterable can be used interchangeably in for-statements and
-in-statements.
+Therefore, an iterator is ALSO an iterable, and can be used in places where an iterable is expected (e.g. for loops). An iterator and an iterable both
+implement __iter__() so that both an iterator and an iterable can be used interchangeably in for-statements and in-statements.
 
-So what about __getitem__()? I understand that implementing __getitem__() on a class makes it possible to use the nice syntax "[]" to access data in
-a class instance like it's a container. See custom_iterable.py notes
+So what about __getitem__()? I understand that implementing __getitem__() on a class makes it possible to use the nice syntax "[]" to access data in a
+class instance like it's a container. See custom_iterable.py notes
 """
 
 def next_method():

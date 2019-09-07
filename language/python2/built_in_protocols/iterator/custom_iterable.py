@@ -4,8 +4,8 @@
 
 
 """
-__getitem__() can be used to implement an iterable to provide legacy code support, not because it's a good idea. __getitem__() predates the iterator
-protocol. 
+__getitem__() can be used to implement an iterable because that's how it was done before the iterator protocol existed, not because it's a good idea.
+__getitem__() predates the iterator protocol. 
 """
 
 
