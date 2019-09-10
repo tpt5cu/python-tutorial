@@ -1,6 +1,0 @@
-https://docs.python-guide.org/writing/gotchas/
-https://docs.python.org/3/glossary.html#term-iterable (Gives definitions of everything!)
-
-What is the self argument?
-What are these special/magic methods anyway?
-Generator vs. iterable vs. enumerator?

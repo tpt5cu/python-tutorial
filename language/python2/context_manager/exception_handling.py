@@ -35,7 +35,7 @@ class ExceptionHandling(object):
         """
         If an exception occurred within the BODY of the with statement, then exc_type, exc_val, and exc_tb will be present, otherwise they are all
         None.
-        - If the __exit__() function returns True, the with statement will suppress the exception
+        - If the __exit__() function returns True, the with-statement will suppress the exception
         - If the __exit__() function returns False, the exception will propagate up the stack
             - Never re-raise the Exception. Return False instead
         If an exception is raised within __exit__() method, the new exception replaces any exception that was being handled. Additionally, the new

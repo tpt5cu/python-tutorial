@@ -1,8 +1,7 @@
-"""
-https://docs.python.org/2/library/json.html
-"""
+# https://docs.python.org/2/library/json.html
 
-import json
+
+import json, os
 
 dictionary = {
     'name': 'AG_1000CUEPR',
@@ -24,8 +23,11 @@ def write_to_file():
     The json.dump() function writes the Python data to the selected file. There are many options for exactly how the file is written. The file is
     written as JSON. By that I mean the entire file is not enclosed in quotations.
     """
-    with open("output.json", "w") as f:
-        json.dump(dictionary, f)
+    filepath = os.path.join(os.path.dirname(__file__), 'output.json')
+    with open(filepath, 'r+') as f:
+        #f.truncate()
+        f.write("hello")
+        #json.dump(dictionary, f, indent=4)
 
 def write_to_string():
     """
@@ -35,5 +37,5 @@ def write_to_string():
     print(json.dumps(dictionary, indent=4))
 
 if __name__ == "__main__":
-    #write_to_file()
-    write_to_string()
+    write_to_file()
+    #write_to_string()

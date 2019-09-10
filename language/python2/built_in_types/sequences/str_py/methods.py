@@ -1,8 +1,6 @@
-"""
-https://docs.python.org/2/library/stdtypes.html#string-methods - built-in methods on str objects
-https://docs.python.org/2/library/stdtypes.html#sequence-types-str-unicode-list-tuple-bytearray-buffer-xrange - sequence-type methods that all sequence types (including strings) support
-https://docs.python.org/2/library/string.html - the string module (not same as built-in str)
-"""
+# https://docs.python.org/2/library/stdtypes.html#string-methods - built-in methods on str objects
+# https://docs.python.org/2/library/stdtypes.html#sequence-types-str-unicode-list-tuple-bytearray-buffer-xrange - sequence-type methods that all sequence types (including strings) support
+# https://docs.python.org/2/library/string.html - the string module (not same as built-in str)
 
 
 import re
@@ -27,11 +25,9 @@ def rstrip_py():
 
 def replace_py():
     """replace() can also take a number specifying the number of time to replace a pattern, starting from the beginning of the string"""
-    # This line throws an error. Also, I can't escape the forward slash!
-    #string = 'What a cool \/ file name.txt'
-    string = 'What a cool/file name.txt'.replace("/", ":")
-    with open(string, "w") as f:
-        f.write(string)
+    string = "This is a cool file/name.txt"
+    replacement = string.replace('/', ':')
+    print(replacement)
 
 
 def find_py():
@@ -92,10 +88,11 @@ def check_beginning_and_end():
 if __name__ == "__main__":
     #strip_py()
     #rstrip_py()
+    replace_py()
     #find_py()
     #regex_find()
     #equals()
     #split_py()
     #string_to_list()
     #get_individual_lines()
-    check_beginning_and_end()
+    #check_beginning_and_end()

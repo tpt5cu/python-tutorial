@@ -16,7 +16,7 @@ def lookbehind():
     print(mo.group()) # " isn't that weird?"
     # sub (i.e. substituition) returns a new string where all occurances of <regex> (unless a count was specified) were replaced by the substitute.
     new_string = pattern.sub(" that's really cool!", string)
-    print(new_string)
+    print(new_string) # I am a string, that's really cool!
 
 
 def lookahead():

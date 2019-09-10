@@ -2,6 +2,7 @@
 # https://stackoverflow.com/questions/5607117/python-question-about-write-and-truncate
 # https://developer.apple.com/library/archive/documentation/System/Conceptual/ManPages_iPhoneOS/man2/fsync.2.html
 
+
 import os, time
 
 
@@ -17,9 +18,12 @@ crashes or the computer loses power before data is written to disk, the data is 
 """
 
 
+filepath = os.path.join(os.path.dirname(__file__), "test-files/written.txt")
+
+
 def write_file():
     """If using <file>.write(), the argument MUST be a string!"""
-    with open(os.path.join(os.path.dirname(__file__), "test-files/written.txt"), 'w') as f:
+    with open(filepath, 'w') as f:
         #f.write("The time is: ")
         #f.write(time.time()) # TypeError
         f.write("The time is: ")
@@ -31,10 +35,36 @@ def write_nothing():
     Opening a file in write mode IMMEDIATELY clears the entire file, regardless of whether or not I write something else! This is a HUGE problem for
     simultaneous writes!
     """
-    with open(os.path.join(os.path.dirname(__file__), "test-files/written.txt"), 'w') as f:
+    with open(filepath, 'w') as f:
         pass
 
 
+def read_write_mode():
+    """
+    Opening in read-write mode does NOT truncate the file. It starts from the very beginning of the file (by default) and writes the prescribed text,
+    overwriting anything that was there before.
+    - It's easy to get nonsense if I open the file in read-write mode and write in new content without truncating the file first
+    - I can use seek() to adjust the position of the file descriptor
+    """
+    with open(filepath, 'r+') as f:
+        f.seek(0, os.SEEK_END) # Always set the file descriptor position to the end of the file. Now this operation is identical to 'a' mode
+        f.write("Hello read_write_mode()!")
+
+
+def write_plus_mode():
+    """
+    Opening in w+ mode does indeed truncate the file. So what's the difference betweeen it and 'w' mode? I can read from the file. That's it.
+    - The file is still created if it does not exist
+    """
+    with open(filepath, 'w+') as f:
+        f.write("Hello from write_plus_mode")
+        f.seek(0, os.SEEK_SET)
+        data = f.read()
+    print(data)
+
+
 if __name__ == "__main__":
-    write_file()
-    write_nothing()
+    #write_file()
+    #write_nothing()
+    #read_write_mode()
+    write_plus_mode()

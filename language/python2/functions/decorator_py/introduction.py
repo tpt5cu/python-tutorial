@@ -1,4 +1,4 @@
-# https://realpython.com/primer-on-python-decorators/
+# https://realpython.com/primer-on-python-decorators/ - a lot of information here!
 # https://stackoverflow.com/questions/13931633/how-can-a-flask-decorator-have-arguments
 # https://stackoverflow.com/questions/1166118/how-to-strip-decorators-from-a-function-in-python
 
@@ -71,5 +71,5 @@ def say_hello():
 
 if __name__ == "__main__":
     #use_my_decorator()    
-    #say_hello()
-    use_plain_function()
+    say_hello()
+    #use_plain_function()

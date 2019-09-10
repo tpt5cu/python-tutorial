@@ -18,7 +18,8 @@ def assert_py():
     #assert 1 == 2 # This is correct usage
     # This will never throw an error because bool( (1 == 2, "Hello") ) will always be True. I am asserting that a non-empty tuple is True, which it
     # always will be
-    assert (1 == 2, "Hello")
+    #assert (1 == 2, "Hello")
+    pass
 
 
 def assert_multiple_conditions():
@@ -32,19 +33,29 @@ def assert_multiple_conditions():
     assert 1 == 2 or 6 == 6 and 7 == 7
 
 
+def assert_grouping(x, y, z):
+    """I want to assert that x is True, and either y or z is also True."""
+    # No AssertionError because even if x and y are False, z is True. BAD!
+    #assert x and y or z
+    # AssertionError because x is False
+    assert x and (y or z)
+
+
 def raise_exception():
     """
     Exception and Exception() both do the same thing because using the class automatically creates an instance. It's perfectly okay to use the class.
     In fact, it's common to use the class when no arguments need to be passed.
+    - Using a plain 'raise' statement will automatically re-raise the current exception
     """
-    raise Exception("This is my Exception")
-
-
-def re_raise():
-    pass
+    try:
+        raise Exception("This is my Exception")
+    except Exception as e:
+        print("Handled the exception")
+        raise
 
 
 if __name__ == "__main__":
     #assert_py()
-    assert_multiple_conditions()
-    #raise_exception()
+    #assert_multiple_conditions()
+    #assert_grouping(False, False, True)
+    raise_exception()

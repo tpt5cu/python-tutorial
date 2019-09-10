@@ -1,8 +1,8 @@
-2019-09-03 16:11:07,752 hello from prepare_file()
-2019-09-03 16:11:07,760 hello from read_and_log_file()
-2019-09-03 16:11:07,763 hello from write_file()
-2019-09-03 16:11:07,765 hello from read_and_log_file()
-2019-09-03 16:11:11,774 hello from read_and_log_file(), read data:
+2019-09-08 22:13:56,153 hello from prepare_file()
+2019-09-08 22:13:56,160 hello from read_and_log_file()
+2019-09-08 22:13:56,160 hello from write_file()
+2019-09-08 22:13:56,162 hello from read_and_log_file()
+2019-09-08 22:14:00,172 hello from read_and_log_file(), read data:
 Line: 0
 Line: 1
 Line: 2
@@ -14,7 +14,7 @@ Line: 7
 Line: 8
 Line: 9
 
-2019-09-03 16:11:11,782 hello from read_and_log_file(), read data:
+2019-09-08 22:14:00,180 hello from read_and_log_file(), read data:
 Line: 0
 Line: 1
 Line: 2

@@ -1,6 +1,5 @@
-"""
-https://stackoverflow.com/questions/22241420/execution-of-python-code-with-m-option-or-not
-"""
+# https://stackoverflow.com/questions/22241420/execution-of-python-code-with-m-option-or-not
+
 
 """
 - A python module can be run as a package with $ python -m <module> $. This tells Python to 1) import the module for me and 2) run the imported 
