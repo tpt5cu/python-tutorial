@@ -8,7 +8,7 @@ def types_of_quotes():
     """strings can be delineated with single, double, or triple quotes."""
     string1 = "I am a cool string!"
     string2 = 'I am also a cool string.'
-    """Use the backslash for escape sequences."""
+    # Use the backslash for escape sequences.
     string3 = "This string can have \"quotes\" inside of it."
     print(string3)
     print(str(type(string3)))
@@ -35,13 +35,26 @@ def multiline_strings():
     print(string4)
 
 
-def more_multiline_strings():
-    """Use the parentheses () syntax to create multiline string literals that involve function calls. If function calls are involved, I need the + operator."""
+def single_line_string_across_multiple_lines():
+    """
+    Parentheses can be used to write a string literal across multiple lines but have it print as a single line.
+    - Be careful not to include commas or I'll be printing a tuple!
+    - If I'm getting strings that are returned from function calls, I need the '+' operator to concatenate those returned strings, regardless of
+      whether or not the function call is on a new line
+    """
+    long_string = ('First line. '
+    'second line. ' 'second line part 2'
+    'third line.')
+    print(long_string) # First line. second line. second line part 2third line.
     def get_string():
         return "cool string!"
-    long_string = (get_string() + get_string() +
+    long_string = (get_string() + get_string() + 
         get_string() + "Yo" + get_string())
-    print(long_string)
+    print(long_string) # cool string!cool string!cool string!Yocool string!
+    # This is invalid syntax. The parentheses are needed
+    #bad_string = get_string() + get_string() +
+    #    get_string()
+    #print(bad_string)
 
 
 def raw_string():
@@ -50,8 +63,26 @@ def raw_string():
     print(string)
 
 
+def string_with_newlines():
+    """There is no way to write a string literal across multiple lines without parenthesis (or triple quotes)"""
+    # This is valid syntax, but does not combine the string literals
+    #string = 'first line'
+    #'second line'
+    # This is invalid syntax
+    #string = 'first line ' +
+    #    'second line'
+    # This is also invalid syntax
+    #string = "first line
+    #    second line"
+    # This is one way to write a multiline string literal, but it's very ugly
+    string = """first line
+    second line"""
+    print(string)
+
+
 if __name__ == "__main__":
-    #string_literals()
+    #types_of_quotes()
     #multiline_strings()
-    more_multiline_strings()
+    #single_line_string_across_multiple_lines()
     #raw_string()
+    string_with_newlines()

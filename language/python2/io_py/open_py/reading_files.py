@@ -1,4 +1,5 @@
 # https://docs.python.org/2/library/stdtypes.html#bltin-file-objects
+# https://stackoverflow.com/questions/8945370/garbage-in-file-after-truncate0-in-python - how truncate really works
 
 
 import os, re
@@ -87,9 +88,86 @@ def truncate_file():
     """
     read_lines()
     with open(target_path, 'r+') as f:
-        #f.truncate() # This will truncate to 0 bytes because the file descriptor happens to be at the start of the file
-        #f.seek(10, os.SEEK_SET); f.truncate() # This will truncate everything after the first 10 characters
-        f.truncate(20) # This will truncate the file to at most 20 bytes
+        # This will truncate to 0 bytes because the file descriptor happens to be at the start of the file
+        #f.truncate() 
+        # This will truncate everything after the first 10 characters
+        #f.seek(10, os.SEEK_SET); f.truncate() 
+        # This will truncate the file to at most 20 bytes
+        #f.truncate(20) 
+
+        # The file pointer's current position isn't affected by truncate(). Thus, if the file pointer is at the end of the file, and then the file is
+        # truncated to 0 bytes, the file pointer will still be at the end of the file!
+        print(os.path.getsize(target_path)) # 2289
+        f.seek(0, os.SEEK_END) # go to end of the file
+        print(f.tell()) # 2289
+        f.truncate(0)
+        print(os.path.getsize(target_path)) # 0
+        print(f.tell()) # 2289
+        # This write corrupts the file!
+        #f.write("some nice text")
+        # This write is okay
+        f.seek(0) # go to the beginning of the file
+        f.write("some nice text")
+
+
+def truncate_file_order():
+    """
+    It does not matter whether seek() is called after or before truncate(), just make sure to move the file pointer to the start of the file when
+    writing after truncate()
+    """
+    read_lines()
+    #with open(target_path, 'r+') as f:
+    #    f.truncate(0)
+    #    f.seek(0)
+    #    f.write("Some new input")
+    with open(target_path, 'r+') as f:
+        f.seek(0)
+        f.truncate(0)
+        f.write("Some other new input")
+
+
+def rename_while_open():
+    """
+    Apparently renaming a file while it's open is okay, both for reading and writing!
+    """
+    with open(target_path, 'w') as f:
+        f.write("renamed_while_open() wrote some content to this file")
+    head = os.path.split(target_path)[0]
+    new_name = os.path.join(head, 'renamed-file.txt')
+
+    def rename_without_with():
+        f = open(target_path, 'r+')
+        print(f.read())
+        os.rename(target_path, new_name)
+        f.seek(0)
+        print(f.read())
+        f.write("rename_without_with()")
+        f.close()
+
+    def rename_with_with():
+        with open(target_path, 'r+') as f:
+            print(f.read())
+            os.rename(target_path, new_name)
+            f.seek(0)
+            print(f.read())
+            f.write("rename_with_with()")
+
+    def online_example():
+        """
+        https://stackoverflow.com/questions/6697972/update-file-descriptor-after-os-rename
+        - This example claims that this code should result in a bad file descriptor, but it doesn't. Actually, it's because that person used a 'rw'
+          mode, which isn't a valid file mode. That's the ONLY reason they got a bad file descriptor
+        """
+        f = open(target_path, 'r+')
+        #f = open(target_path, 'rw') # Bad file descriptor
+        os.rename(f.name, f.name + ".bak")
+        f.write('test')
+        f.close()
+
+    #rename_without_with()
+    #rename_with_with()
+    online_example()
+    #os.remove(new_name)
 
 
 if __name__ == "__main__":
@@ -99,4 +177,6 @@ if __name__ == "__main__":
     # Use both together
     #use_iterator() # reset the content
     #inplace_modification()
-    truncate_file()
+    #truncate_file()
+    #truncate_file_order()
+    rename_while_open()

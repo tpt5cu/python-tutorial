@@ -1,3 +1,6 @@
+# https://docs.python.org/2.7/library/functions.html#range
+
+
 """
 The built-in range() function in Python2 returns a list of the specified size immediately upon invocation.
 This is different from xrange(), which returns an xrange type. An xrange type is an iterable, but it is not an iterator. It is also not a generator.

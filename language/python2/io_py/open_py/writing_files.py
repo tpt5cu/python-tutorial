@@ -47,7 +47,7 @@ def read_write_mode():
     - I can use seek() to adjust the position of the file descriptor
     """
     with open(filepath, 'r+') as f:
-        f.seek(0, os.SEEK_END) # Always set the file descriptor position to the end of the file. Now this operation is identical to 'a' mode
+        f.seek(0, os.SEEK_END) # This will set the file descriptor position to the end of the file. Now this operation is identical to 'a' mode
         f.write("Hello read_write_mode()!")
 
 

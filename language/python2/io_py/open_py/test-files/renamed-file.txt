@@ -1,0 +1,1 @@
+renamed_while_open() wrote some content to this filerename_with_with()

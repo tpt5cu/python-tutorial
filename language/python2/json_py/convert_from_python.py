@@ -22,12 +22,16 @@ def write_to_file():
     """
     The json.dump() function writes the Python data to the selected file. There are many options for exactly how the file is written. The file is
     written as JSON. By that I mean the entire file is not enclosed in quotations.
+    - 
     """
     filepath = os.path.join(os.path.dirname(__file__), 'output.json')
     with open(filepath, 'r+') as f:
-        #f.truncate()
-        f.write("hello")
-        #json.dump(dictionary, f, indent=4)
+        f.truncate()
+        # This writes a string to the file, since a string is a valid JSON type. However, it is only coincidental that the string also happens to be
+        # valid JSON
+        #json.dump(str(dictionary), f, indent=4) 
+        # This writes a Python object to the file. The object is written in JSON, not a string
+        json.dump(dictionary, f, indent=4)
 
 def write_to_string():
     """
