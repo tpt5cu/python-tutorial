@@ -8,9 +8,7 @@ import random
 import pandas as pd
 
 
-"""
-Many pandas operations have an "inplace" parameter that specifies whether to modify this DataFrame or return a new one.
-"""
+"""Many pandas operations have an "inplace" parameter that specifies whether to modify this DataFrame or return a new one."""
 
 
 def get_mixed_matrix():
@@ -51,7 +49,7 @@ def delete_rows_and_columns():
     df.drop([8, 9], inplace=True)
     print("df minus rows:")
     print(df.to_string())
-    # Specify axis=1  to delete based on column labels
+    # Specify axis=1 to delete based on column labels
     df.drop([2, 3], axis=1, inplace=True)
     print("df minus columns:")
     print(df)

@@ -10,13 +10,14 @@ from contextlib import contextmanager
 
 
 """
-- The 'logging' module does not use process-shared locks. In other words, using the locks provided in that module will only lock threads within that
-  process. It will not lock with other processes.
+The 'logging' module does not use process-shared locks. In other words, using the locks provided in that module will only lock threads within that
+process. It will not lock with other processes.
 """
 
 
 logging.basicConfig(filename=os.path.join(os.path.dirname(__file__), "my-log.txt"), filemode='w', format="%(asctime)s %(message)s")
 filepath = os.path.join(os.path.dirname(__file__), 'test.txt')
+
 
 # This is the original context manager. The other one is stripped down
 @contextmanager

@@ -85,10 +85,16 @@ def check_beginning_and_end():
     print(string.endswith("cool")) # False
 
 
+def get_lowercase():
+    """<str>.lower() returns a new string with call capital letters converted into lowercase"""
+    string = "I am a Sentence with Capital letTers"
+    print(string.lower())
+
+
 if __name__ == "__main__":
     #strip_py()
     #rstrip_py()
-    replace_py()
+    #replace_py()
     #find_py()
     #regex_find()
     #equals()
@@ -96,3 +102,4 @@ if __name__ == "__main__":
     #string_to_list()
     #get_individual_lines()
     #check_beginning_and_end()
+    get_lowercase()

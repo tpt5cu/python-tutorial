@@ -1,6 +1,4 @@
-"""
-https://pandas.pydata.org/pandas-docs/version/0.24/user_guide/groupby.html
-"""
+# https://pandas.pydata.org/pandas-docs/version/0.24/user_guide/groupby.html
 
 
 """

@@ -1,9 +1,8 @@
-"""
-https://pandas.pydata.org/pandas-docs/stable/getting_started/dsintro.html#dataframe
-https://pandas.pydata.org/pandas-docs/stable/reference/frame.html#conversion
-https://docs.scipy.org/doc/numpy/user/basics.types.html - basic numpy dtypes
-https://pandas.pydata.org/pandas-docs/stable/getting_started/basics.html#basics-dtypes - show the extensions that pandas makes to numpy dtypes
-"""
+# https://pandas.pydata.org/pandas-docs/stable/getting_started/dsintro.html#dataframe
+# https://pandas.pydata.org/pandas-docs/stable/reference/frame.html#conversion
+# https://docs.scipy.org/doc/numpy/user/basics.types.html - basic numpy dtypes
+# https://pandas.pydata.org/pandas-docs/stable/getting_started/basics.html#basics-dtypes - show the extensions that pandas makes to numpy dtypes
+d
 
 import random
 import numpy as np

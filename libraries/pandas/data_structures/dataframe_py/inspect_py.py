@@ -1,7 +1,5 @@
-"""
-https://stackoverflow.com/questions/19482970/get-list-from-pandas-dataframe-column-headers
-https://stackoverflow.com/questions/35339139/where-is-the-documentation-on-pandas-freq-tags - what is that "Freq" thing?
-"""
+# https://stackoverflow.com/questions/19482970/get-list-from-pandas-dataframe-column-headers
+# https://stackoverflow.com/questions/35339139/where-is-the-documentation-on-pandas-freq-tags - what is that "Freq" thing?
 
 
 import pandas as pd

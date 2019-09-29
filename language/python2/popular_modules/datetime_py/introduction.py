@@ -12,15 +12,12 @@ If I ever see a datetime object like '2017-06-01 00:00:00-05:00', then:
 - '00:00:00' is hrs-mins-secs
 - '-05:00' is 5 hours subtracted from UTC, which represents EST (Eastern Standard Time), which starts in November and ends in March
     - '-04:00' is 4 hours subtracted from UTC, which represents EDT (Eastern Daylight Time), which starts in March and ends in November
-
-If I see "Z" at the end of a datetime format, that stands for the UTC timezone 1994-11-05T13:15:30Z
+- If I see "Z" at the end of a datetime format, that stands for the UTC timezone 1994-11-05T13:15:30Z
 
 There are "naive" and "aware" objects for working with dates and times. A naive object cannot locate itself relative to other date/time objects. An
 aware object can locate itself relative to other date/time objects.
-
-"time" and "datetime" objects are naive by default, and must be supplied a "tzinfo" instance in order to be aware. 
-
-The "tzinfo" class is abstract. Therefore, to pass a tzinfo object I must implement a concrete subclass of tzinfo and use it.
+- "time" and "datetime" objects are naive by default, and must be supplied a "tzinfo" instance in order to be aware. 
+- The "tzinfo" class is abstract. Therefore, to pass a tzinfo object I must implement a concrete subclass of tzinfo and use it.
 """
 
 

@@ -1,9 +1,7 @@
-"""
-https://stackoverflow.com/questions/34347145/pandas-plot-doesnt-show
-https://pandas.pydata.org/pandas-docs/stable/reference/frame.html
-https://matplotlib.org/tutorials/introductory/usage.html#figure-parts - matplotlib overview
-https://matplotlib.org/tutorials/introductory/pyplot.html - pyplot interface
-"""
+# https://stackoverflow.com/questions/34347145/pandas-plot-doesnt-show
+# https://pandas.pydata.org/pandas-docs/stable/reference/frame.html
+# https://matplotlib.org/tutorials/introductory/usage.html#figure-parts - matplotlib overview
+# https://matplotlib.org/tutorials/introductory/pyplot.html - pyplot interface
 
 
 import matplotlib.pyplot as plt

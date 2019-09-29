@@ -1,12 +1,12 @@
-import fcntl, os, time, errno
-from multiprocessing import Process
-
-
 # https://gavv.github.io/articles/file-locks/ - Detailed summary of types of file locks
 # https://stackoverflow.com/questions/9907616/python-fcntl-does-not-lock-as-expected - Describes confusing behavior for a user that doesn't understand locks
 # https://docs.python.org/2.7/library/fcntl.html#fcntl.flock
 # https://stackoverflow.com/questions/5507185/what-does-lock-nb-mean-in-flock
 # https://stackoverflow.com/questions/489861/locking-a-file-in-python
+
+
+import fcntl, os, time, errno
+from multiprocessing import Process
 
 
 """

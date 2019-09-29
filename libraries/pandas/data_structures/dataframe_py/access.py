@@ -1,7 +1,5 @@
-"""
-https://pandas.pydata.org/pandas-docs/stable/getting_started/dsintro.html#indexing-selection
-https://stackoverflow.com/questions/10665889/how-to-take-column-slices-of-dataframe-in-pandas
-"""
+# https://pandas.pydata.org/pandas-docs/stable/getting_started/dsintro.html#indexing-selection
+# https://stackoverflow.com/questions/10665889/how-to-take-column-slices-of-dataframe-in-pandas
 
 
 import pandas as pd

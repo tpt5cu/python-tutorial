@@ -1,6 +1,4 @@
-"""
-https://stackoverflow.com/questions/40180737/how-to-get-data-from-pickle-files-into-a-pandas-dataframe
-"""
+# https://stackoverflow.com/questions/40180737/how-to-get-data-from-pickle-files-into-a-pandas-dataframe
 
 
 import pandas as pd
