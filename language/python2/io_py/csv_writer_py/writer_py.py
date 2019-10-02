@@ -1,6 +1,4 @@
-"""
-https://docs.python.org/2/library/csv.html
-"""
+# https://docs.python.org/2/library/csv.html
 
 
 import os, csv
@@ -38,7 +36,7 @@ def examine_excel_dialect():
 
 def write_header():
     """
-    Only csv.DictWriter (as opposed to csv.writer) has writerows() method. To write a header row with csv.writer, just use the regular methods
+    Only csv.DictWriter (as opposed to csv.writer) has writeheader() method. To write a header row with csv.writer, just use the regular methods
     """
     with open(filepath, 'w') as f:
         writer = csv.writer(f)

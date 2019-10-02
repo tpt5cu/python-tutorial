@@ -2,9 +2,8 @@
 # https://stackoverflow.com/questions/2535760/python-try-except-comma-vs-as-in-except
 
 
-"""
-Normally, I see the "," character in lists, tuples, dictionaries, sets, etc. In those contexts, it's just a normal comma. 
-"""
+"""Normally, I see the "," character in lists, tuples, dictionaries, sets, etc. In those contexts, it's just a normal comma"""
+
 
 def sequence_unpack():
     """Commas on the left-hand side indicate that values should be unpacked from a sequence"""

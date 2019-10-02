@@ -19,7 +19,7 @@ All (3) immutable sequence types: str, unicode, tuple
     - comparison
 
 All (2) mutable sequence types: list, bytearray
-- All mutalbe sequence types support all of the immutable operations and several additional ones:
+- All mutable sequence types support all of the immutable operations and several additional ones:
     - assignment via the above operators, e.g. "seq[<idx>] = <val>", "seq[:] = <val>", "<seq> *= <times>"
     - deletion via the above operators, e.g. "del "seq<idx>", "del seq[:]"
     - <seq>.append()

@@ -127,9 +127,7 @@ def truncate_file_order():
 
 
 def rename_while_open():
-    """
-    Apparently renaming a file while it's open is okay, both for reading and writing!
-    """
+    """Apparently renaming a file while it's open is okay, both for reading and writing!"""
     with open(target_path, 'w') as f:
         f.write("renamed_while_open() wrote some content to this file")
     head = os.path.split(target_path)[0]

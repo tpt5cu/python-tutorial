@@ -53,6 +53,13 @@ def decimal_and_float():
     print("{:06.3f}".format(5.12345))
     print("{:f}".format(12))
     print("{:08.3f}".format(5.12345)) # A floating point number can be left-padded with 0s, but the specified length must be longer than the floating point number
+    
+
+def get_rid_of_scientific_notation():
+    val = 1.56332825753e+12
+    print(val) # Don't want this
+    formatted_val = '%d' % val
+    print(formatted_val) # This is great!
 
 
 if __name__ == "__main__":
@@ -60,4 +67,5 @@ if __name__ == "__main__":
     #pad_and_align_string()
     #truncate_string()
     #truncate_number()
-    decimal_and_float()
+    #decimal_and_float()
+    get_rid_of_scientific_notation()

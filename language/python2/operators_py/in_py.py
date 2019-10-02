@@ -1,6 +1,4 @@
-"""
-https://stackoverflow.com/questions/35302215/python-in-operator
-"""
+# https://stackoverflow.com/questions/35302215/python-in-operator
 
 
 def sequence_membership():

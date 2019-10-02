@@ -69,7 +69,7 @@ class BetterCat(Animal):
         print(super(BetterCat, self).cool_property) # I'm a class property
         # __init__() doesn't return anything, it merely initializes the invoking object
         super(BetterCat, self).__init__(name, species, birthday)
-        # This doesn't invovle the super object, so of course I can look up an instance object property
+        # This doesn't involve the super object, so of course I can look up an instance object property
         print(self.cool_property) # I'm an instance property
         # This is still looking up the class property, and ONLY the class property
         print(super(BetterCat, self).cool_property) # I'm a class property.

@@ -23,6 +23,13 @@ def sparse_list():
     
 
 def detect_palindrome(string):    
+    """
+    In order to use this function, I would have to
+    1) Parse a sentence
+    2) Find strings and split them by whitespace
+    3) When I split the original sentence into strings, I'll actually be creating new strings!
+    """
+    pass
     
 
 
