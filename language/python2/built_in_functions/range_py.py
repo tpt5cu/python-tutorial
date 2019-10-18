@@ -1,11 +1,12 @@
 # https://docs.python.org/2.7/library/functions.html#range
+# https://stackoverflow.com/questions/94935/what-is-the-difference-between-range-and-xrange-functions-in-python-2-x
 
 
 """
 The built-in range() function in Python2 returns a list of the specified size immediately upon invocation.
 This is different from xrange(), which returns an xrange type. An xrange type is an iterable, but it is not an iterator. It is also not a generator.
-
-range() can take 1, 2, or 3 arguments
+- range() can take 1, 2, or 3 arguments
+- xrange() takes less memory. Neither has particularly better performance
 """
 
 def print_numbers():

@@ -32,7 +32,10 @@ def incorrect_way_to_change_equality_behavior():
 
 
 def compare_special_numbers():
-    """There is NO way to modify how comparison works for built-in types like int. Creating a wrapper class doesn't change this."""
+    """
+    There is NO way to modify how comparison works for built-in types like int. Creating a wrapper class doesn't change this, but this example does
+    show that overriding __cmp__() works.
+    """
     #x = 5
     #y = 5
     #print(hash(x)) # 5
@@ -47,7 +50,7 @@ def compare_special_numbers():
     #print(hasattr(4, "__hash__")) # True
     print(hash(x)) # 4
     print(hash(y)) # 77
-    print(x == y) # Would usually be False, but is True
+    print(x == y) # Would be False for regular ints, but is True for SpecialNumbers
 
 
 if __name__ == "__main__":

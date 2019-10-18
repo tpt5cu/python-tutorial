@@ -45,14 +45,27 @@ def length():
 
 
 def slicing():
-    """A slice of a sequence always returns another sequence of the same type. Some also support stepped-slicing with [i:j:k]"""
+    """
+    A slice of a sequence always returns another sequence of the same type. Some also support stepped-slicing with [i:j:k]
+    - Slicing is [<inclusive>: <exclusive>]
+    """
     tup_s = ("good", "stuff", "in", "here")[1:3]
     print(type(tup_s)) # <type 'tuple'>
     print(tup_s) # ("stuff", "in")
     str_s = "This is the best sentence ever"[0::2]
     print(str_s) # Ti stebs etneee
+    print('hello'[0:3]) # hel
+
+
+def repetition():
+    """Repetition does nothing for an empty sequence. The sequence must contain at least 1 value"""
+    print([] * 20) # []
+    print('' * 5) # ''
+    print(() * 2) # ()
+    print('a' * 3) # aaa
 
 
 if __name__ == "__main__":
     #length()
-    slicing()
+    #slicing()
+    repetition()

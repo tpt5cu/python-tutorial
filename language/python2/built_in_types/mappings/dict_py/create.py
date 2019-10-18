@@ -1,6 +1,5 @@
-"""
-https://realpython.com/python-dicts/
-"""
+# https://realpython.com/python-dicts/
+# https://stackoverflow.com/questions/9415785/merging-several-python-dictionaries
 
 """
 A dictionary is another mutable collection, like a list, except that data is stored and accessed in key-value pairs. Dictionaries do NOT keep order
@@ -9,7 +8,6 @@ type
 """
 
 def literal():
-
     foods = {
         'starch': 'bread',
         'protein': 'steak',
@@ -31,10 +29,14 @@ def fill_with_keys():
     print(d)
 
 
-def constructor():
-    pass
+def merge_dicts():
+    d1 = {'direction': 'right', 'color': 'maroon'}
+    d2 = {'weather': 'sunny'}
+    d3 = dict(**dict(**d2))
+    print(d3)
+
 
 if __name__ == "__main__":
     #literal()
-    fill_with_keys()
-    #constructor()
+    #fill_with_keys()
+    merge_dicts()

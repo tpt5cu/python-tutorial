@@ -1,6 +1,4 @@
-"""
-https://docs.python.org/2.7/tutorial/datastructures.html#tuples-and-sequences
-"""
+# https://docs.python.org/2.7/tutorial/datastructures.html#tuples-and-sequences
 
 
 """
@@ -10,20 +8,20 @@ https://docs.python.org/2.7/tutorial/datastructures.html#tuples-and-sequences
 
 
 def no_parentheses():
-    """ Tuples don't require parentheses to be declared. However, in certain contexts the parentheses are needed """
+    """Tuples don't require parentheses to be declared. However, in certain contexts the parentheses are needed"""
     weird_tuple = 1, 2, 3
     print(weird_tuple) # (1, 2, 3)
     print(type(weird_tuple)) # <type 'tuple'>
 
 
 def empty_tuple():
-    """ Empty parentheses create a tuple with 0 elements """
+    """Empty parentheses create a tuple with 0 elements"""
     empty = ()
     print(type(empty)) # <type 'tuple'>
 
 
 def single_element_tuple():
-    """ Creating a single element tuple has ugly syntax """
+    """Creating a single element tuple has ugly syntax"""
     single = (1,)
     print(type(single)) # <type 'tuple'>
 

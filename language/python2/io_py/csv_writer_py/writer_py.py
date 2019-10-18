@@ -1,7 +1,10 @@
+# -*- coding: UTF-8 -*-
+
 # https://docs.python.org/2/library/csv.html
+# https://stackoverflow.com/questions/18449233/2-7-csv-module-wants-unicode-but-doesnt-want-unicode
 
 
-import os, csv
+import os, csv, io
 
 
 filepath = os.path.join(os.path.dirname(__file__), "my-csv.csv")
@@ -14,9 +17,7 @@ data = [
 
 
 def basic_write():
-    """
-    This is the simplest way to write with a csv writer. writerows() must get a sequence of sequences, not just a 1D sequence
-    """
+    """This is the simplest way to write with a csv writer. writerows() must get a sequence of sequences, not just a 1D sequence"""
     with open(filepath, 'w') as f:
         writer = csv.writer(f)
         writer.writerows(data)
@@ -59,8 +60,43 @@ def write_strings():
         writer.writerows(data)
 
 
+def write_unicode():
+    """
+    The CSV module does NOT support unicode. What does this mean? It means that:
+    - I cannot use io.open() in 'w' mode, with or without the 'encoding' parameter
+    - I can only use io.open() in 'wb' mode, which doesn't accept an 'encoding' parameter. 
+        - Given that, if I try to write a unicode object anyway I could get a UnicodeDecodeError because the csv writer tries to encode the unicode
+          object into ascii.
+        - If I try to write a str object, csv writer will happily write the bytes to the file without trying to encoding anything because it thinks
+          the str object is already encoded properly
+    """
+    u = 'aaaàçççñññ'
+    print(type(u)) # <type 'str'>
+    #u = u'aaaàçççñññ'
+    #print(type(u)) # <type 'unicode'>
+    #u = u.encode('ascii') # UnicodeEncodeError
+    with io.open(os.path.join(os.path.dirname(__file__), 'my-csv.csv'), 'wb') as f:
+        writer = csv.writer(f)
+        writer.writerow(u) # Possible UnicodeEncodeError IF 'u' is a unicode object
+
+
+def dict_writer():
+    '''
+    The beauty of a DictWriter is that 1) I can specify the order of the columns with ease and 2) it doesn't matter what order the data dictionaries
+    are, because dictionaries are unordered!
+    '''
+    with open(filepath, 'w') as f:
+        dw = csv.DictWriter(f, fieldnames=('name', 'age', 'favorite'), restval='None')
+        dw.writeheader()
+        dw.writerow({'name': 'Austin', 'age': 99, 'favorite': 'table'})
+        dw.writerow({'favorite': True, 'name': 'Foo', 'age': -1})
+        dw.writerow({'age': 5, 'name': 'Dude'})
+
+
 if __name__ == "__main__":
-    basic_write()
+    #basic_write()
     #examine_excel_dialect()
     #write_header()
     #write_strings()
+    #write_unicode()
+    dict_writer()

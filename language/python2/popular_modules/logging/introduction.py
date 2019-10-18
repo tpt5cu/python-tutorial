@@ -24,7 +24,7 @@ def log_to_console():
           will make an initial call to basicConfig() on their own
         - basicConfig() does nothing if the root logger already has a handler configured for it
     """
-    logging.basicConfig(level=logging.DEBUG) # This must be called first to attached a configured handler that I want
+    logging.basicConfig(level=logging.DEBUG) # This must be called first to attach a configured handler that I want
     logging.debug("Debug message") # Only shows up in console stderr because I configured it so
     logging.warning("This is a warning!")
     #logging.basicConfig(level=logging.DEBUG) # Does nothing because there was an earlier logging.debug() call
@@ -52,9 +52,6 @@ def format_output():
     format_string = "%(filename)s %(funcName)s %(levelname)s %(message)s %(asctime)s" # This works
     logging.basicConfig(filename=filepath, filemode='w', format=format_string)
     logging.error("There was a big bad error!")
-
-
-"""There's a lot more just to the tutorial!"""
 
 
 if __name__ == "__main__":

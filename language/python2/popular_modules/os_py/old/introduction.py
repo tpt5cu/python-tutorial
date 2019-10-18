@@ -1,7 +1,5 @@
-"""
-https://docs.python.org/2.7/library/os.html
-https://stackoverflow.com/questions/3964681/find-all-files-in-a-directory-with-extension-txt-in-python
-"""
+# https://docs.python.org/2.7/library/os.html
+# https://stackoverflow.com/questions/3964681/find-all-files-in-a-directory-with-extension-txt-in-python
 
 
 """ 

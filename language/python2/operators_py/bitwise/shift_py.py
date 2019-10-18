@@ -2,6 +2,8 @@
 # https://stackoverflow.com/questions/5832982/how-to-get-the-logical-right-binary-shift-in-python
 
 
+"""Python only has an arithmetic right shift operator"""
+
 """
 - Logical right shift always shifts in 0s from the left side
 - Arithmetic right shift always copies the sign bit when shifting in from the left side
@@ -17,6 +19,10 @@ def arithmetic_right_shift():
 
 
 def my_logical_right_shift():
+    pass
+
+
+def left_shift():
     pass
 
 

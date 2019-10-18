@@ -1,6 +1,9 @@
+# -*- coding: UTF-8 -*-
+
 # https://docs.python.org/2/library/stdtypes.html#string-methods - built-in methods on str objects
 # https://docs.python.org/2/library/stdtypes.html#sequence-types-str-unicode-list-tuple-bytearray-buffer-xrange - sequence-type methods that all sequence types (including strings) support
 # https://docs.python.org/2/library/string.html - the string module (not same as built-in str)
+# https://stackoverflow.com/questions/1207457/convert-a-unicode-string-to-a-string-in-python-containing-extra-symbols - unicode to str
 
 
 import re
@@ -47,7 +50,7 @@ def regex_find():
 
 
 def equals():
-    """ Just use == to compare strings """
+    """Just use == to compare strings"""
     my_str = "hello there"
     print(my_str == "hello there\n") # False
     print(my_str.startswith("hello there\n")) # False
@@ -91,6 +94,38 @@ def get_lowercase():
     print(string.lower())
 
 
+def reverse_sentence_order():
+    """
+    The delimieter that will be used to join the iterable is defined by the invoking string literal. It's very strange, but that's how it works.
+    """
+    sentence = 'cats like catnip and rubs.'
+    my_list = list(reversed(sentence.split(' ')))
+    print(my_list) # ['rubs.', 'and', 'catnip', 'like', 'cats']
+    reversed_sentence = ' '.join(my_list)
+    print(reversed_sentence) # 'rubs. and catnip like cats'
+
+    my_list = list(reversed(re.split(r'\W*', sentence)))
+    print(my_list) # ['', 'rubs', 'and', 'catnip', 'like', 'cats']
+    reversed_sentence = ' '.join(my_list)
+    print(reversed_sentence) # ' rubs and catnip like cats'
+
+
+def unicode_to_str():
+    """
+    There are many ways of doing this. Check the source. Note that regardless of the approach, one of two things must happen to convert a unicode
+    object to a str object: 1) drop the unicode characters that cannot be encoded in extended ascii 2) replace those characters with something else
+    """
+    a = u'aaaàçççñññ'
+    print(type(a)) # <type 'unicode'>
+    print(a) # aaaàçççñññ
+    print(len(a)) # 10
+    b = a.encode('ascii', 'replace')
+    print(type(b)) # <type 'unicode'>
+    print(b) # aaa???????
+    print(len(b)) # 10
+    print(ord(b[9])) # 63 is question mark in extended ascii, so the characters really are replaced
+
+
 if __name__ == "__main__":
     #strip_py()
     #rstrip_py()
@@ -102,4 +137,6 @@ if __name__ == "__main__":
     #string_to_list()
     #get_individual_lines()
     #check_beginning_and_end()
-    get_lowercase()
+    #get_lowercase()
+    #reverse_sentence_order()
+    unicode_to_str()

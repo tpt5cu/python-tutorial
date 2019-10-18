@@ -4,9 +4,7 @@
 import os
 
 
-"""
-The file checking operations seem to mostly be in the os.path module as opposed to the os module.
-"""
+'''The file checking operations seem to mostly be in the os.path module as opposed to the os module.'''
 
 
 def file_exists():

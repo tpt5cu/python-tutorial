@@ -14,6 +14,24 @@
 my_global = "default global variable"
 
 
+def read_global_variable():
+    """A global variable can be read just fine"""
+    print(my_global) # default global variable
+
+
+def write_global_variable():
+    """
+    Assigning a global variable inside of a function actually creates a local variable that shadows the global variable. Once the shadowing local
+    variable has been created, the global variable cannot be accessed
+    """
+    global my_global
+    print(my_global) # default global variable
+    my_global = 'local variable'
+    print(my_global) # local variable
+    global my_global
+    print(my_global) # local variable
+
+
 class MyClass(object):
 
     def __int__(self):
@@ -26,7 +44,7 @@ class MyClass(object):
 
     def succeed_set_global(self):
         global my_global
-        my_global = "Succeed clas set global variable."
+        my_global = "Succeed class set global variable."
 
 
 def class_fail_set_gloabl():
@@ -67,16 +85,16 @@ def fail_set_global_variable():
 
 
 def succeed_set_global_variable():
-    """
-    The "global" keyword must be used to read AND write a global variable inside of a function or class.
-    """
+    """The "global" keyword must be used to read AND write a global variable inside of a function or class."""
     print(my_global) # default global variable
     set_global_variable()
     print(my_global) # Changed the global variable
 
 
 if __name__ == "__main__":
+    #read_global_variable()
+    write_global_variable()
     #class_fail_set_gloabl()
     #class_succeed_set_global()
-    fail_set_global_variable()
+    #fail_set_global_variable()
     #succeed_set_global_variable()

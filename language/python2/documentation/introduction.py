@@ -4,22 +4,13 @@
 
 """
 Sphinx is the most popular documentation engine for Python.
-"""
 
-
-"""
 PEP 484 for Python 3.5 added type hinting to allow a programmer to document function parameters. It also specified an optional syntax for doing the same thing in
 Python 2.7. The "# type: (param1 type, param2 type, ...) -> <return value> " annotation must go BEFORE the docstring.
-"""
 
-
-"""
 It seems that docstring conventions in Python are quite loose, so I shouldn't worry about using a specific format. I should only worry about writing
 docstrings that the rest of the team can understand.
-"""
 
-
-"""
 I like the idea of separating the type annotation from the docstring. The docstring does not mention types (except for perhaps the return type), so if
 the function changes, the docstring is less likely to need a change. Default arguments need no type annotation.
 

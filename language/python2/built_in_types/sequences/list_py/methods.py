@@ -22,12 +22,17 @@ def extend_py():
     """
     extend() only takes 1 iterable argument, but the elements inside of that argument are appended to the list directly. This is an in-place
     modification!
+    - The other sequence that is being used to extend the target list is unchanged
     """
     my_list = [1, 2, 3]
-    my_list.extend([4, 5])
-    print(my_list) #[1, 2, 3, 4, 5] This is what I want
+    other = [4, 5]
+    my_list.extend(other)
+    print(other) # [4, 5]
+    print(my_list) #[1, 2, 3, 4, 5]
     my_list.extend(("cat", "dog", "bog"))
-    print(my_list)
+    print(my_list) # [1, 2, 3, 4, 5, 'cat', 'dog', 'bog']
+    my_list.extend('hi')
+    print(my_list) # [1, 2, 3, 4, 5, 'cat', 'dog', 'bog', 'h', 'i']
 
 
 def remove_py():
@@ -53,7 +58,7 @@ def find_element():
 def shift():
     """Insertion and popping are in-place operations, so shifting is an in-place operation."""
     my_list = [1, 2, 3, 4, 5]
-    my_list.insert(0, my_list.pop())
+    my_list.insert(0, my_list.pop()) # Remove the last item, return it, then reinsert that item as the first item in the list
     print(my_list)
 
 

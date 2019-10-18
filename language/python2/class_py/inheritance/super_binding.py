@@ -1,6 +1,6 @@
 # https://stackoverflow.com/questions/22403897/what-does-it-mean-by-the-super-object-returned-is-unbound-in-python - not too helpful
 # https://www.artima.com/weblogs/viewpost.jsp?thread=236278 - unbound super is bad
-# # https://rhettinger.wordpress.com/2011/05/26/super-considered-super/ - finer details of super() usage not in these notes
+# https://rhettinger.wordpress.com/2011/05/26/super-considered-super/ - finer details of super() usage not in these notes
 
 
 """

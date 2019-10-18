@@ -7,7 +7,7 @@ import io, codecs, fcntl, os, time
 
 def io_open_identity():
     """
-    io.open is identical to open is False for Python 2, but True for Python 3 as expected.
+    "io.open is open" is False for Python 2, but True for Python 3 as expected.
     - In Python 3, both file objects are instances of <class '_io.TextIOWrapper'>
     """
     print(io.open is open)

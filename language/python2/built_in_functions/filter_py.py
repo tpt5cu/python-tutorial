@@ -5,15 +5,15 @@
 
 
 def filter_list():
-    """ filtering any iterable (except a string or tuple) will return a list """
+    """filtering any iterable (except a string or tuple) will return a list """
     numbers = [1, 2, 3, 4, 5]
     less_than = filter(lambda x: x <=3, numbers)
-    print(less_than)
-    print(type(less_than))
+    print(less_than) # [1, 2, 3]
+    print(type(less_than)) # <type 'list'>
 
 
 def filter_tuple():
-    """ filtering a tuple always returns a tuple """
+    """filtering a tuple always returns a tuple"""
     booleans = (True, False, False, False, True, -1, 0, 1, 2, "", "yay")
     # filter() when function = None simply returns an element if it is True (i.e. also return non-zero numbers, non-empty strings)
     truthy = filter(None, booleans)
@@ -37,7 +37,7 @@ def filter_opposite():
 
 
 if __name__ == "__main__":
-    #filter_list()
+    filter_list()
     #filter_tuple()
     #filter_string()
-    filter_opposite()
+    #filter_opposite()

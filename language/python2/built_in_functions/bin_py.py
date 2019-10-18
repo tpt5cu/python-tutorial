@@ -1,8 +1,12 @@
 # https://docs.python.org/2.7/library/functions.html#bin
 # https://stackoverflow.com/questions/34300336/negative-numbers-to-binary-system-with-python
+# https://stackoverflow.com/questions/9829578/fast-way-of-counting-non-zero-bits-in-positive-integer
 
 
-"""Unfortunately, the immutable str type is no good for any bitwise operations"""
+"""
+- Unfortunately, the immutable str type is no good for any bitwise operations
+- Also, Python does not have built-in unsigned integers
+"""
 
 
 def examine_bin():
@@ -25,36 +29,12 @@ def print_binary_representation():
     - 
     """
     print(bin(-1)) # -0b1
-    simulated_word_size = -1 % 2**32
-    print(bin(simulated_word_size))
+    simulated_word_size = -1 % 2**32 # This is 2^32 - 1, or '00000000 11111111 11111111 11111111 11111111', which is one less than 2^32, or '00000001 00000000 00000000 00000000 00000000'
+    print(bin(simulated_word_size)) # 0b1111 1111 1111 1111 1111 1111 1111 1111
     print(bin(simulated_word_size).count('1')) # 32
-
-
-
-def count_set_bits(num):
-    """
-    This needs to work with negative numbers. 
-    """
-    neg = False
-    if num < 0:
-        num = ~num
-        neg = True
-    print(num)
-    print(bin(num))
-    print('set_bits: {}'.format(bin(num).count('1')))
-    set_bits = 0
-    while num != 0:
-        if neg:
-            set_bits += num ^ 1
-        else:
-            set_bits += num & 1
-        num >>= 1
-    return set_bits
-
+    print(bin(simulated_word_size) == bin(2**32 - 1)) # True
 
 
 if __name__ == '__main__':
     #examine_bin()
     print_binary_representation()
-    #print('Counted {} set bits'.format(count_set_bits(6003))) # 9
-    #print('Counted {} set bits'.format(count_set_bits(-1)))

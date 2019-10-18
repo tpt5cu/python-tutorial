@@ -11,6 +11,7 @@ the argument was not the expected type in the except-block. I'm also supposed to
 
 def is_string():
     print(isinstance("hello", str)) # True
+    print(isinstance(u'goodbye', basestring)) # True
     print(isinstance(True, str)) # False
 
 def is_int():
@@ -31,7 +32,7 @@ def get_float():
     print(my_float) # 5.0, None
 
 if __name__ == "__main__":
-    #is_string()
+    is_string()
     #is_int()
     #is_float()
-    get_float()
+    #get_float()

@@ -4,6 +4,7 @@
 
 """An enumerate object merely wraps another iterator with a convenience index"""
 
+
 def examine_enumerate():
     """
     enumerate() returns an enumerate object which is itself an iterator, so its values are returned on demand. An enumerate object returns an index

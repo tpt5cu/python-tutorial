@@ -1,9 +1,9 @@
+# https://stackoverflow.com/questions/32053618/how-to-to-terminate-process-using-pythons-multiprocessing
+# https://pymotw.com/2/multiprocessing/basics.html
+
+
 import multiprocessing, time
 
-"""
-https://stackoverflow.com/questions/32053618/how-to-to-terminate-process-using-pythons-multiprocessing
-https://pymotw.com/2/multiprocessing/basics.html
-"""
 
 def slow_worker():
     print 'Starting worker'
@@ -27,6 +27,7 @@ def terminate_and_join():
 
     p.join()
     print 'JOINED:', p, p.is_alive() # False
+
 
 def terminate_no_join():
     p = multiprocessing.Process(target=slow_worker)

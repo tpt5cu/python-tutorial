@@ -71,17 +71,32 @@ class EdtTzinfo(tzinfo):
     def dst(self, dt):
         return timedelta(0)
 
+def _tests():
+    '''
+    - I want 89 * 24 = 2136 samples
+    - End date needs to be October 14th. Why? Because that's an actual 89 days!
+
+    '''
+    print(len([0] * 2136)) # 2136
+    start_date = datetime(2019, 7, 17)
+    #end_date = datetime(2019, 10, 13, 23)
+    end_date = datetime(2019, 10, 14)
+    sample_number = 2136
+    td = timedelta(milliseconds=(end_date - start_date).total_seconds() / float(sample_number) * 1000)
+    final_date = start_date + td * 2135
+    print(final_date.strftime('%x %X')) # 10/13/19 22:00:01
 
 
 if __name__ == '__main__':
     #subtract_naive_datetime_objects()
     #subtract_aware_datetime_objects()
-
     #08/25/2019 07:58:21
-    print(datetime_to_seconds(datetime(2019, 8, 25, 7, 58, 21))) # 1566719901.0
-
-    print(datetime_to_seconds(datetime(2019, 7, 29, 13, 51, 46))) # 1564408306.0
-    print(datetime_to_seconds(datetime(2019, 7, 17))) # 1563321600.0
-    print(datetime_to_seconds(datetime(2019, 6, 16, 12))) # 1560686400.0
-    print(datetime_to_seconds(datetime(2018, 6, 16, 12))) # 1529150400.0
-    print(datetime_to_seconds(datetime(2018, 2, 16, 12))) # 1518782400.0
+    #print(datetime_to_seconds(datetime(2019, 8, 25, 7, 58, 21))) # 1566719901.0
+    # 10/05/2019 00:00:00
+    #print(datetime_to_seconds(datetime(2019, 10, 5))) # 1570233600.0
+    #print(datetime_to_seconds(datetime(2019, 7, 29, 13, 51, 46))) # 1564408306.0
+    #print(datetime_to_seconds(datetime(2019, 7, 17))) # 1563321600.0
+    #print(datetime_to_seconds(datetime(2019, 6, 16, 12))) # 1560686400.0
+    #print(datetime_to_seconds(datetime(2018, 6, 16, 12))) # 1529150400.0
+    #print(datetime_to_seconds(datetime(2018, 2, 16, 12))) # 1518782400.0
+    _tests()

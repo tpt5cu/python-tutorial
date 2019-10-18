@@ -1,0 +1,2 @@
+- If I were explaining how to step through a problem to someone else, what would I do?
+    - I could go through basic, better, and best solutions to a problem and understand all of them

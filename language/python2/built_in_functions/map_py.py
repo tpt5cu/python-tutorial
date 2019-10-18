@@ -1,8 +1,4 @@
-
-
-"""
-In Python 2, map() returns a list. In Python 3, map() returns a generator. THIS IS IMPORTANT FOR MATPLOTLIB.
-"""
+"""In Python 2, map() returns a list. In Python 3, map() returns a generator. THIS IS IMPORTANT FOR MATPLOTLIB."""
 
 
 def divide_list_elements():

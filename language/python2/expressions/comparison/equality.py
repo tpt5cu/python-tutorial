@@ -8,9 +8,11 @@ def is_py():
     list_a = ["hello there"]
     list_b = ["hello there"]
     # This is false because a and b are two completely different lists that happen to have identical contents
-    print(list_a is list_b)
-    # This is true since the lists have the same value
-    print(list_a == list_b)
+    print(list_a is list_b) # False
+    # This is true since the lists have the same value. The underlying __eq__() method must be being used
+    print(list_a == list_b) # True
+    print(hasattr(list, '__cmp__')) # False
+    print(hasattr(list, '__eq__')) # True
 
 
 def equals_py():
@@ -26,9 +28,6 @@ def equals_py():
     print(list_a == list_b)
     # This is true
     print(list_a == list_c)
-
-
-def equals
 
 
 def equals_with_order():
@@ -64,8 +63,7 @@ def none_py():
     confusing)
     """
     d = {}
-    # Is true but this is bad
-    print(d.get("thing") == None)
+    print(d.get("thing") == None) # True, but this is bad
     print(d.get("thing") is None)
 
 
@@ -80,8 +78,8 @@ def check_boolean():
 
 
 if __name__ == "__main__":
-    #py_is()
+    is_py()
     #py_equals()
     #equals_with_order()
     #none_py()
-    check_boolean()
+    #check_boolean()

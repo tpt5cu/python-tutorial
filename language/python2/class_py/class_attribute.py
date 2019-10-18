@@ -13,7 +13,7 @@ class Book(object):
     publisher = 'We Publish Books'
     editions = [1990, 1995]
 
-    def __init__(self, title='The Best Book', author='Austin Chang'):
+    def __init__(self, title='The Best Book', author='Austin Chang' ):
         self.title = title
         self.author = author
 
@@ -31,6 +31,12 @@ class Book(object):
     def get_editions_static():
         """Class attributes are not visible in static methods!!!"""
         return editions
+
+
+def test_class_attribute_visibility():
+    '''Instances have access to class attributes, so of course they are visible!'''
+    b = Book()
+    print(b.editions)
 
 
 def modify_mutable_class_attribute():
@@ -76,10 +82,10 @@ def reassign_class_attribute():
 
 
 if __name__ == '__main__':
-    b = Book()
+    test_class_attribute_visibility()
+    #b = Book()
     #b.get_editions()
     #Book.get_editions_class()
     #Book.get_editions_static()
     #modify_mutable_class_attribute()
-    reassign_class_attribute()
-    
+    #reassign_class_attribute()

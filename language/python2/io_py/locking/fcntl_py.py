@@ -37,9 +37,7 @@ def use_fcntl():
 
 
 def write_with_fcntl(sleep_time):
-    """
-    I haven't been able to get fcntl.fcntl() to work at all!
-    """
+    """I haven't been able to get fcntl.fcntl() to work at all!"""
     filepath = os.path.join(os.path.dirname(__file__), 'test.txt')
     # This string is encoded in utf8. This is only needed in Python 2, in Python 3 unicode() is undefined
     string = unicode('hello from io_open_locking()😀', 'utf8') # Python 2

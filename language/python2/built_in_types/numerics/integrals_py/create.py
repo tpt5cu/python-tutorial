@@ -26,6 +26,6 @@ def literal_representations():
 
 
 if __name__ == "__main__":
-    long_integer()
+    #long_integer()
     #different_base()
-    #literal_representations()
+    literal_representations()

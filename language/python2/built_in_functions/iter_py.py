@@ -11,8 +11,8 @@ def get_iterator_object():
     print(type(syntactic_sugar_iterator)) # <type 'listiterator'>
     iterator = my_list.__iter__()
     print(type(iterator)) # <type 'listiterator'>
-    iterator2 = my_list.__iter__()
     print(syntactic_sugar_iterator == iterator) # False
+    iterator2 = my_list.__iter__()
     print(iterator == iterator2) # False
 
 

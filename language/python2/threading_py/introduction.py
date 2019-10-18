@@ -8,7 +8,7 @@ import time, threading
 
 
 """
-In C-Python (my implementation of Python), the GIL only allows a single thread can execute Python code at a time. That means threading is only useful
+In C-Python (my implementation of Python), the GIL only allows a single thread to execute Python code at a time. That means threading is only useful
 for simultaneous I/O bound tasks
 """
 
@@ -19,7 +19,7 @@ def print_numbers(limit, snooze, space):
         time.sleep(snooze)
         
 
-def create_and_run_threads():
+def spawn_threads():
     """The threading interface is very similar to the multiprocessing interface (or should I say it's the other way around)."""
     t0 = threading.Thread(target=print_numbers, args=[10, 0.9, ""]) 
     t1 = threading.Thread(target=print_numbers, args=[7, 1, "   "])
@@ -35,7 +35,7 @@ def run_daemon_thread():
     - The entire Python process shuts down when only daemon threads are remaining. Thus, if a thread is a daemon, the entire Python process can shut
       it down abruptly without properly disposing of resources
     - If a thread is not a daemon, the entire Python process must wait for the thread to finish
-        - In the source, all sunch non-daemonic threads are join()-ed to the main thread
+        - In the source, all such non-daemonic threads are join()-ed to the main thread explicitly
     """
     daemon = threading.Thread(target=print_numbers, args=[100, 1, ""])
     daemon.daemon = True
@@ -43,15 +43,19 @@ def run_daemon_thread():
 
 
 def run_and_join():
-    """Whether or not a thread is a daemon, if it is joined then the entire Process will wait for it to finish before terminating"""
+    """
+    Whether or not a thread is a daemon, if it is joined to the main thread, then the main thread will wait for the other thread to finish before
+    continuing execution. 
+    """
     daemon = threading.Thread(target=print_numbers, args=[10, 1, ""])
     daemon.daemon = True
     daemon.start()
     daemon.join()
+    print("After the join")
 
 
 if __name__ == "__main__":
-    #create_and_run_threads()
+    #spawn_threads()
     #run_daemon_thread() # This will only count up as long as the main thread is alive
-    #run_and_join()
+    run_and_join()
     print("main thread finished")
