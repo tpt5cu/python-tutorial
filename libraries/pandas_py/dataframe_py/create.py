@@ -2,7 +2,7 @@
 # https://pandas.pydata.org/pandas-docs/stable/reference/frame.html#conversion
 # https://docs.scipy.org/doc/numpy/user/basics.types.html - basic numpy dtypes
 # https://pandas.pydata.org/pandas-docs/stable/getting_started/basics.html#basics-dtypes - show the extensions that pandas makes to numpy dtypes
-d
+
 
 import random
 import numpy as np
@@ -17,6 +17,34 @@ A dataframe is basically a 2D matrix, except that the rows and columns are label
     - dtype: the data type will be inferred if this argument is not passed.
     - copy: whether or not to copy the data from the data input. 
 """
+
+
+def get_mixed_matrix():
+    '''Return a 10 x 10 2d matrix that is a list of lists'''
+    words = ["Returns", "a", "new", "list", "containing", "elements", "from", "the", "population", "while", "leaving", "the", "original", "population", "unchanged.", "The", "resulting", "list", "is", "in", "selection", "order", "so", "that", "all", "sub-slices", "will", "also", "be", "valid", "random", "samples.", "This", "allows", "raffle", "winners", "(the", "sample)", "to", "be", "partitioned", "into", "grand", "prize", "and", "second", "place", "winners", "(the", "subslices)."]
+    matrix = []
+    for x in range(10):
+        my_list = []
+        if x % 2 == 0:
+            for y in range(10):
+                my_list.append(random.randint(0, 100))
+        else:
+            for y in range(10):
+                my_list.append(random.choice(words))
+        matrix.append(my_list)
+    return matrix
+
+
+def get_numeric_matrix():
+    '''Return a 10 x 10 2d matrix that is a list of lists''' 
+    return [[random.randint(0, 100) for _ in range(10)] for _ in range(10)]
+    #matrix = []
+    #for x in range(10):
+    #    my_list = []
+    #    for y in range(10):
+    #        my_list.append(random.randint(0, 100))
+    #    matrix.append(my_list)
+    #return matrix
 
 
 def empty_dataframe():

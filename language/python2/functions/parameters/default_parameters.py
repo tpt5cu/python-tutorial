@@ -4,8 +4,6 @@
 import tempfile, random
 
 
-
-
 def modify_mutable_list():
     """
     Default parameters are evaluated exactly 1 time: when a function is created. Thus, the same mutable default parameter could be used for every call

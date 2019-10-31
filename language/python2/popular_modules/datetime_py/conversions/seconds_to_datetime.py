@@ -15,12 +15,6 @@ def get_utc_datetime_from_seconds(seconds):
     print(dt)
 
 if __name__ == '__main__':
+    #get_utc_datetime_from_seconds(1560686400) # 2019-06-16 12:00:00
     #get_local_datetime_from_seconds(1563321600) # 2019-07-16 20:00:00
-    #get_utc_datetime_from_seconds(1563321600) # 2019-07-17 00:00:00
-    #get_utc_datetime_from_seconds(1560686400) # 2019-06-16 12:00:00
-    #get_utc_datetime_from_seconds(1560686400) # 2019-06-16 12:00:00
-    #get_utc_datetime_from_seconds(1565879844) # 2019-08-15 14:37:24
-    #get_utc_datetime_from_seconds(1568438088) # 2019-09-14 05:14:48
-
-    #https://wemc.gridstate.io/dyn/current/projects/default_project/lastval?maxtime=1568438088925&lag=600&offset=0
-    #https://wemc.gridstate.io/dyn/current/projects/default_project/lastval?maxtime=1565879844462&lag=600&offset=0
+    get_utc_datetime_from_seconds(1564365600) # 2019-07-29 02:00:00

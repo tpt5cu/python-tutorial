@@ -1,7 +1,5 @@
-"""
-https://stackoverflow.com/questions/22825349/converting-between-datetime-and-pandas-timestamp-objects
-https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Timestamp.html
-"""
+# https://stackoverflow.com/questions/22825349/converting-between-datetime-and-pandas-timestamp-objects
+# https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Timestamp.html
 
 
 import pandas as pd

@@ -34,4 +34,3 @@ def view_exception_message():
 
 if __name__ == "__main__":
     view_exception_message()
-    

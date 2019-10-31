@@ -2,6 +2,13 @@
 # https://stackoverflow.com/questions/18493677/how-do-i-return-a-string-from-a-regex-match-in-python
 # https://docs.python.org/2/library/re.html#module-contents - re flags
 
+# https://regexone.com/references/python2 - excellent tutorial for Python 2
+
+
+'''
+Fun fact: the Python 2/3 re module is not fully PCRE (Perl Compatible Regular Expressions) compatible, but it gets pretty close.
+'''
+
 
 import re
 
@@ -80,8 +87,34 @@ def get_numbers_from_string():
     #print(mo.group(2))
 
 
+def match_vs_search():
+    '''
+    - re.match() only returns a MatchObject if the regex matched from the beginning of the string onwards.
+        - A MatchObject returned from match() does NOT mean that the entire string matched the regex
+        - Thus, match() seems more like a convenience function than anything. I suppose the function is useful in communicating intent
+    - re.search() returns a MatchObject if there was a match anywhere in the string
+    '''
+    string = '9feeder1beads'
+    rgx = re.compile(r'[a-z]+\d')
+    # match() found a valid match that started from the beginning of the string
+    mo = rgx.match(string) # MatchObject was None
+    #print(mo.group()) 
+    mo = rgx.search(string)
+    print(mo.group()) # feeder1
+
+
+def match_entire_string():
+    good_string = 'feeder1'
+    #bad = 'feeder1a'
+    #entire_string = re.compile(r'^[a-z]+\d$')
+    substring = re.compile(r'[a-z]+\d')
+    mo = substring.search(good_string)
+    print(mo.groups())
+
+
 if __name__ == "__main__":
     #examine_match_object()
-    find_all_matches()
+    #find_all_matches()
     #string_to_list()
     #get_numbers_from_string()
+    match_entire_string()

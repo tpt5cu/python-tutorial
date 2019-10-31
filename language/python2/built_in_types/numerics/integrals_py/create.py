@@ -22,7 +22,8 @@ def literal_representations():
     print(0X9) # 9
     print(0o11) # 9
     print(0O11) # 9
-    print(9L) # 9
+    print(9L) # 9 # SyntaxError in Python 3
+    print(0600) # 8^2 * 6 = 384, SyntaxError in Python 3
 
 
 if __name__ == "__main__":

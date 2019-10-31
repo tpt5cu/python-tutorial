@@ -1,4 +1,3 @@
-
 def unpack_dictionary(name, age):
     """The ** syntax is also used to unpack a dictionary into a function that is being invoked"""
     print(name)
@@ -9,9 +8,7 @@ def unpack_dictionary(name, age):
 #def use_kwargs(**kwargs, age):
 #def use_kwargs(**kwargs, *args):
 def use_kwargs(color, *args, **kwargs):
-    """
-    - **<whatever> (commonly "**kwargs") is a regular old dictionary
-    """
+    """**<whatever> (commonly "**kwargs") is a regular old dictionary"""
     print('color: {}'.format(color))
     #print(type(kwargs)) # <type 'dict'>
     print(kwargs) # {'favorite': 'pie', 'name': 'Austin'}
@@ -27,9 +24,11 @@ if __name__ == '__main__':
     - The keyword argument 'color' correctly fills in its assigned parameter, and is not included in **kwargs
         - Even if the 'color' argument is out of order, it still works just fine
     - If a keyword argument and a positional argument both fill in the same parameter, a TypeError is raised. Great!
+    - An empty dictionary can be unpacked in a function call with no ill effects
     """
-    use_kwargs(color='yellow', name='Austin', favorite='pie') # works fine
-    use_kwargs(name='Austin', favorite='pie', color='yellow') # Also works fine even though color is 'out of order'
+    #use_kwargs(color='yellow', name='Austin', favorite='pie') # works fine
+    #use_kwargs(name='Austin', favorite='pie', color='yellow') # Also works fine even though color is 'out of order'
     #use_kwargs('blue', color='yellow', name='Austin', favorite='pie') # TypeError
+    use_kwargs('green', 'Bill', **{})
     #unpack_dictionary(**{'name': 'Austin', 'age': '5'})
     #unpack_dictionary(*['Austin', '5']) # This works too!

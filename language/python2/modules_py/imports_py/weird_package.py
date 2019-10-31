@@ -26,12 +26,12 @@ Come back to this. It's complicated. 4/26/19
 
 def inspect_py():
     # This shows me that there is indeed an email.mime module
-    #for x in inspect.getmembers(email):
-    #    print(x)
+    for x in inspect.getmembers(email):
+        print(x)
     # I don't see a "multipart" module inside of the email.mime module. What I do see is Multipart "LazyImporter" object. This is a custom class in
     # the email package.
-    #for x in inspect.getmembers(email.mime):
-    #    print(x)
+    for x in inspect.getmembers(email.mime):
+        print(x)
 
 def use_email_bad():
     """

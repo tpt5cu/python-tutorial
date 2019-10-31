@@ -90,13 +90,6 @@ def _tests():
 if __name__ == '__main__':
     #subtract_naive_datetime_objects()
     #subtract_aware_datetime_objects()
-    #08/25/2019 07:58:21
-    #print(datetime_to_seconds(datetime(2019, 8, 25, 7, 58, 21))) # 1566719901.0
-    # 10/05/2019 00:00:00
-    #print(datetime_to_seconds(datetime(2019, 10, 5))) # 1570233600.0
-    #print(datetime_to_seconds(datetime(2019, 7, 29, 13, 51, 46))) # 1564408306.0
-    #print(datetime_to_seconds(datetime(2019, 7, 17))) # 1563321600.0
-    #print(datetime_to_seconds(datetime(2019, 6, 16, 12))) # 1560686400.0
-    #print(datetime_to_seconds(datetime(2018, 6, 16, 12))) # 1529150400.0
-    #print(datetime_to_seconds(datetime(2018, 2, 16, 12))) # 1518782400.0
-    _tests()
+    #_tests()
+    #07/29/2019 02:00:00
+    print(datetime_to_seconds(datetime(2019, 7, 29, 2))) # 1564365600.0

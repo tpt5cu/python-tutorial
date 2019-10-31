@@ -7,7 +7,7 @@ from introduction import get_mixed_matrix
 
 
 def view_column_labels():
-    """ Don't use <DataFrame>.keys(). It doesn't do what I want """
+    """Don't use <DataFrame>.keys(). It doesn't do what I want"""
     df = pd.DataFrame(get_mixed_matrix())
     print(df)
     print(df.columns.tolist())

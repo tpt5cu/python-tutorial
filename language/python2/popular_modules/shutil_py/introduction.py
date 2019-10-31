@@ -37,9 +37,34 @@ def remove_directory_tree():
     shutil.rmtree(dir_path)
 
 
+def move():
+    '''
+    - move() will:
+        - Move a file from dir A to dir B
+            - If the file is moved from A to A, then the net result is that the file is renamed in A
+        - Move a directory from dir A to dir B
+            - If the directory is moved from A to A, then the net result is that the directory is renamed in A
+        - Move a directory from dir A to dir B (nonexistent)
+            - The net result is that the directory is renamed to be B
+        - Move a directory from dir A to dir B/C (both nonexistnet)
+            - Whatever nonexistent intermediary directories are needed will be created, then the directory will be renamed to be dir C
+    - move() will not:
+        - Move a file from dir A to dir B (nonexistent)
+            - The file just gets renamed to be dir B, which is confusing!
+        - Move a directory inside of itself
+    Under the hood, move() is just using os.reanme() and shutil.copy2()
+    '''
+    #shutil.move(os.path.join(os.path.dirname(__file__), 'src.txt'), os.path.join(os.path.dirname(__file__), 'src-dir'))
+    #shutil.move(os.path.join(os.path.dirname(__file__), 'src.txt'), os.path.join(os.path.dirname(__file__), 'made-up-dir'))
+    # shutil Error
+    #shutil.move(os.path.join(os.path.dirname(__file__), 'src-dir'), os.path.join(os.path.dirname(__file__), 'src-dir/hello'))
+    #shutil.move(os.path.join(os.path.dirname(__file__), 'src-dir'), os.path.join(os.path.dirname(__file__), 'inner-dir/whatever/yes'))
+
+
 if __name__ == "__main__":
     #print(os.path.dirname(__file__)) # /Users/austinchang/tutorials/python/language/python2/popular_modules/shutil_py
     #print(os.getcwd()) # /Users/austinchang/tutorials/python/language
     #copy_file()
-    copy()
+    #copy()
     #remove_directory_tree()
+    move()

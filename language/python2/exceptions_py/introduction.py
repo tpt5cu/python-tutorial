@@ -1,7 +1,7 @@
+# https://docs.python.org/2.7/library/exceptions.html - list of built-in exception, includes hierarchy at the end
 # https://realpython.com/python-exceptions/
 # https://stackoverflow.com/questions/2903827/why-are-python-exceptions-named-error
 # https://docs.python.org/2.7/tutorial/errors.html
-# https://riptutorial.com/python/example/5535/exception-hierarchy - very useful hierarchy
 # https://portingguide.readthedocs.io/en/latest/exceptions.html - don't rely on StandardError because Python 3 doesn't use it and porting Python 2
 # code is hard
 

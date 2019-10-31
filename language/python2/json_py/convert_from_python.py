@@ -36,7 +36,7 @@ def write_to_file():
 def write_to_string():
     """
     json.dump() and json.dumps() seem the same, but they are completely different. json.dumps() simply serializes the obj to a Python string that is
-    also formatted as valid json, as supposed to writing the json to a file.
+    also formatted as valid json, as opposed to writing the json to a file.
     """
     print(json.dumps(dictionary, indent=4))
 

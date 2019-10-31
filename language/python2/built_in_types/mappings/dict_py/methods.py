@@ -51,7 +51,10 @@ def value_iteration():
 
 
 def key_iteration():
-    """<dict>.keys() returns a list of the keys in a dictionary. Don't depend on any particular ordering of the list"""
+    '''
+    - <dict>.keys() returns a list of the keys in a dictionary. Don't depend on any particular ordering of the list
+    - <dict>.iterkeys() iterates over the keys instead of creating a list
+    '''
     my_dict = {
         'name': 'Maruy',
         'favorite': 'milk'
@@ -60,16 +63,18 @@ def key_iteration():
     print(type(keys)) # <type 'list'>
     for k in keys:
         print(k) # favorite name
+    for k in my_dict.iterkeys():
+        print(k)
 
 
 # Don't use
 def conditionally_insert_value():
     """
     <dict>.setdefault() is a shortcut for checking whether or not a key exists in a dictionary and then inserting it
-    - If the dictionary already contains the key, the return the value associated with the key
-    - If the dictionary does not contain the key, insert the key value pair and return the value that was just inserted
+    - If the dictionary already contains the key, insert the new value and return the existing key
+    - If the dictionary does not contain the key, insert the key-value pair and return the value that was just inserted
     - Actually, I shouldn't use this function. Why? Because the return value is the same whether or not the key was already in the dictionary. I can't
-      tell from the return value whether or not I inserted a new (key, value) or whether I accessed an existing (key, value)
+      tell from the return value whether or not I inserted a new key-value or whether I accessed an existing key-value
     """
     my_dict = {
         '1': 1,
@@ -101,11 +106,25 @@ def dynamic_dictionary_view():
         print(k)
 
 
+def get_similar_keys():
+    '''There is no convenient functionality built-in to the dict to do this'''
+    import re
+    d = {
+        'feeder1': 'great-feeder.omd',
+        'feeder2': 'other-feeder.omd',
+        'created': 'yesterday'
+    }
+    for k in d.iterkeys():
+        re.
+
+
+
+
+
 if __name__ == "__main__":
     #check_length()
     #key_value_iteration()
     #value_iteration()
     #key_iteration()
-    #conditionally_insert_value()
+    conditionally_insert_value()
     #dynamic_dictionary_view()
-    pass

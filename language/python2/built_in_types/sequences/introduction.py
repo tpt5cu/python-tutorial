@@ -45,16 +45,35 @@ def length():
 
 
 def slicing():
-    """
-    A slice of a sequence always returns another sequence of the same type. Some also support stepped-slicing with [i:j:k]
-    - Slicing is [<inclusive>: <exclusive>]
-    """
+    '''
+    A slice of a sequence always returns another sequence of the same type. Slicing is always performed from left to right. There is no such thing as a
+    reverse slice!
+    - Slicing is [<inclusive>:<exclusive>]
+    - Some also support stepped-slicing with [i:j:k].
+    '''
     tup_s = ("good", "stuff", "in", "here")[1:3]
     print(type(tup_s)) # <type 'tuple'>
     print(tup_s) # ("stuff", "in")
     str_s = "This is the best sentence ever"[0::2]
     print(str_s) # Ti stebs etneee
     print('hello'[0:3]) # hel
+
+
+def negative_index_slicing():
+    '''
+    A negative index is located relative to the right end of the sequence
+    - Exceeding the length of a sequence (either from the left or from the right) will not raise an Exception.
+    - "-0" is equivalent to "0" for slicing purposes
+    '''
+    l = ['apple', 'banana', 'orange']
+    # Think of negative indexes as starting from -1. Also remember that the right index is exclusive, but that's unrelated to whether the index is
+    # negative or not
+    print(l[0:-1]) # [0:-1] -> [0:len(l)-1] -> [0:3-1] -> [0:2] -> ['apple', 'banana']
+    print(l[0:-2]) # [0:-2] -> [0:len(l)-2] -> [0:3-2] -> [0:1] -> ['apple']
+    # Slice index is out of bounds, but interpeter doesn't care
+    print(l[0:-30]) # [0:-30] -> [0:len(l)-30] -> [0:3-30] -> [0:-27] -> []
+    # Right index is less than left index, so the slice must be empty
+    print(l[-2:0]) # [-2:0] -> [1:0] -> []
 
 
 def repetition():
@@ -68,4 +87,5 @@ def repetition():
 if __name__ == "__main__":
     #length()
     #slicing()
-    repetition()
+    negative_index_slicing()
+    #repetition()

@@ -1,5 +1,3 @@
-
-
 """
 With commas, separate arguments are passed to the print() function, and each argument gets printed separately. print() also happens to insert a single
 space between each argument.
