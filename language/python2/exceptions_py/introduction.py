@@ -45,7 +45,8 @@ def bare_except_alias():
     try:
         raise IOError("There was an IOError")
     #except as e: # SyntaxError
-    except as e: # e is an undefined variable, so this is also a SyntaxError
+    #except as e: # e is an undefined variable, so this is also a SyntaxError
+    except Error as e:
         print(e.message)
     print("Hello from bare_except_alias()")
 
@@ -81,9 +82,15 @@ def catch_system_exit():
         print("Do nothing because the exception was a SystemExit(0)")
 
 
+def create_exception_object():
+    '''Simply creating an exception object does not raise any exception, just like other languages'''
+    e = Exception()
+
+
 if __name__ == "__main__":
     #catch_all_explicit()
     #catch_all_implicit()
-    bare_except_alias()
+    #bare_except_alias()
     #catch_specific_exception()
     #catch_system_exit()
+    create_exception_object()

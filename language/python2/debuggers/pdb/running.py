@@ -1,7 +1,5 @@
 '''
-- $ restart
-    - restart the program that is being debugged. Preserve all breakpoints, history, action, debugger options, etc.
-    - Unfortunately, sometimes an exception is raised and pdb just exits
+Code control
 - $ s
     - execute the current line and stop inside a called function or in the current function
         - This WILL step into function calls
@@ -17,4 +15,11 @@
     - jump around (set the next line that will be executed).
 - $ return
     - continue unti the current function returns. Very useful!
+
+Global control
+- $ restart
+    - restart the program that is being debugged. Preserve all breakpoints, history, action, debugger options, etc.
+    - Unfortunately, sometimes an exception is raised and pdb just exits
+- $ exit
+    - terminate the program
 '''

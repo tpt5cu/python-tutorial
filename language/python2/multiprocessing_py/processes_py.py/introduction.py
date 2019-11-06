@@ -11,7 +11,7 @@ The multiprocessing module has a start() method. This start() method calls Popen
 inside of it. fork() is a system call that creates a child process with the same address space as the parent process. The address space is shared
 until the child or parent writes to the address space, at which point both processes get a unique copy of the data in the address space (see my
 notes).
-- The Popen() constructor is NOT the same the subprocess Popen().
+- The Popen() constructor is NOT the same the subprocess.Popen()
 """
 
 

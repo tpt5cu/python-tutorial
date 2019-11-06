@@ -16,6 +16,18 @@ r+, a+, w+ - open the file for reading and writing. Other conditions of the same
 """
 
 
+'''
+There two syntaxes are equivalent:
+
+with A() as a, B() as b:
+    suite
+
+with A() as a:
+    with B() as b:
+        suite
+'''
+
+
 def open_py():
     """
     open() returns a Python file object that is used to read/write the underlying file

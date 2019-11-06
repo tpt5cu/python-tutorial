@@ -39,16 +39,6 @@ def find_py():
     print(string.find("z"))
 
 
-def regex_find():
-    """
-    This doesn't belong here, but that's okay. Use re.search() to search the entire string for any occurance of <re>. Use re.match() to only search
-    from the beginning of the string.
-    """
-    string = "Hello567There"
-    mo = re.search(r"\d{3}", string)
-    print(mo.group(0))
-
-
 def equals():
     """Just use == to compare strings"""
     my_str = "hello there"
