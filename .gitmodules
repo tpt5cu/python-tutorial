@@ -1,0 +1,3 @@
+[submodule "language/python_27/language/python_27/debuggers/rpdb2/rpbd2"]
+	path = language/python_27/language/python_27/debuggers/rpdb2/rpbd2
+	url = https://github.com/bluebird75/winpdb.git
