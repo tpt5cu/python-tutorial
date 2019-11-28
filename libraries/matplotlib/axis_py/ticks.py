@@ -1,10 +1,8 @@
-"""
-https://matplotlib.org/3.1.0/api/_as_gen/matplotlib.pyplot.xticks.html - xticks on the pyplot object. Not object-oriented so not what I want
-https://matplotlib.org/3.1.0/gallery/text_labels_and_annotations/date.html - good example
-https://stackoverflow.com/questions/12608788/changing-the-tick-frequency-on-x-or-y-axis-in-matplotlib
-https://docs.python.org/3/library/datetime.html#strftime-strptime-behavior - format strings for Formatter objects
-https://stackoverflow.com/questions/1574088/plotting-time-in-python-with-matplotlib - how to plot time, NOT datetime, with matplotlib
-"""
+# https://matplotlib.org/3.1.0/api/_as_gen/matplotlib.pyplot.xticks.html - xticks on the pyplot object. Not object-oriented so not what I want
+# https://matplotlib.org/3.1.0/gallery/text_labels_and_annotations/date.html - good example
+# https://stackoverflow.com/questions/12608788/changing-the-tick-frequency-on-x-or-y-axis-in-matplotlib
+# https://docs.python.org/3/library/datetime.html#strftime-strptime-behavior - format strings for Formatter objects
+# https://stackoverflow.com/questions/1574088/plotting-time-in-python-with-matplotlib - how to plot time, NOT datetime, with matplotlib
 
 
 import datetime, random

@@ -1,9 +1,7 @@
-"""
-https://matplotlib.org/3.1.0/api/axes_api.html#matplotlib-axes - Axes doc
-https://matplotlib.org/3.1.0/api/_as_gen/matplotlib.figure.Figure.html#matplotlib.figure.Figure.add_subplot - basic add
-https://matplotlib.org/3.1.0/api/_as_gen/matplotlib.figure.Figure.html#matplotlib.figure.Figure.add_axes - complex add
-https://stackoverflow.com/questions/31726643/how-do-i-get-multiple-subplots-in-matplotlib
-"""
+# https://matplotlib.org/3.1.0/api/axes_api.html#matplotlib-axes - Axes doc
+# https://matplotlib.org/3.1.0/api/_as_gen/matplotlib.figure.Figure.html#matplotlib.figure.Figure.add_subplot - basic add
+# https://matplotlib.org/3.1.0/api/_as_gen/matplotlib.figure.Figure.html#matplotlib.figure.Figure.add_axes - complex add
+# https://stackoverflow.com/questions/31726643/how-do-i-get-multiple-subplots-in-matplotlib
 
 
 import numpy as np
@@ -46,9 +44,8 @@ def easy_way_with_grid_specification():
     plt.show()
 
 
-
 def complex_add_axes():
-    """ <Figure>.add_axes() requires me to specify the exact location of the Axes in the Figure, or to pass an existing Axes object as an argument """
+    '''Figure>.add_axes() requires me to specify the exact location of the Axes in the Figure, or to pass an existing Axes object as an argument'''
     fig = plt.figure()
     fig.add_axes()
 

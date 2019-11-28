@@ -10,12 +10,14 @@ from flask import url_for, session
 """
 The Flask test client, which is a wrapper around the Werkzeug test client, is pretty much exclusively for sending requests to the wrapped Flask
 application as well as keeping that corresponding request context around.
-- A Pytest fixture is only created when it is used by a test
 
-I can start a Flask applicatin with pdb, but then the stdout and stdin change so that I can't work with the debugger anymore in the console. It
+A Pytest fixture is only created when it is used by a test
+
+I can start a Flask application with pdb, but then the stdout and stdin change so that I can't work with the debugger anymore in the console. It
 appears that I'll have to use pdb destructively with 'import pdb; pdb.set_trace()'
 - At least it works!
 - After the initial pause with this line of code, then I can use pdb in the terminal like normal
+- This does not imply that regular pdb works with multiprocessing inside of Flask; it doesn't
 """
 
 
