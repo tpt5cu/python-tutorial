@@ -2,7 +2,7 @@
 # https://docs.python.org/2/reference/expressions.html#yieldexpr - generator implementation
 
 
-"""
+'''
 - A "generator function" is a function that when invoked returns an iterator (that iterator is known as a "generator"). This returned generator then
   controls the execution of the generator function
 - A call to the "generator function" always returns a NEW generator. It does NOT execute any part of the generator function itself. Only calls to the
@@ -15,14 +15,14 @@
     - If send(<arg>) was used to resume a generator, the result of the starting (i.e. current) yield expression is whatever <arg> was
 - The generator will continue executing until it finds the NEXT yield expression, at which point it returns the value and the process will repeat
   until StopIteration is raised
-"""
+'''
 
 
 def basic_generator():
-    """
+    '''
     This single yield expression must be contextualized in such a way that the function will loop back to it upon subsequent calls to next() or
     send().
-    """
+    '''
     my_list = [1, 2, 3, 4, 5]
     count = 0
     # Here, the first next() call executes but any subsequent next() call will raise StopIteration because the generator will exit without yielding
@@ -46,7 +46,7 @@ def use_basic_generator():
 
 
 def modifiable_generator():
-    """Even though this generator function doesn't have any parameters, the send() function can still modify its state"""
+    '''Even though this generator function doesn't have any parameters, the send() function can still modify its state'''
     print('Generator starting...')
     my_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     count = 0
@@ -64,14 +64,14 @@ def modifiable_generator():
 
 
 def modify_generator_state():
-    """
+    '''
     send(<arg>) does several things:
     - it sets the value of the CURRENT yield expression to <arg>
     - With this value accounted for, the generator continues executing as normal
     - send() returns a value through exactly the same execution process as next()!
-    - That's it! Just keep in mind a generator will often start and end on the SAME yield expression (except for of course the very first call to the
+    - That's it! Just keep in mind a generator almost always start and end on the SAME yield expression (except for of course the very first call to the
       generator)
-    """
+    '''
     gen = modifiable_generator() # initial generator call. Returns a new generator that has NOT started anything yet.
     # Skip numbers 5 - 8
     # enumerate() is NOT causing the generator to execute all at once, it's merely wrapping the generator
@@ -82,7 +82,7 @@ def modify_generator_state():
 
 
 def exception_handling_generator():
-    """If I expect to use throw() with a generator, the generator function must be written to handle such exceptions"""
+    '''If I expect to use throw() with a generator, the generator function must be written to handle such exceptions'''
     print('Generator starting...')
     my_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     count = 0
@@ -100,11 +100,11 @@ def exception_handling_generator():
 
 
 def raise_generator_exception():
-    """
+    '''
     Provided that the generator handles the raised exception, it handles the exception and then the yields the next value as normal.
     - If an exception is passed into the generator, and the generator does not catch the exception, the exception propagates to the caller as normal.
       Therefore, passing in a random exception to a generator is not helpful at all
-    """
+    '''
     gen = exception_handling_generator()
     for idx, val in enumerate(gen):
         print("outer: " + str(val))
@@ -114,13 +114,13 @@ def raise_generator_exception():
 
 
 def close_generator():
-    """
+    '''
     <gen>.close() raises GeneratorExit at the point where the generator was paused (i.e. the last yield expression). It does not return anything
     - Two things will cause <gen>.close() to return to the caller without incident:
       - It raises StopIteration by virtue of being already closed OR existing normally
       - It raises GeneratorExit because it didn't catch the GeneratorExit
     - If the generator yields a value, a RuntimeError is raised
-    """
+    '''
     gen = exception_handling_generator()
     for idx, val in enumerate(gen):
         print("outer: " + str(val))

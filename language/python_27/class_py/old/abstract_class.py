@@ -1,1 +1,0 @@
-# https://stackoverflow.com/questions/13646245/is-it-possible-to-make-abstract-classes-in-python

@@ -13,12 +13,13 @@ classes of type(a) excluding metaclasses." See the dir_py.py notes for which att
     - __dict__ of the class object
     - __dict__ of base classes according to __mro__
 - If a descriptor is involved, the look-up process can change slightly:
-    - data descriptors are referenced before instance attributes
-    - instance attributes are referenced before non-data descriptors
-    - non-data descriptors are referenced before class __dict__???. The link says that non-data descriptors come BEFORE regular old class attributes
+    - Data descriptors are referenced before instance attributes
+    - Instance attributes are referenced before non-data descriptors
+    - Non-data descriptors are referenced before class __dict__???.
+        - The link says that non-data descriptors come BEFORE regular old class attributes
 - Additionally, certain methods CAN also change the attribute look-up process:
-    - __getattribute__(): all new-style classes inherit from 'object'. Therefore, they all eventually call down to 'object.__getattribute__()' because
-      I haven't figured out how to implement __getattribute__() without then calling down to 'object.__getattribute__()' eventually
+    - __getattribute__(): all new-style classes inherit from 'object'. Therefore, they all eventually call down to 'object.__getattribute__()'
+        - I haven't figured out how to implement __getattribute__() without then calling down to 'object.__getattribute__()'
     - __getattr__(): __getattribute__() will ALWAYS be called before this method. This method will be invoked ONLY if it is found in the inheritance
       hierarchy and the attribute that is being looked-up does not exist anywhere else (i.e. does not exist in the instance __dict__, the class
       __dict__, etc.)
@@ -29,6 +30,16 @@ In a nutshell here is the look-up order for an attribute:
 3) Non-data descriptors anywhere in the inheritance hierarchy
 4) Regular class attributes in the inheritance hierarchy
 """
+
+
+'''
+object.__getattribute__() is the special sauce that makes Python's wacky attribute lookup process work. Why? Because this method is always called in
+any attribute lookup. I'm guessing that on the way down to object.__getattribute__() through the lookup chain, all of the instance and class
+attributes are collected. Once object.__getattribute__() is invoked, it looks at the collection of attributes and figures out which should be invoked
+first.
+- In the case of a data or non-data descriptor, object.__getattribute__() transforms b.x into type(b).__dict__['x'].__get__(b, type(b)).
+    - Recall the method signature for a descriptor class is __get__(self, instance, owner)
+'''
 
 
 class OldClass():
@@ -105,7 +116,7 @@ def base_class_lookup():
 
 
 def instance_dict_lookup():
-    """ '.' syntax and getattr() are equivalent """
+    """'.' syntax and getattr() are equivalent"""
     t = Top("Boyle")
     # __getattribute__() is STILL called because of t.__dict__ which is using "." syntax
     #print(t.__dict__["name"]) # Boyle

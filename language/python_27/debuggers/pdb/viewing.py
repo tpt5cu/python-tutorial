@@ -4,7 +4,7 @@ View code
     - $ l
         - list 11 lines around the current line
     - $ l <arg>
-        - list 11 lines, starting at the current line
+        - list 11 lines, where 5 lines are above <arg> and 5 lines are below <arg>
     - $ l <arg> <arg>
         - list the lines in that range
 

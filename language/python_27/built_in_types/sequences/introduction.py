@@ -49,7 +49,7 @@ def slicing():
     A slice of a sequence always returns another sequence of the same type. Slicing is always performed from left to right. There is no such thing as a
     reverse slice!
     - Slicing is [<inclusive>:<exclusive>]
-    - Some also support stepped-slicing with [i:j:k].
+    - Some also support stepped-slicing with [<start>:<stop>:<step>].
     '''
     tup_s = ("good", "stuff", "in", "here")[1:3]
     print(type(tup_s)) # <type 'tuple'>

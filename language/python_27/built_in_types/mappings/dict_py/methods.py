@@ -120,9 +120,6 @@ def get_similar_keys():
             print(k) # feeder1\nfeeder2
 
 
-
-
-
 if __name__ == "__main__":
     #check_length()
     #key_value_iteration()

@@ -1,0 +1,3 @@
+- The stack overflow ForkedPdb variant of pdb seems to work well for multiprocessing code
+- rpdb2 is effectively useless
+- PyCharm's debugger blows pdb out of the water and works with multiprocessing code. I wonder how they did it? It's the clear winner

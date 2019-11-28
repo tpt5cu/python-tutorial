@@ -30,10 +30,9 @@ def subtract_aware_datetime_objects():
     #fin = datetime(2019, 7, 17, tzinfo=UtcTzinfo())
     #print(fin.strftime('%Y %m %d %H:%M:%S %z')) # 2019 07 17 00:00:00 +0000
     #print(fin.tzinfo) # <__main__.UtcTzinfo object at 0x104eb2490>
-    fin = datetime(2019, 7, 17, tzinfo=EdtTzinfo())
+    fin = datetime(2019, 7, 17, tzinfo=EST())
     print(fin.strftime('%Y %m %d %H:%M:%S %z')) # 2019 07 17 00:00:00 -0400
-    print(fin.tzinfo)
-    start = datetime(1970, 1, 1, tzinfo=EdtTzinfo())
+    start = datetime(1970, 1, 1, tzinfo=EST())
     td = fin - start
     seconds = td.total_seconds()
     # This is the the number of seconds between July 7th 2019 and January 1st 1970. The floating point number is the same as above because both
@@ -45,31 +44,6 @@ def datetime_to_seconds(dt):
     td = dt - datetime(1970, 1, 1)
     return td.total_seconds()
 
-
-class UtcTzinfo(tzinfo):
-    """Represents a tzinfo object for UTC"""
-
-    def utcoffset(self, dt):
-        return timedelta(0)
-
-    def tzname(self, dt):
-        return 'UTC'
-
-    def dst(self, dt):
-        return timedelta(0)
-
-
-class EdtTzinfo(tzinfo):
-    """EDT already includes DST. EDT is 1 hour ahead of EST"""
-
-    def utcoffset(self, dt):
-        return timedelta(hours=-4)
-
-    def tzname(self, dt):
-        return 'UTC'
-
-    def dst(self, dt):
-        return timedelta(0)
 
 def _tests():
     '''
@@ -89,7 +63,5 @@ def _tests():
 
 if __name__ == '__main__':
     #subtract_naive_datetime_objects()
-    #subtract_aware_datetime_objects()
+    subtract_aware_datetime_objects()
     #_tests()
-    #07/29/2019 02:00:00
-    print(datetime_to_seconds(datetime(2019, 7, 29, 2))) # 1564365600.0

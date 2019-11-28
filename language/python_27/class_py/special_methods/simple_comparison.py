@@ -3,7 +3,8 @@
 
 def compare_objects():
     '''
-    If no __cmp__(), __eq__(), nor __ne__() operation is defined, class instances are compared using their object identities (i.e. id())
+    - TLDR: don't do this
+    - If no __cmp__(), __eq__(), nor __ne__() operation is defined, class instances are compared using their object identities (i.e. id())
     - Since no comparison operation is defined for <type 'object'> instances, such instances must be compared based on their object identity, which is
       a number that is related to their memory address in C-Python
     - As a result, the output of the comparison expressions will change depending on the relative order of initialization of o1 vs. o2! It just

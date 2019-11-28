@@ -16,7 +16,6 @@ The realpython tutorial touches on some other important considerations when usin
 """
 
 class LivingThing(object):
-    """Plants and animals are living things"""
 
     def __init__(self, name):
         self.name = name

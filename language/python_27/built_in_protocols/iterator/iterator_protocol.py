@@ -46,7 +46,7 @@ def __iter__method():
 
 
 def bad_manual_iteration():
-    """If I iterate using the value returned from next(), the iteration will stop when a falsy value is returned."""
+    '''If I iterate using the value returned from next(), the iteration will stop when a falsy value is returned.'''
     my_list = [(0,), (), (2)]
     iterator = iter(my_list)
     try:
@@ -59,7 +59,7 @@ def bad_manual_iteration():
 
 
 def good_manual_iteration():
-    """This seems like the best way to perform iteration manually using an iterator."""
+    '''This seems like the best way to perform iteration manually using an iterator.'''
     my_list = ["foo", "bar", "baz", "faz"]
     iterator = iter(my_list)
     try:
@@ -86,5 +86,5 @@ if __name__ == "__main__":
     #next_method()
     #__iter__method()
     #bad_manual_iteration()
-    #good_manual_iteration()
-    use_for_loop()
+    good_manual_iteration()
+    #use_for_loop()

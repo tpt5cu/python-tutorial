@@ -23,12 +23,10 @@ class Foo(object):
     def __init__(self):
         self.name = "Douglas"
 
-
     def __getattribute__(self, a):
         #return self.__getattribute__(a) # Infinite recursion b/c the method keeps calling itself!
         print("Hello from custom __getattribute__(): " + a) # Now every attribute access will print this!
         return object.__getattribute__(self, a) # Almost always the correct way implement this method
-
 
 
 def attribute_in_variable():
@@ -51,7 +49,15 @@ def attribute_lookup_order():
     #print(foo.__members__)
 
 
+def get_factory_function():
+    f_factory = getattr(__builtins__, 'float')
+    f = f_factory('1.3')
+    print(type(f)) # <type 'float'>
+    print(f) # 1.3
+
+
 if __name__ == "__main__":
     #attribute_in_variable()
     #get_nonexistent_attribute()
-    attribute_lookup_order()
+    #attribute_lookup_order()
+    get_factory_function()

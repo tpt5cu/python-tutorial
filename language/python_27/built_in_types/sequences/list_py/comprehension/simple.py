@@ -58,8 +58,18 @@ def sum_numbers():
             list_sum.append(numbers[idx])
     print(list_sum)
 
+
+def conditional_comprehension():
+    numbers = [1, 2, 3, 4, 5]
+    even_numbers = [n for n in numbers if n % 2 == 0]
+    print(even_numbers) # [2, 4]
+    no_numbers = [n for n in numbers if n > 6]
+    print(no_numbers) # []
+
+
 if __name__ == "__main__":
     #basic_list_comprehension()
-    comprehension_and_declaration()
+    #comprehension_and_declaration()
     #add_a_value()
     #sum_numbers()
+    conditional_comprehension()

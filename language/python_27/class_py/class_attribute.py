@@ -1,12 +1,8 @@
 # https://www.toptal.com/python/python-class-attributes-an-overly-thorough-guide
 
 
-"""
-- Class attributes are not visible in instance methods, class methods, nor static methods
-- Class attributes are implicitly static. No 'static' keyword is needed
-"""
+'''Class attributes are implicitly static. No 'static' keyword is needed'''
 
-some_var = 'foo!'
 
 class Book(object):
 
@@ -17,20 +13,19 @@ class Book(object):
         self.title = title
         self.author = author
 
-    def get_editions(self):
-        """Class attributes are not visible in instance methods!!!"""
-        #return some_var
-        return editions # NameError: global name 'editions' is not defined
+    def view_editions(self):
+        '''Class attributes are absolutely visible inside of instance methods'''
+        print(self.__class__.editions) # [1990, 1995]
 
     @classmethod
-    def get_editions_class(self):
-        """Class attributes are not visible in class methods!!!"""
-        return editions
+    def view_editions_class(cls):
+        '''Class attributes are visible in class methods'''
+        print(cls.editions) # [1990, 1995]
 
     @staticmethod
-    def get_editions_static():
-        """Class attributes are not visible in static methods!!!"""
-        return editions
+    def view_editions_static():
+        '''Class attributes are visible in static methods'''
+        print(globals()['Book'].editions) # [1990, 1995]
 
 
 def test_class_attribute_visibility():
@@ -82,10 +77,10 @@ def reassign_class_attribute():
 
 
 if __name__ == '__main__':
-    test_class_attribute_visibility()
-    #b = Book()
-    #b.get_editions()
-    #Book.get_editions_class()
-    #Book.get_editions_static()
+    #test_class_attribute_visibility()
+    b = Book()
+    b.view_editions()
+    Book.view_editions_class()
+    Book.view_editions_static()
     #modify_mutable_class_attribute()
     #reassign_class_attribute()

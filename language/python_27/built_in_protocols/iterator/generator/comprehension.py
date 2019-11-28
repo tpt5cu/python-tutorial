@@ -2,19 +2,18 @@
 # https://www.python.org/dev/peps/pep-0289/
 
 
-"""
+'''
 Sometimes I want an iterable object, but I don't want to load the entire iterable object into memory. A list comprehension loads the entire iterable
 into a list, so it isn't appropriate for this task. A generator only stores the current object that was return in memory, not the entire iterable
-object.
-"""
+object. The syntax is:
+- (<expression> for <var> in <iterable> if <condition>)
+'''
 
 
 def equivalent_generator():
-    """
-    This generator function looks like it should be equivalent to the confusing version of the generator comprehension in the next function, but it
-    isn't!
-    """
-    for i in range(10):
+    '''This generator function IS equivalent to the GOOD example of a generator comprehension'''
+    for i in range(1000):
+        # I believe this is simply an expression, not a generator comprehension, because it doesn't follow the generator comprehension syntax
         (yield i * 5)
 
 
@@ -25,9 +24,11 @@ def create_generator_comprehension():
       because "the current yield expression always evaluated to None." It must be the case that what I think of as the same line of code is actually
       executing twice. Regardless, don't do this ever.
     """
-    #gen = equivalent_generator()
-    #gen = ((yield i * 5) for i in range(10)) # Don't do this
-    gen = (i * 5 for i in range(10)) # This is good
+    gen = equivalent_generator() # 0 5 10 15 20
+    # This is a tricky bug
+    #gen = ((yield i * 5) for i in range(1000)) # 0 None 5 None 10
+    # This is good
+    gen = (i * 5 for i in range(1000)) # 0 5 10 15 20
     print(gen.next())
     print(gen.next())
     print(gen.next())

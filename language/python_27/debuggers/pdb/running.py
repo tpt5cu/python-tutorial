@@ -18,8 +18,10 @@ Code control
 
 Global control
 - $ restart
-    - restart the program that is being debugged. Preserve all breakpoints, history, action, debugger options, etc.
+    - Restart the program that is being debugged. Preserve all breakpoints, history, action, debugger options, etc.
     - Unfortunately, sometimes an exception is raised and pdb just exits
 - $ exit
-    - terminate the program
+    - Abort the program being executed
+- $ quit
+    - Abort the program being executed
 '''
