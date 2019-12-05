@@ -4,24 +4,7 @@
 
 import datetime as dt
 from datetime import tzinfo, timedelta
-from tzinfo_py import MostBasicUTC
-
-
-'''
-- ISO 8601 is the standard for timestamp formatting. There are two formats: basic and extended
-    - Basic format: YYYYMMDDThhmmss
-        - The basic format should be avoided in plain text
-    - Extended format: YYYY-MM-DDThh:mm:ss
-        - The extended date format uses hyphens as separators
-        - The extended time format uses colons as separators
-    - For either format, the "T" separator between date and time is optional
-- The highest resolution time unit in a timestamp may have an arbitrary decimal precision
-    - The separator for the decimal numbers may be a comma or period
-    - E.g. YYYY-MM-DDThh:mm:ss.ssssss
-    - There is no limit on the number of allowed decimal places
-
-- <datetime>.isoformat() will only append a timezone in the (+|-)dd:dd format. It won't append a "Z"
-'''
+from popular_modules.datetime_ import tzinfo_
 
 
 def view_current_local_timestamp():
@@ -45,6 +28,7 @@ def view_current_utc_timestamp():
     - utcnow() returns a naive datetime object
         - A datetime object is naive if <datetime>.tzinfo is None or <datetime>.tzinfo.utcoffset() is None
     - In order to get a timestamp that is aware that it is in UTC, I should use datetime.now(<tz>)
+    - <datetime>.isoformat() will only append a timezone in the (+|-)dd:dd format. It won't append a "Z"
     '''
     d_time = dt.datetime.utcnow()
     print(d_time.tzinfo) # None
@@ -52,9 +36,16 @@ def view_current_utc_timestamp():
     print(ts) # Mon Nov 25 21:18:48 2019
     ts = d_time.isoformat()
     print(ts) # 2019-11-25T21:18:48.311245
-    d_time = dt.datetime.now(tz=MostBasicUTC())
+    d_time = dt.datetime.now(tz=tzinfo_.UTC())
     print(d_time.isoformat()) # 2019-11-25T22:45:16.164069+00:00
 
+
+def get_pretty_isoformat_timestamp():
+    '''Using rsplit() to get rid of microseconds works regardless of the value of the microseconds'''
+    ts = dt.datetime.utcnow().isoformat().rsplit('.')[0] + 'Z'
+    print(ts)
+    ts = dt.datetime(2019, 11, 27).isoformat().rsplit('.')[0] + 'Z'
+    print(ts)
 
 
 def prove_that_datetimes_are_naive():
@@ -68,5 +59,6 @@ def prove_that_datetimes_are_naive():
 
 if __name__ == '__main__':
     #view_current_local_timestamp()
-    view_current_utc_timestamp()
+    #view_current_utc_timestamp()
+    get_pretty_isoformat_timestamp()
     #prove_that_datetimes_are_naive()

@@ -12,6 +12,12 @@ def check_length():
     print(len(my_dict)) # 1
 
 
+def get_default_value():
+    d = {'foo': 'bar'}
+    x = d.get('baz', 5)
+    print(x) # 5
+
+
 def key_value_iteration():
     """
     - dict.items() returns a list of tuples, where each tuple contains a key and a value. Therefore, what this is doing is 1) getting a list from the
@@ -122,8 +128,9 @@ def get_similar_keys():
 
 if __name__ == "__main__":
     #check_length()
+    get_default_value()
     #key_value_iteration()
-    value_iteration()
+    #value_iteration()
     #key_iteration()
     #conditionally_insert_value()
     #dynamic_dictionary_view()

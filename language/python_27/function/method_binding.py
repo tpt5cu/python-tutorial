@@ -78,7 +78,6 @@ def function_vs_unbound_method():
     #print(f.im_class) # AttributeError
 
 
-
 if __name__ == "__main__":
     #examine_unbound_method_attributes()
     #examine_bound_method_attributes()

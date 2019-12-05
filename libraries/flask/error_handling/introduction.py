@@ -5,7 +5,7 @@
 
 import json
 from werkzeug.exceptions import BadRequestKeyError
-from flask import Flask, request
+from flask import Flask, request, send_from_directory, send_file
 
 
 app = Flask(__name__)
@@ -23,6 +23,28 @@ def missing_form_key():
     #d = dict()
     #d['whatever']
     return 'OK'
+
+
+@app.route('/missing-file')
+def missing_file():
+    '''
+    - send_from_directory() implicitly raises 404 for a nonexistent file
+        - It will serve files from anywhere in the filesystem
+        - It is more secure than send_file() because it will remove dangerous path components that could exist in the filename argument (if it was
+          provided by a malicious user)
+    - send_file() raises 500 for a nonexistent file
+        - Never use send_file(). It does not protect against malicious filenames
+    '''
+    #return send_from_directory('.', 'introduction.py') # Returns 200 and file as expected
+    #return send_from_directory('.', 'blahblah.txt') # Returns 404 
+    # This is not a flaw. There is nothing dangerous about the filename argument itself
+    #return send_from_directory('..', 'introduction.md') # Returns 200
+    # This show security in action
+    #return send_from_directory('.', '../introduction.md') # Returns 404
+    # This is a security flaw. send_file() does not remove potentially dangerous path components from the filename
+    return send_file('../introduction.md') # Returns 200
+    #return send_file('./blahblah.txt') # Returns 500
+
 
 
 @app.route('/bad-json')

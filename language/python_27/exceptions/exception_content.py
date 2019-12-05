@@ -24,7 +24,7 @@ def view_exception_message():
         raise_StopIteration()
     except StopIteration as e:
         print(type(e.message)) # <type 'str'>
-        print(e.message if e.message != '' else 'no message') # no message
+        print(e.message if e.message != '' else 'message was ""') # message was ""
     except Exception as e:
         print(e.args) # ('This is a custom exception message.',)
         print(e.message) # This is a custom exception message
@@ -42,5 +42,5 @@ def view_exception_type():
 
 
 if __name__ == "__main__":
-    #view_exception_message()
-    view_exception_type()
+    view_exception_message()
+    #view_exception_type()

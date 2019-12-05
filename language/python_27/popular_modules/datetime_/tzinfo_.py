@@ -41,6 +41,8 @@ class ET(datetime.tzinfo):
     # country can transitions on and off DST whenever it wants. I now see why Python never tried to provide a concrete implementation. Arizona
     # ignores DST completely!
     dst_switch = {
+        1969: { 'on': datetime.datetime(1969, 4, 27, 2), 'off': datetime.datetime(1969, 10, 26, 2) },
+        1970: { 'on': datetime.datetime(1970, 4, 26, 2), 'off': datetime.datetime(1970, 10, 25, 2) },
         2018: { 'on': datetime.datetime(2018, 3, 11, 2), 'off': datetime.datetime(2018, 11, 4, 2) },
         2019: { 'on': datetime.datetime(2019, 3, 10, 2), 'off': datetime.datetime(2019, 11, 3, 2) },
         2020: { 'on': datetime.datetime(2020, 3, 8, 2), 'off': datetime.datetime(2020, 11, 1, 2) },

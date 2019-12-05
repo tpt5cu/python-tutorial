@@ -62,10 +62,32 @@ def get_rid_of_scientific_notation():
     print(formatted_val) # This is great!
 
 
+def in_depth_printf_formatting():
+    '''
+    printf-style string formatting actually has 7 components, which must appear in order.
+    1) % character which marks start of a format specifier. (required)
+    2) A mapping key enclosed in parentheses (e.g. %(one)) for the sake of mapping. (optional)
+    3) Conversion flags: #, 0, -, ' ', +. See docs because a few of these are weird. (optional)
+        - #: Use alternative form (see docs)
+        - 0: Zero pad a numeric value if needed
+        - -: Left adjust 
+        - ' ': insert a blank space
+        - +: Value should be preceeded by a sign character (+/-)
+    4) Minimum field width. See docs (optional)
+    5) Precision. See docs (optiona)
+    6) Length modifier (optional)
+    7) Conversion type. These are things like the 'd' in '%d'. (required)
+    '''
+    print('This is the number 1: %d' % (1))
+    print('This is the number 1: %5d' % (1)) # minimum field width
+    print('This is the number 1: %.5d' % (1)) # precision
+    print('This is the number 1: %8.5d' % (1)) # minimum field width and precision
+
 if __name__ == "__main__":
     #inserting_variables()
     #pad_and_align_string()
     #truncate_string()
     #truncate_number()
     #decimal_and_float()
-    get_rid_of_scientific_notation()
+    #get_rid_of_scientific_notation()
+    in_depth_printf_formatting()

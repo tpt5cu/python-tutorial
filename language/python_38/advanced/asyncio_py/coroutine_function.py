@@ -9,7 +9,7 @@ async def this_is_a_coroutine_function():
     The "async def" syntax creates a "native coroutine."
     - A native coroutine may use return, yield, and/or await, but all of these are optional
         - Using await or return creates a "coroutine function." In order to invoke a coroutine function, I must await its results
-        - Using yield create an asynchronous generator
+        - Using yield creates an asynchronous generator
     '''
     return 'Alice in Wonderland'
 

@@ -1,9 +1,9 @@
+# https://unix.stackexchange.com/questions/24441/get-file-created-creation-time
+# https://stackoverflow.com/questions/25834356/flask-caching-result-of-data-load
+
+
 import os, time
 
-"""
-https://unix.stackexchange.com/questions/24441/get-file-created-creation-time
-https://stackoverflow.com/questions/25834356/flask-caching-result-of-data-load
-"""
 
 """
 Linux is only guaranteed to store last access time, last modification time, and last inode modification time. Anything else, like the time of a
@@ -24,16 +24,14 @@ def calculate_elapsed_time():
         - Changes when a file inside of the directory is changed
         - Changes when a file inside of the directory is deleted or moved from the directory
     """
-    elapsed_time = int((time.time() - os.path.getmtime("/Users/austinchang/Desktop/stuff")))
+    elapsed_time = int((time.time() - os.path.getmtime("/Users/austinchang/Desktop/testfiles")))
     print(elapsed_time)
     print("{:02}:{:02}:{:02}".format(elapsed_time // 3600, ((elapsed_time % 3600) // 60), elapsed_time % 60))
     print("{:02} hours:{:02} minutes:{:02} seconds".format(elapsed_time // 3600, ((elapsed_time % 3600) // 60), elapsed_time % 60))
 
 def readable_time():
-    """
-    time.ctime() returns a human-readable string of the time (in seconds) that was passed as an argument
-    """
-    print(time.ctime(os.path.getmtime("/Users/austinchang/Desktop/stuff")))
+    '''time.ctime() returns a human-readable string of the time (in seconds) that was passed as an argument'''
+    print(time.ctime(os.path.getmtime("/Users/austinchang/Desktop/testfiles"))) # Sun Jul 14 16:18:14 2019
 
 
 if __name__ == "__main__":

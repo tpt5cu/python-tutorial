@@ -84,8 +84,20 @@ def repetition():
     print('a' * 3) # aaa
 
 
+def unpack():
+    '''In order to use unpacking syntax, an entire sequence must be unpacked at once. Also, whatever is being unpacked must also be iterable'''
+    string = 'boomerang'
+    #s, t = string # ValueError
+    a, b, c, d, e, f, g, h, j = string
+    print(a) # b
+    print(b) # o
+    x = None
+    a, b = x # TypeError: 'NoneType' object is not iterable
+
+
 if __name__ == "__main__":
     #length()
     #slicing()
-    negative_index_slicing()
+    #negative_index_slicing()
     #repetition()
+    unpack()

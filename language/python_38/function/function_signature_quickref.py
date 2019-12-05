@@ -3,9 +3,10 @@
 # https://stackoverflow.com/questions/14301967/bare-asterisk-in-function-arguments
 
 
-def keyword_only_parameters(first, second, *, third):
+def keyword_only_arguments(first, second, *, third):
     '''
-    A bare asterisk in a function signature means that all subsequent arguments must be passed with keyword syntax
+    Keyword-only arguments were introduced in 3.0. A bare asterisk in a function signature means that all subsequent arguments must be passed with
+    keyword syntax
     - Just because an argument is keyword only doesn't mean it isn't required
     '''
     s = first + second
@@ -15,6 +16,6 @@ def keyword_only_parameters(first, second, *, third):
 
 
 if __name__ == '__main__':
-    #print(keyword_only_parameters(5, 5)) # TypeError: missing required keyword-only argument
-    #print(keyword_only_parameters(5, 5, 11)) # TypeError: 2 positional arguments expected but 3 were given
-    print(keyword_only_parameters(5, 5, third=11)) # 21
+    #print(keyword_only_arguments(5, 5)) # TypeError: missing required keyword-only argument
+    #print(keyword_only_arguments(5, 5, 11)) # TypeError: 2 positional arguments expected but 3 were given
+    print(keyword_only_arguments(5, 5, third=11)) # 21
