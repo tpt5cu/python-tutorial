@@ -3,8 +3,8 @@
 # https://rhettinger.wordpress.com/2011/05/26/super-considered-super/ - finer details of super() usage not in these notes
 
 
-"""
-super(<type>, [<instance>]): returns a proxy object that delegates method calls to a PARENT class or sibling class of <type>
+'''
+- super(<type>, [<instance>]): returns a proxy object that delegates method calls to a PARENT class or sibling class of <type>
 - super(<type>) returns an unbound super object. Why would this ever be useful? I don't know
     - The search order is the same as getattr(), except that <type> itself is skipped. That's why an unbound super object can't directly call the
       superclass methods!
@@ -17,21 +17,32 @@ super(<type>, [<instance>]): returns a proxy object that delegates method calls 
 
 A BOUND super object will ONLY look up attributes on the relevant class, never any instance object. The instance object argument is only good for getting
 bound methods, that's it
-"""
+
+If a class does not define its own __init__() method, then the __init__() method of the superclass will implicitly be called
+- See the multiple inheritance notes
+
+- The word "interface" is an overloaded term, but I take it to mean an abstract class with "no" implementation
+    - I say "no" because now Java interfaces can have default methods
+- A mixin is a class that mimics an interface
+    - Inheriting from one or more mixin classes IS multiple inheritance, but it mimics implementing interfaces
+        - Since using mixins is multiple inheritance, they suffer from the "Diamond Problem" of multiple inheritance, but I'm not worried about that
+          in Python
+    - Using mixins is often better than actual inheritance
+'''
 
 
 class Animal(object):
 
-    cool_property = "I'm a class property"
+    cool_property = 'I'm a class property'
 
     def __init__(self, name, species, birthday):
         self.name = name
         self.species = species
         self.birthday = birthday
-        self.cool_property = "I'm an instance property"
+        self.cool_property = 'I'm an instance property'
 
     def say_happy_birthday(self):
-        print("Happy birthday to " + self.name + "! Your birthday is on " + self.birthday)
+        print('Happy birthday to ' + self.name + '! Your birthday is on ' + self.birthday)
 
 
 class Cat(Animal):
@@ -49,21 +60,21 @@ class Cat(Animal):
 
 
     def meow(self):
-        print(self.name + " says meow!")
+        print(self.name + ' says meow!')
 
 
 def play_with_cat():
-    cat = Cat("Flipper", "Tiger", "Wednesday")
+    cat = Cat('Flipper', 'Tiger', 'Wednesday')
 
 
 class BetterCat(Animal):
 
     def __init__(self, name, species, birthday):
-        """
+        '''
         - If the super object is bound to a class, I can only look up class attributes (i.e. unbound methods, class properties, etc.)
         - If the super object is bound to an instance object, I can STILL only look up class attributes. It's just that instead of unbound methods I
           will get bound methods
-        """
+        '''
         # self hasn't been initialized yet, but that doesn't matter. super will never look up the instance object property 'cool_property'
         print(self.cool_property) # I'm a class property
         print(super(BetterCat, self).cool_property) # I'm a class property
@@ -76,9 +87,9 @@ class BetterCat(Animal):
 
 
 def play_with_betterCat():
-    bcat = BetterCat("Hugs", "Lion", "Thursday")
+    bcat = BetterCat('Hugs', 'Lion', 'Thursday')
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     #play_with_cat()
     play_with_betterCat()

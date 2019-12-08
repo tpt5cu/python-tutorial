@@ -1,12 +1,7 @@
 # https://www.python.org/dev/peps/pep-3135/ - official documentation of new super() syntax
 
 
-'''
-The new super() syntax is syntactic sugar, but it is useful because I don't have to hard-code the name of the class anymore
-'''
-
-
-# TODO: resume this after bound methods
+'''The new super() syntax is syntactic sugar, but it is useful because I don't have to hard-code the name of the class anymore'''
 
 
 class Sphere:
@@ -38,20 +33,10 @@ class Gumball(Sphere):
         return f'The diameter is {super().get_diameter()}'
 
 
-def examine_class_of_function():
-    '''I still don't know what <class 'method'> is'''
-    s = Sphere(1.0)
-    print(s.get_function_class()) # <class '__main__.Sphere'>
-    print(s.get_function_class() is Sphere) # True
-    print(s.get_function_class.__class__) # <class 'method'>
-    print(s.get_function_class.__class__ is Sphere) # False
-
-
 def use_super():
     g = Gumball(3.0, 'strawberry')
     print(g.get_diameter()) # The diameter is 3.0
 
 
 if __name__ == '__main__':
-    #examine_class_of_function()
     use_super()

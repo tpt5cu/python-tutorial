@@ -16,14 +16,22 @@ def different_base():
 
 
 def literal_representations():
+    # Binary
     print(0b1001) # 9
     print(0B1001) # 9
+    # Hex
     print(0x9) # 9
     print(0X9) # 9
+    # Octal
     print(0o11) # 9
-    print(0O11) # 9
-    print(9L) # 9 # SyntaxError in Python 3
-    print(0600) # 8^2 * 6 = 384, SyntaxError in Python 3
+    x = 0O11
+    print(x) # 9
+    print(type(x)) # <type 'int'>
+    y = 9L 
+    print(y) # 9 
+    print(type(y)) # <type 'long'>
+    # '0' prefixed numbers are interpeted as base-8
+    print(0600) # (8^2) * 6 = 384, SyntaxError in Python 3
 
 
 if __name__ == "__main__":

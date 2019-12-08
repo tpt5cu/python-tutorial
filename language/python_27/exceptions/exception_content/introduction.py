@@ -41,6 +41,11 @@ def view_exception_type():
         print(isinstance(e, BaseException)) # True
 
 
+def view_exception_traceback():
+    '''I believe this must be done with sys.exc_info()[2]. There is no traceback attribute directly on an exception'''
+    pass
+
+
 if __name__ == "__main__":
     view_exception_message()
     #view_exception_type()
