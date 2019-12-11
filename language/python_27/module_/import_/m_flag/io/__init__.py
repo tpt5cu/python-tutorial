@@ -1,0 +1,1 @@
+print('Hello from shadowing io module')

@@ -5,34 +5,32 @@
 import sys, traceback
 
 
-"""
-The context manager protocol defines two methods: __enter__() and __exit__()
-"""
+'''The context manager protocol defines two methods: __enter__() and __exit__()'''
 
 
 class ExceptionHandling(object):
 
 
     def __init__(self):
-        """
+        '''
         The initializer will execute before any methods, so an error here can't possibly be handled by __exit__(). Remember that __init__() is the
         initializer (sets the state of an object) while __new__() is the constructor (actually creates the object)
-        """
-        #raise ZeroDivisionError("You divided by zero!!!")
+        '''
+        #raise ZeroDivisionError('You divided by zero!!!')
         pass
 
 
     def __enter__(self):
-        """
+        '''
         If an exception occurs here, it must be handled here or outside of the context manager. The main point is that the exception never even
         reaches the __exit__() function, so it won't be handled there.
-        """
-        #raise ValueError("There was a ValueError!")
+        '''
+        #raise ValueError('There was a ValueError!')
         pass
 
 
     def __exit__(self, exception_type, exception_value, exception_traceback):
-        """
+        '''
         If an exception occurred within the BODY of the with statement, then exc_type, exc_val, and exc_tb will be present, otherwise they are all
         None.
         - If the __exit__() function returns True, the with-statement will suppress the exception
@@ -41,8 +39,8 @@ class ExceptionHandling(object):
         If an exception is raised within __exit__() method, the new exception replaces any exception that was being handled. Additionally, the new
         exception must be handled separately because __exit__() never returns and therefore the with statement never has the opportunity to suppress
         the new exception 
-        """
-        #raise OSError("There was an OSError!")
+        '''
+        #raise OSError('There was an OSError!')
         #print(exception_type) # <type 'exceptions.TypeError'>
         #print(exception_value) # There was a TypeError!
         #print(exception_traceback) # <traceback object at ...>
@@ -58,10 +56,10 @@ class ExceptionHandling(object):
 
 def use_context_manager():
     with ExceptionHandling():
-        print("Inside the run-time context")
-        raise TypeError("There was a TypeError!") 
-    print("Outside run-time context") # This may or may not execute depending on the implementation of the context manager
+        print('Inside the run-time context')
+        raise TypeError('There was a TypeError!') 
+    print('Outside run-time context') # This may or may not execute depending on the implementation of the context manager
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     use_context_manager()

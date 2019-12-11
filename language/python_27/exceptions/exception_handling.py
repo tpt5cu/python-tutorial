@@ -59,7 +59,8 @@ def catch_all_explicit():
         #raise StandardError
     except Exception as e:
         print(type(e)) # <type 'exceptions.IOError'>
-        print(e.message) # <empty string>
+        print(e.args) # (2, 'No such file or directory')
+        print(sys.exc_info()[1]) # [Errno 2] No such file or directory: './blablah'
 
 
 def catch_all_implicit():
@@ -87,9 +88,9 @@ def catch_specific_exception():
         # This is ignored because the try-block threw an IOError or NameError
         print("Caught ValueError") 
     # This is a tricky bug
-    except IOError, NameError:
-        print 'hi'
-        print NameError # [Errno 2] No such file or directory: './blablah'
+    #except IOError, NameError:
+    #    print 'hi'
+    #    print NameError # [Errno 2] No such file or directory: './blablah'
     # This is correct
     except (IOError, NameError):
         print("The caught error was: " + str(sys.exc_info()[0])) # The caught error was: <type 'exceptions.IOError'>
@@ -119,10 +120,28 @@ def catch_system_exit():
         print('Do nothing because the exception was a SystemExit(0)')
 
 
+def use_exception_outside_context_manager():
+    '''Python 2 doesn't care if I use an exception outside of a context manager'''
+    try:
+        raise Exception('foobar')
+    except Exception as e:
+        print(e.args) # ('foobar',)
+    print(e.args) # ('foobar',)
+
+
+def iterate_exception():
+    '''Exceptions are iterable objects'''
+    e = Exception(1, 2, 3, 4)
+    for i in e:
+        print(i) #1\n2\n3\n4
+    
+
+
 if __name__ == '__main__':
-    #val = try_except_else_finally()
-    #print('val was: ' + str(val))
+    #val = try_except_else_finally(); print('val was: ' + str(val))
     #catch_all_explicit()
     #catch_all_implicit()
     #catch_specific_exception()
-    catch_system_exit()
+    #catch_system_exit()
+    #use_exception_outside_context_manager()
+    iterate_exception()

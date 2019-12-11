@@ -1,10 +1,10 @@
 from contextlib import contextmanager
 
 
-"""
+'''
 Even if I return from within a with-statement, the __exit__() code still executes. The return value could be modified by the __exit__() code if I
 wanted, presumably because of @contextmanager
-"""
+'''
 
 @contextmanager
 def my_context_manager(my_list):

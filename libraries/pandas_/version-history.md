@@ -1,0 +1,1 @@
+- to_numpy() was added in 0.24.0

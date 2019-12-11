@@ -1,5 +1,10 @@
-# https://stackoverflow.com/questions/714063/importing-modules-from-parent-folder/50194143#50194143 - how to
+# https://stackoverflow.com/questions/714063/importing-modules-from-parent-folder/50194143#50194143 - introduction to using setuptools 
+# https://stackoverflow.com/questions/1550226/python-setup-py-uninstall
+
+
 '''
+Install package
+
 - $ pip install -e .
     - This installs my package, NOT $ python setup.py
 - Make sure every directory has an __init__.py file (for Python 2)
@@ -8,7 +13,11 @@
 - If a virtualenv is active when this file is run, then this package will only be installed under the virtualenv
 - The name of the project is "python2_tutorial", but each directory under the "python_27" directory is its own top-level package and must be imported
   as such
+
+Uninstall package
+
 '''
+
 
 from setuptools import setup, find_packages
 setup(name='python2_tutorial', version='1.0', packages=find_packages())
