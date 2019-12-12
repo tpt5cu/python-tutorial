@@ -8,7 +8,7 @@
 ''' 
 The reason I have Unicode strings in web.py is because User.cu() returns a Unicode string. Whenever a Unicode and byte string are joined, the result
 is always a Unicode string. Unicode uses code points (i.e. an integer that is mapped to a character), not bytes. 
-- There are variations of Unicode. UTF-8 is one such variation. It uses 1 to 4 bytes to encode a code point. 
+- There are different Unicode encodings. UTF-8 is one such encoding. It uses 1 to 4 bytes to encode a code point. 
 '''
 
 ''' 

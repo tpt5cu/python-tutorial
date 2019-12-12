@@ -3,7 +3,6 @@
 # https://python-reference.readthedocs.io/en/latest/docs/str/escapes.html
 # https://realpython.com/lessons/defining-literal-bytes-object/
 # https://docs.python.org/2.4/lib/standard-encodings.html - encodings
-
 # https://medium.com/better-programming/strings-unicode-and-bytes-in-python-3-everything-you-always-wanted-to-know-27dc02ff2686 - should I delete this?
 
 

@@ -3,18 +3,20 @@
 
 
 '''
-- As of 3.7, dict iteration order is guaranteed to be the insertion order.
-- There are no more iter<attribute>() methods because all of the key and value methods return iterables
-- There are no more view<attribute>() methods because all of the key and value methods return view objects
+- As of 3.7, CPython dict iteration order is guaranteed to be the insertion order (but don't rely on this, just use an OrderedDict)
+- In Python 3:
+    - <dict>.keys(), <dict>.items(), and <dict>.values() all return a view object, which is also iterable
+    - Thus, iterkeys(), iteritems(), itervalues(), viewkeys(), viewitems(), viewvalues() don't exist
 '''
 
 
 def key_iteration():
     '''
-    Python 3 <dict>.keys() returns a view object, specifically a <class 'dict_keys'>. What's important is that:
-    - A view object always reflects the current internal state of its dict
+    Python 3 <dict>.keys() returns a view object instead of a list, specifically a <class 'dict_keys'>. What's important is that:
+    - A view object always reflects (but doesn't contain) the current internal state of its dict
     - It must be iterated over
-    - It supports membership tests
+        - It cannot be indexed
+    - It supports membership tests, including set membership tests, and length membership
     - A RuntimeError or undefined behavior can result if the dictionary is modified during iteration
     - It cannot directly modify the dictionary through assignment nor deletion
 
@@ -24,7 +26,8 @@ def key_iteration():
         'yarn': 'dollar',
         'thread': 'yen'
     }
-    #print(my_dict.keys()[0]) # TypeError
+    #print(my_dict.keys()[0]) # TypeError: 'dict_keys' object is not subscriptable
+    print(len(my_dict.keys())) # 2
     print(type(my_dict.keys())) # <class 'dict_keys'>
     print(my_dict.keys().__iter__()) # <dict_keyiterator object at ...>
     for k in my_dict.keys():

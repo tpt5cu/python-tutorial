@@ -1,7 +1,5 @@
 # https://realpython.com/python-string-formatting/
 # https://docs.python.org/3/reference/lexical_analysis.html#string-and-bytes-literals
-
-
 # https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str
 # https://stackoverflow.com/questions/27331819/whats-the-difference-between-a-character-a-code-point-a-glyph-and-a-grapheme
 
@@ -26,7 +24,13 @@ def string_interpolation():
     print(f'There are {365 * 24 * 60 * 60:.2f} seconds in a year!') # There are 31536000.00 seconds in a year!
 
 
+def removed_unicode_function():
+    '''The unicode() function and type were removed in Python 3, but the old unicode literal syntax now just creates str objects'''
+    #u = unicode('hello') # NameError: name 'unicode' is not defined
+    u = u'hello'
+    print(type(u)) # <class 'str'>
 
 
 if __name__ == '__main__':
-    string_interpolation()
+    #string_interpolation()
+    removed_unicode_literal()

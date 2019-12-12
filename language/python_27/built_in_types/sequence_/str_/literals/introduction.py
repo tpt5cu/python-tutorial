@@ -28,7 +28,6 @@ def multiline_strings():
     # a single string literal
     # - The parentheses form an expression that contains the string literals
     # - Be careful not to include commas or I'll be printing a tuple
-    # - 
     string2 = ("Strings can be written"
                " in this way"
                " to avoid including spaces and newlines in the format.")

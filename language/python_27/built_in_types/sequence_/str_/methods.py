@@ -116,6 +116,13 @@ def unicode_to_str():
     print(ord(b[9])) # 63 is question mark in extended ascii, so the characters really are replaced
 
 
+def mix_unicode_and_str():
+    '''unicode and str objects can be concatenated to form a unicode object'''
+    s = b'hello' + u'world'
+    print(type(s)) # <type 'unicode'>
+    print(s) # helloworld
+
+
 if __name__ == '__main__':
     #strip_py()
     #rstrip_py()
@@ -127,6 +134,7 @@ if __name__ == '__main__':
     #string_to_list()
     #get_individual_lines()
     #check_beginning_and_end()
-    get_lowercase()
+    #get_lowercase()
     #reverse_sentence_order()
     #unicode_to_str()
+    mix_unicode_and_str()

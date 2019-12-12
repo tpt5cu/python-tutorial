@@ -5,14 +5,14 @@
 # https://stackoverflow.com/questions/6475314/python-for-in-loop-preceded-by-a-variable
 
 
-"""A list comprehension is an elegant way to create a new list based on an existing list."""
+'''A list comprehension is an elegant way to create a new list based on an existing list.'''
 
 
 def basic_list_comprehension():
-    """ 
+    ''' 
     The syntax is: [<expression> for <item> in <iterable>].
     It could also be restated as: [<Do this to the item and return the result to a new list> for <item> in <iterable>].
-    """
+    '''
     # Get the individual letters (which are strings) of a string
     letters = [c for c in 'humans']
     print(type(letters))
@@ -20,7 +20,7 @@ def basic_list_comprehension():
 
 
 def comprehension_and_declaration():
-    """Sometimes I don't want to have to declare a list separately. I want to declare and use a comprehension simultaneously"""
+    '''Sometimes I don't want to have to declare a list separately. I want to declare and use a comprehension simultaneously'''
     # This works. It must be iterating over a tuple
     red_pets = ['red ' + pet for pet in 'cat', 'dog', 'fish', 'bird']
     print(red_pets)
@@ -30,17 +30,17 @@ def comprehension_and_declaration():
 
 
 def add_a_value():
-    """
+    '''
     Since modifying a list during iteration is poor form, a list comprehension can apply the change (i.e. expression)
     to every element and put the result in a new list (this is called mapping!)
-    """
+    '''
     numbers = [1, 2, 3, 4, 5]
     more_numbers = [num + 5 for num in numbers]
     print(more_numbers)
 
 
 def sum_numbers():
-    """It turns out a list comprehension is NOT suited to this problem, or to every problem."""
+    '''It turns out a list comprehension is NOT suited to this problem, or to every problem.'''
     # The desired output is [4, 11, 20, 30, 85], aka the sum of all numbers up to that point.
     numbers = [4, 7, 9, 10, 55]
     # This prints the total sum, but not the sum up to each point.
@@ -67,7 +67,7 @@ def conditional_comprehension():
     print(no_numbers) # []
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     #basic_list_comprehension()
     #comprehension_and_declaration()
     #add_a_value()

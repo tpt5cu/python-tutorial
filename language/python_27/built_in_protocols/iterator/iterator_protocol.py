@@ -13,18 +13,18 @@ An iterable is simply an object that implements 1 method: __iter__(). __iter__()
 Therefore, an iterator is ALSO an iterable, and can be used in places where an iterable is expected (e.g. for loops). An iterator and an iterable both
 implement __iter__() so that both an iterator and an iterable can be used interchangeably in for-statements and in-statements.
 
-So what about __getitem__()? I understand that implementing __getitem__() on a class makes it possible to use the nice syntax "[]" to access data in a
+So what about __getitem__()? I understand that implementing __getitem__() on a class makes it possible to use the nice syntax '[]' to access data in a
 class instance like it's a container. See custom_iterable.py notes
 '''
 
 
 def next_method():
-    """
+    '''
     An iterator is an object that has a next() method (or __next__() method in Python 3). The next() method returns the next element in the
     iterable, updates the iterator to point to the next value, and signals that iteration is complete by raising the StopIteration Exception.
-    """
+    '''
     #A list is an iterable, NOT an iterator.
-    my_list = ["a", "b", "c", "d", "e"]
+    my_list = ['a', 'b', 'c', 'd', 'e']
     iterator = my_list.__iter__()
     print(iterator.next()) # a
     print(iterator.next()) # b
@@ -38,7 +38,7 @@ def next_method():
 
 
 def __iter__method():
-    """An iterator also has an __iter__() method, which simply returns itself"""
+    '''An iterator also has an __iter__() method, which simply returns itself'''
     my_list = [1, 2, 3]
     iterator = my_list.__iter__()
     print(type(iterator)) # <type 'listiterator'>
@@ -60,7 +60,7 @@ def bad_manual_iteration():
 
 def good_manual_iteration():
     '''This seems like the best way to perform iteration manually using an iterator.'''
-    my_list = ["foo", "bar", "baz", "faz"]
+    my_list = ['foo', 'bar', 'baz', 'faz']
     iterator = iter(my_list)
     try:
         while True:
@@ -71,10 +71,10 @@ def good_manual_iteration():
 
 
 def use_for_loop():
-    """
+    '''
     Apparently I can use an iterator inside of a for-loop just fine. Remember this. This is important because it means I never need to do manual
     iteration ever.
-    """
+    '''
     my_list = ['a', 'b', 'c', 'd', 'e']
     iterator = my_list.__iter__()
     for e in iterator:
@@ -82,7 +82,7 @@ def use_for_loop():
 
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     #next_method()
     #__iter__method()
     #bad_manual_iteration()
