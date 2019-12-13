@@ -4,12 +4,12 @@
 from numbers import Number
 from abc import ABCMeta, abstractmethod
 
-"""
+'''
 An abstract class CAN be instantiated if it doesn't have any abstract methods. However, that's silly. Provided that an abstract method has at least
 one abstract method, it cannot be instantiated
 - An abstract class could be used to represent an interface, provided that all of its methods were abstract. However, this goes against the Python
   philosophy of duck typing
-"""
+'''
 
 class MyAbstractClass():
 

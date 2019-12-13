@@ -5,7 +5,7 @@
 # https://realpython.com/python-metaclasses/
 
 
-"""
+'''
 A regular class defines how an object (an instance of that class) will behave. A metaclass defines how a class (an instance of the metaclass) will
 behave. A metaclass can technically be any callable object. However, it really should be a class itself. 'type' is the usual, default metaclass in
 Python. 'type' is its own class, and its own metaclass ('type' is very special). To create my own realistically useful metaclass, I should subtype
@@ -21,7 +21,7 @@ attributes)
         - Python only does this for classes that don't inherit from anything, which basically means old-style classes
     - If Python still didn't find a __metaclass__ attribute, then it will use the metaclass of the first superclass (if any) to create the current
           class object. If there were no superclasses, then I'm using an old-style class in which case all bets are off.
-"""
+'''
 
 # It doesn't matter whether the parentheses are here or not. It will still be an old-style class because it doesn't inherit from anything
 class OldStyleClass(): 
@@ -33,11 +33,11 @@ class NewStyleClass(object):
 
 
 def examine_default_metaclasses():
-    """
+    '''
     New-style classes have their metaclass set to 'type', presumably because the metaclass of 'object' is 'type'. Old-style classes don't have a
     __class__ attribute. The metaclass of an old-style class is a special kind of type called 'classobj'. 
     - old-style classes really are weird and it's probably a waste of time to understand them in-depth
-    """
+    '''
     osc = OldStyleClass()
     print(type(OldStyleClass)) # <type 'classobj'>
     print(osc.__class__) # __main__.OldStyleClass

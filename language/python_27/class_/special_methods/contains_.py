@@ -26,7 +26,7 @@ def is_letter_in_name():
 
 class Vacation(object):
     '''
-    If a class doesn't define __contains__, the "in" operator tries to see if the item is inside by 1) iterating via __iter__() and 2) using old-style
+    If a class doesn't define __contains__, the "in" operator tries to see if the item is inside by 1) iterating via __iter__() or 2) using old-style
     iteration via __getitem__()
     '''
 

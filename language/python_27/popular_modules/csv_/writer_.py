@@ -68,12 +68,11 @@ def write_unicode():
     - I can only use io.open() in 'wb' mode, which doesn't accept an 'encoding' parameter. 
         - Given that, if I try to write a unicode object anyway I could get a UnicodeDecodeError because the csv writer tries to encode the unicode
           object into ascii.
-        - If I try to write a str object, csv writer will happily write the bytes to the file without trying to encoding anything because it thinks
-          the str object is already encoded properly
+        - If I try to write a str object, csv writer will happily write the bytes to the file without trying to encode anything because it thinks
+          the str object (i.e. a bunch of bytes) is already encoded properly
     - These limitations appear to exist in Python 3 as well, although I get slightly different errors
     '''
-    u = 'aaaàçççñññ'
-    print(type(u)) # <type 'str'>
+    u = 'aaaàçççñññ'; print(type(u)) # <type 'str'>
     #u = u'aaaàçççñññ'
     #print(type(u)) # <type 'unicode'>
     #u = u.encode('ascii') # UnicodeEncodeError

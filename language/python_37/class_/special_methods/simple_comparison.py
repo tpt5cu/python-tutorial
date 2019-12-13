@@ -1,5 +1,3 @@
-
-
 def compare_objects():
     '''
     - There is no __cmp__() in Python 3, hence there is no simple comparison

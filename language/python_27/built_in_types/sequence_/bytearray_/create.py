@@ -2,19 +2,19 @@
 # https://stackoverflow.com/questions/9099145/where-are-python-bytearrays-used
 
 
-"""
+'''
 A bytearray is a mutable sequence of integers, each of which must in the range of [0, 255]. The contents of a bytearray can be treated as integers or
 characters. Bytearrays are superior to the str type when the byte object is being modified. The str type is an immutable sequence of bytes while bytearray type
 is a mutable sequence of bytes.
 - bytearray is THE mutable string type in Python
-"""
+'''
 
 
 def create_bytearray():
-    """
+    '''
     - If <source> is an iterable (like str), then each element of the iterable must be in the range of [0, 255].
     - If <source> is an integer, then the bytearray takes that size and initializes each element to a null byte
-    """
+    '''
     ba = bytearray('hello')
     print(len(ba)) # 5
     print(ba) # hello
@@ -26,11 +26,11 @@ def create_bytearray():
 
 
 def bad_bit_vector():
-    """
+    '''
     Remember: passing an integer to a bytearray merely creates a bytearray with all 0 values of that size
     - A bytearray will include the '0b' if a bin() call is used to instantiate the bytearray
     - A bytearray contains bytes! Therefore, I only need a bytearray of 1 byte!
-    """
+    '''
     #ba = bytearray(2**16 - 1) # wrong
     # Wrong because I don't want to include 0b
     ba = bytearray(bin(2**16 - 1))
@@ -46,10 +46,10 @@ def bad_bit_vector():
 
 
 def good_bit_vector():
-    """
+    '''
     - Do I even need a bytearray to implement a bit vector? No, I just need the value 255. But how do I count how many bits are set in an integer?
     - XOR ^ is equivalent to subtraction
-    """
+    '''
     ba = bytearray(chr(255))
     print(int(ba[0])) # 255
     print(ba[0] ^ 5) # 250 because 11111111 ^ 00000101 = 11111010 = 250
@@ -57,8 +57,8 @@ def good_bit_vector():
 
 
 def print_bytearray():
-    """A bytearray prints just fine"""
-    s = "hi there"
+    '''A bytearray prints just fine'''
+    s = 'hi there'
     ba = bytearray(s)
     print(ba)
 

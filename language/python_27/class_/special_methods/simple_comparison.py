@@ -1,4 +1,5 @@
 # https://docs.python.org/2/reference/datamodel.html#object.__cmp__ - describes default comparison behavior
+# https://stackoverflow.com/questions/17661829/how-to-compare-string-and-integer-in-python
 
 
 def compare_objects():
@@ -46,6 +47,19 @@ def compare_laptops():
     print(toshiba > acer) # True
 
 
+def compare_different_types():
+    '''
+    Nonsense comparisons are allowed in Python 2 but not in Python 3
+    - How does this comparison work? Since 'int' < 'string', any int is less than any string.
+    '''
+    y = '2'
+    x = 2000
+    print(x < y) # True
+    print(x > y) # False
+    print(x == y) # False
+
+
 if __name__ == '__main__':
     #compare_objects()
-    compare_laptops()
+    #compare_laptops()
+    compare_different_types()

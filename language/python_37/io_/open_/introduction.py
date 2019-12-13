@@ -1,14 +1,30 @@
 # https://docs.python.org/3/tutorial/inputoutput.html#methods-of-file-objects
 # https://docs.python.org/3/library/io.html - This is the actual documentation I'm interested in
+# https://docs.python.org/3/library/functions.html#open - shows documentation for open() and modes
+
+# https://docs.python.org/3/library/functions.html#open-newline-parameter - what's the deal with "newline"
 
 
 import io, os, locale
 
 
 '''
+newline
+
+- The "newline" parameter only applies if a file is opend in text mode
+- It can be:
+    - None (default): universal newlines are enabled. A line that is read can end with '\n', '\r', or '\r\n', but that ending will always be returned
+      inside Python as '\n'
+    - '': universal newlines are enabled. A line can end with any of the above BUT will not be translated into '\n'
+    - '\n', '\r', '\r\n: a newline is only delineated by the respective pattern. The respective line ending will also be returned without translation
+- 
+'''
+
+
+'''
 The old Python built-in open() function would read a file into a bytes object (so decoding wasn't relevant), then when a textual representation was
 required it would decode using US-ASCII
-- Since most of the time I was working with str objects in Python anyway, when a str object was written to a file, it would just be encoded as US-ASCII
+- Since most of the time I was working with str objects in Python 2 anyway, when a str object was written to a file, it would just be encoded as US-ASCII
 '''
 
 
@@ -21,7 +37,7 @@ def open_py():
     '''
     - By default, reading a file returns a "str" object, which IS a unicode object in Python 3
         - Use 'b' mode to read a file into a bytes object
-    - The "file" object is no longer a <type 'file'>, but ...
+    - The "file" object is no longer a <type 'file'>
     '''
     try:
         file = open(os.path.join(os.path.dirname(__file__), '../../../../.gitignore'), 'r')

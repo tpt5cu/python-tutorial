@@ -5,8 +5,8 @@
 import numbers
 
 
-"""
-There are many, many types in Python. I must decide what the most important types are, and whether or not to classify a type as a "type" or an object
+'''
+There are many, many types in Python. I must decide what the most important types are, and whether or not to classify a type as a 'type' or an object
 that follows a protocol. 
 
 There are x basic catagories of types:
@@ -19,11 +19,8 @@ There are additional catagories of types that I don't consider as concrete as th
 - Callable objects
 - Protocol based objects: iterator types, descriptor types
 
-
-
-
 There are 7 basic catagories of types: numerics, sequences, mappings, files, classes, instances, and exceptions.
-- Therefore, I shouldn't make a distinction between traditionally primitive types like int, str, bool and "objects" like lists, sets, etc. because
+- Therefore, I shouldn't make a distinction between traditionally primitive types like int, str, bool and 'objects' like lists, sets, etc. because
   that is not a valid distinction in Python.
 
 Numeric types: int, float, long, complex
@@ -31,7 +28,7 @@ Numeric types: int, float, long, complex
 
 Sequence types: str, unicode, list, tuple, bytearray, buffer, xrange
 - range is NOT a sequence type
-"""
+'''
 
 
 def what():
@@ -39,5 +36,5 @@ def what():
     print(type(numbers.Number))
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     what()

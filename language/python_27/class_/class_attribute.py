@@ -35,7 +35,7 @@ def test_class_attribute_visibility():
 
 
 def modify_mutable_class_attribute():
-    """Modifying a mutable class attribute through an instance or class will mutate that attribute for all other instances"""
+    '''Modifying a mutable class attribute through an instance or class will mutate that attribute for all other instances'''
     hardcover = Book()
     print(hardcover.editions) # [1990, 1995]
     print(Book.editions) # [1990, 1995]
@@ -50,27 +50,27 @@ def modify_mutable_class_attribute():
 
 
 def modify_immutable_class_attribute():
-    """An immutable object cannot be modified, so this is impossible"""
+    '''An immutable object cannot be modified, so this is impossible'''
     pass
 
 
 def reassign_class_attribute():
-    """
+    '''
     Reassigning a class attribute through a class will change that attribute for all instances of the class. If I TRY to reassign a class attribute
     through a instance, what I'm actually doing is creating a new attribute on the instance that shadows the class attribute
     - Thus, if a class reassigns a class attribute, the new value of that attribute won't (easily) be displayed if it is being shadowed on a
       particular instance
-    """
+    '''
     hardcover = Book()
     print(hardcover.publisher) # We Publish Books
     print(Book.publisher) # We Publish Books
-    hardcover.publisher = "New Publisher"
+    hardcover.publisher = 'New Publisher'
     print(hardcover.publisher) # New Publisher
     print(Book.publisher) # We Publish Books
-    Book.publisher = "Newest Publisher"
+    Book.publisher = 'Newest Publisher'
     print(hardcover.publisher) # New Publisher
     print(Book.publisher) # Newest Publisher
-    Book.editions = "Quack"
+    Book.editions = 'Quack'
     print(hardcover.editions) # Quack
     print(Book.editions) # Quack
     print(hardcover.__class__.publisher) # Newest Publisher

@@ -11,7 +11,6 @@ TLDR: don't ever use old-style classes. It's not just that they're older, but th
 "fixes" to Python simply don't apply to old-style classes
 - Old-style classes don't have super() or descriptors
 
-
 Definitions:
 - A class is a data structure that can be used as a template to create instances of that class
     - Instances of a class are typically called objects, but in Python everything is an object, so that informal definition of an object is less

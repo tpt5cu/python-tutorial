@@ -6,7 +6,7 @@
 
 #class Animal:
 class Animal(object):
-    """
+    '''
     Python 2.x notation has different class definition syntax. 'object' represents the superclass of this class. In Python 3.x this is implicit.
 
     A 'constructor' does slightly different things depending on the language, so some don't like to call __init__() the constructor per se. __init__()
@@ -22,38 +22,38 @@ class Animal(object):
     This is long-winded to say, so these kinds of functions are called methods in Python. 
 
     Also, __new__ returns a new instance of a class. __init__() doens't return anything. It just initializes the new instance with desired attributes.
-    """
-    def __init__(self, name="George", species="none", age=0):
+    '''
+    def __init__(self, name='George', species='none', age=0):
         self.name = name
         self.species = species
         self.age = age
 
 
     def bad_method(name):
-        """
+        '''
         This method doesn't have the 'self' parameter as the first parameter. As a result, 'name' is treated as 'self'. When this method is called, no
         arguments can be passed to it because 'name' is already occupied by an object instance that is implicitly passed. Furthermore, calling this
         method without arguments will actually change the instance's name property to Austin. Confusing!
-        """
-        name.name = "Austin"
+        '''
+        name.name = 'Austin'
 
 
 def create_instances():
-    """ These objects have identical data inside of them, but they are indeed different objects. """
+    ''' These objects have identical data inside of them, but they are indeed different objects. '''
     i1 = Animal()
     i2 = Animal()
-    print(i1.name + " " + str(id(i1)))
-    print(i2.name + " " + str(id(i2)))
+    print(i1.name + ' ' + str(id(i1)))
+    print(i2.name + ' ' + str(id(i2)))
 
 
 def bad_method_test():
-    """Isn't this confusing?"""
+    '''Isn't this confusing?'''
     creature = Animal()
-    # creature.rename("Joe")
+    # creature.rename('Joe')
     creature.bad_method()
     print(creature.name)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     # create_instances()
     bad_method_test()
