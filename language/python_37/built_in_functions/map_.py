@@ -19,5 +19,15 @@ def divide_list_elements():
         print(i) # 1.0\n2.0\n3.0\n4.0\n5.0\n6.0
 
 
+def map_to_map():
+    '''A map can be fed to a map just fine in Python 3'''
+    list_ = [1, 2, 3, 4, 5]
+    m1 = map(lambda x: x * 2, list_)
+    m2 = map(str, m1)
+    m3 = map(float, m2)
+    print(sum(m3)) # 30.0
+
+
 if __name__ == "__main__":
-    divide_list_elements()
+    #divide_list_elements()
+    map_to_map()

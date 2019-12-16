@@ -1,30 +1,35 @@
-# https://docs.python.org/3/tutorial/inputoutput.html#methods-of-file-objects
-# https://docs.python.org/3/library/io.html - This is the actual documentation I'm interested in
-# https://docs.python.org/3/library/functions.html#open - shows documentation for open() and modes
-
-# https://docs.python.org/3/library/functions.html#open-newline-parameter - what's the deal with "newline"
+# - https://docs.python.org/3/tutorial/inputoutput.html#methods-of-file-objects
+# - https://docs.python.org/3/library/io.html - This is the actual documentation I'm interested in
+# - https://docs.python.org/3/library/functions.html#open - shows documentation for open() and modes
+# - https://docs.python.org/3/library/functions.html#open-newline-parameter - what's the deal with "newline"
+# - https://stackoverflow.com/questions/39295337/why-a-filename-is-given-closefd-parameter-of-open-function-must-be-true-in-pyt - what is closefd?
+# - https://stackoverflow.com/questions/7395542/is-explicitly-closing-files-important - omitting with and close with file works in CPython, but only
+#   as an implementation detail
 
 
 import io, os, locale
 
 
 '''
-newline
-
-- The "newline" parameter only applies if a file is opend in text mode
-- It can be:
-    - None (default): universal newlines are enabled. A line that is read can end with '\n', '\r', or '\r\n', but that ending will always be returned
-      inside Python as '\n'
-    - '': universal newlines are enabled. A line can end with any of the above BUT will not be translated into '\n'
-    - '\n', '\r', '\r\n: a newline is only delineated by the respective pattern. The respective line ending will also be returned without translation
-- 
-'''
-
-
-'''
 The old Python built-in open() function would read a file into a bytes object (so decoding wasn't relevant), then when a textual representation was
 required it would decode using US-ASCII
-- Since most of the time I was working with str objects in Python 2 anyway, when a str object was written to a file, it would just be encoded as US-ASCII
+- Since most of the time I was working with str objects in Python 2 anyway, when a str object was written to a file, it would just be encoded as
+  US-ASCII
+
+open() parameters:
+- newline
+    - The "newline" parameter only applies if a file is opened in text mode 
+        - Text mode the default even though it isn't shown in the documentation function signature
+    - It can be:
+        - None (default): universal newlines are enabled. A line that is read can end with '\n', '\r', or '\r\n', but that ending will always be
+          returned inside Python as '\n'
+        - '': universal newlines are enabled. A line can end with any of the above BUT will not be translated at all 
+        - '\n' or '\r' or '\r\n: a newline is only delineated by the respective pattern. The respective line ending will also be returned without translation
+- closefd
+    - Must be "True" if a filename is given. If a file descriptor is given, it may be False
+    - If it is False, then when the Python file object wrapper is closed the file descriptor will remain open for future use
+    - If it is True, then when the Python file object wrapper is closed the file descriptor will also be closed
+        - This means I still need to use with-statement for a variety of reasons
 '''
 
 
@@ -33,7 +38,7 @@ def compare_open():
     print(io.open is open) # True
 
 
-def open_py():
+def examine_open_type():
     '''
     - By default, reading a file returns a "str" object, which IS a unicode object in Python 3
         - Use 'b' mode to read a file into a bytes object
@@ -83,6 +88,6 @@ def invalid_filename():
 
 if __name__ == '__main__':
     #compare_open()
-    #open_py()
+    #examine_open_type()
     #open_with_encoding()
     invalid_filename()

@@ -36,26 +36,6 @@ def examine_match_object():
     #print(mo.group(2)) # IndexError
 
 
-def find_all_matches():
-    """
-    findall() does not return a MatchObject, it returns a list.
-    - If there were parenthesized groups in the list, the function returns a list of groups
-    """
-    string = 'cat\ndog\nfrogs\nfish\nmonkeys\nbat'
-    # There is a group, so a list of groups is returned
-    match_list = re.findall(r'\b(\w)\w{3}\b', string)
-    print(len(match_list)) # 1
-    print(match_list) # ['f']
-    # There were no groups, so a list of non-overlapping matches of the pattern is returned
-    match_list = re.findall(r'\b\w{3}\b', string)
-    print(len(match_list)) # 3
-    print(match_list) # ['cat', 'dog', bat']
-    # This is another example of using groups. Why would this returned output ever be useful?
-    match_list = re.findall(r'\b(\w)\w{1}(\w)\b', string)
-    print(len(match_list)) # 3
-    print(match_list) # [('c', 't'), ('d', 'g'), ('b', 't')]
-
-
 def string_to_list():
     """<regex>.split() will convert a string into a list, similar to how <string>.split() does the same thing without a regex"""
     data = """63838 20170101 0100 20161231 2000  2.422  -84.75   38.09     4.4     4.1     4.4     3.9     0.0      0 0      0 0      0 0 C     3.7 0     3.8 0     3.5 0    93 0   0.340   0.341   0.343   0.324   0.410     4.5     4.6     5.3     7.2     9.2
@@ -114,7 +94,6 @@ def match_entire_string():
 
 if __name__ == "__main__":
     #examine_match_object()
-    #find_all_matches()
     #string_to_list()
     #get_numbers_from_string()
     match_entire_string()

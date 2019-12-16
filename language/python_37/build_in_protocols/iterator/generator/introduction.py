@@ -10,5 +10,14 @@ def consume_generator():
     print(next(gen)) # H
 
 
+def slice_iterator():
+    '''An iterator is not subscriptable, therefore it is not slicable'''
+    m = map(lambda x: x / 2, [2, 4, 6, 8])
+    print(list(m)[0]) # 1.0
+    #print(m[0]) # TypeError: 'map' object is not subscriptable
+    #print(m[1:3]) # TypeError: 'map' object is not subscriptable
+
+
 if __name__ == '__main__':
-    consume_generator()
+    #consume_generator()
+    slice_iterator()
