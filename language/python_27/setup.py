@@ -20,4 +20,4 @@ Uninstall package
 
 
 from setuptools import setup, find_packages
-setup(name='python2_tutorial', version='1.0', packages=find_packages())
+setup(name='python2-tutorial', version='1.0', packages=find_packages())

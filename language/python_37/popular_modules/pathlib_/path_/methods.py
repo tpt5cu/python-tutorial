@@ -45,6 +45,15 @@ def get_matching_files():
     print(list(p.parent.parent.parent.glob('**/*[s_].py')))
 
 
+def get_absolute_path():
+    p = Path(__file__)
+    print(type(p)) # <class 'pathlib.PosixPath'>
+    print(p) # methods.py, path_/methods.py, etc.
+    abs_p = p.resolve()
+    print(abs_p) # /Users/austinchang/tutorials/python/language/python_37/popular_modules/pathlib_/path_/methods.py 
+
+
 if __name__ == '__main__':
     #file_object_exists()
-    get_matching_files()
+    #get_matching_files()
+    get_absolute_path()

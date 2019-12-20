@@ -1,0 +1,1 @@
+'''all() returns True if all elements in the iterable are True, or the iterable is empty'''

@@ -1,5 +1,9 @@
 - https://setuptools.readthedocs.io/en/latest/setuptools.html#egg-info-create-egg-metadata-and-set-build-tags
 - https://stackoverflow.com/questions/1550226/python-setup-py-uninstall
+- https://stackoverflow.com/questions/38164587/format-of-name-of-a-python-package-with-setuptools
+# Package name
+- If I name a package with an underscore, setuptools silently converts it into a hyphen (confusing)
+- Package names are case-insensitive
 # Install package
 - $ pip install -e .
     - Looks for setup.py in the current directory and installs the package
@@ -23,8 +27,6 @@
 - When the above command is run with a complex installation, a whole host of files are output
     - Remove them with:
         - $ cat files.txt | xargs printf $'\'%s\'\n' | xargs sudo rm
-
-    
 # egg_info
 - egg_info is a command that primarily is used to update a projects .egg-info metadata directory
 - Invocation: $ python setup.py egg_info

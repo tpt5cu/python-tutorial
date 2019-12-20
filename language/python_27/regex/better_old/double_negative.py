@@ -24,6 +24,5 @@ def double_negative():
         print(mo.group())
 
 
-
 if __name__ == '__main__':
     double_negative()

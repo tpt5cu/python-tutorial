@@ -119,6 +119,11 @@ def replace_suffix():
     print(removed_suffix.with_suffix('')) # help
 
 
+def get_absolute_path():
+    '''See pathlib.Path'''
+    pass
+
+
 if __name__ == '__main__':
     #access_components()
     #access_root()

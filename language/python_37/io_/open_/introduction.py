@@ -5,9 +5,10 @@
 # - https://stackoverflow.com/questions/39295337/why-a-filename-is-given-closefd-parameter-of-open-function-must-be-true-in-pyt - what is closefd?
 # - https://stackoverflow.com/questions/7395542/is-explicitly-closing-files-important - omitting with and close with file works in CPython, but only
 #   as an implementation detail
+# - https://stackoverflow.com/questions/29295654/what-does-python3-open-x-mode-do - purpose of 'x' mode
 
 
-import io, os, locale
+import io, os, locale, pathlib, re
 
 
 '''
