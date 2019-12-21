@@ -5,3 +5,4 @@
 venv*/
 .DS_store
 *.pyc
+**/secret
