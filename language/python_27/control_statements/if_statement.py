@@ -6,10 +6,17 @@ def compound_comparison(x):
         print(False)
 
 
+def if_statement_variable():
+    '''There is no such thing as an if-statement variable. Check the surrounding context for the variable'''
+    if x < 5:
+        print(x)
+
+
 def perform_compound_comparison():
     compound_comparison(0) # False
     compound_comparison(4) # 4
 
 
 if __name__ == '__main__':
-    perform_compound_comparison()
+    #perform_compound_comparison()
+    if_statement_variable()

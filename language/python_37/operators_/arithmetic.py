@@ -11,6 +11,7 @@ def division():
     '''
     print(5 / 2.6) # 1.923076923076923
     print(type(5 / 2.6)) # <class 'float'>
+    print(4/2) # 2.0
     print(5 / 3) # 1.6666666666666667
     print(type(5 / 3)) # <class 'float'>
     print(5 // 2.6) # 1.0
@@ -53,8 +54,8 @@ def mixed_type_operations():
 
 
 if __name__ == '__main__':
-    #division()
+    division()
     #exponentiate()
     #cast_float_to_int()
     #integer_divison_floors()
-    mixed_type_operations()
+    #mixed_type_operations()

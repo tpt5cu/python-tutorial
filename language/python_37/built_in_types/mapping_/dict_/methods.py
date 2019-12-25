@@ -1,5 +1,6 @@
 # https://stackoverflow.com/questions/13998492/when-should-iteritems-be-used-instead-of-items
 # https://docs.python.org/3/library/stdtypes.html#dict-views
+# https://stackoverflow.com/questions/6777485/modifying-a-python-dict-while-iterating-over-it
 
 
 '''
@@ -42,5 +43,49 @@ def key_iteration():
     #print(my_dict.viewkeys()) # AttributeError
 
 
+def modify_during_iteration():
+    '''
+    It is obvious that I should not delete or add items to a dictionary while iterating over it, but what about reassigning items?
+    - Stack Overflow:
+      (https://stackoverflow.com/questions/2315520/in-python-how-do-i-loop-through-the-dictionary-and-change-the-value-if-it-equal/2315529#2315529)
+      says it is okay to modify existing entries of a dict while iterating over it
+    - It's always fine to iterate over a list of the dict's keys and modify the dict that way, since I'm not iterating over the dict itself
+    '''
+    pass
+
+
+def sort_dicts():
+    '''
+    Dicts can be sorted by converting their entire contents into strings and then comparing those strings lexicographically
+    - I think it would be better to sort by a particular key, but this is allowed...
+    '''
+    d1 = {
+        'a': 'a',
+        'b': 'b',
+        'c': 'c',
+        'name': 'One'
+    }
+    d2 = {
+        '1': 'b',
+        'c': 'c',
+        'd': 'd',
+        'name': 'Two'
+    }
+    d3 = {
+        'a': '1',
+        'c': 'c',
+        'd': 'd',
+        'name': 'Three'
+    }
+    unsorted_list = [d3, d1, d2]
+    # [{'a': '1', 'c': 'c', 'd': 'd', 'name': 'Three'}, {'a': 'a', 'c': 'c', 'b': 'b', 'name': 'One'}, {'1': 'b', 'c': 'c', 'd': 'd', 'name': 'Two'}]
+    print(unsorted_list) 
+    sorted_ = sorted(unsorted_list, key=lambda d: str({val: d[val] for val in d if val != 'name'})) 
+    # [{'1': 'b', 'c': 'c', 'd': 'd', 'name': 'Two'}, {'a': '1', 'c': 'c', 'd': 'd', 'name': 'Three'}, {'a': 'a', 'c': 'c', 'b': 'b', 'name': 'One'}]
+    print(sorted_)
+    #sorted_ = sorted([d1, d2], key=lambda d: {val: d[val] for val in d if val != 'name'}) # TypeError: '<' not supported between instances of 'dict' and 'dict'
+
+
 if __name__ == '__main__':
-    key_iteration()
+    #key_iteration()
+    sort_dicts()

@@ -2,21 +2,23 @@
 # https://docs.python.org/2/library/stdtypes.html#sequence-types-str-unicode-list-tuple-bytearray-buffer-xrange - sequence-type methods that all sequence types (including strings) support
 # https://docs.python.org/2/library/string.html - the string module (not same as built-in str)
 
-def strip_():
-    '''
-    Use <string>.strip() to remove the specified characters from the leading and trailing ends of the string. CAUTION: ALL such specified characters
-    will be removed!
-    '''
-    # The first 'o', the last 'd', and '.omd' will be removed
-    string = 'oOoy, what a nice string you created.omd'.strip('.omd')
-    print(string)
 
-
-def rstrip_():
-    '''print() automatically inserts a newline, so sometimes it's useful to strip off an existing newline'''
-    line = 'This line has a newline\n'
-    print(line.rstrip('\n'))
-    print('no extra space above')
+'''See Python 3 notes for strip'''
+#def strip_():
+#    '''
+#    Use <string>.strip() to remove the specified characters from the leading and trailing ends of the string. CAUTION: ALL such specified characters
+#    will be removed!
+#    '''
+#    # The first 'o', the last 'd', and '.omd' will be removed
+#    string = 'oOoy, what a nice string you created.omd'.strip('.omd')
+#    print(string) # Ooy, what a nice string you create
+#
+#
+#def rstrip_():
+#    '''print() automatically inserts a newline, so sometimes it's useful to strip off an existing newline'''
+#    line = 'This line has a newline\n'
+#    print(line.rstrip('\n')) # This line has a newline
+#    print('no extra space above') # no extra space above
     
 
 def replace_():
@@ -56,9 +58,7 @@ def get_lowercase():
 
 
 if __name__ == '__main__':
-    strip_()
-    rstrip_()
     replace_()
-    string_to_list()
-    get_individual_lines()
-    get_lowercase()
+    #string_to_list()
+    #get_individual_lines()
+    #get_lowercase()

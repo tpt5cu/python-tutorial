@@ -40,6 +40,27 @@ def count():
     print(count) # 3
 
 
+def bad_conversion():
+    '''Just "casting" a bytes object to a str will give me a weird looking str which is never what I want'''
+    bytes_ = b'USCRN station 45'
+    str_ = str(bytes_)
+    print(type(str_)) # <class 'str'>
+    print(str_) # b'USCRN station 45'
+
+
+def split_():
+    '''
+    str and bytes objects have (almost?) the same set of methods, but each respective method only accepts the same respective type as the calling
+    object
+    - E.g. <bytes>.split(<bytes>) and <str>.split(<str>)
+    '''
+    bytes_ = b'hello\r\nworld'
+    split_bytes = bytes_.split(b'\r\n')
+    print(split_bytes) # [b'hello', b'world']
+
+
 if __name__ == '__main__':
     #decode_bytes_to_str()
-    count()
+    #count()
+    #bad_conversion()
+    split_()

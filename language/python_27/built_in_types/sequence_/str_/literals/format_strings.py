@@ -29,9 +29,13 @@ def new_format_function():
 
 
 def new_format_function_type_coercion():
-    '''The format() function will implicitly call str() on non-string arguments'''
+    '''
+    The format() function will implicitly call str() on non-string arguments
+    - If a format argument isn't specified, the string will contain "{}"
+    '''
     print('Most months have {} days'.format(30)) # Most months have 30 days
     print('Python calls booleans {}'.format(bool)) # Python calls booleans <type 'bool'>
+    print('{}.txt') # {}.txt
 
 
 def template_strings():

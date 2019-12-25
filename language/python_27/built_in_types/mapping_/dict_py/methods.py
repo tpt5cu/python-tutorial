@@ -129,12 +129,23 @@ def get_similar_keys():
             print(k) # feeder1\nfeeder2
 
 
+def direct_iteration():
+    '''Directly iterating over a dictionary iterates over its keys'''
+    dict_ = {
+        'foo': 1,
+        'bar': 2
+    }
+    for k in dict_:
+        print(k) # foo\nbar
+
+
 if __name__ == '__main__':
     #check_length()
     #get_default_value()
     #key_value_iteration()
     #value_iteration()
-    key_iteration()
+    #key_iteration()
     #conditionally_insert_value()
     #dynamic_dictionary_view()
     #get_similar_keys()
+    direct_iteration()

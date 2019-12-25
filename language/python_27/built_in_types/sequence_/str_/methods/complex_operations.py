@@ -1,5 +1,3 @@
-# -*- coding: UTF-8 -*-
-
 # https://stackoverflow.com/questions/1207457/convert-a-unicode-string-to-a-string-in-python-containing-extra-symbols - unicode to str
 # https://docs.python.org/2.7/library/itertools.html#itertools.permutations
 
@@ -19,29 +17,6 @@ def reverse_sentence_order():
     print(my_list) # ['', 'rubs', 'and', 'catnip', 'like', 'cats']
     reversed_sentence = ' '.join(my_list)
     print(reversed_sentence) # ' rubs and catnip like cats'
-
-
-def unicode_to_str():
-    '''
-    There are many ways of doing this. Check the source. Note that regardless of the approach, one of two things must happen to convert a unicode
-    object to a str object: 1) drop the unicode characters that cannot be encoded in extended ascii 2) replace those characters with something else
-    '''
-    a = u'aaaàçççñññ'
-    print(type(a)) # <type 'unicode'>
-    print(a) # aaaàçççñññ
-    print(len(a)) # 10
-    b = a.encode('ascii', 'replace')
-    print(type(b)) # <type 'unicode'>
-    print(b) # aaa???????
-    print(len(b)) # 10
-    print(ord(b[9])) # 63 is question mark in extended ascii, so the characters really are replaced
-
-
-def mix_unicode_and_str():
-    '''unicode and str objects can be concatenated to form a unicode object'''
-    s = b'hello' + u'world'
-    print(type(s)) # <type 'unicode'>
-    print(s) # helloworld
 
 
 def show_permutations(string):
