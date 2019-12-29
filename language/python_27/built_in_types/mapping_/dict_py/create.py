@@ -36,9 +36,20 @@ def fill_with_keys():
 
 
 def merge_dicts():
+    '''The fact is that a dictionary cannot be unpacked into a dictionary that already exists'''
     d1 = {'direction': 'right', 'color': 'maroon'}
     d2 = {'weather': 'sunny'}
-    d3 = dict(**dict(**d2))
+    # Only allowed in Python 3
+    #d3 = {**d1, **d2}
+    # Only allowed in Python 3
+    #d3 = {**d1}
+    # Doesn't work
+    #d3 = {k: d1[k] for k in d1}
+    d3 = {}
+    for k in d1:
+        d3[k] = d1[k]
+    for k in d2:
+        d3[k] = d2[k]
     print(d3)
 
 
@@ -60,5 +71,5 @@ def convert_from_and_to_string():
 if __name__ == "__main__":
     #literal()
     #fill_with_keys()
-    #merge_dicts()
-    convert_from_and_to_string()
+    merge_dicts()
+    #convert_from_and_to_string()

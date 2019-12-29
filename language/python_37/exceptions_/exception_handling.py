@@ -1,3 +1,6 @@
+# https://docs.python.org/3.7/library/exceptions.html - exception hierarchy at the end
+
+
 '''Python 3 removed StandardError'''
 
 

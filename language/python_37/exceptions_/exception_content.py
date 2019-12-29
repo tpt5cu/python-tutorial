@@ -2,6 +2,7 @@ def examine_exception_content():
     '''
     Python 3 exceptions lack the "message" attribute entirely. Instead, everything should be looked up inside of the "args" attribute
     - This is good because the value of the "message" attribute was unreliable in Python 2, so this removes ambiguity
+    - 
     '''
     # This is typically how exceptions are created.
     e = Exception('hello world')

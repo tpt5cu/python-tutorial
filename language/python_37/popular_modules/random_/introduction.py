@@ -9,5 +9,13 @@ def randomize_sequence():
     print(iter_) # [2, 5, 0, 9, 3, 1, 7, 8, 4, 6]
 
 
+def random_choice():
+    '''random.choice() subscripts the sequence, so it cannot accept a generator'''
+    dict_ = { 'foo': 1, 'bar': 2 }
+    #print(random.choice(dict_.values())) # TypeError
+    print(random.choice(list(dict_.values())))
+
+
 if __name__ == '__main__':
-    randomize_sequence()
+    #randomize_sequence()
+    random_choice()

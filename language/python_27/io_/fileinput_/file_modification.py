@@ -1,4 +1,10 @@
+# https://stackoverflow.com/questions/30934232/why-is-fileinput-input-object-not-lost-when-going-out-of-scope - fileinput NEEDS to be closed!
+
+
 import os, fileinput
+
+
+'''As of Python 3.2, fileinput can itself be used as a context manager. Before that, close() had to explicitly be called'''
 
 
 def inplace():

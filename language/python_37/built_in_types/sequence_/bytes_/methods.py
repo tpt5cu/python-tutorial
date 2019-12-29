@@ -8,9 +8,9 @@
 def decode_bytes_to_str():
     '''
     - The decode() method default to UTF-8, which is sensible, but not always correct!
-        - \xBC = 10111100 in raw binary (no encoding at all). Unfortunately, there is no code point in UTF-8 that STARTS with that exact sequence of
-          bits, so UTF-8 can't decode this particular sequence of bytes. It's actually really useful that Python raises this error instead of corrupting
-          data by outputing �
+        - \xBC == 10111100 in raw binary (no encoding at all). Unfortunately, there is no code point in UTF-8 that STARTS with that exact sequence of
+          bits, so UTF-8 can't decode this particular sequence of bytes. It's actually really useful that Python raises this error instead of
+          corrupting data by outputing �
     - It's really cool how it just so happens I can decode this sequence of bytes via two different encodings!
     '''
     b = b'\xBC\xbd\xbe\xbf'
