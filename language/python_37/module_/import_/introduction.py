@@ -3,8 +3,17 @@
 
 import sys
 print(sys.path[0])
-import awesome_module
-awesome_module.awesome_function()
+
+#import awesome_module # Doesn't work sometimes
+#awesome_module.awesome_function()
+
+'''
+Even if a module is successfully imported on a line, a subsequent from-style import of that same module is done completely independently of any prior
+import(s). As a result, the line "from awesome_module import ..." fails for the same reason as the line "import awesome_module"
+'''
+from module_.import_ import awesome_module
+from awesome_module import awesome_function # ModuleNotFoundError: No module named 'awesome_module'
+awesome_function()
 
 
 '''

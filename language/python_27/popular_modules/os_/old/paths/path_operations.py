@@ -34,7 +34,7 @@ def resolve_relative_path():
     # This is good. It will work anywhere. We go from /Users/austinchang/tutorials/python/language/python2/io_py to /Users/austinchang/tutorials/python
     # It does not matter that __file__ could be: language/python2/io_py/file_paths.py, or python2/io_py/file_paths.py, or io_py/file_paths.py, or
     # anything else
-    file_path = os.path.join(os.path.dirname(__file__), '../../../.gitignore')
+    file_path = os.path.join(os.path.dirname(__file__), '../../../../../../.gitignore')
     print('file_path: ' + file_path)
     with open(file_path) as f:
         print(f.read())
@@ -42,7 +42,8 @@ def resolve_relative_path():
 
 def normalize_path():
     '''
-    os.path.normpath removes redundant slashes and collapses relative separators (i.e '..'). It does not remove spaces or place a path with spaces in quotations.
+    os.path.normpath removes redundant slashes and collapses relative separators (i.e '..').
+    - It does not remove spaces or place a path with spaces in quotations.
     '''
     p = (os.path.join('hello/', 'my//', 'name///', 'is', '../Austin'))
     print(p) # hello/my//name///is/../Austin
@@ -80,14 +81,14 @@ def get_last_path_component():
 
 def join_with_empty_string():
     '''When a path is joined with an empty string, the result is a directory entry (i.e. a path with a trailing slash)'''
-    filenames = [os.path.join('hello', 'world', filename) for filename in 'yes', 'no', '']
+    filenames = [os.path.join('hello', 'world', filename) for filename in ('yes', 'no', '')]
     print(filenames) # ['hello/world/yes', 'hello/world/no', 'hello/world/']
     print(os.path.join('hello', 'world')) # 'hello/world'
 
 
 if __name__ == '__main__':
-    examine_paths()
-    #resolve_relative_path()
+    #examine_paths()
+    resolve_relative_path()
     #normalize_path()
     #get_filename_with_extension()
     #get_filename_without_extension()
