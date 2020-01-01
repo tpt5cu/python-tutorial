@@ -15,6 +15,10 @@ from module_.import_ import awesome_module
 from awesome_module import awesome_function # ModuleNotFoundError: No module named 'awesome_module'
 awesome_function()
 
+'''Yes, it is perfectly reasonable to import a function from a module'''
+#from module_.import_.awesome_module import awesome_function
+#awesome_function()
+
 
 '''
 Python 3 completely removes implicit relative imports. This means that when Python is run with the -m flag, sys.path[0] is NO LONGER equal to "",
@@ -33,3 +37,6 @@ Concerete example
     - It fails because sys.path[0] = /Users/austinchang/tutorials/python/language/python_37/module_, so "awesome_module" can't be resolved as a
       top-level script from anything in sys.atph
 '''
+
+def introduction_function():
+    print('Hello from introduction function')
