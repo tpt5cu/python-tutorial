@@ -1,4 +1,5 @@
-# https://docs.python.org/3/library/stdtypes.html#binary-sequence-types-bytes-bytearray-memoryview
+# https://docs.python.org/3.7/library/stdtypes.html#binary-sequence-types-bytes-bytearray-memoryview - binary sequence types constructors, methods, etc.
+
 # https://docs.python.org/3/reference/lexical_analysis.html#string-and-bytes-literals
 # https://python-reference.readthedocs.io/en/latest/docs/str/escapes.html
 # https://realpython.com/lessons/defining-literal-bytes-object/
@@ -47,7 +48,14 @@ def create_bytes_object_from_literal():
         print(c) # 161\n162\n163\n164\n165\n166\n
 
 
+def create_bytes_object_from_readable_literal():
+    '''The bytes constructor requires an encoding if a string literal is passed, even if the string literal contains ASCII characters'''
+    b = bytes('omf/models/pvWatts', 'ascii')
+    print(b)
+
+
 if __name__ == '__main__':
     #create_bytes_literal()
     #create_bytes_object_with_length()
-    create_bytes_object_from_literal()
+    #create_bytes_object_from_literal()
+    create_bytes_object_from_readable_literal()

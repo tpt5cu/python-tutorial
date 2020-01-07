@@ -1,4 +1,8 @@
 # https://docs.python.org/3.7/library/stdtypes.html#string-methods - built-in string methods
+# https://docs.python.org/2.4/lib/standard-encodings.html - Python encoding aliases
+
+
+import base64
 
 
 def mix_unicode_and_str():
@@ -64,7 +68,26 @@ def strip_characters():
     print(str_.strip('ddaa'))   #    bbbaadacc
 
 
+def encode_():
+    '''
+    Common encodings:
+    - cp1252: Microsoft-1252 (superset of ISO-8859-1)
+    - latin_1: ISO-8859-1
+    - ascii: ASCII
+    - utf_8: UTF-8
+    '''
+    b = 'Hello'.encode('latin_1')
+    print(type(b)) # <class 'bytes'>
+    print(b) # b'Hello'
+    # Base64 is a binary encoding!
+    #b = 'Goodbye'.encode('base64') # LookupError: 'base64' is not a text encoding
+    b = base64.standard_b64encode('Goodbye'.encode('utf-8'))
+    print(type(b)) # <class 'bytes'>
+    print(b) # b'R29vZGJ5ZQ=='
+
+
 if __name__ == '__main__':
     #mix_unicode_and_str()
-    remove_characters()
+    #remove_characters()
     #strip_characters()
+    encode_()

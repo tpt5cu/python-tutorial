@@ -2,6 +2,9 @@
 # https://stackoverflow.com/questions/42339876/error-unicodedecodeerror-utf-8-codec-cant-decode-byte-0xff-in-position-0-in/42340744 - invalid start byte
 
 
+import base64
+
+
 '''A bytes object is an immutable sequences of integers'''
 
 
@@ -23,6 +26,40 @@ def decode_bytes_to_str():
     s = b.decode(encoding='latin_1')
     print(type(s)) # <class 'str'>
     print(s) # ¼½¾¿®
+
+
+def decode_readable_bytes_to_str():
+    '''
+    Sometimes all I need to do is get rid of the little 'b' prefix'
+    - decode() defaults to using 'utf-8' which is ascii compatible, so it will usually be sufficient
+    - This is especially needed for Base64-encoded PNGs, which need to be bytes objects in Python, but need to be actual strings for json.dump()
+    '''
+    b = b'Hello there'
+    s = b.decode()
+    print(type(s)) # <class 'str'>
+    print(s) # Hello there
+
+
+def encode_base64():
+    '''The only way to do this is with the base64 module. There is no encode() method on bytes objects since that would be confusing'''
+    bytes_ = b'Hello World'
+    #bytes_ = bytes_.encode('base64') # AttributeError
+    print(bytes_)
+
+
+def decode_base64():
+    '''
+    Technically, this function should be in the base64 notes. I put it here because sometimes I need Base64 bytes -> UTF-8 bytes (or whatever) ->
+    str or binary file
+    - The point is, I can only Base64 decode a bytes object that was previously encoded in Base64
+    '''
+    bytes_ = b'Hello World!'
+    #print(bytes_.decode('base64')) # LookupError: 'base64' is not a text encoding;
+    #utf8_bytes = base64.standard_b64decode(bytes_) # binascii.Error: Incorrect padding
+    bytes_ = base64.standard_b64encode(bytes_)
+    print(bytes_) # b'SGVsbG8gV29ybGQh'
+    utf8_bytes = base64.standard_b64decode(bytes_)
+    print(utf8_bytes) # b'Hello World!'
 
 
 def count():
@@ -61,6 +98,9 @@ def split_():
 
 if __name__ == '__main__':
     #decode_bytes_to_str()
+    #decode_readable_bytes_to_str()
+    #encode_base64()
+    decode_base64()
     #count()
     #bad_conversion()
-    split_()
+    #split_()

@@ -1,3 +1,8 @@
+'''
+Bonus fact: a "resolved import" only occurs when a symbol needs to be extracted from a module with the "from <module> import <symbol>" syntax
+- If the syntax is "from <package> import <module>", then THAT is actually an unresolved import! WOW!
+'''
+
 # - If b.py is __main__, then this import causes no problems, regardless of what import style a.py is using
 #   - This is an "unresolved_import", so "a" is already in the global symbol table of b when this statement is encountered again. Therefore, as far as
 #     Python imports are concerned, this statement has been satisfied. It's almost like there are two execution stages of Python: the import stage and

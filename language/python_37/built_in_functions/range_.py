@@ -25,6 +25,15 @@ def supported_operations():
     print(5 in r) # True
 
 
+def float_length():
+    '''The range() function only accepts integers!'''
+    #gen = range(4.89) # TypeError: 'float' object cannot be interpreted as an integer
+    gen = range (4.89//1)
+    list_ = list(gen)
+    print(list_)
+
+
 if __name__ == '__main__':
     #print_numbers()
-    supported_operations()
+    #supported_operations()
+    float_length()

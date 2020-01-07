@@ -13,5 +13,18 @@ def combine_lists():
     print(list(c)) # [(1, 4), (2, 5), (3, 6)]
 
 
+def unpack_zip():
+    '''Yes, a generator object can be unpacked into a function with the * syntax'''
+    def consume_tuple(x, y):
+        print('x: {}'.format(x)) # x: (1, 'a')
+        print('y: {}'.format(y)) # y: (2, 'b')
+    list_1 = [1, 2]
+    list_2 = ['a', 'b']
+    gen = zip(list_1, list_2)
+    consume_tuple(*gen)
+
+
+
 if __name__ == '__main__':
-    combine_lists()
+    #combine_lists()
+    unpack_zip()

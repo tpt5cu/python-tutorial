@@ -10,6 +10,12 @@ from module_.import_.import_processing.resolved_import.b import say_hello_from_b
 
 
 '''
+Summary: "resolved imports" can cause ImportErrors. A true resolved import only occurs when symbols from an actual MODULE need to be resolved, not
+when a module of a package needs to be resolved.
+'''
+
+
+'''
 Why does this ImportError situation occur? Let's review
 1) Python sees that it cannot simply add "b" to the global symbol table of "a". When the "resolved import" syntax is used like this, b never enters
    into the symbol table of a. The only thing that should be added to the symbol table of a is "say_hello_from_b", so Python dives into b to tries and
