@@ -7,6 +7,7 @@ def examine_exception_content():
     # This is typically how exceptions are created.
     e = Exception('hello world')
     print(e.args) # ('hello world',)
+    print(e.args[0]) # hello world
     #print(e.message) # AttributeError
     # Exceptions can also be created with a variable number of arguments.
     e = Exception('foo', 'bar', 'baz')
@@ -15,6 +16,15 @@ def examine_exception_content():
     #print(e.message) # AttributeError
 
 
+def examine_empty_exception():
+    '''The only way to safely deal with exceptions is to check the length of args'''
+    e = Exception()
+    print(len(e.args)) # 0
+    #print(e.args[0]) # IndexError
+    msg = e.args[0] if len(e.args) > 0 else 'nothing'
+    print(msg)
+
+
 if __name__ == '__main__':
     #examine_exception_content()
-    use_exception_outside_context_manager()
+    examine_empty_exception()

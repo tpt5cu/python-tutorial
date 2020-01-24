@@ -26,4 +26,4 @@ def use_context_manager():
 
 if __name__ == "__main__":
     a_list = use_context_manager()
-    print('val was: ' + str(a_list))
+    print('val was: ' + str(a_list)) # val was: [56, 'item', 'another thing']

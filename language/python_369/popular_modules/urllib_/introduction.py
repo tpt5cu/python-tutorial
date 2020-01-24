@@ -3,6 +3,18 @@
 # https://docs.python.org/3/library/urllib.request.html#module-urllib.response - Response object interface
 
 
+'''
+URLLIB IS A PACKAGE, NOT A MODULE IN PYTHON 3. IT IS A MODULE IN PYTHON 2. VERY ANNOYING
+- Thus, "urllib.requests" raises an AttributeError in Python 3 IF used incorrectly
+'''
+import urllib
+# This is bad
+#urllib.request.urlopen('https://www.google.com') # AttributeError: module 'urllib' has no attribute 'request'
+# These are okay
+#import urllib.request as request
+#from urllib import request
+
+
 from urllib import request
 
 
@@ -13,7 +25,7 @@ I have not investigated how caching works with urllib. Instead, I should just us
 urlopen()
 - urllib.request.urlopen(): open the URL (or Request object) and return a slightly modified http.client.HTTPResponse object (for HTTP and HTTPS URLs)
     - This object is a file-like object that has read(), readline(), info() (returns headers), geturl() (returns the URL), and more
-        - Everything that is read is returned as in bytes, not Unicode
+        - Everything that is read is returned as bytes, not Unicode
 - The HTTPResponse works as a context manager
 
 Request()

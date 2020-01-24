@@ -15,6 +15,9 @@ Code control
     - jump around (set the next line that will be executed).
 - $ return
     - continue unti the current function returns. Very useful!
+- $ p <expression>
+    - Print the value of the expression
+- $ 
 
 Global control
 - $ restart

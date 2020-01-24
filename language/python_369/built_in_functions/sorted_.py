@@ -1,3 +1,10 @@
+# https://docs.python.org/3/library/functions.html#sorted
+
+
+'''
+Return a new sorted list from the items in iterable.
+- <list>.sort() is in-place, not sorted()
+'''
 
 
 def sort_iterable():

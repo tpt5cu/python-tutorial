@@ -1,4 +1,6 @@
 # https://stackoverflow.com/questions/1529002/cant-set-attributes-of-object-class
+# https://stackoverflow.com/questions/652276/is-it-possible-to-create-anonymous-objects-in-python - hacky solutions like using type() and lambda
+# https://stackoverflow.com/questions/1123000/does-python-have-anonymous-classes - cleaner solution with SimpleNamespace
 
 
 """
@@ -11,6 +13,9 @@ In Python (i.e. CPython, the original implementation of Python), all of the buil
 These built-in types do NOT allow arbitrary attributes to be tacked on at runtime. Any custom subclass of any built-in type CAN have arbitrary
 attributes, but these subclass instances will be MUCH larger than the built-in types. This is fine for my purposes, but if every built-in type had a
 __dict__ attribute, the core Python code would be bloated.
+
+Python 3:
+- See types.SimpleNamespace
 """
 
 

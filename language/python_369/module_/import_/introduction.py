@@ -25,6 +25,9 @@ Python 3 completely removes implicit relative imports. This means that when Pyth
 which previously instructed the interpreter to search the directory of the main entrypoint script for an imported module (to boot, this implicit
 relative lookup behaivor would shadow site-package AND built-in modules)
 - Instead, sys.path[0] is now equal to the directory where $ python -m $ was run instead of ""
+
+    - Actually, with Python 3.6.9 and pdb (e.g. python -m pdb <filepath>), it's equal to the base directory of where the debugged file is ???
+
 - There is no difference in behavior between Python 2 and 3 regarding running Python without the -m flag
 
 Concerete example
