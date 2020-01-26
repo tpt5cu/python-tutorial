@@ -3,19 +3,19 @@
 
 
 import pandas as pd
-import create
+from python_369.built_in_types.DataFrame_ import create
 
 
 def get_mixed_matrix():
-    return pd.DataFrame(create.get_mixed_matrix(), columns=["cat", "dog", "frog", "log", "zog", "butt", "goof", "night", "as", "we"])
+    return pd.DataFrame(create.get_mixed_matrix(), columns=['cat', 'dog', 'frog', 'log', 'zog', 'butt', 'goof', 'night', 'as', 'we'])
 
 
 def access_rows():
-    """
+    '''
     Each DataFrame has two special dictionary-like attributes: loc and iloc
     - loc stands for location. Use it to return a row/column based on label
     - iloc stands for integer location. Use it to return a row/column based on its index relative to other rows/columns in the DataFrame. Indexes start at 0.
-    """
+    '''
     df = pd.DataFrame(create.get_mixed_matrix(), index=["cat", "dog", "frog", "log", "zog", "butt", "goof", "night", "as", "we"])
     print(str(df) + "\n")
     # get the row at integer index 0. Rows can be printed veritcally, but they are still horizontal rows in the DataFrame.
@@ -32,20 +32,21 @@ def access_rows():
 
 
 def access_columns():
-    """ Access columns directly on the DatFrame object with brackets. """
+    '''Access columns directly on the DatFrame object with brackets.'''
     df = pd.DataFrame(create.get_mixed_matrix())
-    print(df)
-    # Use brackets to access a COLUMN by label of a dataframe. Brackets (aka square brackets) refers to "[]". Braces (aka curly brackets) refers to "{}".
+    print(df, '\n')
+    # Use brackets to access a COLUMN by label of a dataframe. 
+    # - Brackets (aka square brackets) refers to "[]". Braces (aka curly brackets) refers to "{}".
     # This particular DataFrame happens to have integer columns labels.
-    print(df[0]) 
+    print(df[0], '\n') 
     # There are 10 rows at the column labled 0 in the DataFrame
-    print(len(df[0])) 
+    print(len(df[0]), '\n') 
     # This throws an error because there is no column with the label "cat"
     #print(df["cat"])
 
 
 def slice_columns_by_label():
-    """ The loc dictionary object stores everything by label. Everything must be accessed by lable, NOT index! """
+    '''The loc dictionary object stores everything by label. Everything must be accessed by lable, NOT index!'''
     df = get_mixed_matrix()
     print(str(df) + "\n")
     # Get all the rows of the "frog" column
@@ -55,7 +56,7 @@ def slice_columns_by_label():
 
 
 def slice_columns_by_index():
-    """ The iloc dictionary object stores evrything by index """
+    '''The iloc dictionary object stores evrything by index'''
     df = get_mixed_matrix()
     print(str(df) + "\n")
     # Get all the rows of the 1st column
@@ -65,15 +66,15 @@ def slice_columns_by_index():
 
 
 def access_column_and_row():
-    """ The syntax for accessing a particular row of a column is actually intuitive """
+    '''The syntax for accessing a particular row of a column is actually intuitive'''
     df = pd.DataFrame(create.get_mixed_matrix())
     print(df)
     print(df[0][1])
 
 
 if __name__ == "__main__":
-    #access_rows()
+    access_rows()
     #access_columns()
     #slice_columns_by_label()
-    slice_columns_by_index()
+    #slice_columns_by_index()
     #access_column_and_row()
