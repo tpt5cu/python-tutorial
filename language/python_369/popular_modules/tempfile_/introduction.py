@@ -39,8 +39,12 @@ def temporary_file():
     The file will be destroyed as soon as it is closed. As a simplification: do not rely on the filesystem being able to see or not see that this file
     existed. 
     - The temporary file does not show up in the filesystem according to os.scandir()
+    - The "name" attribute of this type of temporary file is a number, so it's not very helpful
     '''
-    with tempfile.TemporaryFile('w', suffix='.mytemp', dir=this_dir) as f:
+    with tempfile.TemporaryFile('w+', suffix='.mytemp', dir=this_dir) as f:
+        print(type(f)) # <class '_io.TextIOWrapper'>
+    #with tempfile.TemporaryFile(suffix='.mytemp', dir=this_dir) as f:
+    #    print(type(f)) # <class '_io.BufferedRandom'>
         for entry in os.scandir(this_dir):
             print(entry.path)
         f.write('Hello from TemporaryFile()')
@@ -51,11 +55,13 @@ def optionally_deleted_named_temporary_file():
     Exactly the same as TemporaryFile, except that 
     - "delete" == True (default) controls whether or not the file will be deleted
     - The file WILL have a visible name in the file system
+        - See it with the "name" attribute
     '''
     with tempfile.NamedTemporaryFile('w', suffix='.visibletemp', dir=this_dir, delete=True) as f:
-        for entry in os.scandir(this_dir):
-            print(entry.path)
+        #for entry in os.scandir(this_dir):
+        #    print(entry.path)
         f.write('Hello from NamedTemporaryFile()')
+        print(f.name) # /Users/austinchang/tutorials/python/language/python_369/popular_modules/tempfile_/tmph5kyfy36.visibletemp
 
 
 def mkdtemp_():
@@ -80,4 +86,4 @@ if __name__ == '__main__':
     #temporary_file()
     optionally_deleted_named_temporary_file()
     #mkdtemp_()
-    deleted_temporary_directory()
+    #deleted_temporary_directory()

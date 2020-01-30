@@ -53,7 +53,16 @@ def get_absolute_path():
     print(abs_p) # /Users/austinchang/tutorials/python/language/python_37/popular_modules/pathlib_/path_/methods.py 
 
 
+def read_and_write():
+    '''A pathlib.Path object can read/write bytes and strs by itself'''
+    print((Path(__file__).parent / 'src.txt').read_text()) # This is some source text data
+    print((Path(__file__).parent / 'src.txt').read_bytes()) # b'This is some source text data'
+    #(Path(__file__).parent / 'dst.txt').write_text('Hello there')
+    (Path(__file__).parent / 'dst.txt').write_bytes(b'Hello there! G\xFFeneral Kenobi, you are a bold one.')
+
+
 if __name__ == '__main__':
     #file_object_exists()
     #get_matching_files()
-    get_absolute_path()
+    #get_absolute_path()
+    read_and_write()

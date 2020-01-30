@@ -1,7 +1,7 @@
 # https://docs.python.org/2.7/library/shutil.html
 
 
-import shutil, os
+import shutil, os, pathlib
 
 
 '''Like os, shutil operates from the cwd. That means relative paths are relative to the cwd.'''
@@ -16,6 +16,7 @@ def copy_file():
         - Copy the file into a nonexistent directory (OSError errno == 2)
     '''
     shutil.copyfile(os.path.join(os.path.dirname(__file__), 'src.txt'), os.path.join(os.path.dirname(__file__), 'dst.txt'))
+
 
 def copy():
     '''
@@ -61,10 +62,22 @@ def move():
     #shutil.move(os.path.join(os.path.dirname(__file__), 'src-dir'), os.path.join(os.path.dirname(__file__), 'inner-dir/whatever/yes'))
 
 
+def copyfileobj():
+    '''
+    - copyfileobj(<src>, <dst> [, <length>]) will:
+        - Copy the contents of one file-like object into another file-like object
+            - If the current file position of <src> is not 0, only bytes from the current position onward will be copied into <dst>
+            - <length> is the buffersize, which if negative means to read without chunks into an unlimited buffer size
+    '''
+    # This is cuckoo syntax, but it works
+    shutil.copyfileobj((pathlib.Path(__file__).parent / 'src.txt').open(), (pathlib.Path(__file__).parent / 'inner-dir' / 'whatever' / 'no').open('w'))
+
+
 if __name__ == "__main__":
     #print(os.path.dirname(__file__)) # /Users/austinchang/tutorials/python/language/python2/popular_modules/shutil_py
     #print(os.getcwd()) # /Users/austinchang/tutorials/python/language
     #copy_file()
     #copy()
     #remove_directory_tree()
-    move()
+    #move()
+    copyfileobj()
