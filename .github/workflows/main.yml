@@ -1,0 +1,15 @@
+name: Whee
+
+on: [push]
+
+jobs:
+  first:
+    runs-on: ubuntu-18.04
+    name: this is my first job
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          ls -al
+          echo hi there
+          pwd
+      
