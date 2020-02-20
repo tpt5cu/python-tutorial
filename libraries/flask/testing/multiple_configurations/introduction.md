@@ -1,2 +1,0 @@
-- https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-iii-web-forms - basic configuration
-- https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-xv-a-better-application-structure - using multiple configurations

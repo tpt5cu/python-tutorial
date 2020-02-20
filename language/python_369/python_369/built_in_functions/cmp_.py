@@ -1,0 +1,1 @@
+'''Removed in Python 3'''

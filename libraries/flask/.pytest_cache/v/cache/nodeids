@@ -1,6 +1,1 @@
-[
-  "testing/test_introduction_test.py::test_validUsernameAndPassword_LogsIn", 
-  "testing/test_introduction_test.py::test_invalidUsernameAndPassword_DoesNotLogIn", 
-  "testing/test_introduction_test.py::test_loggedInUser_canViewContentPage", 
-  "testing/test_introduction_test.py::test_noFixtureNeeded_doesNotUseFixture"
-]
+[]

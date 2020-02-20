@@ -1,8 +1,4 @@
 setup.py
-module_/__init__.py
-module_/import_/__init__.py
-module_/import_/awesome_module.py
-module_/import_/introduction.py
 python3_tutorial.egg-info/PKG-INFO
 python3_tutorial.egg-info/SOURCES.txt
 python3_tutorial.egg-info/dependency_links.txt

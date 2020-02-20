@@ -1,1 +1,0 @@
-'''reduce() was moved to functools.reduce()'''

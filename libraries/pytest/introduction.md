@@ -15,5 +15,7 @@
     - Run a specific test inside of a file
 - $ `pytest -s`
     - Print all stdout to the console. Normally, only failing tests have their stdout captured
+    - This works. If it doesn't, it's because I'm 1) printing a function that returns None or 2) whatever is being printed doesn't have a string
+      representation for some reason
 - pytest is smart. I can hide my test.py files inside of arbitrarily named directories underneath of where $ pytest $ is run, and pytest will find
   them

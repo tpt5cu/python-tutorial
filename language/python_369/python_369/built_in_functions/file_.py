@@ -1,0 +1,1 @@
+'''This function and type doesn't exist in Python 3. In Python 3, use io.IOBase for type checking'''
