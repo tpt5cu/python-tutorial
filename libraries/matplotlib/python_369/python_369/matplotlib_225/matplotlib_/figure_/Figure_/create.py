@@ -19,7 +19,7 @@ def create_nonviewable_figure():
     <Figure>.show() shows the Figure.
     - Figure objects can only be shown with a GUI backend provided by pyplot
         - To get around this, just save the Figure
-    - In order to save the figure without the RuntimeError, I need to switch the backend from "macosx" (defined in the matplotlibrc file) to something
+    - In order to save the Figure without the RuntimeError, I need to switch the backend from "macosx" (defined in the matplotlibrc file) to something
       else like "TkAgg" (see link)
         - In order to get around the AttributeError, see the second link
             - TLDR: I need a Canvas object to tell the Artist object(s) (i.e. Figure objects) to draw themselves ON the canvas. A Canvas object is
@@ -37,7 +37,7 @@ def create_nonviewable_figure():
 
 
 def create_viewable_figure():
-    '''The attributes of the actual figure are respected when using pyplot to show it'''
+    '''Need pyplot to show() a figure'''
     fig, ax = plt.subplots()
     fig.set_facecolor('y')
     ax.set_facecolor('b')

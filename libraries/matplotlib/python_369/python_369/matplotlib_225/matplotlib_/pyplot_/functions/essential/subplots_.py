@@ -10,9 +10,9 @@ from matplotlib import pyplot as plt
 def create_axes_and_figure():
     '''
     The simplest use case of pyplot.subplots() is to create a figure with a single axes
-    - Recall that the figure is the final image that contains one or more Axes objects
+    - Recall that the Figure is the final image that contains one or more Axes objects
     - Each Axes object represents an entire plot
-        - Axis objects are different and actually represent the x or y axis of an Axes plot
+        - "Axis" objects are different and actually represent the x or y axis of an Axes plot
     '''
     fig, ax = plt.subplots()
     x = np.linspace(0, 2*np.pi, 400)

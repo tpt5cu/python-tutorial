@@ -62,14 +62,6 @@ def savefig_with_pyplot():
     # This saves correctly
     fig.savefig(str((pathlib.Path(__file__).parent / 'test-figure.png').resolve()), facecolor=fig.get_facecolor())
 
-    #fig = create.get_blank_standard_figure()
-    #fig.set_facecolor((1, 0, 0, .5)) # Red at 50% opacity
-    #position = (0, 0, .5, .5)
-    #ax = fig.add_axes(position)
-    #ax.set_facecolor('y')
-    ##ax = _AxesBase(fig, (0, 0, .5, .5), facecolor='y')
-    #fig.savefig(str((pathlib.Path(__file__).parent / 'test-figure.png').resolve()))
-
 
 def add_subplot():
     '''
