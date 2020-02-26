@@ -19,7 +19,7 @@ class Road:
 def examine_road():
     r = Road(10, 10, 'asphalt')
     print(dir(r)) # Has all of the attributes of the Python "object"
-    print(isinstance(r, object))
+    print(isinstance(r, object)) # True
 
 
 def anonymous_namedtuple_class():
@@ -40,6 +40,6 @@ def anonymous_simplenamespace_object():
 
 
 if __name__ == '__main__':
-    #examine_road()
-    anonymous_namedtuple_class()
-    anonymous_simplenamespace_object()
+    examine_road()
+    #anonymous_namedtuple_class()
+    #anonymous_simplenamespace_object()

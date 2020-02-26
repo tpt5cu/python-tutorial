@@ -4,25 +4,27 @@
 from networkx.classes.graph import Graph
 
 
-def create_empty_graph():
-    '''Create an empty graph with no nodes or edges'''
-    g = Graph()
-    print(type(g)) # <class 'networkx.classes.graph.Graph'>
+def create_graph_from_graph():
+    '''Are the results the same as before?'''
+    pass
 
 
-def create_graph_with_edges():
+def create_graph_from_edgeview():
     '''
-    The data can be an edge list, or any NetworkX graph object, but not a list of nodes!
-    - It can't be a list of nodes because a bunch of unconnected nodes don't compose a very interesting graph
-    - Nodes can be any hashable object. Recall that immutable objects are implicitly hashable: int, string, tuple, etc.
+    Fortunately, creating a graph from the EdgeView of another graph does not perform a shallow copy of the original graph
+    - The new graph gets entirely new edges
+        - Arbitrary attributes of the old edges are not copied
+    - This approach will miss copying nodes who had no edges
     '''
     g = Graph([(1, 'foo'), (1, 3)])
-    nodes = g.nodes()
-    print(type(nodes)) # <class 'networkx.classes.reportviews.NodeView'>
-    print(nodes) # [1, 'foo', 3]
-    #g.nodes()[0] = 5 # TypeError: 'NodeView' does not support item assignment
+    g.add_node(4)
+    h = Graph(g.edges)
+    g.edges[1, 'foo']['key'] = 'value'
+    print(h.nodes) # [1, 'foo', 3]
+    print(h.edges) # [(1, 'foo'), (1, 3)]
+    print(h.edges[1, 'foo']) # {}
+    print(g.edges[1, 'foo']) # {'key': 'value'}
 
 
 if __name__ == '__main__':
-    #create_empty_graph()
-    create_graph_with_edges()
+    create_graph_from_edgeview()

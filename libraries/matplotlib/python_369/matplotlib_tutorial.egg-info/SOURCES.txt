@@ -1,0 +1,5 @@
+setup.py
+matplotlib_tutorial.egg-info/PKG-INFO
+matplotlib_tutorial.egg-info/SOURCES.txt
+matplotlib_tutorial.egg-info/dependency_links.txt
+matplotlib_tutorial.egg-info/top_level.txt

@@ -10,9 +10,7 @@
     - E.g. If setup.py is in `/Users/austinchang/tutorials/python/language/python_369/`, then `import python3_tutorial` will never work, but all of
       these work:
     ```
-    import exceptions_
-    import popular_modules
-    import print_
+    import python_369.<whatever>
     ```
 # Install a setuptools package
 - $ pip install -e .

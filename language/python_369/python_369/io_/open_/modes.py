@@ -1,5 +1,5 @@
 import pathlib, itertools, math
-from re_.complex_tasks.validate_open_modes import ensure_one_base_mode, alternate_ensure_one_base_mode
+from python_369.re_.complex_tasks.validate_open_modes import ensure_one_base_mode, alternate_ensure_one_base_mode
 
 
 def get_permutations(base_mode):

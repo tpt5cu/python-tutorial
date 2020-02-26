@@ -12,35 +12,38 @@ import numpy as np
 
 """
 There are 24 array scalar type objects in numpy:
-- Numeric
-    - 10 Exact (integers)
-        - byte
-        - ubyte
-        - short
-        - ushort
-        - intc
-        - uintc
-        - int_
-        - uint
-        - longlong
-        - ulonglong
-    - 7 Approximate (floats)
-        - half
-        - single
-        - csingle
-        - float_
-        - longfloat
-        - complex_
-        - clongfloat
-    - 2 Pointers
-        - intp
-        - uintp
-- 3 Flexible
-    - str_ (i.e. string_)
+- 5 exact signed numeric types (integers)
+    - byte
+    - short
+    - intc
+    - int_
+    - longlong
+- 5 exact unsigned numeric types
+    - ubyte
+    - ushort
+    - uintc
+    - uint_
+    - ulonglong
+- 4 inexact floating numeric types
+    - half
+    - single
+    - float_
+    - longfloat
+- 3 inexact complexfloating numeric types
+    - csingle
+    - complex_
+    - clongfloat
+- 2 flexible character types
+    - str_
     - unicode_
+- 1 flexible type
     - void
-- 2 Generic
+- 2 generic types
     - bool_
+    - object_
+- 2 integer types which are just pointers to other types that hold a pointer for the platform
+    - intp
+    - uintp
     - object_
 
 The basic numeric types are all platform-dependent in size. To mitigate this, numpy provides a set of aliases that refer to types of fixed size. These
