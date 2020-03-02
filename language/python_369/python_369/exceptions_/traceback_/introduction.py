@@ -5,7 +5,7 @@ def inspect_print_exc():
         5/0
     except:
         '''
-        As expected, print_exc() doesn't return anything
+        As expected, print_exc() doesn't return anything, but it does print
         - What I probably want it format_exc()
         '''
         ## Traceback (most recent call last):
@@ -16,7 +16,6 @@ def inspect_print_exc():
         val = traceback.format_exc()
         print(type(val)) # <class 'str'>
         print(val) # None
-        pass
 
 
 if __name__ == '__main__':

@@ -13,6 +13,8 @@ def get_slice():
     #my_slice = slice(1,,2)
     my_slice = slice(1, len(my_list), 2)
     print(my_list[my_slice]) # [2, 4]
+    # This is normal slice syntax
+    print(my_list[2:4]) # [3, 4]
 
 
 def inspect_slice():
@@ -36,5 +38,6 @@ def inspect_slice():
 
 
 if __name__ == '__main__':
-    #get_slice()
-    inspect_slice()
+    get_slice()
+    #inspect_slice()
+    

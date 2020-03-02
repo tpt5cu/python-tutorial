@@ -4,9 +4,25 @@
 from networkx.classes.graph import Graph
 
 
-def create_graph_from_graph():
-    '''Are the results the same as before?'''
-    pass
+def create_graph_from_nodes():
+    '''
+    The net result is the same as in v1.11: the new graph gets all new nodes that are copies of the original nodes
+    - No edges are copied
+    - No arbitrary attributes are copied
+    '''
+    g = Graph([(1, 5), (5, 5)])
+    g.graph['baz'] = 'boo'
+    g.add_node(6)
+    print(g.nodes()) # [1, 5, 6]
+    print(g.edges()) # [(1, 5), (5, 5)]
+    g.nodes[5]['foo'] = 'bar'
+    print(g.nodes[5]) # {'foo': 'bar'}
+    h = Graph()
+    h.add_nodes_from(g)
+    print(h.graph) # {}
+    print(h.nodes()) # [1, 5, 6]
+    print(h.edges()) # {}
+    print(h.nodes[5]) # {}
 
 
 def create_graph_from_edgeview():
@@ -27,4 +43,5 @@ def create_graph_from_edgeview():
 
 
 if __name__ == '__main__':
-    create_graph_from_edgeview()
+    create_graph_from_nodes()
+    #create_graph_from_edgeview()

@@ -1,9 +1,6 @@
 # https://matplotlib.org/2.2.5/gallery/shapes_and_collections/line_collection.html?highlight=linecollection - LineCollection tutorial
 
 
-'''Artist and ScalarMappable <- Collection <- LineCollection'''
-
-
 import numpy as np
 import matplotlib
 matplotlib.use('TkAgg')
@@ -11,10 +8,14 @@ from matplotlib.collections import LineCollection
 from matplotlib import pyplot as plt
 
 
+'''Artist and ScalarMappable <- Collection <- LineCollection'''
+
+
 def create_linecollection():
     '''
     According to the LineCollection tutorial: "We need to set the plot limits, they will not autoscale"
     - The autoscale() method works!
+        - It is NOT implicitly invoked
     - LineCollection objects don't have a __len__() nor are they iterable
     '''
     segments = [

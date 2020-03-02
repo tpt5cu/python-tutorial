@@ -10,26 +10,34 @@ def create_empty_graph():
     print(type(g)) # <class 'networkx.classes.graph.Graph'>
 
 
-def create_new_graph():
+def create_graph_with_new_data():
     '''
+    - Parallel edges are not allowed
     - The data can be:
         - An edge list
         - Any NetworkX graph object
     - The data cannot be a flat list of nodes!
         - It can't be a list of nodes because a bunch of unconnected nodes don't compose a very interesting graph
             - Nodes can be any hashable object. Recall that immutable objects are implicitly hashable: int, string, tuple, etc.
-    - Passing another graph object appears to have the same net result as <Graph>.copy()
     '''
-    # Create with edge list
-    g = Graph([(1, 'foo'), (1, 3)]) 
+    # Create with edge list. Since this is an undirected graph, there is only one edge between 1 and 3
+    g = Graph([(1, 'foo'), (1, 3), (3, 1)]) 
     g.add_node(6)
     # Create with another graph
+    print(g.nodes()) # [1, 'foo', 3, 6]
+    print(g.edges()) # [(1, 'foo'), (1, 3)]
+
+
+def create_graph_from_graph():
+    '''Passing another graph object appears to have the same net result as <Graph>.copy()'''
+    g = Graph([(1, 5), (5, 5)])
+    g.add_node(6)
     h = Graph(g) 
-    print(h.nodes()) # [1, 'foo', 3, 6]
-    print(h.edges()) # [(1, 'foo'), (1, 3)]
-    g.node['foo']['color'] = 'black'
-    print(g.node['foo']) # {'color': 'black'}
-    print(h.node['foo']) # {}
+    print(h.nodes()) # [1, 5, 6]
+    print(h.edges()) # [(1, 5), (5, 5)]
+    g.node[1]['color'] = 'black'
+    print(g.node[1]) # {'color': 'black'}
+    print(h.node[1]) # {}
 
 
 def bad_create_graph():
@@ -102,8 +110,9 @@ def create_true_graph_copy():
 
 
 if __name__ == '__main__':
-    #empty_graph()
-    create_new_graph()
+    #create_empty_graph()
+    create_graph_with_new_data()
+    create_graph_from_graph()
     #bad_create_graph()
     #create_graph_from_nodes()
     #create_graph_from_edges()

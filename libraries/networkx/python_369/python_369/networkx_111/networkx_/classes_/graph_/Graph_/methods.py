@@ -49,6 +49,19 @@ def add_nodes():
     print(g.node['greeting']) # {}
 
 
+def get_node():
+    '''
+    - Remember that in v1.11:
+        - <Graph>.nodes is a function that returns a list
+        - <Graph>.node returns a dict that contains <node key>-<dict> pairs
+    '''
+    g = Graph([(1, 5), (5, 5)])
+    print(type(g.nodes.get(1))) # AttributeError: 'function' object has no attribute 'get'
+    #print(g.nodes.get(1))
+    #print(type(g.nodes.get(2)))
+    #print(g.nodes.get(2))
+
+
 def get_nodes():
     '''
     <Graph>.nodes() returns a new list that contains the unique identifiers that represent nodes in the graph
@@ -72,18 +85,21 @@ def add_edge():
     '''
     g = Graph([(1, 5), (5, 5)])
     g.edge[1][5]['foo'] = 'bar'
-    # A duplciate edge cannot remove existing arbitrary edge attributes
+    # A duplciate edge cannot remove existing arbitrary edge attributes.
+    # - Also, {} and attr_dict={} are equivalent
+    #g.add_edge(1, 5, attr_dict={})
     #g.add_edge(1, 5, {})
     #print(g.edge[1][5]) # {'foo': 'bar'}
     # A duplicate edge can overwrite existing arbitrary edge attributes
-    #g.add_edge(1, 5, foo='fru')
-    #print(g.edge[1][5]) # {'foo': 'fru'}
+    #g.add_edge(1, 5, attr_dict={'foo': 'fru'})
+    g.add_edge(1, 5, foo='fru')
+    print(g.edge[1][5]) # {'foo': 'fru'}
     # A duplicate edge can add new arbitrary edge attributes
     #g.add_edge(1, 5, new='whoo')
     #print(g.edge[1][5]) # {'foo': 'bar', 'new': 'whoo'}
-    g.add_edge(4, 6)
-    print(g.nodes()) # [1, 5, 4, 6]
-    print(g.edges()) # [(1, 5), (5, 5), (4, 6)]
+    #g.add_edge(4, 6)
+    #print(g.nodes()) # [1, 5, 4, 6]
+    #print(g.edges()) # [(1, 5), (5, 5), (4, 6)]
 
 
 def add_edges():
@@ -98,14 +114,27 @@ def add_edges():
 def get_edges():
     '''<Graph>.edges() returns a Python list of tuples, where each 2-tuple represents an edge between two nodes'''
     g = Graph([(1, 5), (5, 5)])
-    print(type(g.edges())) # <class 'list'>
-    print(g.edges()) # [(1, 5), (5, 5)]
+    #print(type(g.edges())) # <class 'list'>
+    #print(g.edges()) # [(1, 5), (5, 5)]
+    # Iterate over 2-tuples
+    for e in g.edges():
+        print(e) # (1, 5)\n(5, 5)
+
+
+def get_neighbors():
+    '''Get a Python list of neighbors connected to <v> via <Graph>.neighbors(<v>)'''
+    g = Graph([(1, 2), (2, 3)])
+    n = g.neighbors(2)
+    print(type(n)) # <class 'list'>
+    print(n) # [1, 3]
 
 
 if __name__ == '__main__':
     #add_node()
     #add_nodes()
+    #get_node()
     #get_nodes()
     #add_edge()
-    add_edges()
+    #add_edges()
     #get_edges()
+    get_neighbors()

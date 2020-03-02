@@ -16,4 +16,3 @@ BASE_COLORS: b, g, r, c, m, y, k, w
 
 def create_transparent_variations_of_red():
     (1, 0, 0) # solid red
-

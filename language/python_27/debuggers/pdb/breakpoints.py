@@ -1,4 +1,5 @@
 # https://realpython.com/python-debugging-pdb/#using-breakpoints
+# https://stackoverflow.com/questions/25275410/conditional-breakpoint-using-pdb
 
 '''
 View breakpoints
@@ -19,4 +20,9 @@ Delete a breakpoint
 Disable/enable a breakpoint
 - $ disable <breakpoint number>
 - $ enable <breakpoint number>
+'''
+
+'''
+There is no way to set a conditional breakpoint with pdb.set_trace()
+- Try using pdb.post_mortem()
 '''

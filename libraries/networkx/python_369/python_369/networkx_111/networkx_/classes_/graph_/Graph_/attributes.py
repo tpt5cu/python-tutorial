@@ -46,6 +46,17 @@ def examine_node_attributes():
     print(g.nodes()) # [1, 5, 6]
 
 
+def examine_nonexistent_node_attributes():
+    '''
+    If a nonexistent node's attributes are referenced or modified, nothing happens
+    - The nonexistent node is not created
+    '''
+    g = Graph([(1, 5), (5, 5)])
+    g.node.get(6, {})['foo'] = 'bar'
+    #print(g.node[6]) # KeyError
+    print(g.nodes()) # [1, 5]
+
+
 def examine_edge_attributes():
     '''
     <Graph>.edge[<n>] is a Python dict
@@ -66,9 +77,13 @@ def examine_edge_attributes():
     print(g.node[5]) # {'foo': 'bar'}
     print(g.edge[5]) # {1: {}, 5: {'friend': 'homie'}}
     print(g.edge[1][5] is g.edge[5][1]) # True
+    # Edge attributes can be accessed directly on the graph object
+    print(g[5][5]) # {'friend': 'homie'}
+    print(g[5][5] is g.edge[5][5]) # True
 
 
 if __name__ == '__main__':
     #examine_graph_attributes()
     #examine_node_attributes()
+    #examine_nonexistent_node_attributes()
     examine_edge_attributes()

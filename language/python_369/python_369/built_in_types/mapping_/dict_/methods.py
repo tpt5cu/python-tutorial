@@ -1,5 +1,5 @@
 # https://stackoverflow.com/questions/13998492/when-should-iteritems-be-used-instead-of-items
-# https://docs.python.org/3/library/stdtypes.html#dict-views
+# https://docs.python.org/3.6/library/stdtypes.html#dict-views
 # https://stackoverflow.com/questions/6777485/modifying-a-python-dict-while-iterating-over-it
 
 
@@ -83,9 +83,36 @@ def sort_dicts():
     sorted_ = sorted(unsorted_list, key=lambda d: str({val: d[val] for val in d if val != 'name'})) 
     # [{'1': 'b', 'c': 'c', 'd': 'd', 'name': 'Two'}, {'a': '1', 'c': 'c', 'd': 'd', 'name': 'Three'}, {'a': 'a', 'c': 'c', 'b': 'b', 'name': 'One'}]
     print(sorted_)
-    #sorted_ = sorted([d1, d2], key=lambda d: {val: d[val] for val in d if val != 'name'}) # TypeError: '<' not supported between instances of 'dict' and 'dict'
+    #sorted_ = sorted([d1, d2], key=lambda d: {val: d[val] for val in d if val != 'name'}) # TypeError: '<' not supported between instances of 'dict'
+    #and 'dict'
+    
+
+def update_():
+    '''
+    <dict>.update() accepts a variety of arguments to update the values in the dictionary
+    - The original dictionary is updated in place
+    - None is returned
+    - key-values pairs are overwritten or not modified, but never removed
+    '''
+    original = {
+        'foo': 'bar',
+        'nice': 'job',
+        3: 4
+    }
+    original.update({'foo': 'fru', 'nice': 'wow'})
+    #print(original) # {'foo': 'fru', 'nice': 'wow', 3: 4}
+    # Here we see the problem of using numbers as keys!
+    #original.update(3='what?!', nice=no) # SyntaxError
+    # A dict and kwargs can be used together
+    original.update({3: 'what?!'}, nice='no')
+    #print(original) # {'foo': 'bar', 'nice': 'no', 3: 'what?!'}
+    # Only an ITERABLE of key-values pairs is allowed, not a plain tuple
+    #original.update(('foo', 'boo')) # ValueError
+    original.update((('foo', 'boo'),))
+    #print(original) # {'foo': 'boo', 'nice': 'job', 3: 4}
 
 
 if __name__ == '__main__':
     #key_iteration()
-    sort_dicts()
+    #sort_dicts()
+    update_()
