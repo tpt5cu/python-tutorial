@@ -19,14 +19,14 @@ def run_process():
         # - Ran for 1 minute successfully without sudo
         # - 
         #['python', '/Users/austinchang/pycharm/omf/omf/models/smartSwitching.py'], # Ran for 1 minute successfully, both with and without sudo
-
         # - This file ran successfully with/without sudo on Docker container in 1 minute
         # - runAllTests.py ran successfully with/without sudo on Docker container in 1 minute
-        # - 
+
+        # If I could just get Travis CI to work, I could determine whether or not the hanging tests are caused by the GitHub Actions environment!
         ['python', '/home/omf/omf/models/smartSwitching.py'],
         stderr=subprocess.PIPE,
         stdout=subprocess.PIPE
-    )
+    
     out, err = p.communicate()
     print('out: {}'.format(out))
     print('err: {}'.format(err))
