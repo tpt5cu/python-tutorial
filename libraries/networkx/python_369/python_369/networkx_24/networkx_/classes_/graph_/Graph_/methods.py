@@ -4,6 +4,16 @@
 from networkx.classes.graph import Graph
 
 
+def add_node_():
+    g = Graph()
+    attributes = {'foo': 'bar'}
+    # Wrong in v2.4
+    #g.add_node('9', attr_dict=attributes)
+    # Right in v2.4
+    g.add_node('9', **attributes)
+    print(g.nodes(data=True)) # [('9', {'foo': 'bar'})]
+
+
 def get_nodes():
     '''
     <Graph>.nodes AND <Graph>.nodes() return the SAME NodeView of the nodes in the graph
@@ -31,7 +41,33 @@ def get_nodes():
     print(type(g.nodes[5])) # <class 'dict'>
 
 
-def add_edge():
+def get_nodes_and_data():
+    '''
+    <Graph>.nodes() is completely different in v2.4
+    - The "data" kwarg can do three things:
+        - If data==True, return all node keys and all their data
+        - If data==False, return just a list of node keys
+        - If data==<attribute key>, return all node keys with the attribute key, along with the value of the attribute
+    - In combination with "data", the "default" kwarg will substitute <value> for every node that doesn't have the searched-for attribute key
+    '''
+    g = Graph()
+    g.add_nodes_from(['a', 'b'], data='quack', size='tiny')
+    g.add_node('c', data=False)
+    g.add_node('d')
+    print(g.nodes()) # ['a', 'b', 'c', 'd']
+    # Get no node attribute values
+    print(g.nodes(data=False)) # ['a', 'b', 'c', 'd']
+    # Get all node attribute key-value pairs
+    print(g.nodes(data=True)) # [('a', {'data': 'quack', 'size': 'tiny'}), ('b', {'data': 'quack', 'size': 'tiny'}), ('c', {'data': False}), ('d', {})]
+    # Get all node keys and attribute values for the given attribute key
+    print(g.nodes(data='size')) # [('a', 'tiny'), ('b', 'tiny'), ('c', None), ('d', None)]
+    # Substitute a value for nodes that don't have the key
+    print(g.nodes(data='size', default='purple')) # [('a', 'tiny'), ('b', 'tiny'), ('c', 'purple'), ('d', 'purple')]
+    # It does not appear possible to search for multiple keys at the same time. I should get all data (data==True), then filter somehow
+    #print(g.nodes(data=('size', 'data')))
+    
+
+def add_edge_():
     '''
     - <Graph>.edge[<u>][<v>] no longer exists, so use <Graph>.edges[<u>, <v>]
     - Unlike v1.11 which accepted a dict as a third argument, only additionals kwargs are accepted after <u> and <v>
@@ -100,7 +136,9 @@ def get_neighbors():
 
 
 if __name__ == '__main__':
+    add_node_()
     #get_nodes()
-    #add_edge()
+    #get_nodes_and_data()
+    #add_edge_()
     #get_edges()
-    get_neighbors()
+    #get_neighbors()

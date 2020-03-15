@@ -77,6 +77,23 @@ def get_nodes():
     print(g.nodes()) # [1, 5]
 
 
+def get_nodes_and_data():
+    '''
+    The <Graph>.nodes() method accepts an optional kwarg "data" that, regardless of value, is interpreted as a truthy or falsy value
+    - If truthy, a list of 2-tuples is returned. Each 2-tuple consists of (<key>, <attr dict>)
+    - If falsy, a list of keys is returned
+    In v1.11 that's all that happens. It's very simple
+    '''
+    g = Graph()
+    g.add_nodes_from(['a', 'b'], data='quack')
+    g.add_node('c', data=False)
+    g.add_node('d')
+    print(g.nodes()) # ['a', 'b', 'c', 'd']
+    print(g.nodes(data=False)) # ['a', 'b', 'c', 'd']
+    print(g.nodes(data=True)) # [('a', {'data': 'quack'}), ('b', {'data': 'quack'}), ('c', {'data': False}), ('d', {})]
+    print(g.nodes(data='no')) # [('a', {'data': 'quack'}), ('b', {'data': 'quack'}), ('c', {'data': False}), ('d', {})]
+
+
 def add_edge():
     '''
     - Adding an edge with nonexistent nodes creates those nodes
@@ -134,7 +151,8 @@ if __name__ == '__main__':
     #add_nodes()
     #get_node()
     #get_nodes()
+    filter_nodes()
     #add_edge()
     #add_edges()
     #get_edges()
-    get_neighbors()
+    #get_neighbors()

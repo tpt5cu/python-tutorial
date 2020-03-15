@@ -61,6 +61,6 @@ def neighbors_():
 
 if __name__ == '__main__':
     #get_node_attributes_()
-    #get_edge_attributes_()
+    get_edge_attributes_()
     #edges_()
-    neighbors_()
+    #neighbors_()
