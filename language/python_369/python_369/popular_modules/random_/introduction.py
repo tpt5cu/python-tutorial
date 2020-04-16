@@ -1,3 +1,6 @@
+# https://docs.python.org/3.6/library/random.html
+
+
 import random
 
 
@@ -16,6 +19,17 @@ def random_choice():
     print(random.choice(list(dict_.values())))
 
 
+def random_int():
+    '''
+    random.randrange(<start>, <stop>, <step>)
+    - <stop> is an excluded upper bound
+    - random.randint() is an alias for random.randrange()
+    '''
+    for _ in range(3):
+        print(random.randrange(0, 10, 2)) # 2 6 4
+
+
 if __name__ == '__main__':
     #randomize_sequence()
-    random_choice()
+    #random_choice()
+    random_int()

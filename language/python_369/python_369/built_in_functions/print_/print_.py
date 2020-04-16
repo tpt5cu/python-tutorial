@@ -1,8 +1,9 @@
+# https://docs.python.org/3.6/library/functions.html#print - print documentation
 # http://www.macfreek.nl/memory/Encoding_of_Python_stdout
 # https://stackoverflow.com/questions/492483/setting-the-correct-encoding-when-piping-stdout-in-python
 
 
-import sys
+import sys, pathlib
 
 
 def view_encoding():
@@ -40,6 +41,23 @@ def avoid_newline():
 
 def control_separator():
     print('These', 'Arguments', 'Will', 'Be', 'Concatenated', 'Into', 'A', 'Tuple', 'Because', 'All', 'Subsequent', 'Parameters', 'Are', 'Keyword', 'Parameters', sep='->')
+    list_ = [1, 2, 'hello world', '29.5']
+    print(*list_, sep=',')
+    
+
+def print_to_file():
+    '''
+    - Using print() with the "file" kwarg might seem like a good idea, but the output is really sloppy (e.g. list brackets are printed)
+        - Fortunately, I can unpack a list and control the separator to get around this (see above)
+    - By default, print() is invoked with file=sys.stdout
+    '''
+    file_path = (pathlib.Path(__file__).parent / 'output.txt').resolve()
+    file_ = open(file_path, 'w')
+    print('Hello World', file=file_)
+    list_ = [1, 2, '3', 'four']
+    print(list_, file=file_)
+    print(*list_, sep=',', file=file_)
+    file_.close()
 
 
 if __name__ == '__main__':
@@ -48,3 +66,4 @@ if __name__ == '__main__':
     #print_decoded_bytes
     #avoid_newline()
     control_separator()
+    #print_to_file()

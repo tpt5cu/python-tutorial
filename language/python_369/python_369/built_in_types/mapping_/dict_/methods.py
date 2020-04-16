@@ -1,3 +1,4 @@
+# https://docs.python.org/3/library/stdtypes.html#mapping-types-dict - dict documentation
 # https://stackoverflow.com/questions/13998492/when-should-iteritems-be-used-instead-of-items
 # https://docs.python.org/3.6/library/stdtypes.html#dict-views
 # https://stackoverflow.com/questions/6777485/modifying-a-python-dict-while-iterating-over-it
