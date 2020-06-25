@@ -36,7 +36,7 @@ df.iloc[0]
 #last 5
 df.iloc[-5:]
 
-#You can also use it on the columns. This retrieves the 3rd column:
+#iloc retrieves the 3rd column:
 df.iloc[:, 2]    # the : in the first position indicates all rows
 
 #You can combine them to get intersections of rows and columns:
@@ -47,5 +47,21 @@ df = pd.DataFrame(index=['a', 'b', 'c'], columns=['time', 'date', 'name'])
 df.loc['a']     # equivalent to df.iloc[0]
 #and the second two rows of the 'date' column by
 df.loc['b':, 'date']   # equivalent to df.iloc[1:, 1]
+
+
+
+
+
+
+
+#Selecting data by row value
+"""
+This works by first creating a boolean for all values in a particular row. Its TRUE, if it equals a certain value.
+Then filter the columns based on that, then filter the original df by the filtered columns
+"""
+cols = df.columns[df.iloc[2] == 'Value that equals']
+df[ cols ]
+
+
 
 
