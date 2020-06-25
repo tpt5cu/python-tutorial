@@ -1,0 +1,47 @@
+"""
+Git sucks, this doesn't
+
+
+Here's a guide to all github problems
+
+"""
+
+
+***  CREATE GIT REPO FROM TERMINAL ***
+
+git init
+git add *
+git commit -m "initial commit"
+git remote add origin "https://github.com/your_github_username/$repo_name.git"
+git push -u origin master
+
+
+
+
+*OR w/ SSH*
+
+touch README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin git@github.com:alexpchin/<reponame>.git
+git push -u origin master
+
+
+Above still has problems
+
+*** GIT RESET HARD/SOFT/MERGE ***
+https://stackoverflow.com/questions/2530060/in-plain-english-what-does-git-reset-do
+
+
+
+
+Start:
+- A - B - C (HEAD, master)
+
+and you realize you want master to point to B, not C, you will use git reset B to move it there:
+
+
+
+
+
