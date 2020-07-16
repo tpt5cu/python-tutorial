@@ -1,3 +1,28 @@
+#Basic decorator
+
+def make_pretty(func):
+    def inner():
+        print("I got decorated")
+        func()
+    return inner
+
+
+def ordinary():
+    print("I am ordinary")
+
+# decorated = make_pretty(ordinary)
+# decorated()
+
+#Is equivalent to
+
+@make_pretty
+def ordinary():
+    print("I am ordinary")
+
+
+
+
+
 # https://jeffknupp.com/blog/2016/03/07/python-with-context-managers/
 
 
@@ -31,4 +56,5 @@ def use_context_manager():
 
 
 if __name__ == "__main__":
-    use_context_manager()
+    print(ordinary())
+    # use_context_manager()
